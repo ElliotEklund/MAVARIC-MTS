@@ -231,6 +231,60 @@ DynamicsParts/Sources/Forces_MTS.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/Forces_MTS.cpp.s
 .PHONY : DynamicsParts/Sources/Forces_MTS.cpp.s
 
+DynamicsParts/Sources/GTerm.o: DynamicsParts/Sources/GTerm.cpp.o
+
+.PHONY : DynamicsParts/Sources/GTerm.o
+
+# target to build an object file
+DynamicsParts/Sources/GTerm.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/GTerm.cpp.o
+.PHONY : DynamicsParts/Sources/GTerm.cpp.o
+
+DynamicsParts/Sources/GTerm.i: DynamicsParts/Sources/GTerm.cpp.i
+
+.PHONY : DynamicsParts/Sources/GTerm.i
+
+# target to preprocess a source file
+DynamicsParts/Sources/GTerm.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/GTerm.cpp.i
+.PHONY : DynamicsParts/Sources/GTerm.cpp.i
+
+DynamicsParts/Sources/GTerm.s: DynamicsParts/Sources/GTerm.cpp.s
+
+.PHONY : DynamicsParts/Sources/GTerm.s
+
+# target to generate assembly for a file
+DynamicsParts/Sources/GTerm.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/GTerm.cpp.s
+.PHONY : DynamicsParts/Sources/GTerm.cpp.s
+
+DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.o: DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.o
+
+.PHONY : DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.o
+
+# target to build an object file
+DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.o
+.PHONY : DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.o
+
+DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.i: DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.i
+
+.PHONY : DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.i
+
+# target to preprocess a source file
+DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.i
+.PHONY : DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.i
+
+DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.s: DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.s
+
+.PHONY : DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.s
+
+# target to generate assembly for a file
+DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.s
+.PHONY : DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.s
+
 DynamicsParts/Sources/M_Matrix.o: DynamicsParts/Sources/M_Matrix.cpp.o
 
 .PHONY : DynamicsParts/Sources/M_Matrix.o
@@ -285,6 +339,33 @@ DynamicsParts/Sources/M_Matrix_MTS.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/M_Matrix_MTS.cpp.s
 .PHONY : DynamicsParts/Sources/M_Matrix_MTS.cpp.s
 
+DynamicsParts/Sources/SpringEnergy.o: DynamicsParts/Sources/SpringEnergy.cpp.o
+
+.PHONY : DynamicsParts/Sources/SpringEnergy.o
+
+# target to build an object file
+DynamicsParts/Sources/SpringEnergy.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/SpringEnergy.cpp.o
+.PHONY : DynamicsParts/Sources/SpringEnergy.cpp.o
+
+DynamicsParts/Sources/SpringEnergy.i: DynamicsParts/Sources/SpringEnergy.cpp.i
+
+.PHONY : DynamicsParts/Sources/SpringEnergy.i
+
+# target to preprocess a source file
+DynamicsParts/Sources/SpringEnergy.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/SpringEnergy.cpp.i
+.PHONY : DynamicsParts/Sources/SpringEnergy.cpp.i
+
+DynamicsParts/Sources/SpringEnergy.s: DynamicsParts/Sources/SpringEnergy.cpp.s
+
+.PHONY : DynamicsParts/Sources/SpringEnergy.s
+
+# target to generate assembly for a file
+DynamicsParts/Sources/SpringEnergy.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/SpringEnergy.cpp.s
+.PHONY : DynamicsParts/Sources/SpringEnergy.cpp.s
+
 DynamicsParts/Sources/StateDepPots.o: DynamicsParts/Sources/StateDepPots.cpp.o
 
 .PHONY : DynamicsParts/Sources/StateDepPots.o
@@ -311,6 +392,33 @@ DynamicsParts/Sources/StateDepPots.s: DynamicsParts/Sources/StateDepPots.cpp.s
 DynamicsParts/Sources/StateDepPots.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/StateDepPots.cpp.s
 .PHONY : DynamicsParts/Sources/StateDepPots.cpp.s
+
+DynamicsParts/Sources/StateIndepPot.o: DynamicsParts/Sources/StateIndepPot.cpp.o
+
+.PHONY : DynamicsParts/Sources/StateIndepPot.o
+
+# target to build an object file
+DynamicsParts/Sources/StateIndepPot.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/StateIndepPot.cpp.o
+.PHONY : DynamicsParts/Sources/StateIndepPot.cpp.o
+
+DynamicsParts/Sources/StateIndepPot.i: DynamicsParts/Sources/StateIndepPot.cpp.i
+
+.PHONY : DynamicsParts/Sources/StateIndepPot.i
+
+# target to preprocess a source file
+DynamicsParts/Sources/StateIndepPot.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/StateIndepPot.cpp.i
+.PHONY : DynamicsParts/Sources/StateIndepPot.cpp.i
+
+DynamicsParts/Sources/StateIndepPot.s: DynamicsParts/Sources/StateIndepPot.cpp.s
+
+.PHONY : DynamicsParts/Sources/StateIndepPot.s
+
+# target to generate assembly for a file
+DynamicsParts/Sources/StateIndepPot.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/StateIndepPot.cpp.s
+.PHONY : DynamicsParts/Sources/StateIndepPot.cpp.s
 
 DynamicsParts/Sources/Theta_MTS.o: DynamicsParts/Sources/Theta_MTS.cpp.o
 
@@ -630,15 +738,27 @@ help:
 	@echo "... DynamicsParts/Sources/Forces_MTS.o"
 	@echo "... DynamicsParts/Sources/Forces_MTS.i"
 	@echo "... DynamicsParts/Sources/Forces_MTS.s"
+	@echo "... DynamicsParts/Sources/GTerm.o"
+	@echo "... DynamicsParts/Sources/GTerm.i"
+	@echo "... DynamicsParts/Sources/GTerm.s"
+	@echo "... DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.o"
+	@echo "... DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.i"
+	@echo "... DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.s"
 	@echo "... DynamicsParts/Sources/M_Matrix.o"
 	@echo "... DynamicsParts/Sources/M_Matrix.i"
 	@echo "... DynamicsParts/Sources/M_Matrix.s"
 	@echo "... DynamicsParts/Sources/M_Matrix_MTS.o"
 	@echo "... DynamicsParts/Sources/M_Matrix_MTS.i"
 	@echo "... DynamicsParts/Sources/M_Matrix_MTS.s"
+	@echo "... DynamicsParts/Sources/SpringEnergy.o"
+	@echo "... DynamicsParts/Sources/SpringEnergy.i"
+	@echo "... DynamicsParts/Sources/SpringEnergy.s"
 	@echo "... DynamicsParts/Sources/StateDepPots.o"
 	@echo "... DynamicsParts/Sources/StateDepPots.i"
 	@echo "... DynamicsParts/Sources/StateDepPots.s"
+	@echo "... DynamicsParts/Sources/StateIndepPot.o"
+	@echo "... DynamicsParts/Sources/StateIndepPot.i"
+	@echo "... DynamicsParts/Sources/StateIndepPot.s"
 	@echo "... DynamicsParts/Sources/Theta_MTS.o"
 	@echo "... DynamicsParts/Sources/Theta_MTS.i"
 	@echo "... DynamicsParts/Sources/Theta_MTS.s"

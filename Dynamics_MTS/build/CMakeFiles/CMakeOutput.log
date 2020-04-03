@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is AppleClang, found in "/Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/3.16.4/CompilerIdC/a.out"
+The C compiler identification is AppleClang, found in "/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/3.16.4/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /Library/Developer/CommandLineTools/usr/bin/c++ 
@@ -23,32 +23,32 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is AppleClang, found in "/Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/3.16.4/CompilerIdCXX/a.out"
+The CXX compiler identification is AppleClang, found in "/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/3.16.4/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp
+Change Dir: /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_8ddc3/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_8ddc3.dir/build.make CMakeFiles/cmTC_8ddc3.dir/build
-Building C object CMakeFiles/cmTC_8ddc3.dir/testCCompiler.c.o
-/Library/Developer/CommandLineTools/usr/bin/cc    -o CMakeFiles/cmTC_8ddc3.dir/testCCompiler.c.o   -c /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_8ddc3
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ddc3.dir/link.txt --verbose=1
-/Library/Developer/CommandLineTools/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_8ddc3.dir/testCCompiler.c.o  -o cmTC_8ddc3 
+Run Build Command(s):/usr/bin/make cmTC_1ba4a/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_1ba4a.dir/build.make CMakeFiles/cmTC_1ba4a.dir/build
+Building C object CMakeFiles/cmTC_1ba4a.dir/testCCompiler.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc    -o CMakeFiles/cmTC_1ba4a.dir/testCCompiler.c.o   -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_1ba4a
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1ba4a.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_1ba4a.dir/testCCompiler.c.o  -o cmTC_1ba4a 
 
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp
+Change Dir: /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_d4c32/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_d4c32.dir/build.make CMakeFiles/cmTC_d4c32.dir/build
-Building C object CMakeFiles/cmTC_d4c32.dir/CMakeCCompilerABI.c.o
-/Library/Developer/CommandLineTools/usr/bin/cc   -v -Wl,-v -o CMakeFiles/cmTC_d4c32.dir/CMakeCCompilerABI.c.o   -c /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+Run Build Command(s):/usr/bin/make cmTC_9557b/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_9557b.dir/build.make CMakeFiles/cmTC_9557b.dir/build
+Building C object CMakeFiles/cmTC_9557b.dir/CMakeCCompilerABI.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -v -Wl,-v -o CMakeFiles/cmTC_9557b.dir/CMakeCCompilerABI.c.o   -c /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCCompilerABI.c
 Apple LLVM version 10.0.1 (clang-1001.0.46.4)
 Target: x86_64-apple-darwin18.7.0
 Thread model: posix
 InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
- "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_d4c32.dir/CMakeCCompilerABI.c.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1 -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdebug-compilation-dir /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_d4c32.dir/CMakeCCompilerABI.c.o -x c /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_9557b.dir/CMakeCCompilerABI.c.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1 -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdebug-compilation-dir /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_9557b.dir/CMakeCCompilerABI.c.o -x c /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCCompilerABI.c
 clang -cc1 version 10.0.1 (clang-1001.0.46.4) default target x86_64-apple-darwin18.7.0
 #include "..." search starts here:
 #include <...> search starts here:
@@ -59,14 +59,14 @@ clang -cc1 version 10.0.1 (clang-1001.0.46.4) default target x86_64-apple-darwin
  /System/Library/Frameworks (framework directory)
  /Library/Frameworks (framework directory)
 End of search list.
-Linking C executable cmTC_d4c32
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4c32.dir/link.txt --verbose=1
-/Library/Developer/CommandLineTools/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_d4c32.dir/CMakeCCompilerABI.c.o  -o cmTC_d4c32 
+Linking C executable cmTC_9557b
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9557b.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_9557b.dir/CMakeCCompilerABI.c.o  -o cmTC_9557b 
 Apple LLVM version 10.0.1 (clang-1001.0.46.4)
 Target: x86_64-apple-darwin18.7.0
 Thread model: posix
 InstalledDir: /Library/Developer/CommandLineTools/usr/bin
- "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_d4c32 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_d4c32.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_9557b -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_9557b.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a
 @(#)PROGRAM:ld  PROJECT:ld64-450.3
 BUILD 18:16:53 Apr  5 2019
 configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -96,17 +96,17 @@ Parsed C implicit include dir info from above output: rv=done
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_d4c32/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_d4c32.dir/build.make CMakeFiles/cmTC_d4c32.dir/build]
-  ignore line: [Building C object CMakeFiles/cmTC_d4c32.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc   -v -Wl -v -o CMakeFiles/cmTC_d4c32.dir/CMakeCCompilerABI.c.o   -c /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_9557b/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_9557b.dir/build.make CMakeFiles/cmTC_9557b.dir/build]
+  ignore line: [Building C object CMakeFiles/cmTC_9557b.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc   -v -Wl -v -o CMakeFiles/cmTC_9557b.dir/CMakeCCompilerABI.c.o   -c /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
   ignore line: [Apple LLVM version 10.0.1 (clang-1001.0.46.4)]
   ignore line: [Target: x86_64-apple-darwin18.7.0]
   ignore line: [Thread model: posix]
   ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
   ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-  ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_d4c32.dir/CMakeCCompilerABI.c.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1 -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdebug-compilation-dir /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_d4c32.dir/CMakeCCompilerABI.c.o -x c /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_9557b.dir/CMakeCCompilerABI.c.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1 -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdebug-compilation-dir /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_9557b.dir/CMakeCCompilerABI.c.o -x c /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
   ignore line: [clang -cc1 version 10.0.1 (clang-1001.0.46.4) default target x86_64-apple-darwin18.7.0]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
@@ -117,14 +117,14 @@ Parsed C implicit link information from above output:
   ignore line: [ /System/Library/Frameworks (framework directory)]
   ignore line: [ /Library/Frameworks (framework directory)]
   ignore line: [End of search list.]
-  ignore line: [Linking C executable cmTC_d4c32]
-  ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4c32.dir/link.txt --verbose=1]
-  ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc   -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_d4c32.dir/CMakeCCompilerABI.c.o  -o cmTC_d4c32 ]
+  ignore line: [Linking C executable cmTC_9557b]
+  ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9557b.dir/link.txt --verbose=1]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/cc   -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_9557b.dir/CMakeCCompilerABI.c.o  -o cmTC_9557b ]
   ignore line: [Apple LLVM version 10.0.1 (clang-1001.0.46.4)]
   ignore line: [Target: x86_64-apple-darwin18.7.0]
   ignore line: [Thread model: posix]
   ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_d4c32 -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_d4c32.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
+  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_9557b -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_9557b.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
     arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
     arg [-demangle] ==> ignore
     arg [-lto_library] ==> ignore, skip following value
@@ -135,11 +135,11 @@ Parsed C implicit link information from above output:
     arg [-macosx_version_min] ==> ignore
     arg [10.14.0] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_d4c32] ==> ignore
+    arg [cmTC_9557b] ==> ignore
     arg [-search_paths_first] ==> ignore
     arg [-headerpad_max_install_names] ==> ignore
     arg [-v] ==> ignore
-    arg [CMakeFiles/cmTC_d4c32.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_9557b.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lSystem] ==> lib [System]
     arg [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
   Library search paths: [;/usr/lib;/usr/local/lib]
@@ -156,29 +156,29 @@ Parsed C implicit link information from above output:
 
 
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp
+Change Dir: /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_a4596/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_a4596.dir/build.make CMakeFiles/cmTC_a4596.dir/build
-Building CXX object CMakeFiles/cmTC_a4596.dir/testCXXCompiler.cxx.o
-/Library/Developer/CommandLineTools/usr/bin/c++     -o CMakeFiles/cmTC_a4596.dir/testCXXCompiler.cxx.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_a4596
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a4596.dir/link.txt --verbose=1
-/Library/Developer/CommandLineTools/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_a4596.dir/testCXXCompiler.cxx.o  -o cmTC_a4596 
+Run Build Command(s):/usr/bin/make cmTC_9e812/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_9e812.dir/build.make CMakeFiles/cmTC_9e812.dir/build
+Building CXX object CMakeFiles/cmTC_9e812.dir/testCXXCompiler.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/c++     -o CMakeFiles/cmTC_9e812.dir/testCXXCompiler.cxx.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_9e812
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e812.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_9e812.dir/testCXXCompiler.cxx.o  -o cmTC_9e812 
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp
+Change Dir: /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_3915a/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_3915a.dir/build.make CMakeFiles/cmTC_3915a.dir/build
-Building CXX object CMakeFiles/cmTC_3915a.dir/CMakeCXXCompilerABI.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/c++    -v -Wl,-v -o CMakeFiles/cmTC_3915a.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+Run Build Command(s):/usr/bin/make cmTC_c669e/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_c669e.dir/build.make CMakeFiles/cmTC_c669e.dir/build
+Building CXX object CMakeFiles/cmTC_c669e.dir/CMakeCXXCompilerABI.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/c++    -v -Wl,-v -o CMakeFiles/cmTC_c669e.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
 Apple LLVM version 10.0.1 (clang-1001.0.46.4)
 Target: x86_64-apple-darwin18.7.0
 Thread model: posix
 InstalledDir: /Library/Developer/CommandLineTools/usr/bin
 clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
- "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_3915a.dir/CMakeCXXCompilerABI.cpp.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1 -stdlib=libc++ -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdeprecated-macro -fdebug-compilation-dir /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_3915a.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_c669e.dir/CMakeCXXCompilerABI.cpp.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1 -stdlib=libc++ -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdeprecated-macro -fdebug-compilation-dir /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_c669e.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
 clang -cc1 version 10.0.1 (clang-1001.0.46.4) default target x86_64-apple-darwin18.7.0
 ignoring nonexistent directory "/usr/include/c++/v1"
 #include "..." search starts here:
@@ -191,14 +191,14 @@ ignoring nonexistent directory "/usr/include/c++/v1"
  /System/Library/Frameworks (framework directory)
  /Library/Frameworks (framework directory)
 End of search list.
-Linking CXX executable cmTC_3915a
-/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3915a.dir/link.txt --verbose=1
-/Library/Developer/CommandLineTools/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_3915a.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3915a 
+Linking CXX executable cmTC_c669e
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c669e.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/c++    -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_c669e.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_c669e 
 Apple LLVM version 10.0.1 (clang-1001.0.46.4)
 Target: x86_64-apple-darwin18.7.0
 Thread model: posix
 InstalledDir: /Library/Developer/CommandLineTools/usr/bin
- "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_3915a -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_3915a.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a
+ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_c669e -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c669e.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a
 @(#)PROGRAM:ld  PROJECT:ld64-450.3
 BUILD 18:16:53 Apr  5 2019
 configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -230,17 +230,17 @@ Parsed CXX implicit include dir info from above output: rv=done
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_3915a/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_3915a.dir/build.make CMakeFiles/cmTC_3915a.dir/build]
-  ignore line: [Building CXX object CMakeFiles/cmTC_3915a.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/Library/Developer/CommandLineTools/usr/bin/c++    -v -Wl -v -o CMakeFiles/cmTC_3915a.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_c669e/fast && /Library/Developer/CommandLineTools/usr/bin/make -f CMakeFiles/cmTC_c669e.dir/build.make CMakeFiles/cmTC_c669e.dir/build]
+  ignore line: [Building CXX object CMakeFiles/cmTC_c669e.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/c++    -v -Wl -v -o CMakeFiles/cmTC_c669e.dir/CMakeCXXCompilerABI.cpp.o -c /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [Apple LLVM version 10.0.1 (clang-1001.0.46.4)]
   ignore line: [Target: x86_64-apple-darwin18.7.0]
   ignore line: [Thread model: posix]
   ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
   ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-  ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_3915a.dir/CMakeCXXCompilerABI.cpp.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1 -stdlib=libc++ -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdeprecated-macro -fdebug-compilation-dir /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_3915a.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.14.0 -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mthread-model posix -mdisable-fp-elim -fno-strict-return -masm-verbose -munwind-tables -target-cpu penryn -dwarf-column-info -debugger-tuning=lldb -target-linker-version 450.3 -v -coverage-notes-file /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp/CMakeFiles/cmTC_c669e.dir/CMakeCXXCompilerABI.cpp.gcno -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1 -stdlib=libc++ -Wno-atomic-implicit-seq-cst -Wno-framework-include-private-from-public -Wno-atimport-in-framework-header -Wno-quoted-include-in-framework-header -fdeprecated-macro -fdebug-compilation-dir /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fmessage-length 0 -stack-protector 1 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fobjc-runtime=macosx-10.14.0 -fcxx-exceptions -fexceptions -fmax-type-align=16 -fdiagnostics-show-option -o CMakeFiles/cmTC_c669e.dir/CMakeCXXCompilerABI.cpp.o -x c++ /Applications/CMake.app/Contents/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
   ignore line: [clang -cc1 version 10.0.1 (clang-1001.0.46.4) default target x86_64-apple-darwin18.7.0]
   ignore line: [ignoring nonexistent directory "/usr/include/c++/v1"]
   ignore line: [#include "..." search starts here:]
@@ -253,14 +253,14 @@ Parsed CXX implicit link information from above output:
   ignore line: [ /System/Library/Frameworks (framework directory)]
   ignore line: [ /Library/Frameworks (framework directory)]
   ignore line: [End of search list.]
-  ignore line: [Linking CXX executable cmTC_3915a]
-  ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3915a.dir/link.txt --verbose=1]
-  ignore line: [/Library/Developer/CommandLineTools/usr/bin/c++    -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_3915a.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_3915a ]
+  ignore line: [Linking CXX executable cmTC_c669e]
+  ignore line: [/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c669e.dir/link.txt --verbose=1]
+  ignore line: [/Library/Developer/CommandLineTools/usr/bin/c++    -Wl -search_paths_first -Wl -headerpad_max_install_names  -v -Wl -v CMakeFiles/cmTC_c669e.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_c669e ]
   ignore line: [Apple LLVM version 10.0.1 (clang-1001.0.46.4)]
   ignore line: [Target: x86_64-apple-darwin18.7.0]
   ignore line: [Thread model: posix]
   ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_3915a -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_3915a.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
+  link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch x86_64 -macosx_version_min 10.14.0 -o cmTC_c669e -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c669e.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]
     arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
     arg [-demangle] ==> ignore
     arg [-lto_library] ==> ignore, skip following value
@@ -271,11 +271,11 @@ Parsed CXX implicit link information from above output:
     arg [-macosx_version_min] ==> ignore
     arg [10.14.0] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_3915a] ==> ignore
+    arg [cmTC_c669e] ==> ignore
     arg [-search_paths_first] ==> ignore
     arg [-headerpad_max_install_names] ==> ignore
     arg [-v] ==> ignore
-    arg [CMakeFiles/cmTC_3915a.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_c669e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lc++] ==> lib [c++]
     arg [-lSystem] ==> lib [System]
     arg [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/lib/darwin/libclang_rt.osx.a]

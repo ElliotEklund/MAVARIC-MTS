@@ -6,5 +6,5 @@ CXX_FLAGS =   -DNDEBUG -O3 -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/ellioteklund/Downloads/boost_1_72_0 -I/Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/DynamicsParts/Headers 
+CXX_INCLUDES = -I/Users/ellioteklund/Downloads/boost_1_72_0 -I/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/DynamicsParts/Headers 
 

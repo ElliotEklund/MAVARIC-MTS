@@ -22,9 +22,6 @@
 #include <chrono>
 using namespace std::chrono;
 
-void test(vector<std::complex<double> > x){
-    std::cout << x << std::endl;
-}
 
 int main(int argc, char ** argv) {
     

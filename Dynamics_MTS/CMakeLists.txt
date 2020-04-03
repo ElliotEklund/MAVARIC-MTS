@@ -15,8 +15,8 @@ set(CMAKE_CXX_COMPILER mpic++)
 
 if(${MACHINE} STREQUAL "MAC")
     set(INCLUDE_DIRS "${BOOST_MAC}/boost_1_72_0")
-    set(MY_HEADERS "${ROOT_MAC}/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/DynamicsParts/Headers")
-    set(MY_SOURCE "${ROOT_MAC}/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/DynamicsParts/Sources")
+    set(MY_HEADERS "${ROOT_MAC}/Dynamics_MTS_git/Dynamics_MTS/DynamicsParts/Headers")
+    set(MY_SOURCE "${ROOT_MAC}/Dynamics_MTS_git/Dynamics_MTS/DynamicsParts/Sources")
 
 elseif(${MACHINE} STREQUAL "LIN")
     set(INCLUDE_DIRS "${BOOST_LIN}/boost_1_72_0")

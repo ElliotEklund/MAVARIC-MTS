@@ -1,4 +1,4 @@
-# Install script for directory: /Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS
+# Install script for directory: /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/ellioteklund/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -19,13 +19,6 @@
 
 #include "Dynamics.hpp"
 
-#include <chrono>
-#include <list>
-#include <vector>
-
-using namespace std::chrono;
-
-
 int main(int argc, char ** argv) {
     
    int num_procs = 1; //number of processors program is distributed over
@@ -78,8 +71,9 @@ int main(int argc, char ** argv) {
     myDyn.set_dt(dt);
     myDyn.set_total_time(total_time);
 
-    auto start = high_resolution_clock::now();
 
+    clock_t start = clock();
+    
     if(run_energ_conserv){
         myDyn.energ_conserv(tol,energy_stride);
     }
@@ -88,12 +82,11 @@ int main(int argc, char ** argv) {
         myDyn.PAC();
     }
     
-    auto stop = high_resolution_clock::now();
-    std::chrono::duration<double> elapsed = stop - start;
-    
+    clock_t end = clock();
+    double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
     
     if (my_id == root_process) {
-        std::cout << elapsed.count() << std::endl;
+        std::cout << time_taken << std::endl;
     }
 
     MPI_Finalize();

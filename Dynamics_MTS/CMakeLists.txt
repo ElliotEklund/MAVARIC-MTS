@@ -10,7 +10,7 @@ set(BOOST_LIN "/home/elliot")
 
 # set the project name
 project(mavaric)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 98)
 set(CMAKE_CXX_COMPILER mpic++)
 
 if(${MACHINE} STREQUAL "MAC")

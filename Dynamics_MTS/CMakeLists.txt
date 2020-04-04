@@ -4,9 +4,12 @@ set(MACHINE "MAC")
 
 set(ROOT_MAC "/Users/ellioteklund/Desktop")
 set(ROOT_LIN "/home/elliot/Desktop")
+set(ROOT_ASTRA "/home/fs01/ece52/MAVARIC-MTS/Dynamics_MTS")
+
 
 set(BOOST_MAC "/Users/ellioteklund/Downloads")
 set(BOOST_LIN "/home/elliot")
+set(BOOST_ASTRA "/home/fs01/ece52/MAVARIC_MTS")
 
 # set the project name
 project(mavaric)
@@ -22,6 +25,12 @@ elseif(${MACHINE} STREQUAL "LIN")
     set(INCLUDE_DIRS "${BOOST_LIN}/boost_1_72_0")
     set(MY_HEADERS "${ROOT_LIN}/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/DynamicsParts/Headers")
     set(MY_SOURCE "${ROOT_LIN}/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/DynamicsParts/Sources")
+
+elseif(${MACHINE} STREQUAL "ASTRA")
+    set(INCLUDE_DIRS "${BOOST_ASTRA}/boost_1_72_0")
+    set(MY_HEADERS "${ROOT_ASTRA}/DynamicsParts/Headers")
+    set(MY_SOURCE "${ROOT_ASTRA}/DynamicsParts/Sources")
+
 endif()
 
 add_definitions( "-DNDEBUG -O3" )

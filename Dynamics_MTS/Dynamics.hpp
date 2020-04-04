@@ -24,6 +24,7 @@
 #include "MVRPMD_MTS_Hamiltonian.hpp"
 
 #include <math.h>
+#include <sstream>
 #include <list>
 #include <fstream>
 #include "mpi.h"
@@ -54,7 +55,7 @@ private:
     /* Private Functions*/
     
     /* Write total position auto-correlation function to file.*/
-    void print_QQt(const vector<double> &QQt,double sgnTheta_total);
+    void print_QQt(vector<double> &QQt,double sgnTheta_total);
     
     /* Write out all broken trajectories*/
     void write_broken(std::list<int> broken,std::string file_root);

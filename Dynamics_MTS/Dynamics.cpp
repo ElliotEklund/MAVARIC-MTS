@@ -219,9 +219,13 @@ void Dynamics::energ_conserv(double tol, int energy_stride){
 void Dynamics::write_broken(std::list<int> broken,std::string file_root){
     
     
-    std::string file_name = file_root + "broken" + std::to_string(my_id);
+    std::ostringstream quick_convert;
+    quick_convert << my_id;
+    
+    std::string file_name = file_root + "broken" + quick_convert.str();
+
     std::ofstream myFile;
-    myFile.open(file_name);
+    myFile.open(file_name.c_str());
     
     if (!myFile.is_open()) {
         std::cout << "Could not open " << file_name << std::endl;
@@ -255,7 +259,7 @@ void Dynamics::write_broken(std::list<int> broken,std::string file_root){
     
 }
 
-void Dynamics::print_QQt(const vector<double> &QQt,double sgnTheta_total){
+void Dynamics::print_QQt(vector<double> &QQt,double sgnTheta_total){
 
     int data_count = total_time*10;
     int rate = 1/(dt*10);
@@ -293,7 +297,7 @@ void Dynamics::load_var(vector<double> &X, std::string var, std::string root_pat
     std::string file_name =  root_path + var;
     
     std::ifstream myFile;
-    myFile.open(file_name);
+    myFile.open(file_name.c_str());
     
     if(!myFile.is_open()) {
         std::cout << "Could not open file " << var << std::endl;

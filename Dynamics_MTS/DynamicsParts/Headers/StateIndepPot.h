@@ -1,11 +1,8 @@
 #ifndef STATEINDEPPOT_H
 #define STATEINDEPPOT_H
 
-#include <iostream>
 #include <boost/numeric/ublas/vector.hpp>
 #include <boost/numeric/ublas/io.hpp>
-#include <boost/geometry.hpp>
-#include <boost/compute/algorithm/accumulate.hpp>
 
 #include <math.h>
 

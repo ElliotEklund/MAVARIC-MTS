@@ -30,6 +30,7 @@ add_definitions( "-DNDEBUG -O3" )
 add_executable(main main.cpp
     ${MY_SOURCE}/dSpring_dQ.cpp
     ${MY_SOURCE}/dCdelec.cpp
+    ${MY_SOURCE}/GTerm.cpp
     ${MY_SOURCE}/C_Matrix.cpp
     ${MY_SOURCE}/M_Matrix.cpp
     ${MY_SOURCE}/M_Matrix_MTS.cpp
@@ -38,10 +39,13 @@ add_executable(main main.cpp
     ${MY_SOURCE}/StateDepPots.cpp
     ${MY_SOURCE}/dStateDep_dQ.cpp
     ${MY_SOURCE}/dStateIndep_dQ.cpp
+    ${MY_SOURCE}/StateIndepPot.cpp
+    ${MY_SOURCE}/SpringEnergy.cpp
     ${MY_SOURCE}/Theta_MTS.cpp
     ${MY_SOURCE}/dTheta_MTS_dElec.cpp
     ${MY_SOURCE}/dTheta_MTS_dQ.cpp
     ${MY_SOURCE}/Forces_MTS.cpp
+    ${MY_SOURCE}/MVRPMD_MTS_Hamiltonian.cpp
     ABM_MVRPMD.cpp
     RK4_MVRPMD.cpp
     Dynamics.cpp)

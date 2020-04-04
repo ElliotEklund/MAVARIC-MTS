@@ -21,7 +21,10 @@
 #include "Forces_MTS.hpp"
 #include "ABM_MVRPMD.hpp"
 
+#include "MVRPMD_MTS_Hamiltonian.hpp"
+
 #include <math.h>
+#include <list>
 #include <fstream>
 #include "mpi.h"
 
@@ -32,13 +35,18 @@ public:
              int elec_beads, int num_states, double mass,
              double beta_nuc_beads, double beta_elec_beads, int num_trajs);
     
-    /* Run Molecular Dynamics Simulation*/
-    void runSimulation();
+    /* Compute Position Auto-Correlation (PAC) function */
+    void PAC();
+    
+    /* Compute Position Auto-Correlation function while checking for energy conservation.
+     The energy of an individual trajectory will be checked after every energy_stride steps.
+     A trajectory is considered broken if it violates the tolerances set by tol.*/
+    void energ_conserv(double tol, int energy_stride);
     
     /* Set dt to dtIN*/
     void set_dt(double dtIN);
 
-    /* Set total_time to total_timeIN*/
+    /* Set total_time to total_timeIN and num_steps to total_time/dt*/
     void set_total_time(double total_timeIN);
 
 private:
@@ -47,6 +55,9 @@ private:
     
     /* Write total position auto-correlation function to file.*/
     void print_QQt(const vector<double> &QQt,double sgnTheta_total);
+    
+    /* Write out all broken trajectories*/
+    void write_broken(std::list<int> broken,std::string file_root);
 
     /* Given a vector of bead positions, Q, return the centroid*/
     double compute_centroid(const vector<double> &Q);
@@ -79,6 +90,8 @@ private:
     double dt; //time step [a.u]
     double total_time; //total molecular dynamics simulation time [a.u]
     int num_steps; //number of steps need to complete simulation
+    
+    bool dt_is_set, total_time_is_set; //true if dt, total_time has been set
    
     /* Q(i)(j) = jth bead position of ith trajectory*/
     vector<vector<double> > Q;

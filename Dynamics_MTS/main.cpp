@@ -20,6 +20,9 @@
 #include "Dynamics.hpp"
 
 #include <chrono>
+#include <list>
+#include <vector>
+
 using namespace std::chrono;
 
 
@@ -45,6 +48,11 @@ int main(int argc, char ** argv) {
     double dt;
     int num_trajs;
     double total_time;
+    double tol = 0.001;
+    int energy_stride = 100;
+
+    bool run_PAC = false;
+    bool run_energ_conserv = false;
 
     /* Variable initialization */
     nuc_beads = 4;
@@ -55,10 +63,14 @@ int main(int argc, char ** argv) {
     beta_elec = beta/elec_beads;
     beta_nuc = beta/nuc_beads;
     mass = 1.0;
-    dt = 0.001;
+    dt = 0.002;
     total_time = 10;
     num_trajs = 10;
     
+    run_energ_conserv = true;
+    //run_PAC = true;
+
+    /* Setup Dynamics object for simulation. */
     Dynamics myDyn(num_procs,my_id,root_process,nuc_beads,
                    elec_beads,num_states,
                    mass,beta_nuc,beta_elec,num_trajs);
@@ -67,15 +79,24 @@ int main(int argc, char ** argv) {
     myDyn.set_total_time(total_time);
 
     auto start = high_resolution_clock::now();
-    
-    myDyn.runSimulation();
 
+    if(run_energ_conserv){
+        myDyn.energ_conserv(tol,energy_stride);
+    }
+
+    if(run_PAC){
+        myDyn.PAC();
+    }
+    
     auto stop = high_resolution_clock::now();
     std::chrono::duration<double> elapsed = stop - start;
-    std::cout << elapsed.count() << std::endl;
+    
+    
+    if (my_id == root_process) {
+        std::cout << elapsed.count() << std::endl;
+    }
 
     MPI_Finalize();
-
 
     return 0;
 }

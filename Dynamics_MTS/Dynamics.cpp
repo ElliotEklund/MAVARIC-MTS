@@ -38,8 +38,8 @@ Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads,
      * work with.*/
     vector<double> Q_local = zero_vector<double> (num_trajs_local*nuc_beads);
     vector<double> P_local = zero_vector<double> (num_trajs_local*nuc_beads);
-    vector<double> x_local = zero_vector<double> (num_trajs_local*elec_beads*nuc_beads);
-    vector<double> p_local = zero_vector<double> (num_trajs_local*elec_beads*nuc_beads);
+    vector<double> x_local = zero_vector<double> (num_trajs_local*elec_beads*num_states);
+    vector<double> p_local = zero_vector<double> (num_trajs_local*elec_beads*num_states);
     
     std::string root_path = "/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/Results/Trajectories/";
     //std::string root_path = "/home/elliot/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/Results/Trajectories/";

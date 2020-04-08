@@ -265,9 +265,22 @@ CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dElec.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dElec.cpp.s"
 	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/DynamicsParts/Sources/dTheta_MTS_dElec.cpp -o CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dElec.cpp.s
 
+CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.o: ../DynamicsParts/Sources/PopulationEstimator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/DynamicsParts/Sources/PopulationEstimator.cpp
+
+CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.i"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/DynamicsParts/Sources/PopulationEstimator.cpp > CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.i
+
+CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.s"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/DynamicsParts/Sources/PopulationEstimator.cpp -o CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.s
+
 CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dQ.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dQ.cpp.o: ../DynamicsParts/Sources/dTheta_MTS_dQ.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dQ.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dQ.cpp.o"
 	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dQ.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/DynamicsParts/Sources/dTheta_MTS_dQ.cpp
 
 CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dQ.cpp.i: cmake_force
@@ -280,7 +293,7 @@ CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dQ.cpp.s: cmake_force
 
 CMakeFiles/main.dir/DynamicsParts/Sources/Forces_MTS.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/DynamicsParts/Sources/Forces_MTS.cpp.o: ../DynamicsParts/Sources/Forces_MTS.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/main.dir/DynamicsParts/Sources/Forces_MTS.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/main.dir/DynamicsParts/Sources/Forces_MTS.cpp.o"
 	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/DynamicsParts/Sources/Forces_MTS.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/DynamicsParts/Sources/Forces_MTS.cpp
 
 CMakeFiles/main.dir/DynamicsParts/Sources/Forces_MTS.cpp.i: cmake_force
@@ -293,7 +306,7 @@ CMakeFiles/main.dir/DynamicsParts/Sources/Forces_MTS.cpp.s: cmake_force
 
 CMakeFiles/main.dir/DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.o: ../DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/main.dir/DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/main.dir/DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.o"
 	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp
 
 CMakeFiles/main.dir/DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.i: cmake_force
@@ -306,7 +319,7 @@ CMakeFiles/main.dir/DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.s: cmake_fo
 
 CMakeFiles/main.dir/ABM_MVRPMD.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/ABM_MVRPMD.cpp.o: ../ABM_MVRPMD.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/main.dir/ABM_MVRPMD.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/main.dir/ABM_MVRPMD.cpp.o"
 	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/ABM_MVRPMD.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/ABM_MVRPMD.cpp
 
 CMakeFiles/main.dir/ABM_MVRPMD.cpp.i: cmake_force
@@ -319,7 +332,7 @@ CMakeFiles/main.dir/ABM_MVRPMD.cpp.s: cmake_force
 
 CMakeFiles/main.dir/RK4_MVRPMD.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/RK4_MVRPMD.cpp.o: ../RK4_MVRPMD.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/main.dir/RK4_MVRPMD.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/main.dir/RK4_MVRPMD.cpp.o"
 	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/RK4_MVRPMD.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/RK4_MVRPMD.cpp
 
 CMakeFiles/main.dir/RK4_MVRPMD.cpp.i: cmake_force
@@ -332,7 +345,7 @@ CMakeFiles/main.dir/RK4_MVRPMD.cpp.s: cmake_force
 
 CMakeFiles/main.dir/Dynamics.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/Dynamics.cpp.o: ../Dynamics.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/main.dir/Dynamics.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/main.dir/Dynamics.cpp.o"
 	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/Dynamics.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/Dynamics.cpp
 
 CMakeFiles/main.dir/Dynamics.cpp.i: cmake_force
@@ -361,6 +374,7 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/DynamicsParts/Sources/SpringEnergy.cpp.o" \
 "CMakeFiles/main.dir/DynamicsParts/Sources/Theta_MTS.cpp.o" \
 "CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dElec.cpp.o" \
+"CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.o" \
 "CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dQ.cpp.o" \
 "CMakeFiles/main.dir/DynamicsParts/Sources/Forces_MTS.cpp.o" \
 "CMakeFiles/main.dir/DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.o" \
@@ -387,6 +401,7 @@ main: CMakeFiles/main.dir/DynamicsParts/Sources/StateIndepPot.cpp.o
 main: CMakeFiles/main.dir/DynamicsParts/Sources/SpringEnergy.cpp.o
 main: CMakeFiles/main.dir/DynamicsParts/Sources/Theta_MTS.cpp.o
 main: CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dElec.cpp.o
+main: CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.o
 main: CMakeFiles/main.dir/DynamicsParts/Sources/dTheta_MTS_dQ.cpp.o
 main: CMakeFiles/main.dir/DynamicsParts/Sources/Forces_MTS.cpp.o
 main: CMakeFiles/main.dir/DynamicsParts/Sources/MVRPMD_MTS_Hamiltonian.cpp.o
@@ -395,7 +410,7 @@ main: CMakeFiles/main.dir/RK4_MVRPMD.cpp.o
 main: CMakeFiles/main.dir/Dynamics.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

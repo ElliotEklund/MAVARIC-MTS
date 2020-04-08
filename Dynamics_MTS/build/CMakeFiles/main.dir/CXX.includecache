@@ -98,6 +98,26 @@ algorithm
 M_Matrix.h
 ../DynamicsParts/Headers/M_Matrix.h
 
+../DynamicsParts/Headers/PopulationEstimator.hpp
+boost/numeric/ublas/vector.hpp
+-
+boost/numeric/ublas/matrix.hpp
+-
+boost/numeric/ublas/matrix_proxy.hpp
+-
+boost/numeric/ublas/io.hpp
+-
+boost/numeric/ublas/storage.hpp
+-
+algorithm
+-
+numeric
+-
+fstream
+-
+sstream
+-
+
 ../DynamicsParts/Headers/SpringEnergy.h
 boost/numeric/ublas/vector.hpp
 -
@@ -282,10 +302,6 @@ RK4_MVRPMD.hpp
 math.h
 -
 
-/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/Dynamics.cpp
-Dynamics.hpp
-/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/Dynamics.hpp
-
 /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/Dynamics.hpp
 boost/numeric/ublas/vector.hpp
 -
@@ -317,6 +333,8 @@ Forces_MTS.hpp
 /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/Forces_MTS.hpp
 ABM_MVRPMD.hpp
 /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/ABM_MVRPMD.hpp
+PopulationEstimator.hpp
+/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/PopulationEstimator.hpp
 MVRPMD_MTS_Hamiltonian.hpp
 /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/MVRPMD_MTS_Hamiltonian.hpp
 math.h
@@ -377,6 +395,8 @@ ABM_MVRPMD.hpp
 /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/ABM_MVRPMD.hpp
 Dynamics.hpp
 /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/Dynamics.hpp
+PopulationEstimator.hpp
+/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/PopulationEstimator.hpp
 
 /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
 boost/config.hpp

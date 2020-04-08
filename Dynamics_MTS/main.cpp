@@ -18,6 +18,7 @@
 #include "ABM_MVRPMD.hpp"
 
 #include "Dynamics.hpp"
+#include "PopulationEstimator.hpp"
 
 int main(int argc, char ** argv) {
     
@@ -45,6 +46,7 @@ int main(int argc, char ** argv) {
     int energy_stride = 100;
 
     bool run_PAC = false;
+    bool run_PopAC = false;
     bool run_energ_conserv = false;
 
     /* Variable initialization */
@@ -56,12 +58,13 @@ int main(int argc, char ** argv) {
     beta_elec = beta/elec_beads;
     beta_nuc = beta/nuc_beads;
     mass = 1.0;
-    dt = 0.002;
+    dt = 0.001;
     total_time = 10;
-    num_trajs = 10;
+    num_trajs = 1000;
     
-    run_energ_conserv = true;
+    //run_energ_conserv = true;
     //run_PAC = true;
+    run_PopAC = true;
 
     /* Setup Dynamics object for simulation. */
     Dynamics myDyn(num_procs,my_id,root_process,nuc_beads,
@@ -80,6 +83,10 @@ int main(int argc, char ** argv) {
 
     if(run_PAC){
         myDyn.PAC();
+    }
+
+    if(run_PopAC){
+        myDyn.PopAC();
     }
     
     clock_t end = clock();

@@ -15,20 +15,6 @@ void Theta_MTS::update_gamma_mat(const vector<double> &Q,const matrix<double> &x
     
     C->update_C_vec(x, p);
     M_MTS->update_M_MTS_vec(Q);
-    
-    
-   // std::cout << std::endl << "Call to update gamma_mat" << std::endl;
-    
-//    for (int i=0; i<elec_beads; i++) {
-//        std::cout << "C mat: " << i << std::endl;
-//        std::cout << C->get_C_alpha(i) << std::endl;
-//    }
-//
-//    for (int i=0; i<elec_beads; i++) {
-//        std::cout << "M mat: " << i << std::endl;
-//        std::cout << M_MTS->get_M_MTS_alpha(i) << std::endl;
-//    }
-    
         
     /* Chain multiplicaton */
     gamma_mat = identity_matrix<std::complex<double> > (num_states);

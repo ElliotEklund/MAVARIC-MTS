@@ -339,6 +339,33 @@ DynamicsParts/Sources/M_Matrix_MTS.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/M_Matrix_MTS.cpp.s
 .PHONY : DynamicsParts/Sources/M_Matrix_MTS.cpp.s
 
+DynamicsParts/Sources/PopulationEstimator.o: DynamicsParts/Sources/PopulationEstimator.cpp.o
+
+.PHONY : DynamicsParts/Sources/PopulationEstimator.o
+
+# target to build an object file
+DynamicsParts/Sources/PopulationEstimator.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.o
+.PHONY : DynamicsParts/Sources/PopulationEstimator.cpp.o
+
+DynamicsParts/Sources/PopulationEstimator.i: DynamicsParts/Sources/PopulationEstimator.cpp.i
+
+.PHONY : DynamicsParts/Sources/PopulationEstimator.i
+
+# target to preprocess a source file
+DynamicsParts/Sources/PopulationEstimator.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.i
+.PHONY : DynamicsParts/Sources/PopulationEstimator.cpp.i
+
+DynamicsParts/Sources/PopulationEstimator.s: DynamicsParts/Sources/PopulationEstimator.cpp.s
+
+.PHONY : DynamicsParts/Sources/PopulationEstimator.s
+
+# target to generate assembly for a file
+DynamicsParts/Sources/PopulationEstimator.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/DynamicsParts/Sources/PopulationEstimator.cpp.s
+.PHONY : DynamicsParts/Sources/PopulationEstimator.cpp.s
+
 DynamicsParts/Sources/SpringEnergy.o: DynamicsParts/Sources/SpringEnergy.cpp.o
 
 .PHONY : DynamicsParts/Sources/SpringEnergy.o
@@ -750,6 +777,9 @@ help:
 	@echo "... DynamicsParts/Sources/M_Matrix_MTS.o"
 	@echo "... DynamicsParts/Sources/M_Matrix_MTS.i"
 	@echo "... DynamicsParts/Sources/M_Matrix_MTS.s"
+	@echo "... DynamicsParts/Sources/PopulationEstimator.o"
+	@echo "... DynamicsParts/Sources/PopulationEstimator.i"
+	@echo "... DynamicsParts/Sources/PopulationEstimator.s"
 	@echo "... DynamicsParts/Sources/SpringEnergy.o"
 	@echo "... DynamicsParts/Sources/SpringEnergy.i"
 	@echo "... DynamicsParts/Sources/SpringEnergy.s"

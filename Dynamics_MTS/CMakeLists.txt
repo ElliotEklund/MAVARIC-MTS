@@ -52,6 +52,7 @@ add_executable(main main.cpp
     ${MY_SOURCE}/SpringEnergy.cpp
     ${MY_SOURCE}/Theta_MTS.cpp
     ${MY_SOURCE}/dTheta_MTS_dElec.cpp
+    ${MY_SOURCE}/PopulationEstimator.cpp
     ${MY_SOURCE}/dTheta_MTS_dQ.cpp
     ${MY_SOURCE}/Forces_MTS.cpp
     ${MY_SOURCE}/MVRPMD_MTS_Hamiltonian.cpp

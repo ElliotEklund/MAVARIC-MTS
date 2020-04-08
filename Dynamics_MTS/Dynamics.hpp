@@ -20,6 +20,7 @@
 
 #include "Forces_MTS.hpp"
 #include "ABM_MVRPMD.hpp"
+#include "PopulationEstimator.hpp"
 
 #include "MVRPMD_MTS_Hamiltonian.hpp"
 
@@ -39,7 +40,7 @@ public:
     /* Compute Position Auto-Correlation (PAC) function */
     void PAC();
     
-    /* Compute Position Auto-Correlation function while checking for energy conservation.
+    /* Check energy conservation.
      The energy of an individual trajectory will be checked after every energy_stride steps.
      A trajectory is considered broken if it violates the tolerances set by tol.*/
     void energ_conserv(double tol, int energy_stride);
@@ -49,6 +50,10 @@ public:
 
     /* Set total_time to total_timeIN and num_steps to total_time/dt*/
     void set_total_time(double total_timeIN);
+    
+    /* Compute population auto-correlation function*/
+    void PopAC();
+
 
 private:
 

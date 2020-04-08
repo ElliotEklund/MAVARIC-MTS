@@ -216,6 +216,72 @@ void Dynamics::energ_conserv(double tol, int energy_stride){
     
 }
 
+void Dynamics::PopAC(){
+
+    if (!total_time) {
+        std::cout << "ERROR: total_time must be set before a simulation can be run." << std::endl;
+    }
+    
+    PopulationEstimator popEsti(elec_beads,num_states);
+    
+    int data_count = int(total_time * 10); //resolution of data being sampled
+    int rate = num_steps/data_count;
+    double sgnTheta = 0;
+    double sgnTheta_total = 0;
+    int i_data = 0;
+    
+    matrix<double> PPt(data_count,num_states,0);
+    vector<double> pop_0(num_states,0); //PPt at t=0
+    vector<double> pop_t(num_states,0); //PPt at t=t
+
+    
+    ABM_MVRPMD myABM(F,dt,num_states,nuc_beads,elec_beads);
+    
+    vector<double> Q_traj (nuc_beads);
+    vector<double> P_traj (nuc_beads);
+    matrix<double> x_traj (elec_beads,num_states);
+    matrix<double> p_traj (elec_beads,num_states);
+    
+    for (int traj=0; traj<num_trajs_local; traj++){
+        
+        /* Load new trajecty*/
+        Q_traj = Q(traj);
+        P_traj = P(traj);
+        x_traj = x(traj);
+        p_traj = p(traj);
+        
+        myABM.initialize_rk4(Q_traj, P_traj, x_traj, p_traj);
+        
+        sgnTheta = F.get_sgnTheta(Q_traj,x_traj,p_traj);
+        sgnTheta_total += sgnTheta;
+
+        popEsti.update_populations(x_traj,p_traj);
+        pop_0 = popEsti.get_pop();
+        row(PPt,0) += element_prod(pop_0,pop_0)*sgnTheta;
+        pop_0 = pop_0*sgnTheta;
+        
+        i_data = 1;
+        
+        for (int step=1; step<num_steps; step++) {
+            
+            myABM.take_step(Q_traj, P_traj, x_traj, p_traj);
+            
+            if(step%rate == 0){
+                
+                popEsti.update_populations(x_traj,p_traj);
+                pop_t = popEsti.get_pop();
+                row(PPt,i_data) += element_prod(pop_0,pop_t);
+                
+                i_data += 1;
+            }
+        }
+    }
+    
+    PPt = PPt/sgnTheta_total;
+    std::string root = "./";
+    popEsti.write_populations(PPt,dt,data_count,rate,root);
+}
+
 void Dynamics::write_broken(std::list<int> broken,std::string file_root){
     
     

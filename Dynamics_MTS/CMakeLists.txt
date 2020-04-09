@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 set(MACHINE "MAC")
 
-set(ROOT_MAC "/Users/ellioteklund/Desktop")
+set(ROOT_MAC "/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src")
 set(ROOT_LIN "/home/elliot/Desktop")
 set(ROOT_ASTRA "/home/fs01/ece52/MAVARIC-MTS/Dynamics_MTS")
 
@@ -17,9 +17,12 @@ set(CMAKE_CXX_STANDARD 98)
 set(CMAKE_CXX_COMPILER mpic++)
 
 if(${MACHINE} STREQUAL "MAC")
-    set(INCLUDE_DIRS "${BOOST_MAC}/boost_1_72_0")
-    set(MY_HEADERS "${ROOT_MAC}/Dynamics_MTS_git/Dynamics_MTS/DynamicsParts/Headers")
-    set(MY_SOURCE "${ROOT_MAC}/Dynamics_MTS_git/Dynamics_MTS/DynamicsParts/Sources")
+    set(BOOST_DIR "${BOOST_MAC}/boost_1_72_0")
+    set(DYNAMICS_DIR "${ROOT_MAC}/dynamics")
+    set(EQUILIBRIUM_DIR "${ROOT_MAC}/equilibrium")
+    set(FORCES_DIR "${ROOT_MAC}/forces")
+    set(HAMILTONIAN_DIR "${ROOT_MAC}/hamiltonian")
+    set(MISC_DIR "${ROOT_MAC}/misc")
 
 elseif(${MACHINE} STREQUAL "LIN")
     set(INCLUDE_DIRS "${BOOST_LIN}/boost_1_72_0")
@@ -37,28 +40,58 @@ add_definitions( "-DNDEBUG -O3" )
 
 # add the executable
 add_executable(main main.cpp
-    ${MY_SOURCE}/dSpring_dQ.cpp
-    ${MY_SOURCE}/dCdelec.cpp
-    ${MY_SOURCE}/GTerm.cpp
-    ${MY_SOURCE}/C_Matrix.cpp
-    ${MY_SOURCE}/M_Matrix.cpp
-    ${MY_SOURCE}/M_Matrix_MTS.cpp
-    ${MY_SOURCE}/dM_Matrix_MTS_dQ.cpp
-    ${MY_SOURCE}/dM_Matrix_dQ.cpp
-    ${MY_SOURCE}/StateDepPots.cpp
-    ${MY_SOURCE}/dStateDep_dQ.cpp
-    ${MY_SOURCE}/dStateIndep_dQ.cpp
-    ${MY_SOURCE}/StateIndepPot.cpp
-    ${MY_SOURCE}/SpringEnergy.cpp
-    ${MY_SOURCE}/Theta_MTS.cpp
-    ${MY_SOURCE}/dTheta_MTS_dElec.cpp
-    ${MY_SOURCE}/PopulationEstimator.cpp
-    ${MY_SOURCE}/dTheta_MTS_dQ.cpp
-    ${MY_SOURCE}/Forces_MTS.cpp
-    ${MY_SOURCE}/MVRPMD_MTS_Hamiltonian.cpp
-    ABM_MVRPMD.cpp
-    RK4_MVRPMD.cpp
-    Dynamics.cpp)
-include_directories(${INCLUDE_DIRS})
-include_directories(${MY_HEADERS})
+
+    #dynamics directory
+    ${DYNAMICS_DIR}/ABM_MVRPMD.cpp
+    ${DYNAMICS_DIR}/Dynamics.cpp
+    ${DYNAMICS_DIR}/RK4_MVRPMD.cpp
+
+    #equilibrium directory
+    ${EQUILIBRIUM_DIR}/dM_Matrix_dBeta.cpp
+    ${EQUILIBRIUM_DIR}/dM_Matrix_MTS_dBeta.cpp
+    ${EQUILIBRIUM_DIR}/dTheta_dBeta.cpp
+    ${EQUILIBRIUM_DIR}/dTheta_MTS_dBeta.cpp
+    ${EQUILIBRIUM_DIR}/MonteCarlo_MTS.cpp
+    ${EQUILIBRIUM_DIR}/MonteCarlo.cpp
+    ${EQUILIBRIUM_DIR}/MVRPMD_Estimator.cpp
+    ${EQUILIBRIUM_DIR}/MVRPMD_MTS_Estimator.cpp
+
+    #forces directory
+    ${FORCES_DIR}/dCdelec.cpp
+    ${FORCES_DIR}/dM_Matrix_dQ.cpp
+    ${FORCES_DIR}/dM_Matrix_MTS_dQ.cpp
+    ${FORCES_DIR}/dSpring_dQ.cpp
+    ${FORCES_DIR}/dStateDep_dQ.cpp
+    ${FORCES_DIR}/dStateIndep_dQ.cpp
+    ${FORCES_DIR}/dTheta_MTS_dElec.cpp
+    ${FORCES_DIR}/dTheta_MTS_dQ.cpp
+    ${FORCES_DIR}/Forces_MTS.cpp
+
+    #hamiltonian directory
+    ${HAMILTONIAN_DIR}/BathSpringEnergy.cpp
+    ${HAMILTONIAN_DIR}/C_Matrix.cpp
+    ${HAMILTONIAN_DIR}/CouplingEnergy.cpp
+    ${HAMILTONIAN_DIR}/GTerm.cpp
+    ${HAMILTONIAN_DIR}/M_Matrix_MTS.cpp
+    ${HAMILTONIAN_DIR}/M_Matrix.cpp
+    ${HAMILTONIAN_DIR}/MVRPMD_Hamiltonian.cpp
+    ${HAMILTONIAN_DIR}/MVRPMD_MTS_Hamiltonian.cpp
+    ${HAMILTONIAN_DIR}/SpringEnergy.cpp
+    ${HAMILTONIAN_DIR}/StateDepPots.cpp
+    ${HAMILTONIAN_DIR}/StateIndepPot.cpp
+    ${HAMILTONIAN_DIR}/Theta_MTS.cpp
+    ${HAMILTONIAN_DIR}/Theta.cpp
+
+
+    #misc directory
+    ${MISC_DIR}/MainHlpr.cpp
+    ${MISC_DIR}/PopulationEstimator.cpp)
+
+
+include_directories(${BOOST_DIR})
+include_directories(${DYNAMICS_DIR}/Headers)
+include_directories(${EQUILIBRIUM_DIR}/Headers)
+include_directories(${FORCES_DIR}/Headers)
+include_directories(${HAMILTONIAN_DIR}/Headers)
+include_directories(${MISC_DIR}/Headers)
 

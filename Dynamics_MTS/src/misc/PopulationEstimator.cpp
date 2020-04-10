@@ -43,7 +43,7 @@ const vector<double> PopulationEstimator::get_pop(){
 
 void PopulationEstimator::write_populations(matrix<double> final_pops, double dt, int data_steps, int rate, std::string root){
     
-    std::string fileName = root + "/PopAC";
+    std::string fileName = root + "/Results/PopAC";
     std::ofstream myFile;
     myFile.open(fileName);
     

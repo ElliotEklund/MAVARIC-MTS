@@ -2,8 +2,9 @@
 
 Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads, 
                    int elec_beads, int num_states, double mass,
-                   double beta_nuc_beads, double beta_elec_beads, int num_trajs)
+                   double beta_nuc_beads, double beta_elec_beads, int num_trajs,std::string root)
     :num_procs(num_procs),my_id(my_id),root_proc(root_proc),
+     root(root),
         
      nuc_beads(nuc_beads),elec_beads(elec_beads),num_states(num_states),
      num_trajs(num_trajs),num_trajs_local(num_trajs/num_procs), mass(mass),
@@ -41,15 +42,14 @@ Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads,
     vector<double> x_local = zero_vector<double> (num_trajs_local*elec_beads*num_states);
     vector<double> p_local = zero_vector<double> (num_trajs_local*elec_beads*num_states);
     
-    std::string root_path = "/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/Results/Trajectories/";
-    //std::string root_path = "/home/elliot/Desktop/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/Results/Trajectories/";
-    
+    std::string fileName = root + "/Results/Trajectories/";
+
     /* Read in trajectories to global PSV vectors  */
     if(my_id == root_proc){
-        load_var(Q_global,"Q0",root_path);
-        load_var(P_global,"P0",root_path);
-        load_var(x_global,"xelec0",root_path);
-        load_var(p_global,"pelec0",root_path);
+        load_var(Q_global,"Q",fileName);
+        load_var(P_global,"P",fileName);
+        load_var(x_global,"xelec",fileName);
+        load_var(p_global,"pelec",fileName);
     }
     
    MPI_Barrier(MPI_COMM_WORLD);
@@ -200,8 +200,7 @@ void Dynamics::energ_conserv(double tol, int energy_stride){
         
     }
     
-    std::string file_root = "./";
-    write_broken(broken_trajectories,file_root);
+    write_broken(broken_trajectories,root);
 
     int num_broke_loc = broken_trajectories.size();
     int num_broke_glo = 0;
@@ -210,9 +209,6 @@ void Dynamics::energ_conserv(double tol, int energy_stride){
     if (my_id == root_proc){
         std::cout << "Percent broken: " << 100 * num_broke_glo/double(num_trajs) << std::endl;
     }
-
-
-    //std::cout << 100 * broken_trajectories.size()/double (num_trajs_local) << std::endl;
     
 }
 
@@ -278,17 +274,15 @@ void Dynamics::PopAC(){
     }
     
     PPt = PPt/sgnTheta_total;
-    std::string root = "./";
     popEsti.write_populations(PPt,dt,data_count,rate,root);
 }
 
 void Dynamics::write_broken(std::list<int> broken,std::string file_root){
     
-    
     std::ostringstream quick_convert;
     quick_convert << my_id;
     
-    std::string file_name = file_root + "broken" + quick_convert.str();
+    std::string file_name = file_root + "/Results/broken" + quick_convert.str();
 
     std::ofstream myFile;
     myFile.open(file_name.c_str());
@@ -339,12 +333,18 @@ void Dynamics::print_QQt(vector<double> &QQt,double sgnTheta_total){
     MPI_Reduce(&QQt[0],&global_QQt[0],data_count,MPI_DOUBLE,MPI_SUM,0,MPI_COMM_WORLD);
 
     if(my_id == root_proc){
+        std::string fileName = root + "/Results/PAC";
+        
         std::ofstream myFile;
-        myFile.open("./pos_auto_corr");
+        myFile.open(fileName);
+        
+        if (!myFile.is_open()) {
+            std::cout << "ERROR: Could not open " << fileName << std::endl;
+        }
+        
     
         for(int i=0; i<QQt.size(); i++){
             myFile << i*rate*dt << " " << global_QQt(i)/global_sgn_theta_total << std::endl;
-            //myFile << i*dt << " " << global_QQt(i)/global_sgn_theta_total << std::endl;
         }
     
         myFile.close();

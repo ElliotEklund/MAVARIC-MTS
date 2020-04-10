@@ -2,10 +2,9 @@ cmake_minimum_required(VERSION 3.10)
 
 set(MACHINE "MAC")
 
-set(ROOT_MAC "/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src")
+set(ROOT_MAC "/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS")
 set(ROOT_LIN "/home/elliot/Desktop")
 set(ROOT_ASTRA "/home/fs01/ece52/MAVARIC-MTS/Dynamics_MTS")
-
 
 set(BOOST_MAC "/Users/ellioteklund/Downloads")
 set(BOOST_LIN "/home/elliot")
@@ -18,11 +17,11 @@ set(CMAKE_CXX_COMPILER mpic++)
 
 if(${MACHINE} STREQUAL "MAC")
     set(BOOST_DIR "${BOOST_MAC}/boost_1_72_0")
-    set(DYNAMICS_DIR "${ROOT_MAC}/dynamics")
-    set(EQUILIBRIUM_DIR "${ROOT_MAC}/equilibrium")
-    set(FORCES_DIR "${ROOT_MAC}/forces")
-    set(HAMILTONIAN_DIR "${ROOT_MAC}/hamiltonian")
-    set(MISC_DIR "${ROOT_MAC}/misc")
+    set(DYNAMICS_DIR "${ROOT_MAC}/src/dynamics")
+    set(EQUILIBRIUM_DIR "${ROOT_MAC}/src/equilibrium")
+    set(FORCES_DIR "${ROOT_MAC}/src/forces")
+    set(HAMILTONIAN_DIR "${ROOT_MAC}/src/hamiltonian")
+    set(MISC_DIR "${ROOT_MAC}/src/misc")
 
 elseif(${MACHINE} STREQUAL "LIN")
     set(INCLUDE_DIRS "${BOOST_LIN}/boost_1_72_0")
@@ -37,9 +36,10 @@ elseif(${MACHINE} STREQUAL "ASTRA")
 endif()
 
 add_definitions( "-DNDEBUG -O3" )
+set(EXECUTABLE_OUTPUT_PATH ${ROOT_MAC})
 
 # add the executable
-add_executable(main main.cpp
+add_executable(mavaric main.cpp
 
     #dynamics directory
     ${DYNAMICS_DIR}/ABM_MVRPMD.cpp
@@ -53,8 +53,10 @@ add_executable(main main.cpp
     ${EQUILIBRIUM_DIR}/dTheta_MTS_dBeta.cpp
     ${EQUILIBRIUM_DIR}/MonteCarlo_MTS.cpp
     ${EQUILIBRIUM_DIR}/MonteCarlo.cpp
+    ${EQUILIBRIUM_DIR}/MonteCarloHelper.cpp
     ${EQUILIBRIUM_DIR}/MVRPMD_Estimator.cpp
     ${EQUILIBRIUM_DIR}/MVRPMD_MTS_Estimator.cpp
+    ${EQUILIBRIUM_DIR}/Sampling_MTS.cpp
 
     #forces directory
     ${FORCES_DIR}/dCdelec.cpp

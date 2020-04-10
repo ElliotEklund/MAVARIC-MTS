@@ -4,8 +4,6 @@
 #include <stdio.h>
 
 #include <boost/numeric/ublas/vector.hpp>
-#include <boost/numeric/ublas/io.hpp>
-#include <boost/geometry.hpp>
 #include <boost/numeric/ublas/matrix.hpp>
 #include <boost/numeric/ublas/io.hpp>
 #include <boost/numeric/ublas/matrix_proxy.hpp>
@@ -13,6 +11,7 @@
 
 #include <algorithm>
 #include <random>
+#include <string>
 
 #include "MVRPMD_MTS_Hamiltonian.hpp"
 #include "MVRPMD_MTS_Estimator.hpp"
@@ -23,7 +22,7 @@ using namespace boost::numeric::ublas;
 class MonteCarlo_MTS {
     
 public:
-    MonteCarlo_MTS(int num_beads, int elec_beads, double mass, int num_states,double beta_num_beads, double beta_elec_beads, double nuc_ss, double elec_ss);
+    MonteCarlo_MTS(int num_beads, int elec_beads, double mass, int num_states,double beta_num_beads, double beta_elec_beads, double nuc_ss, double elec_ss,std::string root);
 
     /* Generate initial conditions for Q. Q is set after calling*/
     void gen_initQ();
@@ -112,6 +111,8 @@ private:
     std::uniform_int_distribution<int> rand_bead; //generate random integer betwwen 1 and num_beads
     
     std::uniform_int_distribution<int> rand_elec_bead; //generate random integer betwwen 1 and elec_beads
+    
+    MonteCarloHelper myHelper;
 };
 
 #endif

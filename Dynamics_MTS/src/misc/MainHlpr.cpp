@@ -1,8 +1,7 @@
 #include "MainHlpr.hpp"
 
-MainHlpr::MainHlpr(){
-    
-}
+MainHlpr::MainHlpr()
+{}
 
 std::vector<double> MainHlpr::get_parameters(std::string fileName){
 
@@ -431,11 +430,10 @@ int MainHlpr::DynParams_checker(std::string root, std::vector<double> &params){
 /* Each of the five input vectors well be filled with their corresponding values after
  * input_file_handler is called. These vectors will only be returned if the function does
  * not find any corrupt files or errors.*/
-int MainHlpr::input_file_handler(std::vector<double> &sysParams,std::vector<double> &elecParams,
+int MainHlpr::input_file_handler(std::string root, std::vector<double> &sysParams,std::vector<double> &elecParams,
                               std::vector<double> &MCParams,std::vector<double> &sampParams,
                               std::vector<double> &dynParams){
     
-    std::string root = "/Users/ellioteklund/Desktop/Equilibrium_MTS_Alpha/MAVARIC_MTS/";
     
     std::string ElecFile = root + "InputFiles/ElecParameters.txt";
     std::string SysFile = root + "InputFiles/SystemParameters.txt";

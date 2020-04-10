@@ -28,6 +28,7 @@
 #include <sstream>
 #include <list>
 #include <fstream>
+#include <string>
 #include "mpi.h"
 
 class Dynamics{
@@ -35,7 +36,7 @@ class Dynamics{
 public:
     Dynamics(int num_procs,int my_id, int root_proc,int nuc_beads, 
              int elec_beads, int num_states, double mass,
-             double beta_nuc_beads, double beta_elec_beads, int num_trajs);
+             double beta_nuc_beads, double beta_elec_beads, int num_trajs,std::string root);
     
     /* Compute Position Auto-Correlation (PAC) function */
     void PAC();
@@ -84,6 +85,7 @@ private:
     int num_procs; //number of processors
     int my_id; //unique processor id
     int root_proc; //id of root processor
+    std::string root;
 
     int elec_beads; //number of electronic beads
     int nuc_beads; //number of nuclear beads

@@ -8,9 +8,6 @@
 #include <string>
 #include <stdlib.h>
 #include <vector>
-//#include "Paths.h"
-
-//using namespace std;
 
 class MainHlpr{
     
@@ -61,7 +58,7 @@ public:
     /* Each of the five input vectors well be filled with their corresponding values after
      * input_file_handler is called. These vectors will only be returned if the function does
      * not find any corrupt files or errors.*/
-    int input_file_handler(std::vector<double> &sysParams,std::vector<double> &elecParams,
+    int input_file_handler(std::string root, std::vector<double> &sysParams,std::vector<double> &elecParams,
                                   std::vector<double> &MCParams,std::vector<double> &sampParams,
                                   std::vector<double> &dynParams);
     

@@ -1,7 +1,7 @@
 #include "MonteCarlo.hpp"
 
 MonteCarlo::MonteCarlo(int num_beads, double mass, int num_states,
-                       double beta_num_beads, double nuc_ss, double elec_ss)
+                       double beta_num_beads, double nuc_ss, double elec_ss, std::string root)
     :Q(num_beads), x(num_beads,num_states), p(num_beads,num_states),
      Q_prop(num_beads), x_prop(num_beads,num_states), p_prop(num_beads,num_states),
      mt(0),nuc_dist(-nuc_ss,nuc_ss), elec_dist(-elec_ss,elec_ss),
@@ -14,7 +14,9 @@ MonteCarlo::MonteCarlo(int num_beads, double mass, int num_states,
      theta(num_states, num_beads, beta_num_beads,C,M),
      H(beta_num_beads,V_spring,V0,G,theta),
      dtheta_dBeta(num_beads,num_states,beta_num_beads,C,M),
-     Esti(num_beads,beta_num_beads,V_spring,V0,theta,dtheta_dBeta)
+     Esti(num_beads,beta_num_beads,V_spring,V0,theta,dtheta_dBeta),
+
+    myHelper(root)
 {
     gen_initQ();
     gen_initx();
@@ -83,10 +85,10 @@ void MonteCarlo::runSimulation(){
         }
     }
     
-    print_sys_accpt(sys_steps, sys_steps_accpt);
-    print_elec_accpt(elec_steps, elec_steps_accpt);
-    print_avg_energy(estimator_total, sgn_total);
-    write_estimator(estimator_t,esti_rate);
+    myHelper.print_sys_accpt(sys_steps, sys_steps_accpt);
+    myHelper.print_elec_accpt(elec_steps, elec_steps_accpt);
+    myHelper.print_avg_energy(estimator_total, sgn_total);
+    myHelper.write_estimator(estimator_t,esti_rate);
 }
 
 void MonteCarlo::sample_nuc(){

@@ -1,7 +1,7 @@
 #include "MonteCarlo_MTS.hpp"
 
-MonteCarlo_MTS::MonteCarlo_MTS(int num_beads, int elec_beads,double mass, int num_states,
-                       double beta_num_beads, double beta_elec_beads, double nuc_ss, double elec_ss)
+MonteCarlo_MTS::MonteCarlo_MTS(int num_beads, int elec_beads,double mass, int num_states, double beta_num_beads,
+                               double beta_elec_beads, double nuc_ss, double elec_ss, std::string root)
     :/* Initialize parameters*/
      num_beads(num_beads), num_states(num_states),
      beta_num_beads(beta_num_beads), elec_beads(elec_beads),
@@ -24,7 +24,10 @@ MonteCarlo_MTS::MonteCarlo_MTS(int num_beads, int elec_beads,double mass, int nu
      thetaMTS(num_states, elec_beads,C,M_MTS),
      dthetaMTS_dBeta(num_beads,elec_beads,num_states,beta_elec_beads,C,M,M_MTS),
      H_MTS(beta_num_beads,V_spring,V0,G,thetaMTS),
-     Esti_MTS(num_beads,beta_num_beads,V_spring,V0,thetaMTS,dthetaMTS_dBeta)
+     Esti_MTS(num_beads,beta_num_beads,V_spring,V0,thetaMTS,dthetaMTS_dBeta),
+
+     myHelper(root)
+
 {
     /* Generate random initial PSV. If readPSV is true, these will be overwritten
      with saved values during the call to runSimulation.*/
@@ -62,11 +65,11 @@ void MonteCarlo_MTS::runSimulation(){
     double sgn_total = 0;
     
     if(readPSV){
-        read_PSV(num_beads, elec_beads, num_states, Q, x, p);
+        myHelper.read_PSV(num_beads, elec_beads, num_states, Q, x, p);
     }
     
     if (readData) {
-        read_MC_data(sgn_total, estimator_total);
+        myHelper.read_MC_data(sgn_total, estimator_total);
     }
 
     estimator_t.resize(num_steps/esti_rate);
@@ -102,17 +105,17 @@ void MonteCarlo_MTS::runSimulation(){
         }
     }
 
-    print_sys_accpt(sys_steps, sys_steps_accpt);
-    print_elec_accpt(elec_steps, elec_steps_accpt);
-    print_avg_energy(estimator_total, sgn_total);
-    write_estimator(estimator_t,esti_rate);
+    myHelper.print_sys_accpt(sys_steps, sys_steps_accpt);
+    myHelper.print_elec_accpt(elec_steps, elec_steps_accpt);
+    myHelper.print_avg_energy(estimator_total, sgn_total);
+    myHelper.write_estimator(estimator_t,esti_rate);
     
     if(writePSV){
-        write_PSV(num_beads, elec_beads, num_states, Q, x, p);
+        myHelper.write_PSV(num_beads, elec_beads, num_states, Q, x, p);
     }
 
     if (writeData) {
-        write_MC_data(sgn_total, estimator_total);
+        myHelper.write_MC_data(sgn_total, estimator_total);
     }
     
 }

@@ -1,8 +1,9 @@
 #include "MonteCarlo_MTS.hpp"
 
-MonteCarlo_MTS::MonteCarlo_MTS(int num_beads, int elec_beads,double mass, int num_states, double beta_num_beads,
-                               double beta_elec_beads, double nuc_ss, double elec_ss, std::string root)
+MonteCarlo_MTS::MonteCarlo_MTS(int my_id, int root_proc, int num_procs, int num_beads, int elec_beads,double mass, int num_states,
+                               double beta_num_beads, double beta_elec_beads, double nuc_ss, double elec_ss, std::string root)
     :/* Initialize parameters*/
+     my_id(my_id), root_proc(root_proc), num_procs(num_procs),
      num_beads(num_beads), num_states(num_states),
      beta_num_beads(beta_num_beads), elec_beads(elec_beads),
     
@@ -26,7 +27,7 @@ MonteCarlo_MTS::MonteCarlo_MTS(int num_beads, int elec_beads,double mass, int nu
      H_MTS(beta_num_beads,V_spring,V0,G,thetaMTS),
      Esti_MTS(num_beads,beta_num_beads,V_spring,V0,thetaMTS,dthetaMTS_dBeta),
 
-     myHelper(root)
+     myHelper(root,my_id,num_procs,root_proc)
 
 {
     /* Generate random initial PSV. If readPSV is true, these will be overwritten
@@ -107,7 +108,9 @@ void MonteCarlo_MTS::runSimulation(){
 
     myHelper.print_sys_accpt(sys_steps, sys_steps_accpt);
     myHelper.print_elec_accpt(elec_steps, elec_steps_accpt);
+    
     myHelper.print_avg_energy(estimator_total, sgn_total);
+
     myHelper.write_estimator(estimator_t,esti_rate);
     
     if(writePSV){

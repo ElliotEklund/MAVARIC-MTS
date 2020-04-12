@@ -10,17 +10,18 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
+
+#include "mpi.h"
 
 using namespace boost::numeric::ublas;
 
 class MonteCarloHelper{
     
-private:
-    std::string root;
-    
+
 public:
     
-    MonteCarloHelper(std::string root);
+    MonteCarloHelper(std::string root, int my_id, int num_procs, int root_proc);
     
     // Print system Monte Carlo acceptance ratios after calling runMC.
     void print_sys_accpt(unsigned long long sys_steps,unsigned long long sys_steps_accpt);
@@ -44,6 +45,13 @@ public:
     void write_MC_data(double sgn_total,double estimator_total);
     
     void read_MC_data(double &sgn_totalGlobal, double &estimator_total);
+    
+    
+private:
+    std::string root;
+    int my_id; //unique processor id
+    int num_procs; //number of processors
+    int root_proc; //root processor
     
 };
 

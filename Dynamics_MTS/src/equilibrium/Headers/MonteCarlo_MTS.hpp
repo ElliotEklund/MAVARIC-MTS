@@ -22,7 +22,9 @@ using namespace boost::numeric::ublas;
 class MonteCarlo_MTS {
     
 public:
-    MonteCarlo_MTS(int num_beads, int elec_beads, double mass, int num_states,double beta_num_beads, double beta_elec_beads, double nuc_ss, double elec_ss,std::string root);
+    MonteCarlo_MTS(int my_id, int root_proc, int num_procs, int num_beads, int elec_beads, double mass,
+                   int num_states,double beta_num_beads, double beta_elec_beads, double nuc_ss,
+                   double elec_ss,std::string root);
 
     /* Generate initial conditions for Q. Q is set after calling*/
     void gen_initQ();
@@ -49,6 +51,8 @@ public:
 
     void set_write_Data(bool set_In);
     
+    void print_avg_energy(double estimator_total, double sgn_total);
+
 private:
     
     /* Private functions. */
@@ -67,6 +71,10 @@ private:
     MVRPMD_MTS_Estimator Esti_MTS;
 
     /* Private data. */
+    int my_id; //unique processor id
+    int root_proc; //root processor
+    int num_procs; //number of processors
+    
     bool writePSV; //write PSV to file after simulation if true
     bool readPSV; //read in PSC.txt before simulation if true
     bool readData; //read in mcData.txt before simulation if true

@@ -12,11 +12,7 @@ M_Matrix::M_Matrix(int num_states,int num_beads,double beta_num_beads)
      exp_row(num_states,0.0),V_couple_temp(num_states,num_states,0.0),
      M_inter(identity_matrix<double>(num_states))
 {
-//    std::fill(M_alpha.data().begin(),M_alpha.data().end(),0.0);
-//    std::fill(V_mat.data().begin(),V_mat.data().end(),0.0);
     myExp.set_beta_num_beads(beta_num_beads);
-//    M_inter = identity_matrix<double> (num_states);
-
 }
 
 void M_Matrix::update_M_alpha(const double &Q, int bead){
@@ -37,17 +33,8 @@ void M_Matrix::update_M_alpha(const double &Q, int bead){
 }
 
 void M_Matrix::update_M_vec(const vector<double> &Q){
-    
-//    std::cout << std::endl << "Call to update M_vec" << std::endl;
-    
+        
     noalias(V_mat) = V.get_V_mat(Q);
-    
-//
-//    std::cout << std::endl << "V_mat" << std::endl;
-//    std::cout << V_mat << std::endl;
-//
-    //std::transform(V_mat.data().begin(), V_mat.data().end(), exp_V_mat.data().begin(), myExp);
-    
     
     for (int bead=0; bead<num_beads; bead++) {
         for (int state=0; state<num_states; state++) {
@@ -55,20 +42,12 @@ void M_Matrix::update_M_vec(const vector<double> &Q){
         }
     }
     
-//    std::cout << std::endl << "V_mat exponential" << std::endl;
-//    std::cout << exp_V_mat << std::endl;
-    
     update_V_couple_vec(Q);
     
     for (int bead=0; bead<num_beads; bead++) {
         update_M_alpha(Q[bead], bead);
         noalias(M_vec(bead)) = M_alpha;
     }
-    
-//    for (int i=0; i<num_beads; i++) {
-//        std::cout << "M: " << i << std::endl;
-//        std::cout << M_vec(i) << std::endl;
-//    }
     
 }
 

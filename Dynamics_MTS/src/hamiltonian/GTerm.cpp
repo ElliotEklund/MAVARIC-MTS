@@ -6,9 +6,6 @@ GTerm::GTerm(int num_beads, int num_states)
 {}
 
 void GTerm::update_gTerm(const matrix<double> &x,const matrix<double> &p){
-    
-    //std::transform(x.data().begin(),x.data().end(),x_squared.data().begin(),square());
-    //std::transform(p.data().begin(),p.data().end(),p_squared.data().begin(),square());
 
     x_squared = element_prod(x,x);
     p_squared = element_prod(p,p);

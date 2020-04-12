@@ -1,9 +1,11 @@
 #include "Sampling_MTS.hpp"
 
-Sampling_MTS::Sampling_MTS(int num_beads, int elec_beads,double mass, int num_states,
-                       double beta_num_beads, double beta_elec_beads, double nuc_ss, double elec_ss, std::string root)
+Sampling_MTS::Sampling_MTS(int my_id, int num_procs, int root_proc,int num_beads, int elec_beads,double mass,
+                           int num_states,double beta_num_beads, double beta_elec_beads, double nuc_ss,
+                           double elec_ss, std::string root)
     :/* Initialize parameters*/
      root(root),
+     my_id(my_id), num_procs(num_procs), root_proc(root_proc),
 
      num_beads(num_beads), num_states(num_states), mass(mass),
      beta_num_beads(beta_num_beads), elec_beads(elec_beads),
@@ -26,7 +28,6 @@ Sampling_MTS::Sampling_MTS(int num_beads, int elec_beads,double mass, int num_st
      thetaMTS(num_states, elec_beads,C,M_MTS),
      H_MTS(beta_num_beads,V_spring,V0,G,thetaMTS)
 {}
-
 
 void Sampling_MTS::runSimulation(){
 
@@ -70,22 +71,24 @@ void Sampling_MTS::runSimulation(){
     savep();
     saveP();
 
-    print_sys_accpt(sys_steps, sys_steps_accpt);
-    print_elec_accpt(elec_steps, elec_steps_accpt);
- 
-    std::string fileName = root + "/Results/hist.txt";
-   
-    int bins = 300;
-    vector<double> Q_cent (num_samples);
-    double sum = 0;
-    for(int traj=0; traj<num_samples; traj++){
-        sum = 0;
-        for(int bead=0; bead<num_beads; bead++){
-            sum += Q_samp(traj*num_beads + bead);
-        }
-        Q_cent(traj) = sum/num_beads;
+    if (my_id==root_proc) {
+        print_sys_accpt(sys_steps, sys_steps_accpt);
+        print_elec_accpt(elec_steps, elec_steps_accpt);
     }
-    histogram(fileName,bins,Q_cent);
+
+//    std::string fileName = root + "/Results/hist.txt";
+//
+//    int bins = 300;
+//    vector<double> Q_cent (num_samples);
+//    double sum = 0;
+//    for(int traj=0; traj<num_samples; traj++){
+//        sum = 0;
+//        for(int bead=0; bead<num_beads; bead++){
+//            sum += Q_samp(traj*num_beads + bead);
+//        }
+//        Q_cent(traj) = sum/num_beads;
+//    }
+//    histogram(fileName,bins,Q_cent);
 }
 
 void Sampling_MTS::sample_nuc(){
@@ -168,7 +171,10 @@ void Sampling_MTS::set_num_samples(int set_In){
 
 void Sampling_MTS::readPSV(){
     
-    std::string fileName = root + "/Results/PSV.txt";
+    std::ostringstream quickConvert;
+    quickConvert << my_id;
+    
+    std::string fileName = root + "/Results/PSV" + quickConvert.str();
     
     std::ifstream myFile;
     myFile.open(fileName);
@@ -238,7 +244,10 @@ void Sampling_MTS::stash_p(int sample){
 
 void Sampling_MTS::saveQ(){
     
-    std::string fileName = root + "/Results/Trajectories/Q";
+    std::ostringstream quickConvert;
+    quickConvert << my_id;
+    
+    std::string fileName = root + "/Results/Trajectories/Q" + quickConvert.str();
     
     std::ofstream myFile;
     myFile.open(fileName);
@@ -254,7 +263,10 @@ void Sampling_MTS::saveQ(){
 
 void Sampling_MTS::savex(){
     
-    std::string fileName = root + "/Results/Trajectories/xelec";
+    std::ostringstream quickConvert;
+    quickConvert << my_id;
+    
+    std::string fileName = root + "/Results/Trajectories/xelec" + quickConvert.str();
     
     std::ofstream myFile;
     myFile.open(fileName);
@@ -272,7 +284,10 @@ void Sampling_MTS::savex(){
 
 void Sampling_MTS::savep(){
     
-    std::string fileName = root + "/Results/Trajectories/pelec";
+    std::ostringstream quickConvert;
+    quickConvert << my_id;
+    
+    std::string fileName = root + "/Results/Trajectories/pelec" + quickConvert.str();
     
     std::ofstream myFile;
     myFile.open(fileName);
@@ -293,7 +308,10 @@ void Sampling_MTS::saveP(){
     double stdev = sqrt(mass/beta_num_beads);
     std::normal_distribution<double> boltz_dist(0,stdev);
     
-    std::string fileName = root + "/Results/Trajectories/P";
+    std::ostringstream quickConvert;
+    quickConvert << my_id;
+    
+    std::string fileName = root + "/Results/Trajectories/P" + quickConvert.str();
     
     std::ofstream myFile;
     myFile.open(fileName);

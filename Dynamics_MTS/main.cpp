@@ -125,11 +125,12 @@ int main(int argc, char ** argv) {
     if (runMC) {
 
         if (my_id == root_process) {
-            std::cout << "Begin Monte Carlo Simulation" << std::endl;
             std::cout << std::endl << std::endl;
+            std::cout << "Begin Monte Carlo Simulation" << std::endl;
+            std::cout << std::endl;
         }
 
-        MonteCarlo_MTS myMC_MTS(nuc_beads,elec_beads,mass,num_states,
+        MonteCarlo_MTS myMC_MTS(my_id,root_process,num_procs,nuc_beads,elec_beads,mass,num_states,
                                 beta_nuc,beta_elec,nuc_ss,elec_ss,root);
 
         myMC_MTS.set_num_steps(num_steps);
@@ -147,7 +148,7 @@ int main(int argc, char ** argv) {
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
 
         if (my_id == root_process) {
-            std::cout << time_taken << std::endl;
+            std::cout << "\t Monte Carlo simulation time: " << time_taken << std::endl << std::endl;
             std::cout << "End Monte Carlo Simulation" << std::endl;
             std::cout << std::endl << std::endl;
         }
@@ -168,8 +169,8 @@ int main(int argc, char ** argv) {
             std::cout << std::endl << std::endl;
         }
 
-        Sampling_MTS mySamp(nuc_beads,elec_beads,mass,num_states,
-                            beta_nuc,beta_elec,nuc_ss,elec_ss,root);
+        Sampling_MTS mySamp(my_id,num_procs,root_process,nuc_beads,elec_beads,
+                            mass,num_states,beta_nuc,beta_elec,nuc_ss,elec_ss,root);
 
         mySamp.set_decor_len(decor_len);
         mySamp.set_num_samples(num_trajs);

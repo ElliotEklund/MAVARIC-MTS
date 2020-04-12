@@ -16,7 +16,7 @@ MonteCarlo::MonteCarlo(int num_beads, double mass, int num_states,
      dtheta_dBeta(num_beads,num_states,beta_num_beads,C,M),
      Esti(num_beads,beta_num_beads,V_spring,V0,theta,dtheta_dBeta),
 
-    myHelper(root)
+    myHelper(root,1,1,1)
 {
     gen_initQ();
     gen_initx();

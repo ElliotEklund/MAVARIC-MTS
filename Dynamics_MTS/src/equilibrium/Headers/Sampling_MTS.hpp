@@ -9,6 +9,7 @@
 #include <boost/numeric/ublas/storage.hpp>
 
 #include <random>
+#include <sstream>
 #include <fstream>
 
 #include "MVRPMD_MTS_Hamiltonian.hpp"
@@ -17,8 +18,8 @@ class Sampling_MTS{
     
 public:
     
-    Sampling_MTS(int num_beads, int elec_beads, double mass, int num_states,
-                 double beta_num_beads, double beta_elec_beads, double nuc_ss,
+    Sampling_MTS(int my_id, int num_procs, int root_proc, int num_beads, int elec_beads, double mass,
+                 int num_states, double beta_num_beads, double beta_elec_beads, double nuc_ss,
                  double elec_ss, std::string root);
     
     /* Run Sampling simulation. A batch of samples will be produces after
@@ -60,6 +61,8 @@ private:
     void histogram(std::string fileName, int bins, T X);
 
     /* Private Data */
+    int my_id, num_procs, root_proc;
+    
     double mass;
     int num_beads; //number of nuclear beads
     int elec_beads; //number of electronic beads

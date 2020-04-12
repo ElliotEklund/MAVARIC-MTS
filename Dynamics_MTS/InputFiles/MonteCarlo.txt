@@ -1,5 +1,5 @@
 Run MC:1
-MC Moves:1e5
+MC Moves:1e7
 Estimator Rate:1e4
 Save PSV:1
 Save MC Data:1

@@ -150,7 +150,7 @@ int main(int argc, char ** argv) {
         if (my_id == root_process) {
             std::cout << "\t Monte Carlo simulation time: " << time_taken << std::endl << std::endl;
             std::cout << "End Monte Carlo Simulation" << std::endl;
-            std::cout << std::endl << std::endl;
+            std::cout << std::endl;
         }
     }
     
@@ -166,7 +166,7 @@ int main(int argc, char ** argv) {
 
         if (my_id == root_process) {
             std::cout << "Begin Sampling Simulation" << std::endl;
-            std::cout << std::endl << std::endl;
+            std::cout << std::endl;
         }
 
         Sampling_MTS mySamp(my_id,num_procs,root_process,nuc_beads,elec_beads,
@@ -183,7 +183,7 @@ int main(int argc, char ** argv) {
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
 
         if (my_id == root_process) {
-            std::cout << time_taken << std::endl;
+            std::cout << "\t Sampling simulation time: " << time_taken << std::endl << std::endl;
             std::cout << "End Sampling Simulation" << std::endl;
             std::cout << std::endl << std::endl;
         }

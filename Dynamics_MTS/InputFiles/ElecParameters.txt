@@ -1,3 +1,3 @@
 States:2
-ElecBeads:1
-MC step size:0.90
+ElecBeads:6
+MC step size:0.38

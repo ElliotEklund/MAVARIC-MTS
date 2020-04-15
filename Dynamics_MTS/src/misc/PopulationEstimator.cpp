@@ -33,11 +33,11 @@ void PopulationEstimator::update_populations(const matrix<double> &x,const matri
     }
 }
 
-const double PopulationEstimator::get_pop(const int state){
+double PopulationEstimator::get_pop(const int state){
     return populations(state);
 }
 
-const vector<double> PopulationEstimator::get_pop(){
+vector<double> PopulationEstimator::get_pop(){
     return populations;
 }
 
@@ -45,7 +45,7 @@ void PopulationEstimator::write_populations(matrix<double> final_pops, double dt
     
     std::string fileName = root + "/Results/PopAC";
     std::ofstream myFile;
-    myFile.open(fileName);
+    myFile.open(fileName.c_str());
     
     if (!myFile.is_open()) {
         std::cout << "ERROR: Could not open file " << fileName << std::endl;

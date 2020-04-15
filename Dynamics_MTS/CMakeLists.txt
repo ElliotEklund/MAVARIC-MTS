@@ -22,6 +22,7 @@ if(${MACHINE} STREQUAL "MAC")
     set(FORCES_DIR "${ROOT_MAC}/src/forces")
     set(HAMILTONIAN_DIR "${ROOT_MAC}/src/hamiltonian")
     set(MISC_DIR "${ROOT_MAC}/src/misc")
+    set(EXECUTABLE_OUTPUT_PATH ${ROOT_MAC})
 
 elseif(${MACHINE} STREQUAL "LIN")
     set(INCLUDE_DIRS "${BOOST_LIN}/boost_1_72_0")
@@ -29,14 +30,16 @@ elseif(${MACHINE} STREQUAL "LIN")
     set(MY_SOURCE "${ROOT_LIN}/Dynamics_MTS_AlphaDEBUG/Dynamics_MTS/DynamicsParts/Sources")
 
 elseif(${MACHINE} STREQUAL "ASTRA")
-    set(INCLUDE_DIRS "${BOOST_ASTRA}/boost_1_72_0")
-    set(MY_HEADERS "${ROOT_ASTRA}/DynamicsParts/Headers")
-    set(MY_SOURCE "${ROOT_ASTRA}/DynamicsParts/Sources")
-
+    set(BOOST_DIR "${BOOST_ASTRA}/boost_1_72_0")
+    set(DYNAMICS_DIR "${ROOT_ASTRA}/src/dynamics")
+    set(EQUILIBRIUM_DIR "${ROOT_ASTRA}/src/equilibrium")
+    set(FORCES_DIR "${ROOT_ASTRA}/src/forces")
+    set(HAMILTONIAN_DIR "${ROOT_ASTRA}/src/hamiltonian")
+    set(MISC_DIR "${ROOT_ASTRA}/src/misc")
+    set(EXECUTABLE_OUTPUT_PATH ${ROOT_ASTRA})
 endif()
 
 add_definitions( "-DNDEBUG -O3" )
-set(EXECUTABLE_OUTPUT_PATH ${ROOT_MAC})
 
 # add the executable
 add_executable(mavaric main.cpp

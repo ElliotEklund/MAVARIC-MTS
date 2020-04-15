@@ -46,26 +46,26 @@ Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads,
 
     /* Read in trajectories to global PSV vectors  */
     if(my_id == root_proc){
-        load_var(Q_global,"Q",fileName);
-        load_var(P_global,"P",fileName);
-        load_var(x_global,"xelec",fileName);
-        load_var(p_global,"pelec",fileName);
+        load_var(Q_global,"Q0",fileName);
+        load_var(P_global,"P0",fileName);
+        load_var(x_global,"xelec0",fileName);
+        load_var(p_global,"pelec0",fileName);
     }
     
    MPI_Barrier(MPI_COMM_WORLD);
 
    /* Distribute global trajectories across all processors. */
-   MPI_Scatter(&Q_global[0],num_trajs_local*nuc_beads,MPI_DOUBLE,&Q_local[0],num_trajs*nuc_beads,
+   MPI_Scatter(&Q_global[0],num_trajs_local*nuc_beads,MPI_DOUBLE,&Q_local[0],num_trajs_local*nuc_beads,
      MPI_DOUBLE,root_proc,MPI_COMM_WORLD);
 
-   MPI_Scatter(&P_global[0],num_trajs_local*nuc_beads,MPI_DOUBLE,&P_local[0],num_trajs*nuc_beads,
+   MPI_Scatter(&P_global[0],num_trajs_local*nuc_beads,MPI_DOUBLE,&P_local[0],num_trajs_local*nuc_beads,
      MPI_DOUBLE,root_proc,MPI_COMM_WORLD);
 
    MPI_Scatter(&x_global[0],num_trajs_local*elec_beads*num_states,MPI_DOUBLE,&x_local[0],
-     num_trajs*elec_beads*num_states,MPI_DOUBLE,root_proc,MPI_COMM_WORLD);
+     num_trajs_local*elec_beads*num_states,MPI_DOUBLE,root_proc,MPI_COMM_WORLD);
 
    MPI_Scatter(&p_global[0],num_trajs_local*elec_beads*num_states,MPI_DOUBLE,&p_local[0],
-     num_trajs*elec_beads*num_states,MPI_DOUBLE,root_proc,MPI_COMM_WORLD);
+     num_trajs_local*elec_beads*num_states,MPI_DOUBLE,root_proc,MPI_COMM_WORLD);
 
     /* Trajectories are now distributed across all processors, but still need to be
      * correctly formated. */
@@ -107,7 +107,6 @@ void Dynamics::PAC(){
         P_traj = P(traj);
         x_traj = x(traj);
         p_traj = p(traj);
-
 
         Qcent_0 = compute_centroid(Q_traj);
 
@@ -336,7 +335,7 @@ void Dynamics::print_QQt(vector<double> &QQt,double sgnTheta_total){
         std::string fileName = root + "/Results/PAC";
         
         std::ofstream myFile;
-        myFile.open(fileName);
+        myFile.open(fileName.c_str());
         
         if (!myFile.is_open()) {
             std::cout << "ERROR: Could not open " << fileName << std::endl;

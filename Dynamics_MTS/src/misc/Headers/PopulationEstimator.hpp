@@ -23,9 +23,9 @@ public:
     
     void update_populations(const matrix<double> &x,const matrix<double> &p);
     
-    const double get_pop(const int state);
+    double get_pop(const int state);
     
-    const vector<double> get_pop();
+    vector<double> get_pop();
     
     void write_populations(matrix<double> final_pops, double dt, int data_steps, int rate, std::string root);
 

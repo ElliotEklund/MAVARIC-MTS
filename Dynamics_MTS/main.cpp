@@ -67,7 +67,9 @@ int main(int argc, char ** argv) {
     double total_time;
     double tol;
     int energy_stride;
-    
+    bool run_init_PAC;
+    double interval;
+
     bool run_PAC = false;
     bool run_PopAC = false;
     bool run_energ_conserv = false;
@@ -107,6 +109,8 @@ int main(int argc, char ** argv) {
     run_energ_conserv = Dyn_parameters[5];
     tol = Dyn_parameters[6];
     run_PopAC = Dyn_parameters[7];
+    run_init_PAC = Dyn_parameters[8];
+    interval = Dyn_parameters[9];
 
     /* Set derived variables */
     beta = 1.0/temp;
@@ -223,6 +227,10 @@ int main(int argc, char ** argv) {
 
         if(run_PopAC){
             myDyn.PopAC();
+        }
+        
+        if(run_init_PAC){
+          myDyn.compute_initPAC(interval);
         }
 
         clock_t end = clock();

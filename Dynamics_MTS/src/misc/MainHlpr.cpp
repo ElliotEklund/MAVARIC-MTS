@@ -423,6 +423,16 @@ int MainHlpr::DynParams_checker(std::string root, std::vector<double> &params){
     if(!check_binary(params[7],fileName,"Compute Wigner Populations")){
         result = -1;
     }
+
+    /* Check that Compute Initial PAC is binary. */
+    if(!check_binary(params[8],fileName,"Compute Initial PAC")){
+        result = -1;
+    }
+
+    /* Check that Interval is a positive number. */
+    if(!check_positive(params[9],fileName,"Interval")){
+        result = -1;
+    }
     
     return result;
 }
@@ -460,7 +470,7 @@ int MainHlpr::input_file_handler(std::string root, std::vector<double> &sysParam
         result = -1;
     }
     
-    if(corruption_check(DynFile,8)){
+    if(corruption_check(DynFile,10)){
         result = -1;
     }
     

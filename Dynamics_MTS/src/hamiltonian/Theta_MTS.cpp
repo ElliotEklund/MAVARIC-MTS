@@ -30,21 +30,12 @@ void Theta_MTS::update_theta(const vector<double> &Q,const matrix<double> &x,
     
     update_gamma_mat(Q, x, p);
     std::complex<double> tr (0.0,0.0);
-    
-    //std::cout << std::endl << "Call to gamma" << std::endl;
-        
+            
     /* Compute trace. */
     for (int i=0; i<num_states; i++) {
-        //std::cout << gamma_mat(i,i) << std::endl;
         tr += gamma_mat(i,i);
     }
-    
-//    std::cout << std::endl;
-    
     theta = tr.real();
-    
-    //matrix_vector_range<matrix<std::complex<double> > > diag(gamma_mat, range (0,num_states), range (0,num_states));
-    //theta = sum(diag).real();
 }
 
 double Theta_MTS::get_theta(const vector<double> &Q,const matrix<double> &x,

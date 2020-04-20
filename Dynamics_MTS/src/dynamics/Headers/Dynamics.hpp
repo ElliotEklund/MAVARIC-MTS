@@ -21,6 +21,7 @@
 #include "Forces_MTS.hpp"
 #include "ABM_MVRPMD.hpp"
 #include "PopulationEstimator.hpp"
+#include "init_PAC.hpp"
 
 #include "MVRPMD_MTS_Hamiltonian.hpp"
 
@@ -54,6 +55,8 @@ public:
     
     /* Compute population auto-correlation function*/
     void PopAC();
+    
+    void compute_initPAC(int interval);
 
 
 private:

@@ -231,6 +231,33 @@ src/dynamics/RK4_MVRPMD.cpp.s:
 	$(MAKE) -f CMakeFiles/mavaric.dir/build.make CMakeFiles/mavaric.dir/src/dynamics/RK4_MVRPMD.cpp.s
 .PHONY : src/dynamics/RK4_MVRPMD.cpp.s
 
+src/dynamics/init_PAC.o: src/dynamics/init_PAC.cpp.o
+
+.PHONY : src/dynamics/init_PAC.o
+
+# target to build an object file
+src/dynamics/init_PAC.cpp.o:
+	$(MAKE) -f CMakeFiles/mavaric.dir/build.make CMakeFiles/mavaric.dir/src/dynamics/init_PAC.cpp.o
+.PHONY : src/dynamics/init_PAC.cpp.o
+
+src/dynamics/init_PAC.i: src/dynamics/init_PAC.cpp.i
+
+.PHONY : src/dynamics/init_PAC.i
+
+# target to preprocess a source file
+src/dynamics/init_PAC.cpp.i:
+	$(MAKE) -f CMakeFiles/mavaric.dir/build.make CMakeFiles/mavaric.dir/src/dynamics/init_PAC.cpp.i
+.PHONY : src/dynamics/init_PAC.cpp.i
+
+src/dynamics/init_PAC.s: src/dynamics/init_PAC.cpp.s
+
+.PHONY : src/dynamics/init_PAC.s
+
+# target to generate assembly for a file
+src/dynamics/init_PAC.cpp.s:
+	$(MAKE) -f CMakeFiles/mavaric.dir/build.make CMakeFiles/mavaric.dir/src/dynamics/init_PAC.cpp.s
+.PHONY : src/dynamics/init_PAC.cpp.s
+
 src/equilibrium/MVRPMD_Estimator.o: src/equilibrium/MVRPMD_Estimator.cpp.o
 
 .PHONY : src/equilibrium/MVRPMD_Estimator.o
@@ -1170,6 +1197,9 @@ help:
 	@echo "... src/dynamics/RK4_MVRPMD.o"
 	@echo "... src/dynamics/RK4_MVRPMD.i"
 	@echo "... src/dynamics/RK4_MVRPMD.s"
+	@echo "... src/dynamics/init_PAC.o"
+	@echo "... src/dynamics/init_PAC.i"
+	@echo "... src/dynamics/init_PAC.s"
 	@echo "... src/equilibrium/MVRPMD_Estimator.o"
 	@echo "... src/equilibrium/MVRPMD_Estimator.i"
 	@echo "... src/equilibrium/MVRPMD_Estimator.s"

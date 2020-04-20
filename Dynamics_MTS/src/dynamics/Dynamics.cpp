@@ -75,6 +75,16 @@ Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads,
    format_array(p,p_local);
 }
 
+void Dynamics::compute_initPAC(int interval){
+    
+    init_PAC my_init_PAC(num_procs,my_id,root_proc,nuc_beads,elec_beads,
+                         num_states,num_trajs,num_trajs_local,Theta);
+    
+    my_init_PAC.set_interval(interval);
+    my_init_PAC.set_vectors(Q,x,p);
+    my_init_PAC.compute(root);
+}
+
 void Dynamics::PAC(){
     
     if (!total_time) {

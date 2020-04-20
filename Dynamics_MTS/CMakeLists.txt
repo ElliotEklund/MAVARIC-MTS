@@ -48,6 +48,7 @@ add_executable(mavaric main.cpp
     ${DYNAMICS_DIR}/ABM_MVRPMD.cpp
     ${DYNAMICS_DIR}/Dynamics.cpp
     ${DYNAMICS_DIR}/RK4_MVRPMD.cpp
+    ${DYNAMICS_DIR}/init_PAC.cpp
 
     #equilibrium directory
     ${EQUILIBRIUM_DIR}/dM_Matrix_dBeta.cpp
@@ -86,7 +87,6 @@ add_executable(mavaric main.cpp
     ${HAMILTONIAN_DIR}/StateIndepPot.cpp
     ${HAMILTONIAN_DIR}/Theta_MTS.cpp
     ${HAMILTONIAN_DIR}/Theta.cpp
-
 
     #misc directory
     ${MISC_DIR}/MainHlpr.cpp

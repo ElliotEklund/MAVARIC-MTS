@@ -108,8 +108,13 @@ void init_PAC::compute(std::string root){
         for (int i=0; i<num_samples; i++) {
             theta_sum += theta_samples_final[i];
             qq_sum += qqTheta_samples_final[i];
+            double error = 0;
             
-            myFile << (i+1)*interval << " " << qq_sum/theta_sum << std::endl;
+            for (int j=0; j<i; j++) {
+                error = pow((qq_sum/theta_sum) - (qqTheta_samples_final[i]/theta_samples_final[i]),2);
+            }
+            
+            myFile << (i+1)*interval << " " << qq_sum/theta_sum << " " << theta_sum << " " << sqrt(error/(i+1)) << std::endl;
         }
         myFile.close();
     }

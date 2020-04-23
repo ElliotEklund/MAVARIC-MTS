@@ -4,8 +4,15 @@
 
 #include "Dynamics.hpp"
 #include "MainHlpr.hpp"
+
+#ifdef MAC
 #include "MonteCarlo_MTS.hpp"
-#include "Sampling_MTS.hpp"
+#endif
+
+#ifdef ASTRA
+#include "MonteCarlo_MTSastra.hpp"
+#endif
+//#include "Sampling_MTS.hpp"
 
 int main(int argc, char ** argv) {
     
@@ -134,8 +141,15 @@ int main(int argc, char ** argv) {
             std::cout << std::endl;
         }
 
+        #ifdef MAC
         MonteCarlo_MTS myMC_MTS(my_id,root_process,num_procs,nuc_beads,elec_beads,mass,num_states,
                                 beta_nuc,beta_elec,nuc_ss,elec_ss,root);
+        #endif
+
+        #ifdef ASTRA
+        MonteCarlo_MTSastra myMC_MTS(my_id,root_process,num_procs,nuc_beads,elec_beads,mass,num_states,
+                                beta_nuc,beta_elec,nuc_ss,elec_ss,root);
+        #endif
 
         myMC_MTS.set_num_steps(num_steps);
         myMC_MTS.set_esti_rate(esti_rate);
@@ -173,15 +187,15 @@ int main(int argc, char ** argv) {
             std::cout << std::endl;
         }
 
-        Sampling_MTS mySamp(my_id,num_procs,root_process,nuc_beads,elec_beads,
-                            mass,num_states,beta_nuc,beta_elec,nuc_ss,elec_ss,root);
+     //   Sampling_MTS mySamp(my_id,num_procs,root_process,nuc_beads,elec_beads,
+     //                       mass,num_states,beta_nuc,beta_elec,nuc_ss,elec_ss,root);
 
-        mySamp.set_decor_len(decor_len);
-        mySamp.set_num_samples(num_trajs);
+     //   mySamp.set_decor_len(decor_len);
+     //   mySamp.set_num_samples(num_trajs);
 
         clock_t start = clock();
 
-        mySamp.runSimulation();
+      //  mySamp.runSimulation();
 
         clock_t end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);

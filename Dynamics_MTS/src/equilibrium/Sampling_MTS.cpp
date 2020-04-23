@@ -48,7 +48,7 @@ void Sampling_MTS::runSimulation(){
     elec_steps = 0;
 
     energy = H_MTS.get_energy(Q,x,p);
-    
+        
     for (int sample=0; sample<num_samples; sample++) {
         for (int step=0; step<decor_len; step++) {
             if(unif_1(mt) > 0.5){

@@ -10,7 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mavaric.dir/src/equilibrium/MVRPMD_MTS_Estimator.cpp.o"
   "CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo.cpp.o"
   "CMakeFiles/mavaric.dir/src/equilibrium/MonteCarloHelper.cpp.o"
-  "CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.o"
+  "CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.o"
   "CMakeFiles/mavaric.dir/src/equilibrium/Sampling_MTS.cpp.o"
   "CMakeFiles/mavaric.dir/src/equilibrium/dM_Matrix_MTS_dBeta.cpp.o"
   "CMakeFiles/mavaric.dir/src/equilibrium/dM_Matrix_dBeta.cpp.o"

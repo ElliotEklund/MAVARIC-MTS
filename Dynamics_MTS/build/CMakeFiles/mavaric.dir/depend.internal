@@ -9,7 +9,7 @@ CMakeFiles/mavaric.dir/main.cpp.o
  ../src/equilibrium/Headers/MVRPMD_MTS_Estimator.hpp
  ../src/equilibrium/Headers/MonteCarloHelper.h
  ../src/equilibrium/Headers/MonteCarlo_MTS.hpp
- ../src/equilibrium/Headers/Sampling_MTS.hpp
+ ../src/equilibrium/Headers/MonteCarlo_MTSastra.hpp
  ../src/equilibrium/Headers/dM_Matrix_MTS_dBeta.hpp
  ../src/equilibrium/Headers/dM_Matrix_dBeta.hpp
  ../src/equilibrium/Headers/dTheta_MTS_dBeta.hpp
@@ -33,6 +33,8 @@ CMakeFiles/mavaric.dir/main.cpp.o
  ../src/hamiltonian/Headers/Theta_MTS.hpp
  ../src/misc/Headers/MainHlpr.hpp
  ../src/misc/Headers/PopulationEstimator.hpp
+ ../src/misc/Headers/nr3.h
+ ../src/misc/Headers/ran.h
  /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/main.cpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
@@ -7506,10 +7508,10 @@ CMakeFiles/mavaric.dir/src/equilibrium/MonteCarloHelper.cpp.o
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/typeof/vector50.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/utility/enable_if.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/version.hpp
-CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.o
+CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.o
  ../src/equilibrium/Headers/MVRPMD_MTS_Estimator.hpp
  ../src/equilibrium/Headers/MonteCarloHelper.h
- ../src/equilibrium/Headers/MonteCarlo_MTS.hpp
+ ../src/equilibrium/Headers/MonteCarlo_MTSastra.hpp
  ../src/equilibrium/Headers/dM_Matrix_MTS_dBeta.hpp
  ../src/equilibrium/Headers/dM_Matrix_dBeta.hpp
  ../src/equilibrium/Headers/dTheta_MTS_dBeta.hpp
@@ -7522,7 +7524,9 @@ CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.o
  ../src/hamiltonian/Headers/StateDepPots.h
  ../src/hamiltonian/Headers/StateIndepPot.h
  ../src/hamiltonian/Headers/Theta_MTS.hpp
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/equilibrium/MonteCarlo_MTS.cpp
+ ../src/misc/Headers/nr3.h
+ ../src/misc/Headers/ran.h
+ /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/equilibrium/MonteCarlo_MTSastra.cpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config.hpp

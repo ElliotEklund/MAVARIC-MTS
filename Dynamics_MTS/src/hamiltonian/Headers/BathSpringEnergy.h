@@ -6,8 +6,9 @@
 #include <boost/numeric/ublas/matrix_proxy.hpp>
 #include <boost/numeric/ublas/io.hpp>
 #include <boost/numeric/ublas/storage.hpp>
+#include <boost/numeric/ublas/matrix_sparse.hpp>
 
-#include "SpringEnergy.h"
+//#include "SpringEnergy.h"
 
 using namespace boost::numeric::ublas;
 
@@ -38,8 +39,15 @@ private:
     /* Private Data. */
     int num_modes; //number of bath modes
     double energy; //bath spring energy
+    const double prefactor; // mass/(2.0 * beta_num_beads^(2))
+    mapped_matrix<double> W; //matrix used to calculate spring energy
+    matrix<double> Q_diff; //Qi - Qi+1
+    matrix<double> Q_diff_sq; //(Qi - Qi+1)^2
+    vector<double> ones_num_beads; //unit vector of length num_beads
+    vector<double> ones_num_modes; //unit vector of length num_modes
+    vector<double> temp_vec; //temporary vector used while calculating energy
     
-    SpringEnergy V_spring;
+    //SpringEnergy V_spring;
 };
 
 #endif

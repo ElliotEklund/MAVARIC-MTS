@@ -2,6 +2,7 @@
 #define SPRINGENERGY_H
 
 #include <boost/numeric/ublas/vector.hpp>
+#include <boost/numeric/ublas/matrix_sparse.hpp>
 #include <boost/numeric/ublas/io.hpp>
 
 using namespace boost::numeric::ublas;
@@ -25,20 +26,15 @@ public:
     double& get_springEnergy();
     
 private:
-    
-    /* Private functions.*/
-    
-    /* Q_shift is updated after calling this function*/
-    void update_Q_shift(const vector<double> &Q);
-    
+        
     /* Private data. */
     const int num_beads; //number of beads
     const double mass; //mass
     const double beta_num_beads; //beta/num_beads
     const double preFactor; // mass/(2.0 * beta_num_beads^(2))
     double energy; //spring energy
-    vector<double> Q_shift; //vector of bead positions with each index shifted by one
-    vector<double> Q_diff; //Q - Q_shift
+    vector<double> Q_diff; //Qi - Qi+1
+    mapped_matrix<double> W; //matrix used to calculate spring energy
 };
 
 #endif

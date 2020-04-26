@@ -239,18 +239,18 @@ CMakeFiles/mavaric.dir/src/equilibrium/Sampling_MTS.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mavaric.dir/src/equilibrium/Sampling_MTS.cpp.s"
 	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/equilibrium/Sampling_MTS.cpp -o CMakeFiles/mavaric.dir/src/equilibrium/Sampling_MTS.cpp.s
 
-CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.o: CMakeFiles/mavaric.dir/flags.make
-CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.o: ../src/equilibrium/MonteCarlo_MTSastra.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.o"
-	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/equilibrium/MonteCarlo_MTSastra.cpp
+CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.o: CMakeFiles/mavaric.dir/flags.make
+CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.o: ../src/equilibrium/MonteCarlo_MTS.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/equilibrium/MonteCarlo_MTS.cpp
 
-CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.i"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/equilibrium/MonteCarlo_MTSastra.cpp > CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.i
+CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.i"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/equilibrium/MonteCarlo_MTS.cpp > CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.i
 
-CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.s"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/equilibrium/MonteCarlo_MTSastra.cpp -o CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.s
+CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.s"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/equilibrium/MonteCarlo_MTS.cpp -o CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.s
 
 CMakeFiles/mavaric.dir/src/forces/dCdelec.cpp.o: CMakeFiles/mavaric.dir/flags.make
 CMakeFiles/mavaric.dir/src/forces/dCdelec.cpp.o: ../src/forces/dCdelec.cpp
@@ -580,7 +580,7 @@ mavaric_OBJECTS = \
 "CMakeFiles/mavaric.dir/src/equilibrium/MVRPMD_Estimator.cpp.o" \
 "CMakeFiles/mavaric.dir/src/equilibrium/MVRPMD_MTS_Estimator.cpp.o" \
 "CMakeFiles/mavaric.dir/src/equilibrium/Sampling_MTS.cpp.o" \
-"CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.o" \
+"CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.o" \
 "CMakeFiles/mavaric.dir/src/forces/dCdelec.cpp.o" \
 "CMakeFiles/mavaric.dir/src/forces/dM_Matrix_dQ.cpp.o" \
 "CMakeFiles/mavaric.dir/src/forces/dM_Matrix_MTS_dQ.cpp.o" \
@@ -623,7 +623,7 @@ mavaric_EXTERNAL_OBJECTS =
 ../mavaric: CMakeFiles/mavaric.dir/src/equilibrium/MVRPMD_Estimator.cpp.o
 ../mavaric: CMakeFiles/mavaric.dir/src/equilibrium/MVRPMD_MTS_Estimator.cpp.o
 ../mavaric: CMakeFiles/mavaric.dir/src/equilibrium/Sampling_MTS.cpp.o
-../mavaric: CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.o
+../mavaric: CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.o
 ../mavaric: CMakeFiles/mavaric.dir/src/forces/dCdelec.cpp.o
 ../mavaric: CMakeFiles/mavaric.dir/src/forces/dM_Matrix_dQ.cpp.o
 ../mavaric: CMakeFiles/mavaric.dir/src/forces/dM_Matrix_MTS_dQ.cpp.o

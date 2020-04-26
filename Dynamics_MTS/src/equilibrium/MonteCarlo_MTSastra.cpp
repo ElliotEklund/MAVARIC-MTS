@@ -127,35 +127,36 @@ void MonteCarlo_MTSastra::runSimulation(){
 void MonteCarlo_MTSastra::sample_nuc(){
 
     int mcMove = 0;
-
+    
     /* Propose new nuclear moves.*/
     for (int i=0; i<num_beads; i++) {
         mcMove = rand_nuc_bead(myRand.int64());
         Q_prop(mcMove) = Q(mcMove) + nuc_dist(myRand.doub());
+        
+        double energ_prop = H_MTS.get_energy(Q_prop,x,p);
+        double esti_prop = Esti_MTS.get_estimator();
+        int sgn_prop = thetaMTS.get_signTheta();
+        
+        /* Accept new system moves if energ_prop < energy*/
+        if(energ_prop < energy){
+            Q = Q_prop;
+            energy = energ_prop;
+            estimator = esti_prop;
+            sgn_theta = sgn_prop;
+            sys_steps_accpt += 1;
+        }
+        
+        /* Accept new system moves if inequality is met*/
+        else if (myRand.doub() <= exp(-beta_num_beads * (energ_prop - energy))){
+            Q = Q_prop;
+            energy = energ_prop;
+            estimator = esti_prop;
+            sgn_theta = sgn_prop;
+            sys_steps_accpt += 1;
+        }
+        else{Q_prop = Q;}
+        
     }
-
-    double energ_prop = H_MTS.get_energy(Q_prop,x,p);
-    double esti_prop = Esti_MTS.get_estimator();
-    int sgn_prop = thetaMTS.get_signTheta();
-
-    /* Accept new system moves if energ_prop < energy*/
-    if(energ_prop < energy){
-        Q = Q_prop;
-        energy = energ_prop;
-        estimator = esti_prop;
-        sgn_theta = sgn_prop;
-        sys_steps_accpt += 1;
-    }
-
-    /* Accept new system moves if inequality is met*/
-    else if (myRand.doub() <= exp(-beta_num_beads * (energ_prop - energy))){
-        Q = Q_prop;
-        energy = energ_prop;
-        estimator = esti_prop;
-        sgn_theta = sgn_prop;
-        sys_steps_accpt += 1;
-    }
-    else{Q_prop = Q;}
 
     sys_steps += 1;
 }
@@ -163,44 +164,44 @@ void MonteCarlo_MTSastra::sample_nuc(){
 void MonteCarlo_MTSastra::sample_elec(){
 
     int mcMove = 0;
-
+    
     //Propose new electronic moves.
     for (int bead=0; bead<elec_beads; bead++) {
         mcMove = rand_elec_bead(myRand.int64());
-
+        
         for(int state=0; state<num_states; state++){
             x_prop(mcMove,state) = x(mcMove,state) + elec_dist(myRand.doub());
             p_prop(mcMove,state) = p(mcMove,state) + elec_dist(myRand.doub());
         }
-    }
-
-    double energ_prop = H_MTS.get_energy(Q,x_prop,p_prop);
-    double esti_prop = Esti_MTS.get_estimator();
-    int sgn_prop = thetaMTS.get_signTheta();
-
-    /* Accept new electronic move if energ_prop < energy */
-    if(energ_prop < energy){
-        x = x_prop;
-        p = p_prop;
-        energy = energ_prop;
-        estimator = esti_prop;
-        sgn_theta = sgn_prop;
-        elec_steps_accpt += 1;
-    }
-
-    /* Accept new system moves if inequality is met*/
-    else if (myRand.doub() <= exp(-beta_num_beads * (energ_prop - energy))){
-        x = x_prop;
-        p = p_prop;
-        energy = energ_prop;
-        estimator = esti_prop;
-        sgn_theta = sgn_prop;
-        elec_steps_accpt += 1;
-    }
-
-    else{
-        x_prop = x;
-        p_prop = p;
+        
+        double energ_prop = H_MTS.get_energy(Q,x_prop,p_prop);
+        double esti_prop = Esti_MTS.get_estimator();
+        int sgn_prop = thetaMTS.get_signTheta();
+        
+        /* Accept new electronic move if energ_prop < energy */
+        if(energ_prop < energy){
+            x = x_prop;
+            p = p_prop;
+            energy = energ_prop;
+            estimator = esti_prop;
+            sgn_theta = sgn_prop;
+            elec_steps_accpt += 1;
+        }
+        
+        /* Accept new system moves if inequality is met*/
+        else if (myRand.doub() <= exp(-beta_num_beads * (energ_prop - energy))){
+            x = x_prop;
+            p = p_prop;
+            energy = energ_prop;
+            estimator = esti_prop;
+            sgn_theta = sgn_prop;
+            elec_steps_accpt += 1;
+        }
+        
+        else{
+            x_prop = x;
+            p_prop = p;
+        }
     }
 
     elec_steps += 1;

@@ -1,7 +1,7 @@
 #ifndef GAMMA_H
 #define GAMMA_H
 
-Doub gammln(const Doub xx) {
+inline Doub gammln(const Doub xx) {
 	Int j;
 	Doub x,tmp,y,ser;
 	static const Doub cof[14]={57.1562356658629235,-59.5979603554754912,
@@ -17,7 +17,7 @@ Doub gammln(const Doub xx) {
 	for (j=0;j<14;j++) ser += cof[j]/++y;
 	return tmp+log(2.5066282746310005*ser/x);
 }
-Doub factrl(const Int n) {
+inline Doub factrl(const Int n) {
 	static VecDoub a(171);
 	static Bool init=true;
 	if (init) {
@@ -28,7 +28,7 @@ Doub factrl(const Int n) {
 	if (n < 0 || n > 170) throw("factrl out of range");
 	return a[n];
 }
-Doub factln(const Int n) {
+inline Doub factln(const Int n) {
 	static const Int NTOP=2000;
 	static VecDoub a(NTOP);
 	static Bool init=true;
@@ -40,12 +40,12 @@ Doub factln(const Int n) {
 	if (n < NTOP) return a[n];
 	return gammln(n+1.);
 }
-Doub bico(const Int n, const Int k) {
+inline Doub bico(const Int n, const Int k) {
 	if (n<0 || k<0 || k>n) throw("bad args in bico");
 	if (n<171) return floor(0.5+factrl(n)/(factrl(k)*factrl(n-k)));
 	return floor(0.5+exp(factln(n)-factln(k)-factln(n-k)));
 }
-Doub beta(const Doub z, const Doub w) {
+inline Doub beta(const Doub z, const Doub w) {
 	return exp(gammln(z)+gammln(w)-gammln(z+w));
 }
 

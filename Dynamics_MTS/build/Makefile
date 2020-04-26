@@ -366,32 +366,32 @@ src/equilibrium/MonteCarloHelper.cpp.s:
 	$(MAKE) -f CMakeFiles/mavaric.dir/build.make CMakeFiles/mavaric.dir/src/equilibrium/MonteCarloHelper.cpp.s
 .PHONY : src/equilibrium/MonteCarloHelper.cpp.s
 
-src/equilibrium/MonteCarlo_MTSastra.o: src/equilibrium/MonteCarlo_MTSastra.cpp.o
+src/equilibrium/MonteCarlo_MTS.o: src/equilibrium/MonteCarlo_MTS.cpp.o
 
-.PHONY : src/equilibrium/MonteCarlo_MTSastra.o
+.PHONY : src/equilibrium/MonteCarlo_MTS.o
 
 # target to build an object file
-src/equilibrium/MonteCarlo_MTSastra.cpp.o:
-	$(MAKE) -f CMakeFiles/mavaric.dir/build.make CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.o
-.PHONY : src/equilibrium/MonteCarlo_MTSastra.cpp.o
+src/equilibrium/MonteCarlo_MTS.cpp.o:
+	$(MAKE) -f CMakeFiles/mavaric.dir/build.make CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.o
+.PHONY : src/equilibrium/MonteCarlo_MTS.cpp.o
 
-src/equilibrium/MonteCarlo_MTSastra.i: src/equilibrium/MonteCarlo_MTSastra.cpp.i
+src/equilibrium/MonteCarlo_MTS.i: src/equilibrium/MonteCarlo_MTS.cpp.i
 
-.PHONY : src/equilibrium/MonteCarlo_MTSastra.i
+.PHONY : src/equilibrium/MonteCarlo_MTS.i
 
 # target to preprocess a source file
-src/equilibrium/MonteCarlo_MTSastra.cpp.i:
-	$(MAKE) -f CMakeFiles/mavaric.dir/build.make CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.i
-.PHONY : src/equilibrium/MonteCarlo_MTSastra.cpp.i
+src/equilibrium/MonteCarlo_MTS.cpp.i:
+	$(MAKE) -f CMakeFiles/mavaric.dir/build.make CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.i
+.PHONY : src/equilibrium/MonteCarlo_MTS.cpp.i
 
-src/equilibrium/MonteCarlo_MTSastra.s: src/equilibrium/MonteCarlo_MTSastra.cpp.s
+src/equilibrium/MonteCarlo_MTS.s: src/equilibrium/MonteCarlo_MTS.cpp.s
 
-.PHONY : src/equilibrium/MonteCarlo_MTSastra.s
+.PHONY : src/equilibrium/MonteCarlo_MTS.s
 
 # target to generate assembly for a file
-src/equilibrium/MonteCarlo_MTSastra.cpp.s:
-	$(MAKE) -f CMakeFiles/mavaric.dir/build.make CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTSastra.cpp.s
-.PHONY : src/equilibrium/MonteCarlo_MTSastra.cpp.s
+src/equilibrium/MonteCarlo_MTS.cpp.s:
+	$(MAKE) -f CMakeFiles/mavaric.dir/build.make CMakeFiles/mavaric.dir/src/equilibrium/MonteCarlo_MTS.cpp.s
+.PHONY : src/equilibrium/MonteCarlo_MTS.cpp.s
 
 src/equilibrium/Sampling_MTS.o: src/equilibrium/Sampling_MTS.cpp.o
 
@@ -1212,9 +1212,9 @@ help:
 	@echo "... src/equilibrium/MonteCarloHelper.o"
 	@echo "... src/equilibrium/MonteCarloHelper.i"
 	@echo "... src/equilibrium/MonteCarloHelper.s"
-	@echo "... src/equilibrium/MonteCarlo_MTSastra.o"
-	@echo "... src/equilibrium/MonteCarlo_MTSastra.i"
-	@echo "... src/equilibrium/MonteCarlo_MTSastra.s"
+	@echo "... src/equilibrium/MonteCarlo_MTS.o"
+	@echo "... src/equilibrium/MonteCarlo_MTS.i"
+	@echo "... src/equilibrium/MonteCarlo_MTS.s"
 	@echo "... src/equilibrium/Sampling_MTS.o"
 	@echo "... src/equilibrium/Sampling_MTS.i"
 	@echo "... src/equilibrium/Sampling_MTS.s"

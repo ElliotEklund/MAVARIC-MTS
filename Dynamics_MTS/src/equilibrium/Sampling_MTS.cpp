@@ -51,13 +51,15 @@ void Sampling_MTS::runSimulation(){
         
     for (int sample=0; sample<num_samples; sample++) {
         for (int step=0; step<decor_len; step++) {
-            if(unif_1(mt) > 0.5){
-                //Sample nuclear coordinates
-                sample_nuc();
-            }
-            else{
-                //Sample electronic coordinates
-                sample_elec();
+            for (int m_type=0; m_type<2; m_type++) {
+                if(unif_1(mt) > 0.5){
+                    //Sample nuclear coordinates
+                    sample_nuc();
+                }
+                else{
+                    //Sample electronic coordinates
+                    sample_elec();
+                }
             }
         }
 
@@ -94,29 +96,29 @@ void Sampling_MTS::runSimulation(){
 void Sampling_MTS::sample_nuc(){
 
     int mcMove = 0;
-
+    
     /* Propose new nuclear moves.*/
     for (int i=0; i<num_beads; i++) {
         mcMove = rand_bead(mt);
         Q_prop(mcMove) = Q(mcMove) + nuc_dist(mt);
+        
+        double energ_prop = H_MTS.get_energy(Q_prop,x,p);
+        
+        /* Accept new system moves if energ_prop < energy*/
+        if(energ_prop < energy){
+            Q = Q_prop;
+            energy = energ_prop;
+            sys_steps_accpt += 1;
+        }
+        
+        /* Accept new system moves if inequality is met*/
+        else if (unif_1(mt) <= exp(-beta_num_beads * (energ_prop - energy))){
+            Q = Q_prop;
+            energy = energ_prop;
+            sys_steps_accpt += 1;
+        }
+        else{Q_prop = Q;}
     }
-
-    double energ_prop = H_MTS.get_energy(Q_prop,x,p);
-
-    /* Accept new system moves if energ_prop < energy*/
-    if(energ_prop < energy){
-        Q = Q_prop;
-        energy = energ_prop;
-        sys_steps_accpt += 1;
-    }
-
-    /* Accept new system moves if inequality is met*/
-    else if (unif_1(mt) <= exp(-beta_num_beads * (energ_prop - energy))){
-        Q = Q_prop;
-        energy = energ_prop;
-        sys_steps_accpt += 1;
-    }
-    else{Q_prop = Q;}
 
     sys_steps += 1;
 }
@@ -124,40 +126,40 @@ void Sampling_MTS::sample_nuc(){
 void Sampling_MTS::sample_elec(){
 
     int mcMove = 0;
-
+    
     //Propose new electronic moves.
     for (int bead=0; bead<elec_beads; bead++) {
         mcMove = rand_elec_bead(mt);
-
+        
         for(int state=0; state<num_states; state++){
             x_prop(mcMove,state) = x(mcMove,state) + elec_dist(mt);
             p_prop(mcMove,state) = p(mcMove,state) + elec_dist(mt);
         }
+        
+        double energ_prop = H_MTS.get_energy(Q,x_prop,p_prop);
+        
+        /* Accept new electronic move if energ_prop < energy */
+        if(energ_prop < energy){
+            x = x_prop;
+            p = p_prop;
+            energy = energ_prop;
+            elec_steps_accpt += 1;
+        }
+        
+        /* Accept new system moves if inequality is met*/
+        else if (unif_1(mt) <= exp(-beta_num_beads * (energ_prop - energy))){
+            x = x_prop;
+            p = p_prop;
+            energy = energ_prop;
+            elec_steps_accpt += 1;
+        }
+        
+        else{
+            x_prop = x;
+            p_prop = p;
+        }
     }
-
-    double energ_prop = H_MTS.get_energy(Q,x_prop,p_prop);
-
-    /* Accept new electronic move if energ_prop < energy */
-    if(energ_prop < energy){
-        x = x_prop;
-        p = p_prop;
-        energy = energ_prop;
-        elec_steps_accpt += 1;
-    }
-
-    /* Accept new system moves if inequality is met*/
-    else if (unif_1(mt) <= exp(-beta_num_beads * (energ_prop - energy))){
-        x = x_prop;
-        p = p_prop;
-        energy = energ_prop;
-        elec_steps_accpt += 1;
-    }
-
-    else{
-        x_prop = x;
-        p_prop = p;
-    }
-
+    
     elec_steps += 1;
 }
 

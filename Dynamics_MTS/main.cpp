@@ -7,12 +7,13 @@
 
 #ifdef MAC
 #include "MonteCarlo_MTS.hpp"
+#include "Sampling_MTS.hpp"
 #endif
 
 #ifdef ASTRA
 #include "MonteCarlo_MTSastra.hpp"
+#include "Sampling_MTSastra.hpp"
 #endif
-//#include "Sampling_MTS.hpp"
 
 int main(int argc, char ** argv) {
     
@@ -187,15 +188,22 @@ int main(int argc, char ** argv) {
             std::cout << std::endl;
         }
 
-     //   Sampling_MTS mySamp(my_id,num_procs,root_process,nuc_beads,elec_beads,
-     //                       mass,num_states,beta_nuc,beta_elec,nuc_ss,elec_ss,root);
+        #ifdef MAC
+        Sampling_MTS mySamp(my_id,num_procs,root_process,nuc_beads,elec_beads,
+                            mass,num_states,beta_nuc,beta_elec,nuc_ss,elec_ss,root);
+        #endif
+        
+        #ifdef ASTRA
+        Sampling_MTSastra mySamp(my_id,num_procs,root_process,nuc_beads,elec_beads,
+                            mass,num_states,beta_nuc,beta_elec,nuc_ss,elec_ss,root);
+        #endif
 
-     //   mySamp.set_decor_len(decor_len);
-     //   mySamp.set_num_samples(num_trajs);
+        mySamp.set_decor_len(decor_len);
+        mySamp.set_num_samples(num_trajs);
 
         clock_t start = clock();
 
-      //  mySamp.runSimulation();
+        mySamp.runSimulation();
 
         clock_t end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);

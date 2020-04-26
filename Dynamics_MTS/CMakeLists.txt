@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-set(MACHINE "ASTRA")
+set(MACHINE "MAC")
 
 set(ROOT_MAC "/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS")
 set(ROOT_LIN "/home/elliot/Desktop")
@@ -125,7 +125,7 @@ elseif(${MACHINE} STREQUAL "ASTRA")
         ${EQUILIBRIUM_DIR}/MonteCarloHelper.cpp
         ${EQUILIBRIUM_DIR}/MVRPMD_Estimator.cpp
         ${EQUILIBRIUM_DIR}/MVRPMD_MTS_Estimator.cpp
-        ${EQUILIBRIUM_DIR}/Sampling_MTS.cpp
+        ${EQUILIBRIUM_DIR}/Sampling_MTSastra.cpp
         ${EQUILIBRIUM_DIR}/MonteCarlo_MTSastra.cpp
 
         #forces directory

@@ -1,11 +1,11 @@
 #include <iostream>
 
-//#define TEST
+#include "nr3.h"
+#include "gamma.h"
 
 int main(){
 
-    #ifdef TEST
     std::cout << "Hi" << std::endl;
-    #endif
+
     return 0;
 }

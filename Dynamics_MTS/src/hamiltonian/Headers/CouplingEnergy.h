@@ -4,6 +4,7 @@
 #include <boost/numeric/ublas/vector.hpp>
 #include <boost/numeric/ublas/matrix.hpp>
 #include <boost/numeric/ublas/matrix_proxy.hpp>
+#include <boost/numeric/ublas/matrix_sparse.hpp>
 #include <boost/numeric/ublas/io.hpp>
 #include <boost/numeric/ublas/storage.hpp>
 
@@ -15,8 +16,8 @@ class CouplingEnergy{
     
 public:
     
-    CouplingEnergy(int bath_modes, int num_beads, double mass,
-                   vector<double> cs, vector<double> ws);
+    CouplingEnergy(int bath_modes, int sys_beads, int bath_beads,
+                   double mass, vector<double> cs, vector<double> ws);
     
     /* Update energy to reflect the state of Q and Q_bath.
      Q is a vector of bead positions corresponding the system.
@@ -50,16 +51,23 @@ private:
     
     /* Private data. */
     int bath_modes; //number of bath modes
-    int num_beads; //number of ring polymer beads
+    int sys_beads; //number of syste ring polymer beads
+    int bath_beads; //number of bath ring polymer beads
+    int r; //sys_beads/bath_beads
     double mass; //bath mass
     double energy; //coupling energy
     vector<double> cs; //bath coupling strengths
     vector<double> ws; //bath mode frequencies
-    
     vector<double> wwm; //ws*ws*mass; used for optimization
     vector<double> c_wwm; // cs/(mass*ws*ws); used for optimization
-    
-    vector<double> diff_sq; // (Q_bath[i] - Q)^2; intermediate value
+    mapped_matrix<double> W; //matrix used to calculate coupling energy
+    vector<double> ones_bath_beads; //unit vector of length num_beads
+    vector<double> Q_sub; //result of matrix product of W and Q
+    matrix<double> cQ_sub; //result of outter product of Q_sub x c_wwm
+    matrix<double> dif;
+    matrix<double> dif_sq; //result of squaring each element in dif
+    vector<double> sum_dif_sq; //result of summing across columns of dif_sq
+
 };
 
 #endif

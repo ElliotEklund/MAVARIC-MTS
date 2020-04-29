@@ -3,5 +3,5 @@ MC Moves:1e5
 Estimator Rate:1e3
 Save PSV:1
 Save MC Data:1
-Read PSV:0
-Read MC Data:0
+Read PSV:1
+Read MC Data:1

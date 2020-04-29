@@ -18,9 +18,9 @@ double MVRPMD_Hamiltonian::get_energy(const vector<double> &Q,const matrix<doubl
     double V0_temp = V0->get_V0(Q);
     double G_temp = G->get_gTerm(x, p);
     double theta_temp = theta->get_theta(Q, x, p);
-    double energy = V_spring_temp + V0_temp + one_beta_num_beads*(G_temp - log(abs(theta_temp)));
+    double energy = V_spring_temp + V0_temp + one_beta_num_beads*(G_temp - log(fabs(theta_temp)));
     
-    return V_spring_temp + V0_temp + one_beta_num_beads*(G_temp - log(abs(theta_temp)));
+    return V_spring_temp + V0_temp + one_beta_num_beads*(G_temp - log(fabs(theta_temp)));
 }
 
 double MVRPMD_Hamiltonian::get_energy(){
@@ -30,5 +30,5 @@ double MVRPMD_Hamiltonian::get_energy(){
     double G_temp = G->get_gTerm();
     double theta_temp = theta->get_theta();
         
-    return V_spring_temp + V0_temp + one_beta_num_beads*(G_temp - log(abs(theta_temp)));
+    return V_spring_temp + V0_temp + one_beta_num_beads*(G_temp - log(fabs(theta_temp)));
 }

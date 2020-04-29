@@ -75,6 +75,7 @@ if(${MACHINE} STREQUAL "MAC")
         ${EQUILIBRIUM_DIR}/MVRPMD_MTS_Estimator.cpp
         ${EQUILIBRIUM_DIR}/Sampling_MTS.cpp
         ${EQUILIBRIUM_DIR}/MonteCarlo_MTS.cpp
+        ${EQUILIBRIUM_DIR}/decorrelation.cpp
 
         #forces directory
         ${FORCES_DIR}/dCdelec.cpp
@@ -101,6 +102,7 @@ if(${MACHINE} STREQUAL "MAC")
         ${HAMILTONIAN_DIR}/StateIndepPot.cpp
         ${HAMILTONIAN_DIR}/Theta_MTS.cpp
         ${HAMILTONIAN_DIR}/Theta.cpp
+        ${HAMILTONIAN_DIR}/RPMD_B_Hamiltonian.cpp
 
         #misc directory
         ${MISC_DIR}/MainHlpr.cpp
@@ -121,7 +123,6 @@ elseif(${MACHINE} STREQUAL "ASTRA")
         ${EQUILIBRIUM_DIR}/dM_Matrix_MTS_dBeta.cpp
         ${EQUILIBRIUM_DIR}/dTheta_dBeta.cpp
         ${EQUILIBRIUM_DIR}/dTheta_MTS_dBeta.cpp
-        ${EQUILIBRIUM_DIR}/MonteCarlo.cpp
         ${EQUILIBRIUM_DIR}/MonteCarloHelper.cpp
         ${EQUILIBRIUM_DIR}/MVRPMD_Estimator.cpp
         ${EQUILIBRIUM_DIR}/MVRPMD_MTS_Estimator.cpp

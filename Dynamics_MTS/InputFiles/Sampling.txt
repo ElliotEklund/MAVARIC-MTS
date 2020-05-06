@@ -1,5 +1,5 @@
 Run Sampling:1
-Number of Trajectories:100
+Number of Trajectories:800
 Decorrelation Length:100
 Save Sampled Trajectories:1
 Histogram Positions:0

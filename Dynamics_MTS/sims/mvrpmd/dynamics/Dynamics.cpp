@@ -11,8 +11,10 @@ Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads,
      beta_nuc_beads(beta_nuc_beads),
      dt_is_set(false), total_time_is_set(false),
     
-     Q(num_trajs_local,zero_vector<double>(nuc_beads)),P(num_trajs_local,zero_vector<double>(nuc_beads)),
-     x(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),p(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
+     Q(num_trajs_local,zero_vector<double>(nuc_beads)),
+     P(num_trajs_local,zero_vector<double>(nuc_beads)),
+     x(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
+     p(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
 
      C(elec_beads, num_states), M(num_states, nuc_beads, beta_nuc_beads),
 
@@ -42,7 +44,7 @@ Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads,
     vector<double> x_local = zero_vector<double> (num_trajs_local*elec_beads*num_states);
     vector<double> p_local = zero_vector<double> (num_trajs_local*elec_beads*num_states);
     
-    std::string fileName = root + "/Results/Trajectories/";
+    std::string fileName = root + "Results/Trajectories/";
 
     /* Read in trajectories to global PSV vectors  */
     if(my_id == root_proc){
@@ -221,69 +223,109 @@ void Dynamics::energ_conserv(double tol, int energy_stride){
     
 }
 
-void Dynamics::PopAC(){
-
+void Dynamics::PopAC(bool pac, int pac_stride, bool bp, int bp_stride,
+                     bool sp, int sp_stride, bool wp, int wp_stride){
+    
     if (!total_time) {
         std::cout << "ERROR: total_time must be set before a simulation can be run." << std::endl;
     }
-    
-    PopulationEstimator popEsti(elec_beads,num_states);
-    
-    int data_count = int(total_time * 10); //resolution of data being sampled
-    int rate = num_steps/data_count;
-    double sgnTheta = 0;
-    double sgnTheta_total = 0;
-    int i_data = 0;
-    
-    matrix<double> PPt(data_count,num_states,0);
-    vector<double> pop_0(num_states,0); //PPt at t=0
-    vector<double> pop_t(num_states,0); //PPt at t=t
 
-    
     ABM_MVRPMD myABM(F,dt,num_states,nuc_beads,elec_beads);
-    
+
     vector<double> Q_traj (nuc_beads);
     vector<double> P_traj (nuc_beads);
     matrix<double> x_traj (elec_beads,num_states);
     matrix<double> p_traj (elec_beads,num_states);
-    
-    for (int traj=0; traj<num_trajs_local; traj++){
-        
+
+    aggregate myAggregator;
+    pop_estimators myPops(elec_beads,num_states);
+
+    vector<double> pac_v0, bp_v0, sp_v0, wp_v0;
+    vector<double> pac_v, bp_v, sp_v, wp_v;
+
+    if (pac){
+        myAggregator.add_calc("position",1,num_steps/pac_stride);
+        pac_v.resize(1);
+        pac_v0.resize(1);
+    }
+    if (bp){
+        myAggregator.add_calc("boltzman",num_states,num_steps/bp_stride);
+        bp_v.resize(num_states);
+        bp_v0.resize(num_states);
+    }
+    if (sp){
+        myAggregator.add_calc("semi_classic",num_states,num_steps/sp_stride);
+        sp_v.resize(num_states);
+        sp_v0.resize(num_states);
+    }
+    if (wp){
+        myAggregator.add_calc("wigner",num_states,num_steps/wp_stride);
+        wp_v.resize(num_states);
+        wp_v0.resize(num_states);
+    }
+
+    double sgnTheta = 0; //sign of Theta for a trajectory
+
+    for (int traj=0; traj<num_trajs_local; traj++) {
         /* Load new trajecty*/
         Q_traj = Q(traj);
         P_traj = P(traj);
         x_traj = x(traj);
         p_traj = p(traj);
-        
-        myABM.initialize_rk4(Q_traj, P_traj, x_traj, p_traj);
-        
-        sgnTheta = F.get_sgnTheta(Q_traj,x_traj,p_traj);
-        sgnTheta_total += sgnTheta;
 
-        popEsti.update_populations(x_traj,p_traj);
-        pop_0 = popEsti.get_pop();
-        row(PPt,0) += element_prod(pop_0,pop_0)*sgnTheta;
-        pop_0 = pop_0*sgnTheta;
-        
-        i_data = 1;
-        
+        myABM.initialize_rk4(Q_traj, P_traj, x_traj, p_traj);
+
+        sgnTheta = F.get_sgnTheta(Q_traj,x_traj,p_traj);
+
+        if (pac){
+            pac_v0(0) = compute_centroid(Q_traj);
+            myAggregator.collect("position",0,pac_v0,pac_v,sgnTheta);
+        }
+//        if (bp){
+//
+//        }
+        if (sp){
+            sp_v0 = myPops.sc(x_traj,p_traj);
+            myAggregator.collect("semi_classic",0,sp_v0,sp_v,sgnTheta);
+        }
+        if (wp){
+            wp_v0 = myPops.wigner(x_traj,p_traj);
+            myAggregator.collect("wigner",0,wp_v0,wp_v,sgnTheta);
+        }
+
         for (int step=1; step<num_steps; step++) {
-            
+
             myABM.take_step(Q_traj, P_traj, x_traj, p_traj);
-            
-            if(step%rate == 0){
-                
-                popEsti.update_populations(x_traj,p_traj);
-                pop_t = popEsti.get_pop();
-                row(PPt,i_data) += element_prod(pop_0,pop_t);
-                
-                i_data += 1;
+
+            if (pac){
+                if (step % pac_stride == 0) {
+                    pac_v(0) = compute_centroid(Q_traj);
+                    myAggregator.collect("position",step/sp_stride,pac_v0,pac_v,sgnTheta);
+                }
+            }
+//
+//            //            if (bp){
+//            //                myAggregator.add_calc("boltzman",num_states,  );
+//            //            }
+//
+//
+            if (sp){
+                if (step % sp_stride == 0) {
+                    sp_v = myPops.sc(x_traj,p_traj);
+                    myAggregator.collect("semi_classic",step/sp_stride,sp_v0,sp_v,sgnTheta);
+                }
+            }
+            if (wp){
+                if (step % wp_stride == 0) {
+                    wp_v = myPops.wigner(x_traj,p_traj);
+                    myAggregator.collect("wigner",step/wp_stride,wp_v0,wp_v,sgnTheta);
+                }
             }
         }
     }
-    
-    PPt = PPt/sgnTheta_total;
-    popEsti.write_populations(PPt,dt,data_count,rate,root);
+
+    std::string fileName = root + "Results/";
+    myAggregator.merge_collections(root_proc,my_id,fileName);
 }
 
 void Dynamics::write_broken(std::list<int> broken,std::string file_root){
@@ -292,7 +334,7 @@ void Dynamics::write_broken(std::list<int> broken,std::string file_root){
     quick_convert << my_id;
     
     std::string file_name = file_root + "/Results/broken" + quick_convert.str();
-
+    
     std::ofstream myFile;
     myFile.open(file_name.c_str());
     
@@ -435,59 +477,4 @@ void Dynamics::format_array(vector<matrix<double> > &X, vector<double> &X_local)
             }
         }
     }
-}
-
-/* Functions used of debugging. Will be removed in final version*/
-
-void Dynamics::write_Q(std::ofstream &myStream, double step, vector<double> &Q){
-
-  myStream << step << " ";
-
-  for(int bead=0; bead<nuc_beads; bead++){
-      myStream << Q[bead] << " ";
-  }
-
-  myStream << std::endl;
-
-}
-
-void Dynamics::write_P(std::ofstream &myStream, double step, vector<double> &P){
-
-  myStream << step << " ";
-
-  for(int bead=0; bead<nuc_beads; bead++){
-      myStream << P[bead] << " ";
-  }
-
-  myStream << std::endl;
-
-}
-
-void Dynamics::write_x(std::ofstream &myStream, double step, matrix<double> &x){
-
-  myStream << step << " ";
-
-
-  for(int bead=0; bead<nuc_beads; bead++){
-      for(int state=0; state<num_states; state++){
-          myStream << x(bead,state) << " ";
-      }
-  }
-
-  myStream << std::endl;
-
-}
-
-void Dynamics::write_p(std::ofstream &myStream, double step, matrix<double> &p){
-
-  myStream << step << " ";
-
-  for(int bead=0; bead<nuc_beads; bead++){
-      for(int state=0; state<num_states; state++){
-          myStream << p(bead,state) << " ";
-      }
-  }
-
-  myStream << std::endl;
-
 }

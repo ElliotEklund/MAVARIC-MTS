@@ -1,0 +1,20 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/test.dir/MainHlpr.cpp.o"
+  "CMakeFiles/test.dir/PopulationEstimator.cpp.o"
+  "CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.o"
+  "CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.o"
+  "CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.o"
+  "CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.o"
+  "CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.o"
+  "CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.o"
+  "CMakeFiles/test.dir/aggregate.cpp.o"
+  "CMakeFiles/test.dir/pop_estimators.cpp.o"
+  "CMakeFiles/test.dir/test.cpp.o"
+  "test"
+  "test.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/test.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

@@ -4,8 +4,8 @@
 #include <boost/numeric/ublas/vector.hpp>
 #include <boost/numeric/ublas/io.hpp>
 #include <boost/numeric/ublas/matrix.hpp>
-#include <boost/numeric/ublas/io.hpp>
 #include <boost/numeric/ublas/matrix_proxy.hpp>
+#include <boost/numeric/ublas/matrix_sparse.hpp>
 
 using namespace boost::numeric::ublas;
 
@@ -18,6 +18,8 @@ public:
     /* Return the derivative of the spring term w.r.t to Q*/
     const vector<double> & get_dSpring_dQ(const vector<double> &Q);
     
+    const vector<double> & get_dSpring_dQ2(const vector<double> &Q);
+    
 private:
     
     /* Private Data. */
@@ -25,6 +27,8 @@ private:
     int nuc_beads; //number of nuclear beads
     double mass; //system mass
     double coeff; //mass/(beta_nuc_beads^2)
+    
+    mapped_matrix<double> W; //matrix used to calculate coupling energy
     
     vector<double> force;
     

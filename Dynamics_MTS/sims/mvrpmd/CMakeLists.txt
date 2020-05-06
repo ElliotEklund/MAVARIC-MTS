@@ -35,6 +35,7 @@ if(${MACHINE} STREQUAL "MAC")
         ${EQUILIBRIUM_DIR}/MonteCarlo.cpp
         ${EQUILIBRIUM_DIR}/MonteCarloHelper.cpp
         ${EQUILIBRIUM_DIR}/MonteCarlo_MTS.cpp
+        ${EQUILIBRIUM_DIR}/input_mvrpmd.cpp
 
         #sampling directory
         ${SAMPLING_DIR}/Sampling_MTS.cpp
@@ -82,6 +83,8 @@ if(${MACHINE} STREQUAL "MAC")
         ${MISC_DIR}/MainHlpr.cpp
         ${MISC_DIR}/PopulationEstimator.cpp
         ${MISC_DIR}/decorrelation.cpp
+        ${MISC_DIR}/pop_estimators.cpp
+        ${MISC_DIR}/aggregate.cpp
         ${MISC_DIR}/init_PAC.cpp)
 
 endif()

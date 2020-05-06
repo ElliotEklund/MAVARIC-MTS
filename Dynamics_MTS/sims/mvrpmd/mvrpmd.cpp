@@ -2,6 +2,8 @@
 #include <fstream>
 #include "mpi.h"
 
+#include "input_mvrpmd.hpp"
+
 #include "Dynamics.hpp"
 #include "MainHlpr.hpp"
 
@@ -14,7 +16,6 @@
 //#include "MonteCarlo_MTSastra.hpp"
 //#include "Sampling_MTSastra.hpp"
 //#endif
-
 
 int main(int argc, char ** argv) {
     
@@ -43,12 +44,12 @@ int main(int argc, char ** argv) {
     std::vector<double> Samp_parameters;
     std::vector<double> Dyn_parameters;
 
-    MainHlpr myHlpr;
+    input_mvrpmd myInput;
 
     std::string root = "/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/";
-    //std::string root = "/home/fs01/ece52/MAVARIC-MTS/Dynamics_MTS/";
-
-    int abort = myHlpr.input_file_handler(root,sys_parameters,elec_parameters,MC_parameters,
+//    //std::string root = "/home/fs01/ece52/MAVARIC-MTS/Dynamics_MTS/";
+//
+    int abort = myInput.input_file_handler(root,sys_parameters,elec_parameters,MC_parameters,
                                           Samp_parameters,Dyn_parameters);
 
     if (abort == -1){
@@ -252,7 +253,17 @@ int main(int argc, char ** argv) {
         }
 
         if(run_PopAC){
-            myDyn.PopAC();
+            bool pac = false;
+            bool bp = false;
+            bool sp = true;
+            bool wp = false;
+            
+            int pac_stride = 100;
+            int bp_stride = 100;
+            int sp_stride = 100;
+            int wp_stride = 100;
+
+            myDyn.PopAC(pac,pac_stride,bp,bp_stride,sp,sp_stride,wp,wp_stride);
         }
 
         if(run_init_PAC){

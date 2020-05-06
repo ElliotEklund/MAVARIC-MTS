@@ -20,8 +20,9 @@
 
 #include "Forces_MTS.hpp"
 #include "ABM_MVRPMD.hpp"
-#include "PopulationEstimator.hpp"
 #include "init_PAC.hpp"
+#include "aggregate.hpp"
+#include "pop_estimators.hpp"
 
 #include "MVRPMD_MTS_Hamiltonian.hpp"
 
@@ -54,7 +55,8 @@ public:
     void set_total_time(double total_timeIN);
     
     /* Compute population auto-correlation function*/
-    void PopAC();
+    void PopAC(bool pac, int pac_stride, bool bp, int bp_stride,
+               bool sp, int sp_stride, bool wp, int wp_stride);
     
     void compute_initPAC(int interval);
 
@@ -131,20 +133,6 @@ private:
     dTheta_MTS_dElec dThetadElec;
     
     Forces_MTS F;
-    
-    /* Functions used for debugging */
-    
-    /* Write all position variables of a given trajectory at time=step to file. */
-    void write_Q(std::ofstream &myStream, double step, vector<double> &Q);
-    
-    /* Write all momentum variables of a given trajectory at time=step to file. */
-    void write_P(std::ofstream &myStream, double step, vector<double> &P);
-    
-    /* Write all x mapping variables of a given trajectory at time=step to file. */
-    void write_x(std::ofstream &myStream, double step, matrix<double> &x);
-    
-    /* Write all p mapping variables of a given trajectory at time=step to file. */
-    void write_p(std::ofstream &myStream, double step, matrix<double> &p);
     
 };
 

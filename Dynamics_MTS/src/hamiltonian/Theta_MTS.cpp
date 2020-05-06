@@ -2,8 +2,9 @@
 
 Theta_MTS::Theta_MTS(int num_states, int elec_beads,
                      C_Matrix &C_In, M_Matrix_MTS &M_MTS_In)
-    :num_states(num_states),elec_beads(elec_beads),
-     gamma_mat(identity_matrix<std::complex<double> >(num_states))
+    :num_states(num_states),
+     elec_beads(elec_beads),
+     gamma_mat(identity_matrix<std::complex<double> > (num_states))
 
 {
     C = &C_In;

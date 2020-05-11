@@ -7,9 +7,14 @@ SpringEnergy::SpringEnergy(int num_beads, double mass, double beta_num_beads)
     preFactor(mass/(2.0*beta_num_beads*beta_num_beads)),
     W(num_beads,num_beads,2*num_beads)
 {
-    for (int i=0; i<num_beads; i++) {
-        W(i,i) = 1.0;
-        W(i,(i + 1)%num_beads) = - 1.0;
+    if (num_beads>1) {
+        for (int i=0; i<num_beads; i++) {
+            W(i,i) = 1.0;
+            W(i,(i + 1)%num_beads) = - 1.0;
+        }
+    }
+    else{
+        W(0,0) = 0.0;
     }
 }
 

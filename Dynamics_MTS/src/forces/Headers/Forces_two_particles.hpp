@@ -80,13 +80,13 @@ private:
     dSpring_dQ dVspring_dQ1;
     dSpring_dQ dVspring_dQ2;
     
-    vector<double> dVd0(const vector<double> &Q, double c);
+    vector<double> dV0_dQ1(const vector<double> &Q);
+    
+    vector<double> dV0_dQ2(const vector<double> &Q);
     
     vector<double> dV12_dQ1(const vector<double> &Q1,const vector<double> &Q2);
     
     vector<double> dV12_dQ2(const vector<double> &Q1,const vector<double> &Q2);
-
-
 
 
 };

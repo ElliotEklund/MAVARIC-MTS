@@ -23,12 +23,24 @@ two_particle_Hamiltonian::two_particle_Hamiltonian(int num_beads1, int num_beads
         }
     }
 }
-
 double inline two_particle_Hamiltonian::V01(const vector<double> &Q1){
-    return c1*inner_prod(Q1,Q1);
+    vector<double> QQ = element_prod(Q1,Q1);
+    vector<double> QQQ = element_prod(QQ,Q1);
+    vector<double> QQQQ = element_prod(QQQ,Q1);
+
+    double t_2 = sum(QQ);
+    double t_3 = sum(QQQ);
+    double t_4 = sum(QQQQ);
+
+    return (0.5*t_2 + 0.1*t_3 + 0.01*t_4)/num_beads1;
 }
 double inline two_particle_Hamiltonian::V02(const vector<double> &Q2){
-    return c2*inner_prod(Q2,Q2);
+    
+    vector<double> QQ = element_prod(Q2,Q2);
+    vector<double> QQQQ = element_prod(QQ,QQ);
+    double t_4 = sum(QQQQ);
+
+    return 0.25*t_4/num_beads2;
 }
 double inline two_particle_Hamiltonian::Vcouple(const vector<double> &Q1,const vector<double> &Q2){
     noalias(Q2_mapped) = prod(W,Q2);
@@ -41,13 +53,6 @@ double two_particle_Hamiltonian::get_energy(const vector<double> &Q1, const vect
     double E_V01 = V01(Q1);
     double E_V02 = V02(Q2);
     double E_coup = Vcouple(Q1,Q2);
-    
-    std::cout << E_spring1 << std::endl;
-    std::cout << E_spring2 << std::endl;
-    std::cout << E_V01 << std::endl;
-    std::cout << E_V02 << std::endl;
-    std::cout << E_coup << std::endl;
-    
     return E_spring1 + E_spring2 + E_V01 + E_V02 + E_coup;
 }
 //

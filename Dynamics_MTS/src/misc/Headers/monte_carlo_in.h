@@ -13,11 +13,11 @@
  Return 1 if no errors were found in MonteCarlo inputfile.
  Else, return 0.
  */
-inline int check_monte_carlo_in(std::string root, std::vector<double> &params){
+inline int check_monte_carlo_in(std::string fileName, std::vector<double> &params){
     
     int result = 0;
     std::ifstream myFile;
-    std::string fileName = root + "InputFiles/MonteCarlo.txt";
+    //std::string fileName = root + "InputFiles/MonteCarlo.txt";
     myFile.open(fileName.c_str());
     
     if(!myFile.is_open()) {

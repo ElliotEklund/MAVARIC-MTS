@@ -9,7 +9,7 @@ dSpring_dQ::dSpring_dQ(int nuc_beads,double mass, double beta_nuc_beads)
     for (int i=0; i<nuc_beads; i++) {
         W(i,i) = 2.0;
         W(i,(i+1)%nuc_beads) = -1.0;
-        W(i,(i-1)%nuc_beads) = -1.0;
+        W(i,(i+nuc_beads-1)%nuc_beads) = -1.0;
     }
 }
 

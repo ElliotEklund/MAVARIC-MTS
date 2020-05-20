@@ -1,0 +1,4 @@
+Mass:1
+NucBeads:4
+Temperature:0.125
+MC Step Size:1

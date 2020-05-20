@@ -1,0 +1,7 @@
+Run Sampling:1
+Number of Trajectories:1e4
+Decorrelation Length:1e3
+Save Sampled Trajectories:1
+Histogram Positions:0
+Number of Bins:300
+Read PSV:1

@@ -1,3 +1,0 @@
-/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/rebuild_cache.dir
-/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/edit_cache.dir
-/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/build/CMakeFiles/mavaric.dir

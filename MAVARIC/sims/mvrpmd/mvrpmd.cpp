@@ -6,17 +6,8 @@
 
 #include "Dynamics.hpp"
 #include "MainHlpr.hpp"
-
-#ifdef MAC
-#include "MonteCarlo_MTS.hpp"
 #include "sampling_mvrpmd.hpp"
-//#include "Sampling_MTS.hpp"
-#endif
-
-//#ifdef ASTRA
-//#include "MonteCarlo_MTSastra.hpp"
-//#include "Sampling_MTSastra.hpp"
-//#endif
+#include "equilib_mvrpmd.hpp"
 
 int main(int argc, char ** argv) {
     
@@ -129,23 +120,6 @@ int main(int argc, char ** argv) {
     beta = 1.0/temp;
     beta_nuc = beta/nuc_beads;
     beta_elec = beta/elec_beads;
-
-    
-    vector<double> Q(10,0);
-    double v_final [80];
-    int counts[num_procs];
-    int displs[num_procs];
-    int send_count = 10;
-    
-    for (int i=0; i<num_procs; i++) {
-        counts[i] = 10;
-        displs[i] = i * 10;
-    }
-    
-    
-    MPI_Gatherv(&Q(0), send_count, MPI_DOUBLE,
-                    &v_final[0], counts,displs, MPI_DOUBLE,
-                    root_process, MPI_COMM_WORLD);
     
 
                         /* END PROCESS 1 */
@@ -164,28 +138,15 @@ int main(int argc, char ** argv) {
             std::cout << std::endl;
         }
 
-        #ifdef MAC
-        MonteCarlo_MTS myMC_MTS(my_id,root_process,num_procs,nuc_beads,
-                                elec_beads,mass,num_states,
-                                beta_nuc,beta_elec,nuc_ss,elec_ss,root);
-        #endif
+        equilib_mvrpmd equilibrator(my_id,root_process,num_procs,root);
+        equilibrator.initialize_system(nuc_beads,elec_beads,num_states,
+                                       mass,beta);
 
-        #ifdef ASTRA
-        MonteCarlo_MTSastra myMC_MTS(my_id,root_process,num_procs,nuc_beads,
-                                     elec_beads,mass,num_states,
-                                beta_nuc,beta_elec,nuc_ss,elec_ss,root);
-        #endif
-
-        myMC_MTS.set_num_steps(num_steps);
-        myMC_MTS.set_esti_rate(esti_rate);
-        myMC_MTS.set_write_PSV(writePSV);
-        myMC_MTS.set_read_PSV(readPSV);
-        myMC_MTS.set_read_Data(readData);
-        myMC_MTS.set_write_Data(writeData);
+        equilibrator.initialize_files(writePSV,readPSV,writeData,readData);
 
         clock_t start = clock();
-
-        myMC_MTS.runSimulation();
+        
+        equilibrator.run(nuc_ss,elec_ss,elec_ss,num_steps,esti_rate);
 
         clock_t end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
@@ -211,19 +172,6 @@ int main(int argc, char ** argv) {
             std::cout << "Begin Sampling Simulation" << std::endl;
             std::cout << std::endl;
         }
-
-//        #ifdef MAC
-//        Sampling_MTS mySamp(my_id,num_procs,root_process,nuc_beads,elec_beads,
-//                            mass,num_states,beta_nuc,beta_elec,nuc_ss,elec_ss,root);
-//        #endif
-//
-//        #ifdef ASTRA
-//        Sampling_MTSastra mySamp(my_id,num_procs,root_process,nuc_beads,elec_beads,
-//                            mass,num_states,beta_nuc,beta_elec,nuc_ss,elec_ss,root);
-//        #endif
-
-//        mySamp.set_decor_len(decor_len);
-//        mySamp.set_num_samples(num_trajs);
         
         sampling_mvrpmd sampler(my_id,root_process,num_procs);
         sampler.initialize_system(nuc_beads,elec_beads,num_states,mass,beta);

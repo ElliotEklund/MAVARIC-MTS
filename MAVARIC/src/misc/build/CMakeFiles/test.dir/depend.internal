@@ -3,10 +3,10 @@
 
 CMakeFiles/test.dir/MainHlpr.cpp.o
  ../Headers/MainHlpr.hpp
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/MainHlpr.cpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp
 CMakeFiles/test.dir/PopulationEstimator.cpp.o
  ../Headers/PopulationEstimator.hpp
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/PopulationEstimator.cpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config.hpp
@@ -825,9 +825,9 @@ CMakeFiles/test.dir/PopulationEstimator.cpp.o
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/typeof/vector50.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/utility/enable_if.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/version.hpp
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.o
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/C_Matrix.h
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.o
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/C_Matrix.h
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config.hpp
@@ -1646,10 +1646,10 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/typeof/vector50.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/utility/enable_if.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/version.hpp
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.o
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/M_Matrix.h
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/StateDepPots.h
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.o
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/M_Matrix.h
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/StateDepPots.h
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config.hpp
@@ -2468,11 +2468,11 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/typeof/vector50.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/utility/enable_if.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/version.hpp
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.o
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/M_Matrix.h
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/M_Matrix_MTS.hpp
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/StateDepPots.h
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.o
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/M_Matrix.h
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/M_Matrix_MTS.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/StateDepPots.h
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config.hpp
@@ -3291,9 +3291,9 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/typeof/vector50.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/utility/enable_if.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/version.hpp
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.o
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/StateDepPots.h
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.o
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/StateDepPots.h
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config.hpp
@@ -4112,12 +4112,12 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/typeof/vector50.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/utility/enable_if.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/version.hpp
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.o
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/C_Matrix.h
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/M_Matrix.h
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/StateDepPots.h
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/Theta.h
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.o
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/C_Matrix.h
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/M_Matrix.h
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/StateDepPots.h
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/Theta.h
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config.hpp
@@ -4936,13 +4936,13 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/typeof/vector50.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/utility/enable_if.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/version.hpp
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.o
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/C_Matrix.h
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/M_Matrix.h
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/M_Matrix_MTS.hpp
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/StateDepPots.h
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers/Theta_MTS.hpp
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.o
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/C_Matrix.h
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/M_Matrix.h
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/M_Matrix_MTS.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/StateDepPots.h
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/Theta_MTS.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config.hpp
@@ -5763,7 +5763,7 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/version.hpp
 CMakeFiles/test.dir/aggregate.cpp.o
  ../Headers/aggregate.hpp
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/aggregate.cpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config.hpp
@@ -6582,7 +6582,7 @@ CMakeFiles/test.dir/aggregate.cpp.o
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/version.hpp
 CMakeFiles/test.dir/pop_estimators.cpp.o
  ../Headers/pop_estimators.hpp
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/pop_estimators.cpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config.hpp
@@ -7404,7 +7404,7 @@ CMakeFiles/test.dir/pop_estimators.cpp.o
 CMakeFiles/test.dir/test.cpp.o
  ../Headers/aggregate.hpp
  ../Headers/pop_estimators.hpp
- /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/test.cpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/test.cpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config.hpp

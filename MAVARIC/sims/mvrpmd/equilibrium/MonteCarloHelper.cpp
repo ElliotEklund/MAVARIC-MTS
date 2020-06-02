@@ -4,7 +4,6 @@ MonteCarloHelper::MonteCarloHelper(std::string root, int my_id, int num_procs, i
     :root(root), my_id(my_id),
      num_procs(num_procs), root_proc(root_proc)
 {}
-
 void MonteCarloHelper::print_sys_accpt(unsigned long long sys_steps,unsigned long long sys_steps_accpt){
     
     unsigned long long sys_steps_global = 0;
@@ -17,7 +16,6 @@ void MonteCarloHelper::print_sys_accpt(unsigned long long sys_steps,unsigned lon
         std::cout << "\t System Acceptance Ratio: " << 100*(double)sys_steps_accpt_global/sys_steps_global << std::endl;
     }
 }
-
 void MonteCarloHelper::print_elec_accpt(unsigned long long elec_steps, unsigned long long elec_steps_accpt){
    
     unsigned long long elec_steps_global = 0;
@@ -30,7 +28,6 @@ void MonteCarloHelper::print_elec_accpt(unsigned long long elec_steps, unsigned 
         std::cout << "\t Electronic Acceptance Ratio: " << 100*(double)elec_steps_accpt_global/elec_steps_global << std::endl;
     }
 }
-
 void MonteCarloHelper::print_avg_energy(double estimator_total, double sgn_total){
     
     double estimator_total_global = 0;
@@ -63,8 +60,6 @@ void MonteCarloHelper::print_avg_energy(double estimator_total, double sgn_total
         }
     }
 }
-
-
 void MonteCarloHelper::write_estimator(vector <double> estimator,int interval){
     
     int size = estimator.size();
@@ -88,7 +83,6 @@ void MonteCarloHelper::write_estimator(vector <double> estimator,int interval){
         std::cout << "\t Successfully wrote energy_estimator file to Results." << std::endl;
     }
 }
-
 void MonteCarloHelper::write_PSV(int nuc_beads,int elec_beads, int num_states,
                       vector<double> Q, matrix<double> x,matrix <double> p){
     
@@ -125,7 +119,6 @@ void MonteCarloHelper::write_PSV(int nuc_beads,int elec_beads, int num_states,
     
     myFile.close();
 }
-
 void MonteCarloHelper::read_PSV(int nuc_beads,int elec_beads, int num_states, vector<double> &Q, matrix<double> &x,
                      matrix<double> &p){
     
@@ -162,7 +155,6 @@ void MonteCarloHelper::read_PSV(int nuc_beads,int elec_beads, int num_states, ve
         std::cout << "\t Successfully read PSV file from Results." << std::endl;
     }
 }
-
 void MonteCarloHelper::write_MC_data(double sgn_total,double estimator_total){
     
     std::ostringstream quickConvert;
@@ -187,7 +179,6 @@ void MonteCarloHelper::write_MC_data(double sgn_total,double estimator_total){
     }
     
 }
-
 void MonteCarloHelper::read_MC_data(double &sgn_totalGlobal, double &estimator_total){
     
     std::ostringstream quickConvert;

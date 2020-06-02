@@ -10,7 +10,6 @@ Theta_MTS::Theta_MTS(int num_states, int elec_beads,
     C = &C_In;
     M_MTS = &M_MTS_In;
 }
-
 void Theta_MTS::update_gamma_mat(const vector<double> &Q,const matrix<double> &x,
                              const matrix<double> &p){
     

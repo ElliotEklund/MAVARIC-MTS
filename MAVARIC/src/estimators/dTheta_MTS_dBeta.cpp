@@ -11,12 +11,10 @@ dTheta_MTS_dBeta::dTheta_MTS_dBeta(int nuc_beads, int elec_beads, int num_states
     C = &C_In;
     M_MTS = &M_MTS_In;
 }
-
 double dTheta_MTS_dBeta::get_dTheta_MTS_dBeta(){
     update_dTheta_MTS_dBeta();
     return d_Theta_MTS_dBeta;
 }
-
 void dTheta_MTS_dBeta::update_dTheta_MTS_dBeta(){
 
     update_dGamma_dBeta();
@@ -29,7 +27,6 @@ void dTheta_MTS_dBeta::update_dTheta_MTS_dBeta(){
     /* Compute trace. */
     d_Theta_MTS_dBeta = tr.real();
 }
-
 void dTheta_MTS_dBeta::update_dGamma_dBeta(){
     
     update_f_chain();
@@ -49,7 +46,6 @@ void dTheta_MTS_dBeta::update_dGamma_dBeta(){
     }
     dGamma_dBeta = sum;
 }
-
 void dTheta_MTS_dBeta::update_f_chain(){
     
     f_chain[0] = C->get_C_alpha(0);
@@ -60,7 +56,6 @@ void dTheta_MTS_dBeta::update_f_chain(){
         f_chain[bead] = prod(f_chain[bead-1], temp);
     }
 }
-
 void dTheta_MTS_dBeta::update_b_chain(){
     
     b_chain[elec_beads-1] = identity_matrix<std::complex<double> > (num_states);

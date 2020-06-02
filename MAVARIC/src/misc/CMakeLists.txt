@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 set(MACHINE "MAC")
 
-set(ROOT_MAC "/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS")
+set(ROOT_MAC "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC")
 
 set(BOOST_MAC "/Users/ellioteklund/Downloads")
 

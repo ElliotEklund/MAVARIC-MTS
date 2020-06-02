@@ -5,7 +5,7 @@ mpi_wrapper::mpi_wrapper(int num_procs, int my_id, int root_proc)
      my_id(my_id),
      root_proc(root_proc)
 {}
-void mpi_wrapper::write_vector(const vector<double> &v,std::string fileName){
+void mpi_wrapper::write_vector(vector<double> &v,std::string fileName){
     
     int v_size = v.size(); //length of v
     int all_sizes [num_procs]; //collection of v_size across all procs
@@ -37,7 +37,7 @@ void mpi_wrapper::write_vector(const vector<double> &v,std::string fileName){
 
     if (my_id==root_proc) {
         std::ofstream myFile;
-        myFile.open(fileName);
+        myFile.open(fileName.c_str());
         if (!myFile.is_open()) {
             std::cout << "ERROR: Could not open " << fileName << std::endl;
         }

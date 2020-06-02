@@ -43,10 +43,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc
+CMAKE_SOURCE_DIR = /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build
+CMAKE_BINARY_DIR = /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/test.dir/depend.make
@@ -59,156 +59,156 @@ include CMakeFiles/test.dir/flags.make
 
 CMakeFiles/test.dir/test.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/test.cpp.o: ../test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/test.cpp.o"
-	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/test.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test.dir/test.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/test.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/test.cpp
 
 CMakeFiles/test.dir/test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/test.cpp.i"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/test.cpp > CMakeFiles/test.dir/test.cpp.i
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/test.cpp > CMakeFiles/test.dir/test.cpp.i
 
 CMakeFiles/test.dir/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/test.cpp.s"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/test.cpp -o CMakeFiles/test.dir/test.cpp.s
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/test.cpp -o CMakeFiles/test.dir/test.cpp.s
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.o: /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.o"
-	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.i"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp > CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.i
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.i"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp > CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.i
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.s"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.s
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.s"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.s
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.o: /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.o"
-	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.i"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp > CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.i
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.i"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp > CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.i
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.s"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.s
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.s"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.s
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.o: /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.o"
-	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.i"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp > CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.i
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.i"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp > CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.i
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.s"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.s
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.s"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.s
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.o: /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.o"
-	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.i"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp > CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.i
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.i"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp > CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.i
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.s"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.s
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.s"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.s
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.o: /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.o"
-	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.i"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp > CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.i
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.i"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp > CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.i
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.s"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.s
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.s"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.s
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.o: /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.o"
-	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.i"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp > CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.i
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.i"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp > CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.i
 
-CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.s"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.s
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.s"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.s
 
 CMakeFiles/test.dir/MainHlpr.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/MainHlpr.cpp.o: ../MainHlpr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/MainHlpr.cpp.o"
-	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/MainHlpr.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/MainHlpr.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/MainHlpr.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/MainHlpr.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp
 
 CMakeFiles/test.dir/MainHlpr.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/MainHlpr.cpp.i"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/MainHlpr.cpp > CMakeFiles/test.dir/MainHlpr.cpp.i
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp > CMakeFiles/test.dir/MainHlpr.cpp.i
 
 CMakeFiles/test.dir/MainHlpr.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/MainHlpr.cpp.s"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/MainHlpr.cpp -o CMakeFiles/test.dir/MainHlpr.cpp.s
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp -o CMakeFiles/test.dir/MainHlpr.cpp.s
 
 CMakeFiles/test.dir/pop_estimators.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/pop_estimators.cpp.o: ../pop_estimators.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/pop_estimators.cpp.o"
-	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/pop_estimators.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/pop_estimators.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/pop_estimators.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/pop_estimators.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp
 
 CMakeFiles/test.dir/pop_estimators.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/pop_estimators.cpp.i"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/pop_estimators.cpp > CMakeFiles/test.dir/pop_estimators.cpp.i
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp > CMakeFiles/test.dir/pop_estimators.cpp.i
 
 CMakeFiles/test.dir/pop_estimators.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/pop_estimators.cpp.s"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/pop_estimators.cpp -o CMakeFiles/test.dir/pop_estimators.cpp.s
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp -o CMakeFiles/test.dir/pop_estimators.cpp.s
 
 CMakeFiles/test.dir/aggregate.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/aggregate.cpp.o: ../aggregate.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/aggregate.cpp.o"
-	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/aggregate.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/aggregate.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/aggregate.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/aggregate.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp
 
 CMakeFiles/test.dir/aggregate.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/aggregate.cpp.i"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/aggregate.cpp > CMakeFiles/test.dir/aggregate.cpp.i
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp > CMakeFiles/test.dir/aggregate.cpp.i
 
 CMakeFiles/test.dir/aggregate.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/aggregate.cpp.s"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/aggregate.cpp -o CMakeFiles/test.dir/aggregate.cpp.s
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp -o CMakeFiles/test.dir/aggregate.cpp.s
 
 CMakeFiles/test.dir/PopulationEstimator.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/PopulationEstimator.cpp.o: ../PopulationEstimator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/PopulationEstimator.cpp.o"
-	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/PopulationEstimator.cpp.o -c /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/PopulationEstimator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/PopulationEstimator.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/PopulationEstimator.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp
 
 CMakeFiles/test.dir/PopulationEstimator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/PopulationEstimator.cpp.i"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/PopulationEstimator.cpp > CMakeFiles/test.dir/PopulationEstimator.cpp.i
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp > CMakeFiles/test.dir/PopulationEstimator.cpp.i
 
 CMakeFiles/test.dir/PopulationEstimator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/PopulationEstimator.cpp.s"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/PopulationEstimator.cpp -o CMakeFiles/test.dir/PopulationEstimator.cpp.s
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp -o CMakeFiles/test.dir/PopulationEstimator.cpp.s
 
 # Object files for target test
 test_OBJECTS = \
 "CMakeFiles/test.dir/test.cpp.o" \
-"CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.o" \
-"CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.o" \
-"CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.o" \
-"CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.o" \
-"CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.o" \
-"CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.o" \
+"CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.o" \
+"CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.o" \
+"CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.o" \
+"CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.o" \
+"CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.o" \
+"CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.o" \
 "CMakeFiles/test.dir/MainHlpr.cpp.o" \
 "CMakeFiles/test.dir/pop_estimators.cpp.o" \
 "CMakeFiles/test.dir/aggregate.cpp.o" \
@@ -218,19 +218,19 @@ test_OBJECTS = \
 test_EXTERNAL_OBJECTS =
 
 test: CMakeFiles/test.dir/test.cpp.o
-test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.o
-test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.o
-test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.o
-test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.o
-test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.o
-test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.o
+test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.o
+test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.o
+test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.o
+test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.o
+test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.o
+test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.o
 test: CMakeFiles/test.dir/MainHlpr.cpp.o
 test: CMakeFiles/test.dir/pop_estimators.cpp.o
 test: CMakeFiles/test.dir/aggregate.cpp.o
 test: CMakeFiles/test.dir/PopulationEstimator.cpp.o
 test: CMakeFiles/test.dir/build.make
 test: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -243,6 +243,6 @@ CMakeFiles/test.dir/clean:
 .PHONY : CMakeFiles/test.dir/clean
 
 CMakeFiles/test.dir/depend:
-	cd /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles/test.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test.dir/depend
 

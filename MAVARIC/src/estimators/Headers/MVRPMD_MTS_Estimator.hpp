@@ -18,6 +18,9 @@ public:
     
     double get_estimator();
     
+    double get_estimator(const vector<double> &Q,const matrix<double> &x,
+                         const matrix<double> &p);
+    
 private:
     
     double ONE_HALF_beta_num_beads; // 0.5 * (1/beta_num_beads)

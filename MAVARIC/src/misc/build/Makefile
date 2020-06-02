@@ -48,10 +48,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc
+CMAKE_SOURCE_DIR = /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build
+CMAKE_BINARY_DIR = /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -177,167 +177,167 @@ PopulationEstimator.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/PopulationEstimator.cpp.s
 .PHONY : PopulationEstimator.cpp.s
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.o: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.o
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.o
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.o
-
-# target to build an object file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.o
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.o
-
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.i: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.i
-
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.i
-
-# target to preprocess a source file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.i
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.i
-
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.s: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.s
-
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.s
-
-# target to generate assembly for a file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.s
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.cpp.s
-
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.o: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.o
-
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.o
 
 # target to build an object file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.o
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.o
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.o
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.i: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.i
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.i
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.i
 
 # target to preprocess a source file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.i
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.i
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.i
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.s: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.s
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.s
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.s
 
 # target to generate assembly for a file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.s
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.cpp.s
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.cpp.s
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.o: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.o
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.o
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.o
 
 # target to build an object file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.o
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.o
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.o
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.i: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.i
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.i
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.i
 
 # target to preprocess a source file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.i
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.i
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.i
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.s: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.s
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.s
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.s
 
 # target to generate assembly for a file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.s
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.cpp.s
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp.s
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.o: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.o
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.o
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.o
 
 # target to build an object file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.o
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.o
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.o
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.i: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.i
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.i
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.i
 
 # target to preprocess a source file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.i
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.i
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.i
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.s: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.s
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.s
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.s
 
 # target to generate assembly for a file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.s
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.cpp.s
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.cpp.s
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.o: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.o
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.o
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.o
 
 # target to build an object file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.o
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.o
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.o
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.i: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.i
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.i
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.i
 
 # target to preprocess a source file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.i
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.i
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.i
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.s: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.s
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.s
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.s
 
 # target to generate assembly for a file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.s
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.cpp.s
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.cpp.s
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.o: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.o
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.o
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.o
 
 # target to build an object file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.o
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.o
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.o
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.i: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.i
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.i
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.i
 
 # target to preprocess a source file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.i
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.i
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.i
 
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.s: Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.s
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.s
 
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.s
 
 # target to generate assembly for a file
-Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.s
-.PHONY : Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.cpp.s
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.s
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.o
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.o
+
+# target to build an object file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.o
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.i
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.i
+
+# target to preprocess a source file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.i
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.s
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.s
+
+# target to generate assembly for a file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.s
 
 aggregate.o: aggregate.cpp.o
 
@@ -435,24 +435,24 @@ help:
 	@echo "... PopulationEstimator.o"
 	@echo "... PopulationEstimator.i"
 	@echo "... PopulationEstimator.s"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.o"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.i"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/C_Matrix.s"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.o"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.i"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix.s"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.o"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.i"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/M_Matrix_MTS.s"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.o"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.i"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/StateDepPots.s"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.o"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.i"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta.s"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.o"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.i"
-	@echo "... Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Theta_MTS.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/C_Matrix.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix_MTS.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/StateDepPots.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.s"
 	@echo "... aggregate.o"
 	@echo "... aggregate.i"
 	@echo "... aggregate.s"

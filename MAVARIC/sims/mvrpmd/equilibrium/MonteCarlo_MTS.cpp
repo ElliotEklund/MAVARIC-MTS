@@ -141,9 +141,7 @@ void MonteCarlo_MTS::sample_nuc(){
         }
         
         /* Accept new system moves if inequality is met*/
-        //else if (unif_1(mt) <= exp(-beta_num_beads * (energ_prop - energy))){
-        else if (unif_1(mt) <= exp(-beta_num_beads * num_beads *(energ_prop - energy))){
-
+        else if (unif_1(mt) <= exp(-beta_num_beads * (energ_prop - energy))){
             Q = Q_prop;
             energy = energ_prop;
             estimator = esti_prop;
@@ -183,9 +181,7 @@ void MonteCarlo_MTS::sample_elec(){
         }
         
         /* Accept new system moves if inequality is met*/
-        //else if (unif_1(mt) <= exp(-beta_num_beads * (energ_prop - energy))){
-        else if (unif_1(mt) <= exp(-beta_num_beads * num_beads * (energ_prop - energy))){
-
+        else if (unif_1(mt) <= exp(-beta_num_beads * (energ_prop - energy))){
             x = x_prop;
             p = p_prop;
             energy = energ_prop;

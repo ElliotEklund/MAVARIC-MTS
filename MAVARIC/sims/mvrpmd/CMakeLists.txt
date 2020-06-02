@@ -5,6 +5,9 @@ set(MACHINE "MAC")
 set(ROOT_MAC "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC")
 set(BOOST_MAC "/Users/ellioteklund/Downloads")
 
+set(ROOT_ASTRA "/home/fs01/ece52/MAVARIC-MTS/MAVARIC")
+set(BOOST_ASTRA "/home/fs01/ece52/MAVARIC_MTS")
+
 # set the project name
 project(mavaric)
 set(CMAKE_CXX_STANDARD 98)
@@ -20,9 +23,25 @@ if(${MACHINE} STREQUAL "MAC")
     set(FORCES_DIR "${ROOT_MAC}/src/forces")
     set(INTEGRATORS_DIR "${ROOT_MAC}/src/integrators")
     set(MISC_DIR "${ROOT_MAC}/src/misc")
+    set(MONTECARLO_DIR "${ROOT_MAC}/src/monte_carlo")
     set(EXECUTABLE_OUTPUT_PATH "${ROOT_MAC}/bin")
     set(CMAKE_CXX_FLAGS "-DMAC")
+
+elseif(${MACHINE} STREQUAL "ASTRA")
+    set(BOOST_DIR "${BOOST_ASTRA}/boost_1_72_0")
+    set(DYNAMICS_DIR "${ROOT_ASTRA}/sims/mvrpmd/dynamics")
+    set(SAMPLING_DIR "${ROOT_ASTRA}/sims/mvrpmd/sampling")
+    set(EQUILIBRIUM_DIR "${ROOT_ASTRA}/sims/mvrpmd/equilibrium")
+    set(FORCES_DIR "${ROOT_ASTRA}/src/forces")
+    set(HAMILTONIAN_DIR "${ROOT_ASTRA}/src/hamiltonian")
+    set(ESTIMATORS_DIR "${ROOT_ASTRA}/src/estimators")
+    set(INTEGRATORS_DIR "${ROOT_ASTRA}/src/integrators")
+    set(MISC_DIR "${ROOT_ASTRA}/src/misc")
+    set(MONTECARLO_DIR "${ROOT_ASTRA}/src/monte_carlo")
+    set(EXECUTABLE_OUTPUT_PATH "${ROOT_ASTRA}/bin")
+    set(CMAKE_CXX_FLAGS "-ASTRA")
 endif()
+
 
 add_definitions( "-DNDEBUG -O3" )
 
@@ -35,6 +54,7 @@ if(${MACHINE} STREQUAL "MAC")
         ${EQUILIBRIUM_DIR}/MonteCarlo.cpp
         ${EQUILIBRIUM_DIR}/MonteCarloHelper.cpp
         ${EQUILIBRIUM_DIR}/MonteCarlo_MTS.cpp
+        ${EQUILIBRIUM_DIR}/equilib_mvrpmd.cpp
         ${EQUILIBRIUM_DIR}/input_mvrpmd.cpp
 
         #sampling directory
@@ -88,7 +108,11 @@ if(${MACHINE} STREQUAL "MAC")
         ${MISC_DIR}/decorrelation.cpp
         ${MISC_DIR}/pop_estimators.cpp
         ${MISC_DIR}/aggregate.cpp
-        ${MISC_DIR}/init_PAC.cpp)
+        ${MISC_DIR}/init_PAC.cpp
+
+        #monte carlo directory
+        ${MONTECARLO_DIR}/system_step.cpp
+        ${MONTECARLO_DIR}/elec_step.cpp)
 
 endif()
 
@@ -101,4 +125,5 @@ include_directories(${ESTIMATORS_DIR}/Headers)
 include_directories(${FORCES_DIR}/Headers)
 include_directories(${INTEGRATORS_DIR}/Headers)
 include_directories(${MISC_DIR}/Headers)
+include_directories(${MONTECARLO_DIR}/Headers)
 

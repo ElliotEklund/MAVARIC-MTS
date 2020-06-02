@@ -16,11 +16,13 @@ C_Matrix::C_Matrix(int num_beads, int num_states)
 {
     half_identity = 0.5 * identity_matrix<std::complex<double> > (num_states);
 }
-
 void C_Matrix::update_C_vec(const matrix<double> &x_mat, const matrix<double> &p_mat){
     
-    x_mat_c = x_mat;
-    p_mat_c = p_mat;
+    //copy x-mat,p-mat to complex matricies
+    double alpha = sqrt(1);
+    
+    x_mat_c = alpha*x_mat;
+    p_mat_c = p_mat/alpha;
 
     noalias(x_plus_ip_mat) = x_mat_c + unit_complex*p_mat_c;
     noalias(x_min_ip_mat) = x_mat_c - unit_complex*p_mat_c;
@@ -31,7 +33,6 @@ void C_Matrix::update_C_vec(const matrix<double> &x_mat, const matrix<double> &p
         noalias(C_vec(bead)) = outer_prod(column(x_plus_ip_mat_trans, bead), row(x_min_ip_mat, bead)) - half_identity;
     }
 }
-
 matrix<std::complex<double> >& C_Matrix::get_C_alpha(int alpha){
     return C_vec(alpha);
 }

@@ -17,7 +17,6 @@
 using namespace boost::numeric::ublas;
 
 class MonteCarloHelper{
-    
 
 public:
     

@@ -44,7 +44,11 @@ numeric
 complex
 -
 
-/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/test.cpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp
+aggregate.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.hpp
+
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/test.cpp
 iostream
 -
 vector
@@ -53,6 +57,10 @@ string
 -
 map
 -
+fstream
+-
+random
+-
 boost/numeric/ublas/vector.hpp
 -
 boost/numeric/ublas/io.hpp
@@ -60,9 +68,9 @@ boost/numeric/ublas/io.hpp
 boost/numeric/ublas/matrix.hpp
 -
 pop_estimators.hpp
-/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/pop_estimators.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.hpp
 aggregate.hpp
-/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/aggregate.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.hpp
 
 /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
 boost/config.hpp

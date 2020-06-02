@@ -1,6 +1,6 @@
-Run Sampling:1
-Number of Trajectories:800
-Decorrelation Length:100
+Run Sampling:0
+Number of Trajectories:1000
+Decorrelation Length:500
 Save Sampled Trajectories:1
 Histogram Positions:0
 Number of Bins:300

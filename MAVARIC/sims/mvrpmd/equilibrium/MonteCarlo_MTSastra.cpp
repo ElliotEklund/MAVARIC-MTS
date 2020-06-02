@@ -29,7 +29,6 @@ MonteCarlo_MTSastra::MonteCarlo_MTSastra(int my_id, int root_proc, int num_procs
      Esti_MTS(num_beads,beta_num_beads,V_spring,V0,thetaMTS,dthetaMTS_dBeta),
 
      myHelper(root,my_id,num_procs,root_proc)
-
 {
     /* Generate random initial PSV. If readPSV is true, these will be overwritten
      with saved values during the call to runSimulation.*/
@@ -37,13 +36,11 @@ MonteCarlo_MTSastra::MonteCarlo_MTSastra(int my_id, int root_proc, int num_procs
     gen_initx();
     gen_initp();
 }
-
 void MonteCarlo_MTSastra::gen_initQ(){
     for (int bead=0; bead<num_beads; bead++) {
         Q(bead) = nuc_dist(myRand.doub());
     }
 }
-
 void MonteCarlo_MTSastra::gen_initx(){
     for (int bead=0; bead<elec_beads; bead++) {
         for (int state=0; state<num_states; state++) {
@@ -51,7 +48,6 @@ void MonteCarlo_MTSastra::gen_initx(){
         }
     }
 }
-
 void MonteCarlo_MTSastra::gen_initp(){
     for (int bead=0; bead<elec_beads; bead++) {
         for (int state=0; state<num_states; state++) {
@@ -59,7 +55,6 @@ void MonteCarlo_MTSastra::gen_initp(){
         }
     }
 }
-
 void MonteCarlo_MTSastra::runSimulation(){
    
     int esti_samples = 0;
@@ -119,9 +114,7 @@ void MonteCarlo_MTSastra::runSimulation(){
     if (writeData) {
         myHelper.write_MC_data(sgn_total, estimator_total);
     }
-    
 }
-
 void MonteCarlo_MTSastra::sample_nuc(){
 
     int mcMove = 0;
@@ -156,9 +149,7 @@ void MonteCarlo_MTSastra::sample_nuc(){
     
         sys_steps += 1;
     }
-
 }
-
 void MonteCarlo_MTSastra::sample_elec(){
 
     int mcMove = 0;
@@ -202,45 +193,34 @@ void MonteCarlo_MTSastra::sample_elec(){
         }
         elec_steps += 1;
     }
-
 }
-
 inline double MonteCarlo_MTSastra::nuc_dist(const double rn){
     return (rn * 2.0 * nuc_ss) - nuc_ss;
 }
-
 inline double MonteCarlo_MTSastra::elec_dist(const double rn){
     return (rn * 2.0 * elec_ss) - elec_ss;
 }
-
 inline int MonteCarlo_MTSastra::rand_nuc_bead(const Ullong rn){
     return rn % num_beads;
 }
-
 inline int MonteCarlo_MTSastra::rand_elec_bead(const Ullong rn){
     return rn % elec_beads;
 }
-
 void MonteCarlo_MTSastra::set_num_steps(unsigned long long num_steps_In){
     num_steps = num_steps_In;
 }
-
 void MonteCarlo_MTSastra::set_esti_rate(unsigned long long esti_rate_In){
     esti_rate = esti_rate_In;
 }
-
 void MonteCarlo_MTSastra::set_write_PSV(bool set_In){
     writePSV = set_In;
 }
-
 void MonteCarlo_MTSastra::set_read_PSV(bool set_In){
     readPSV = set_In;
 }
-
 void MonteCarlo_MTSastra::set_read_Data(bool set_In){
     readData = set_In;
 }
-
 void MonteCarlo_MTSastra::set_write_Data(bool set_In){
     writeData = set_In;
 }

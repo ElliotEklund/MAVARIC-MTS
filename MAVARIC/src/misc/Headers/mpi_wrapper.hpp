@@ -19,7 +19,7 @@ class mpi_wrapper{
 public:
     mpi_wrapper(int num_procs, int my_id, int root_proc);
     
-    void write_vector(const vector<double> &v,std::string fileName);
+    void write_vector(vector<double> &v,std::string fileName);
     
 private:
     int num_procs, my_id, root_proc;

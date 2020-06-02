@@ -16,6 +16,8 @@
 #include "mpi_wrapper.hpp"
 #include "MVRPMD_MTS_Hamiltonian.hpp"
 #include "SamplingHelper.h"
+#include "system_step.hpp"
+#include "elec_step.hpp"
 
 using namespace boost::numeric::ublas;
 
@@ -64,8 +66,6 @@ private:
     Ran myRand; //NR3 random number generator
     SamplingHelper helper;
     
-    
-    
 /* Functions */
     /*
      Return a uniform random number between [-step_size,step_size]
@@ -74,23 +74,9 @@ private:
      */
     inline double step_dist(const double rn, double step_size);
     
-    /*
-     Return a uniform random number between [0,num_beads-1]
-     rn: random Ullong; a nr3 data type
-     num_beads: sets range of uniform distribution
-     */
-    inline int rand_bead(const Ullong rn, int num_beads);
+    void save_trajs(vector<double> &v,std::string name);
     
-    /*
-     Return true if energy_prop passes Metropolis Hastings accpt/rejct criteria
-     energy: currenty energy of system
-     energy_prop: proposed energy of system
-     */
-    bool check_move(double energy, double energy_prop);
-    
-    void save_trajs(const vector<double> &v,std::string name);
-    
-    void save_trajs(const matrix<double> &v,int size, int num_trajs,
+    void save_trajs(matrix<double> &v,int size, int num_trajs,
                     std::string name);
 
     
@@ -98,10 +84,6 @@ private:
     
     void gen_initElec(matrix<double> &v, int num_beads,
                       int num_states,double step_size);
-
-
-
-    
 };
 
 #endif

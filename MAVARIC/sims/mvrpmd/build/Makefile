@@ -1068,6 +1068,60 @@ Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.s:
 	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.s
 .PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.s
 
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.o
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.o
+
+# target to build an object file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.o:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.o
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.i
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.i
+
+# target to preprocess a source file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.i:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.i
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.s
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.s
+
+# target to generate assembly for a file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.s:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.s
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.o
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.o
+
+# target to build an object file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.o:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.o
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.i
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.i
+
+# target to preprocess a source file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.i:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.i
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.s
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.s
+
+# target to generate assembly for a file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.s:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.s
+
 dynamics/Dynamics.o: dynamics/Dynamics.cpp.o
 
 .PHONY : dynamics/Dynamics.o
@@ -1175,6 +1229,33 @@ equilibrium/MonteCarlo_MTS.s: equilibrium/MonteCarlo_MTS.cpp.s
 equilibrium/MonteCarlo_MTS.cpp.s:
 	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/equilibrium/MonteCarlo_MTS.cpp.s
 .PHONY : equilibrium/MonteCarlo_MTS.cpp.s
+
+equilibrium/equilib_mvrpmd.o: equilibrium/equilib_mvrpmd.cpp.o
+
+.PHONY : equilibrium/equilib_mvrpmd.o
+
+# target to build an object file
+equilibrium/equilib_mvrpmd.cpp.o:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/equilibrium/equilib_mvrpmd.cpp.o
+.PHONY : equilibrium/equilib_mvrpmd.cpp.o
+
+equilibrium/equilib_mvrpmd.i: equilibrium/equilib_mvrpmd.cpp.i
+
+.PHONY : equilibrium/equilib_mvrpmd.i
+
+# target to preprocess a source file
+equilibrium/equilib_mvrpmd.cpp.i:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/equilibrium/equilib_mvrpmd.cpp.i
+.PHONY : equilibrium/equilib_mvrpmd.cpp.i
+
+equilibrium/equilib_mvrpmd.s: equilibrium/equilib_mvrpmd.cpp.s
+
+.PHONY : equilibrium/equilib_mvrpmd.s
+
+# target to generate assembly for a file
+equilibrium/equilib_mvrpmd.cpp.s:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/equilibrium/equilib_mvrpmd.cpp.s
+.PHONY : equilibrium/equilib_mvrpmd.cpp.s
 
 equilibrium/input_mvrpmd.o: equilibrium/input_mvrpmd.cpp.o
 
@@ -1398,6 +1479,12 @@ help:
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.o"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.i"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.s"
 	@echo "... dynamics/Dynamics.o"
 	@echo "... dynamics/Dynamics.i"
 	@echo "... dynamics/Dynamics.s"
@@ -1410,6 +1497,9 @@ help:
 	@echo "... equilibrium/MonteCarlo_MTS.o"
 	@echo "... equilibrium/MonteCarlo_MTS.i"
 	@echo "... equilibrium/MonteCarlo_MTS.s"
+	@echo "... equilibrium/equilib_mvrpmd.o"
+	@echo "... equilibrium/equilib_mvrpmd.i"
+	@echo "... equilibrium/equilib_mvrpmd.s"
 	@echo "... equilibrium/input_mvrpmd.o"
 	@echo "... equilibrium/input_mvrpmd.i"
 	@echo "... equilibrium/input_mvrpmd.s"

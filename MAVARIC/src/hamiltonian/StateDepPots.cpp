@@ -37,8 +37,8 @@ StateDepPots::StateDepPots(int num_states, int num_beads, double beta_num_beads)
     std::fill(V_couple_mat.data().begin(),V_couple_mat.data().end(),1.0);
 
     /* Constant coupling optimization */
-    V_couple_mat(1,0) = 1.0;
-    V_couple_mat(0,1) = 1.0;
+    V_couple_mat(1,0) = 0.1;
+    V_couple_mat(0,1) = 0.1;
 
     V11_vec.resize(num_beads);
     V22_vec.resize(num_beads);

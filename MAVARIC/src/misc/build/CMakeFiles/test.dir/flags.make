@@ -6,5 +6,5 @@ CXX_FLAGS = -DMAC   -DNDEBUG -O3 -std=gnu++98
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/ellioteklund/Downloads/boost_1_72_0 -I/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/hamiltonian/Headers -I/Users/ellioteklund/Desktop/Dynamics_MTS_git/Dynamics_MTS/src/misc/Headers 
+CXX_INCLUDES = -I/Users/ellioteklund/Downloads/boost_1_72_0 -I/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers -I/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers 
 

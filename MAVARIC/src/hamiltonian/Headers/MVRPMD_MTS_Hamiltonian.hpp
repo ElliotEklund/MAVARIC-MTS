@@ -20,6 +20,8 @@ public:
     
     double get_energy_dyn(double mass,const vector<double> &Q, const vector<double> &P,
                           const matrix<double> &x,const matrix<double> &p);
+    
+    double get_sign();
 
 private:
 

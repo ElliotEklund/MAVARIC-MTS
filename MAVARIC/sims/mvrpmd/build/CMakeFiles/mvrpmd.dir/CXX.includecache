@@ -82,34 +82,6 @@ sstream
 mpi.h
 ../equilibrium/Headers/mpi.h
 
-../equilibrium/Headers/MonteCarlo_MTS.hpp
-stdio.h
--
-boost/numeric/ublas/vector.hpp
--
-boost/numeric/ublas/matrix.hpp
--
-boost/numeric/ublas/io.hpp
--
-boost/numeric/ublas/matrix_proxy.hpp
--
-boost/numeric/ublas/storage.hpp
--
-algorithm
--
-random
--
-string
--
-MVRPMD_MTS_Hamiltonian.hpp
-../equilibrium/Headers/MVRPMD_MTS_Hamiltonian.hpp
-MVRPMD_MTS_Estimator.hpp
-../equilibrium/Headers/MVRPMD_MTS_Estimator.hpp
-MonteCarloHelper.h
-../equilibrium/Headers/MonteCarloHelper.h
-decorrelation.h
-../equilibrium/Headers/decorrelation.h
-
 ../equilibrium/Headers/equilib_mvrpmd.hpp
 boost/numeric/ublas/vector.hpp
 -
@@ -226,9 +198,13 @@ system_step.hpp
 elec_step.hpp
 ../sampling/Headers/elec_step.hpp
 
-/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/equilibrium/MonteCarlo_MTS.cpp
-MonteCarlo_MTS.hpp
-/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/equilibrium/MonteCarlo_MTS.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/dynamics/Dynamics.cpp
+Dynamics.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/dynamics/Dynamics.hpp
+
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/equilibrium/equilib_mvrpmd.cpp
+equilib_mvrpmd.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/equilibrium/equilib_mvrpmd.hpp
 
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/mvrpmd.cpp
 iostream
@@ -237,16 +213,20 @@ fstream
 -
 mpi.h
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/mpi.h
-input_mvrpmd.hpp
-/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/input_mvrpmd.hpp
-Dynamics.hpp
-/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/Dynamics.hpp
 MainHlpr.hpp
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/MainHlpr.hpp
-sampling_mvrpmd.hpp
-/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/sampling_mvrpmd.hpp
+input_mvrpmd.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/input_mvrpmd.hpp
 equilib_mvrpmd.hpp
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/equilib_mvrpmd.hpp
+sampling_mvrpmd.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/sampling_mvrpmd.hpp
+Dynamics.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/Dynamics.hpp
+
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/sampling/sampling_mvrpmd.cpp
+sampling_mvrpmd.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/sampling/sampling_mvrpmd.hpp
 
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/Headers/MVRPMD_MTS_Estimator.hpp
 SpringEnergy.h
@@ -291,6 +271,14 @@ M_Matrix.h
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/Headers/M_Matrix.h
 dM_Matrix_MTS_dBeta.hpp
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/Headers/dM_Matrix_MTS_dBeta.hpp
+
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/MVRPMD_MTS_Estimator.cpp
+MVRPMD_MTS_Estimator.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/MVRPMD_MTS_Estimator.hpp
+
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.cpp
+Forces_MTS.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.hpp
 
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/Forces_MTS.hpp
 boost/numeric/ublas/io.hpp
@@ -551,6 +539,26 @@ M_Matrix_MTS.hpp
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/M_Matrix_MTS.hpp
 C_Matrix.h
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/C_Matrix.h
+functions.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/functions.hpp
+
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/MVRPMD_MTS_Hamiltonian.cpp
+MVRPMD_MTS_Hamiltonian.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/MVRPMD_MTS_Hamiltonian.hpp
+
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.cpp
+M_Matrix.h
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/M_Matrix.h
+
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp
+Theta_MTS.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.hpp
+
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp
+ABM_MVRPMD.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.hpp
+iomanip
+-
 
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/Headers/ABM_MVRPMD.hpp
 boost/numeric/ublas/vector.hpp
@@ -586,6 +594,10 @@ math.h
 Forces_MTS.hpp
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/Headers/Forces_MTS.hpp
 
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp
+RK4_MVRPMD.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.hpp
+
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/MainHlpr.hpp
 algorithm
 -
@@ -620,18 +632,6 @@ boost/numeric/ublas/io.hpp
 boost/numeric/ublas/storage.hpp
 -
 boost/numeric/ublas/matrix.hpp
--
-
-/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/decorrelation.h
-string
--
-fstream
--
-boost/numeric/ublas/vector.hpp
--
-boost/numeric/ublas/io.hpp
--
-boost/numeric/ublas/storage.hpp
 -
 
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/deviates.h
@@ -672,6 +672,10 @@ string
 math.h
 -
 fstream
+-
+
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/functions.hpp
+boost/numeric/ublas/matrix.hpp
 -
 
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/gamma.h
@@ -806,6 +810,10 @@ vector
 fstream
 -
 
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/init_PAC.cpp
+init_PAC.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/init_PAC.hpp
+
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/Headers/elec_step.hpp
 boost/numeric/ublas/vector.hpp
 -
@@ -815,8 +823,6 @@ boost/numeric/ublas/matrix.hpp
 -
 MVRPMD_MTS_Hamiltonian.hpp
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/Headers/MVRPMD_MTS_Hamiltonian.hpp
-MVRPMD_MTS_Estimator.hpp
-/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/Headers/MVRPMD_MTS_Estimator.hpp
 nr3.h
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/Headers/nr3.h
 ran.h
@@ -831,12 +837,18 @@ boost/numeric/ublas/matrix.hpp
 -
 MVRPMD_MTS_Hamiltonian.hpp
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/Headers/MVRPMD_MTS_Hamiltonian.hpp
-MVRPMD_MTS_Estimator.hpp
-/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/Headers/MVRPMD_MTS_Estimator.hpp
 nr3.h
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/Headers/nr3.h
 ran.h
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/Headers/ran.h
+
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp
+elec_step.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.hpp
+
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp
+system_step.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.hpp
 
 /Users/ellioteklund/Downloads/boost_1_72_0/boost/aligned_storage.hpp
 boost/type_traits/aligned_storage.hpp

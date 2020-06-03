@@ -6,7 +6,6 @@
 #include <boost/numeric/ublas/matrix.hpp>
 
 #include "MVRPMD_MTS_Hamiltonian.hpp"
-#include "MVRPMD_MTS_Estimator.hpp"
 
 #include "nr3.h"
 #include "ran.h"
@@ -28,10 +27,6 @@ public:
     void step_x(double energyIN, const vector<double> &Q, matrix<double> &x,
                 const matrix<double> &p);
     
-    void step_x_esti(double energyIN, double estimatorIN, double sgnThetaIN,
-                     const vector<double> &Q, matrix<double> &x,
-                     const matrix<double> &p);
-    
     /* On average, try a move with every p mapping variable.
      energyIN: energy of system prior to calling step_p; will be change by
                function call
@@ -41,15 +36,9 @@ public:
     void step_p(double energyIN, const vector<double> &Q, const matrix<double> &x,
                 matrix<double> &p);
     
-    void step_p_esti(double energyIN, double estimatorIN, double sgnThetaIN,
-                     const vector<double> &Q, const matrix<double> &x,
-                     matrix<double> &p);
-    
 /* Mutators */
     void set_hamiltonian(MVRPMD_MTS_Hamiltonian &H_IN);
-    
-    void set_estimator(MVRPMD_MTS_Estimator &Esti_IN);
-    
+        
     void set_beta(double betaIN);
     
     void set_energy(double energyIN);
@@ -65,10 +54,6 @@ public:
     double get_p_steps_total();
 
     double get_p_steps_accpt();
-    
-    double get_estimator();
-    
-    double get_sgnTheta();
 
 private:
 /* Data */
@@ -86,16 +71,11 @@ private:
 
     double beta; //1/kbT
     double energy; //energy of system before a move is proposed
-    double estimator;
-    double sgnTheta;
     
     matrix<double> x_prop, p_prop; //propsed moves
     
 /* Objects */
     MVRPMD_MTS_Hamiltonian *H; //Hamiltonian
-    
-    MVRPMD_MTS_Estimator *Esti;
-
     
 /* Functions*/
     

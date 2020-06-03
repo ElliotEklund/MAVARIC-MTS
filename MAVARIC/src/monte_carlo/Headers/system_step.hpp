@@ -5,8 +5,9 @@
 #include <boost/numeric/ublas/io.hpp>
 #include <boost/numeric/ublas/matrix.hpp>
 
+#include "mvrpmd_mixed.hpp"
 #include "MVRPMD_MTS_Hamiltonian.hpp"
-#include "MVRPMD_MTS_Estimator.hpp"
+#include "mvrpmd_mixed_ham.hpp"
 
 #include "nr3.h"
 #include "ran.h"
@@ -28,15 +29,9 @@ public:
     void step(double energy,vector<double> &Q,const matrix<double> &x,
               const matrix<double> &p);
     
-    void step_esti(double energyIN,double estimatorIN,double sgnThetaIN,
-                   vector<double> &Q,const matrix<double> &x,
-                   const matrix<double> &p);
-    
 /* Mutators */
-    void set_hamiltonian(MVRPMD_MTS_Hamiltonian &H_IN);
-    
-    void set_estimator(MVRPMD_MTS_Estimator &Esti_IN);
-    
+    void set_hamiltonian(mvrpmd_mixed &H_IN);
+        
     void set_nuc_ss(double nuc_ssIN);
     
     void set_beta(double betaIN);
@@ -44,11 +39,7 @@ public:
     void set_energy(double energyIN);
     
     double get_energy();
-    
-    double get_estimator();
-    
-    double get_sgnTheta();
-    
+
     unsigned long long get_steps_total();
     
     unsigned long long get_steps_accepted();
@@ -64,15 +55,12 @@ private:
     double nuc_ss; //step size to take
     double beta; //1/kbT
     double energy; //energy of mc step
-    double estimator;
-    double sgnTheta;
-    
+
     vector<double> Q_prop; //proposed monte carlo move
 
 /* Objects */
-    MVRPMD_MTS_Hamiltonian *H;
-    
-    MVRPMD_MTS_Estimator *Esti;
+    //MVRPMD_MTS_Hamiltonian *H;
+    mvrpmd_mixed *H;
 
 /* Functions */
     

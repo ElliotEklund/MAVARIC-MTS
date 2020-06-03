@@ -37,40 +37,6 @@ void system_step::step(double energyIN, vector<double> &Q, const matrix<double> 
         steps_total += 1;
     }
 }
-void system_step::step_esti(double energyIN,double estimatorIN,double sgnThetaIN,
-                            vector<double> &Q,const matrix<double> &x,
-                            const matrix<double> &p){
-    energy = energyIN;
-    estimator = estimatorIN;
-    sgnTheta = sgnThetaIN;
-    
-    double mcMove=0;
-    double energy_prop = 0;
-    double estimator_prop = 0;
-    int sgn_prop = 0;
-    bool accept_move = false;
-    
-    for (int bead=0; bead<num_beads; bead++) {
-        mcMove = rand_bead(myRand.int64(),num_beads);
-        Q_prop(mcMove) = Q(mcMove) + step_dist(myRand.doub(),nuc_ss);
-        energy_prop = H->get_energy(Q_prop,x,p);
-        estimator_prop = Esti->get_estimator();
-        sgn_prop = H->get_sign();
-        accept_move = check_move(energy,energy_prop);
-
-        if (accept_move) {
-            Q(mcMove) = Q_prop(mcMove);
-            energy = energy_prop;
-            estimator = estimator_prop;
-            sgnTheta = sgnThetaIN;
-            steps_accepted += 1;
-        }
-        else{
-            Q_prop(mcMove) = Q(mcMove);
-        }
-        steps_total += 1;
-    }
-}
 inline double system_step::step_dist(const double rn, double step_size){
     return (rn * 2.0 * step_size) - step_size;
 }
@@ -91,9 +57,7 @@ bool system_step::check_move(double energy, double energy_prop){
     }
     return accept_move;
 }
-void system_step::set_hamiltonian(MVRPMD_MTS_Hamiltonian &H_IN){H = &H_IN;}
-
-void system_step::set_estimator(MVRPMD_MTS_Estimator &Esti_IN){Esti = &Esti_IN;}
+void system_step::set_hamiltonian(mvrpmd_mixed &H_IN){H = &H_IN;}
 
 void system_step::set_nuc_ss(double nuc_ssIN){nuc_ss = nuc_ssIN;}
 
@@ -102,10 +66,6 @@ void system_step::set_beta(double betaIN){beta = betaIN;}
 void system_step::set_energy(double energyIN){energy = energyIN;}
 
 double system_step::get_energy(){return energy;}
-
-double system_step::get_sgnTheta(){return sgnTheta;}
-
-double system_step::get_estimator(){return estimator;}
 
 unsigned long long system_step::get_steps_total(){return steps_total;}
 

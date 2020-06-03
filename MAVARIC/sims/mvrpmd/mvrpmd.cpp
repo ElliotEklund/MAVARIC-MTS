@@ -2,12 +2,11 @@
 #include <fstream>
 #include "mpi.h"
 
-#include "input_mvrpmd.hpp"
-
-#include "Dynamics.hpp"
 #include "MainHlpr.hpp"
-#include "sampling_mvrpmd.hpp"
+#include "input_mvrpmd.hpp"
 #include "equilib_mvrpmd.hpp"
+#include "sampling_mvrpmd.hpp"
+#include "Dynamics.hpp"
 
 int main(int argc, char ** argv) {
     
@@ -41,12 +40,10 @@ int main(int argc, char ** argv) {
     std::string root = "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/";
 //    //std::string root = "/home/fs01/ece52/MAVARIC-MTS/Dynamics_MTS/";
 //
-    int abort = myInput.input_file_handler(root,sys_parameters,elec_parameters,MC_parameters,
-                                          Samp_parameters,Dyn_parameters);
+    int abort = myInput.input_file_handler(root,sys_parameters,elec_parameters,
+                                           MC_parameters,Samp_parameters,Dyn_parameters);
 
-    if (abort == -1){
-        return -1;
-    }
+    if (abort == -1){return -1;}
 
     /* Physical parameters.*/
     double temp, mass;
@@ -131,7 +128,6 @@ int main(int argc, char ** argv) {
       /* This process runs the Monte Carlo simulation if requested.*/
 
     if (runMC) {
-
         if (my_id == root_process) {
             std::cout << std::endl << std::endl;
             std::cout << "Begin Monte Carlo Simulation" << std::endl;
@@ -152,7 +148,9 @@ int main(int argc, char ** argv) {
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
 
         if (my_id == root_process) {
-            std::cout << "\t Monte Carlo simulation time: " << time_taken << std::endl << std::endl;
+            std::cout << "\t Monte Carlo simulation time: " << time_taken <<
+            std::endl << std::endl;
+            
             std::cout << "End Monte Carlo Simulation" << std::endl;
             std::cout << std::endl;
         }
@@ -167,7 +165,6 @@ int main(int argc, char ** argv) {
       /* This process runs Sampling  if requested.*/
 
     if(runSamp){
-
         if (my_id == root_process) {
             std::cout << "Begin Sampling Simulation" << std::endl;
             std::cout << std::endl;
@@ -179,13 +176,15 @@ int main(int argc, char ** argv) {
 
         clock_t start = clock();
 
-        sampler.run(nuc_ss,elec_ss,num_trajs,decor_len);
+        sampler.run(nuc_ss,elec_ss,elec_ss,num_trajs,decor_len);
 
         clock_t end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
 
         if (my_id == root_process) {
-            std::cout << "\t Sampling simulation time: " << time_taken << std::endl << std::endl;
+            std::cout << "\t Sampling simulation time: " << time_taken <<
+            std::endl << std::endl;
+            
             std::cout << "End Sampling Simulation" << std::endl;
             std::cout << std::endl << std::endl;
         }
@@ -200,7 +199,6 @@ int main(int argc, char ** argv) {
     /* This process runs the Dynamics simulation if requested.*/
 
     if(runDyn){
-
         if (my_id == root_process) {
             std::cout << "Begin Dynamics Simulation" << std::endl;
             std::cout << std::endl << std::endl;

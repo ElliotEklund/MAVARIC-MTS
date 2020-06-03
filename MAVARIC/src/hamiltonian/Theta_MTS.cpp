@@ -29,11 +29,7 @@ void Theta_MTS::update_theta(const vector<double> &Q,const matrix<double> &x,
     
     update_gamma_mat(Q, x, p);
     std::complex<double> tr (0.0,0.0);
-            
-    /* Compute trace. */
-    for (int i=0; i<num_states; i++) {
-        tr += gamma_mat(i,i);
-    }
+    tr = trace<std::complex<double> >(gamma_mat,num_states);
     theta = tr.real();
 }
 double Theta_MTS::get_theta(const vector<double> &Q,const matrix<double> &x,
@@ -44,24 +40,12 @@ double Theta_MTS::get_theta(const vector<double> &Q,const matrix<double> &x,
 }
 double Theta_MTS::get_theta(){return theta;}
 
-double Theta_MTS::get_signTheta(){
-    if (theta >= 0) {
-        return 1.0;
-    }
-    else{
-        return -1.0;
-    }
-}
+double Theta_MTS::get_signTheta(){return sign(theta);}
+
 double Theta_MTS::get_signTheta(const vector<double> &Q,const matrix<double> &x,
                                 const matrix<double> &p){
-
-    update_theta(Q,x,p); 
     
-    if (theta >= 0) {
-        return 1.0;
-    }
-    else{
-        return -1.0;
-    }
+    update_theta(Q,x,p);
+    return sign(theta);
 }
 matrix<std::complex<double> > Theta_MTS::get_gamm(){return gamma_mat;}

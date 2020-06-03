@@ -9,6 +9,7 @@
 
 #include "M_Matrix_MTS.hpp"
 #include "C_Matrix.h"
+#include "functions.hpp"
 
 using namespace boost::numeric::ublas;
 
@@ -57,6 +58,4 @@ private:
     matrix<std::complex<double> > gamma_mat; // C1 x M1 ... CN x MN
     
 };
-
-
 #endif

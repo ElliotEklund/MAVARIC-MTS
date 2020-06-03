@@ -51,9 +51,7 @@ if(${MACHINE} STREQUAL "MAC")
     add_executable(mvrpmd mvrpmd.cpp
 
         #equilibrium directory
-        ${EQUILIBRIUM_DIR}/MonteCarlo.cpp
         ${EQUILIBRIUM_DIR}/MonteCarloHelper.cpp
-        ${EQUILIBRIUM_DIR}/MonteCarlo_MTS.cpp
         ${EQUILIBRIUM_DIR}/equilib_mvrpmd.cpp
         ${EQUILIBRIUM_DIR}/input_mvrpmd.cpp
 

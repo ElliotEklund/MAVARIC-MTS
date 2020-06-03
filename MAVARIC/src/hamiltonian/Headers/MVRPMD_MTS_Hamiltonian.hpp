@@ -5,8 +5,9 @@
 #include "StateIndepPot.h"
 #include "Theta_MTS.hpp"
 #include "GTerm.h"
+#include "mvrpmd_mixed.hpp"
 
-class MVRPMD_MTS_Hamiltonian{
+class MVRPMD_MTS_Hamiltonian : public mvrpmd_mixed{
 
 public:
     

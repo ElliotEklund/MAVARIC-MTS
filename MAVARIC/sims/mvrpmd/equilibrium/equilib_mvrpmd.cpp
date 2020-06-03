@@ -15,13 +15,15 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     vector<double> Q(nuc_beads,0);
     matrix<double> x(elec_beads,num_states,0), p(elec_beads,num_states,0);
 
+    //Initialize vectors
     gen_initQ(Q,nuc_beads,nuc_ss);
     gen_initElec(x,elec_beads,num_states,x_ss);
     gen_initElec(p,elec_beads,num_states,p_ss);
     
+    //Over-write with saved vectors if requested
     if(readPSV){helper.read_PSV(nuc_beads, elec_beads, num_states, Q, x, p);}
     
-    /* Assemble Hamiltonian*/
+    /* Assemble Hamiltonian and Estimator*/
     SpringEnergy V_spring(nuc_beads,mass,beta/nuc_beads);
     StateIndepPot V0(nuc_beads,mass);
     GTerm G(elec_beads,num_states);
@@ -36,21 +38,22 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     MVRPMD_MTS_Estimator Esti(nuc_beads,beta/nuc_beads,V_spring,V0,
                                    thetaMTS,dthetaMTS_dBeta);
     
+    /* Initialize energy and estimator variables*/
     int esti_samples = 0;
     double estimator_total(0), sgn_total(0);
-    double energy = H.get_energy(Q,x,p);
-    double estimator(0), sgnTheta(0);
+    double energy(0), estimator(0), sgnTheta(0);
     vector<double> estimator_t(num_steps/stride,0);
     
-    if (readData) {
-        helper.read_MC_data(sgn_total, estimator_total);
-    }
+    energy = H.get_energy(Q,x,p);
+    estimator = Esti.get_estimator();
+
+    /* Over-write estimator with saved value if requested*/
+    if (readData) {helper.read_MC_data(sgn_total, estimator_total);}
 
     /* Initialize nuclear stepping procedure */
     system_step nuc_stepper(my_id,num_procs,root_proc,nuc_beads,beta);
     nuc_stepper.set_nuc_ss(nuc_ss);
     nuc_stepper.set_hamiltonian(H);
-    nuc_stepper.set_estimator(Esti);
 
     /* Initialize electronic stepping procedure*/
     elec_step elec_stepper(my_id,num_procs,root_proc,elec_beads,num_states,beta);
@@ -92,6 +95,7 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
         }
     }
 
+    /* Retrive acceptance ratio information */
     unsigned long long nuc_steps_total = nuc_stepper.get_steps_total();
     unsigned long long nuc_steps_accpt = nuc_stepper.get_steps_accepted();
 
@@ -101,15 +105,15 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     unsigned long long p_steps_accpt = elec_stepper.get_p_steps_accpt();
     unsigned long long p_steps_total = elec_stepper.get_p_steps_total();
     
+    /* Print Monte Carlo simulation Data */
     helper.print_sys_accpt(nuc_steps_total, nuc_steps_accpt);
     helper.print_elec_accpt(x_steps_total, x_steps_accpt);
     helper.print_avg_energy(estimator_total, sgn_total);
     helper.write_estimator(estimator_t,stride);
         
+    /* Write Monte Carlo information to file if requested*/
     if(writePSV){helper.write_PSV(nuc_beads, elec_beads, num_states, Q, x, p);}
-    
     if (writeData) {helper.write_MC_data(sgn_total, estimator_total);}
-
 }
 void equilib_mvrpmd::gen_initQ(vector<double> &Q, int num_beads, double step_size){
     for (int bead=0; bead<num_beads; bead++) {

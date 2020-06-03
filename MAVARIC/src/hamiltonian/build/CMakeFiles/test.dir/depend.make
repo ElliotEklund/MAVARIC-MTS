@@ -2526,7 +2526,9 @@ CMakeFiles/test.dir/MVRPMD_MTS_Hamiltonian.cpp.o: ../Headers/SpringEnergy.h
 CMakeFiles/test.dir/MVRPMD_MTS_Hamiltonian.cpp.o: ../Headers/StateDepPots.h
 CMakeFiles/test.dir/MVRPMD_MTS_Hamiltonian.cpp.o: ../Headers/StateIndepPot.h
 CMakeFiles/test.dir/MVRPMD_MTS_Hamiltonian.cpp.o: ../Headers/Theta_MTS.hpp
+CMakeFiles/test.dir/MVRPMD_MTS_Hamiltonian.cpp.o: ../Headers/mvrpmd_mixed.hpp
 CMakeFiles/test.dir/MVRPMD_MTS_Hamiltonian.cpp.o: ../MVRPMD_MTS_Hamiltonian.cpp
+CMakeFiles/test.dir/MVRPMD_MTS_Hamiltonian.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/functions.hpp
 CMakeFiles/test.dir/MVRPMD_MTS_Hamiltonian.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/aligned_storage.hpp
 CMakeFiles/test.dir/MVRPMD_MTS_Hamiltonian.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/basic_archive.hpp
 CMakeFiles/test.dir/MVRPMD_MTS_Hamiltonian.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/detail/abi_prefix.hpp
@@ -8370,6 +8372,7 @@ CMakeFiles/test.dir/Theta_MTS.cpp.o: ../Headers/M_Matrix_MTS.hpp
 CMakeFiles/test.dir/Theta_MTS.cpp.o: ../Headers/StateDepPots.h
 CMakeFiles/test.dir/Theta_MTS.cpp.o: ../Headers/Theta_MTS.hpp
 CMakeFiles/test.dir/Theta_MTS.cpp.o: ../Theta_MTS.cpp
+CMakeFiles/test.dir/Theta_MTS.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/functions.hpp
 CMakeFiles/test.dir/Theta_MTS.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
 CMakeFiles/test.dir/Theta_MTS.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
 CMakeFiles/test.dir/Theta_MTS.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/config.hpp
@@ -9204,6 +9207,7 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/F
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dStateIndep_dQ.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dElec.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dQ.hpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/functions.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/aligned_storage.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/basic_archive.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/detail/abi_prefix.hpp
@@ -17586,6 +17590,7 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrat
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dQ.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/Headers/RK4_MVRPMD.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/functions.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/aligned_storage.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/basic_archive.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/detail/abi_prefix.hpp
@@ -18467,6 +18472,7 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrat
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dQ.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/Headers/mvrpmd_special.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/functions.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/aligned_storage.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/basic_archive.hpp
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/detail/abi_prefix.hpp
@@ -22684,6 +22690,7 @@ CMakeFiles/test.dir/test.cpp.o: ../test.cpp
 CMakeFiles/test.dir/test.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/Headers/RK4_MVRPMD.hpp
 CMakeFiles/test.dir/test.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/Headers/mvrpmd_special.hpp
 CMakeFiles/test.dir/test.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/Headers/rpmd_vv.hpp
+CMakeFiles/test.dir/test.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/functions.hpp
 CMakeFiles/test.dir/test.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/aligned_storage.hpp
 CMakeFiles/test.dir/test.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/basic_archive.hpp
 CMakeFiles/test.dir/test.cpp.o: /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/detail/abi_prefix.hpp

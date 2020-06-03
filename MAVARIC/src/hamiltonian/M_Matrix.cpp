@@ -14,7 +14,23 @@ M_Matrix::M_Matrix(int num_states,int num_beads,double beta_num_beads)
 {
     myExp.set_beta_num_beads(beta_num_beads);
 }
-
+void M_Matrix::update_M_vec(const vector<double> &Q){
+        
+    noalias(V_mat) = V.get_V_mat(Q);
+    
+    for (int bead=0; bead<num_beads; bead++) {
+        for (int state=0; state<num_states; state++) {
+            exp_V_mat(bead,state) = exp(-beta_num_beads*V_mat(bead,state));
+        }
+    }
+    
+    update_V_couple_vec(Q);
+    
+    for (int bead=0; bead<num_beads; bead++) {
+        update_M_alpha(Q[bead], bead);
+        noalias(M_vec(bead)) = M_alpha;
+    }
+}
 void M_Matrix::update_M_alpha(const double &Q, int bead){
     
     noalias(V_couple_temp) = V_couple_vec(bead);
@@ -32,25 +48,6 @@ void M_Matrix::update_M_alpha(const double &Q, int bead){
     }
 }
 
-void M_Matrix::update_M_vec(const vector<double> &Q){
-        
-    noalias(V_mat) = V.get_V_mat(Q);
-    
-    for (int bead=0; bead<num_beads; bead++) {
-        for (int state=0; state<num_states; state++) {
-            exp_V_mat(bead,state) = exp(-beta_num_beads*V_mat(bead,state));
-        }
-    }
-    
-    update_V_couple_vec(Q);
-    
-    for (int bead=0; bead<num_beads; bead++) {
-        update_M_alpha(Q[bead], bead);
-        noalias(M_vec(bead)) = M_alpha;
-    }
-    
-}
-
 void M_Matrix::exp_mat::set_beta_num_beads(double x){beta_num_beads = x;}
 
 double M_Matrix::exp_mat::operator() (double x) const { return exp( - beta_num_beads * x); }
@@ -58,7 +55,6 @@ double M_Matrix::exp_mat::operator() (double x) const { return exp( - beta_num_b
 matrix<std::complex<double> >& M_Matrix::get_M_alpha(int alpha){
     return M_vec(alpha);
 }
-
 const matrix<double>& M_Matrix::get_V_mat() {return V_mat;}
 
 void M_Matrix::update_V_couple_vec(const vector<double> &Q){
@@ -67,7 +63,6 @@ void M_Matrix::update_V_couple_vec(const vector<double> &Q){
         V_couple_vec(bead) = V.get_V_couple_mat(Q(bead));
     }
 }
-
 const matrix<double>& M_Matrix::get_V_couple_alpha(int alpha){
     return  V_couple_vec(alpha);
 }

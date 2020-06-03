@@ -32,8 +32,8 @@ public:
      num_trajs: number of trajectories to be sampled
      decorr: decorrelation length between trajectories
      */
-    void run(double nuc_ss, double elec_ss,unsigned long long num_trajs,
-                              unsigned long long decorr);
+    void run(double nuc_ss, double x_ss, double p_xx,
+             unsigned long long num_trajs,unsigned long long decorr);
     
     /*
      Set all variables in the argument; these are defined below under Model Data
@@ -44,7 +44,6 @@ public:
     /* Set all variables in the argument; these are defined below under
      Sampling Data*/
     void initialize_files(bool readPSVIN, std::string rootFolderIN);
-
     
 private:
 
@@ -74,14 +73,28 @@ private:
      */
     inline double step_dist(const double rn, double step_size);
     
+    /* Save v to file name.
+     v: vector to be saved
+     name: name of file v is to be saved to*/
     void save_trajs(vector<double> &v,std::string name);
     
+    /* Save v to file name.
+     v: matrix to be saved
+     size: number of states x number of beads in system
+     num_trajs: number of trajectories v holds
+     name: name of file v is to be saved to*/
     void save_trajs(matrix<double> &v,int size, int num_trajs,
                     std::string name);
 
-    
+    /* Initialize Q with random vaules.
+     Q: vector of bead positions
+     num_beads: number of beads in Q
+     step_size: sets range of individual elements of Q; Q[i] ~ [-step_size,step_size]*/
     void gen_initQ(vector<double> &Q, int num_beads, double step_size);
     
+    /* Returns a uniform random number between [-step_size,step_size]
+     rn: random double
+     step_size: specifices range of uniform random distribution*/
     void gen_initElec(matrix<double> &v, int num_beads,
                       int num_states,double step_size);
 };

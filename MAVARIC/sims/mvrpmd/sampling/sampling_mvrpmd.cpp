@@ -7,8 +7,8 @@ sampling_mvrpmd::sampling_mvrpmd(int my_id, int root_proc, int num_procs)
      myRand(time(NULL) + my_id),
      helper(my_id,num_procs,root_proc)
 {}
-void sampling_mvrpmd::run(double nuc_ss, double elec_ss, unsigned long long num_trajs,
-                          unsigned long long decorr){
+void sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
+                          unsigned long long num_trajs,unsigned long long decorr){
     
     /* Convert num_trajs to num_trajs per processor*/
     if (num_trajs % num_procs != 0) {
@@ -26,8 +26,8 @@ void sampling_mvrpmd::run(double nuc_ss, double elec_ss, unsigned long long num_
     matrix<double> x(elec_beads,num_states,0), p(elec_beads,num_states,0);
     
     gen_initQ(Q,nuc_beads,nuc_ss);
-    gen_initElec(x,elec_beads,num_states,elec_ss);
-    gen_initElec(p,elec_beads,num_states,elec_ss);
+    gen_initElec(x,elec_beads,num_states,x_ss);
+    gen_initElec(p,elec_beads,num_states,p_ss);
     
     if (readPSV) {
         helper.read_PSV(nuc_beads,elec_beads,num_states,Q,x,p);
@@ -62,7 +62,7 @@ void sampling_mvrpmd::run(double nuc_ss, double elec_ss, unsigned long long num_
     elec_step elec_stepper(my_id,num_procs,root_proc,elec_beads,num_states,beta);
     elec_stepper.set_hamiltonian(H);
     elec_stepper.set_energy(energy);
-    elec_stepper.set_ss(elec_ss,elec_ss);
+    elec_stepper.set_ss(x_ss,p_ss);
 
     //r is a ratio that determines how often to sample each sub-system
     double r = double(nuc_beads)/ double(nuc_beads + num_states*elec_beads);

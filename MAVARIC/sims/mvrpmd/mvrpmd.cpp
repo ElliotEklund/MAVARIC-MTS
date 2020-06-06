@@ -118,6 +118,8 @@ int main(int argc, char ** argv) {
     beta_nuc = beta/nuc_beads;
     beta_elec = beta/elec_beads;
     
+    double x_ss = 1.3;
+    double p_ss = 1.3;
 
                         /* END PROCESS 1 */
     /* /////////////////////////////////////////////////////////*/
@@ -142,7 +144,7 @@ int main(int argc, char ** argv) {
 
         clock_t start = clock();
         
-        equilibrator.run(nuc_ss,elec_ss,elec_ss,num_steps,esti_rate);
+        equilibrator.run(nuc_ss,x_ss,p_ss,num_steps,esti_rate);
 
         clock_t end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
@@ -176,7 +178,7 @@ int main(int argc, char ** argv) {
 
         clock_t start = clock();
 
-        sampler.run(nuc_ss,elec_ss,elec_ss,num_trajs,decor_len);
+        sampler.run(nuc_ss,x_ss,p_ss,num_trajs,decor_len);
 
         clock_t end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);

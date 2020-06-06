@@ -17,7 +17,10 @@
 
 #include "mpi_wrapper.hpp"
 #include "MVRPMD_MTS_Hamiltonian.hpp"
+#include "mvrpmd_mixed.hpp"
+#include "mvrpmd_mixed_ham.hpp"
 #include "MVRPMD_MTS_Estimator.hpp"
+#include "mvrpmd_mixed_esti.hpp"
 #include "MonteCarloHelper.h"
 #include "system_step.hpp"
 #include "elec_step.hpp"

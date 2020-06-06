@@ -19,8 +19,12 @@
 #include "Theta_MTS.hpp"
 #include "dTheta_MTS_dQ.hpp"
 #include "dTheta_MTS_dElec.hpp"
+#include "theta_mixed.hpp"
+#include "theta_mixed_dQ.hpp"
+#include "theta_mixed_dElec.hpp"
 
 #include "Forces_MTS.hpp"
+#include "mvrpmd_mixed_forces.hpp"
 #include "ABM_MVRPMD.hpp"
 #include "init_PAC.hpp"
 #include "aggregate.hpp"
@@ -134,7 +138,12 @@ private:
     dTheta_MTS_dQ dThetadQ;
     dTheta_MTS_dElec dThetadElec;
     
-    Forces_MTS F;
+    theta_mixed theta;
+    theta_mixed_dQ theta_dQ;
+    theta_mixed_dElec theta_dElec;
+    
+    //Forces_MTS F;
+    mvrpmd_mixed_forces F;
     
 };
 

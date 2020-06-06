@@ -47,7 +47,10 @@ void sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     M_Matrix M(num_states,nuc_beads,beta/elec_beads);
     M_Matrix_MTS M_MTS(nuc_beads,elec_beads,num_states,M);
     Theta_MTS thetaMTS(num_states,elec_beads,C,M_MTS);
-    MVRPMD_MTS_Hamiltonian H(beta/nuc_beads,V_spring,V0,G,thetaMTS);
+    theta_mixed theta(num_states,nuc_beads,elec_beads,C,M);
+
+    //MVRPMD_MTS_Hamiltonian H(beta/nuc_beads,V_spring,V0,G,thetaMTS);
+    mvrpmd_mixed_ham H(beta/nuc_beads,V_spring,V0,G,theta);
     
     double energy = H.get_energy(Q,x,p);
     double energy_prop = energy;
@@ -127,9 +130,8 @@ void sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     unsigned long long p_steps_total = elec_stepper.get_p_steps_total();
     
     helper.print_sys_accpt(nuc_steps_total,nuc_steps_accpt,"Nuclear");
-    //helper.print_sys_accpt(elec_steps_total,elec_steps_accpt,"Electronic");
-    std::cout << "x steps:" << 100 * double(x_steps_accpt)/double(x_steps_total) << std::endl;
-    std::cout << "p steps:" << 100 * double(p_steps_accpt)/double(p_steps_total) << std::endl;
+    helper.print_sys_accpt(x_steps_total,x_steps_accpt,"x");
+    helper.print_sys_accpt(p_steps_total,p_steps_accpt,"p");
 }
 void sampling_mvrpmd::gen_initQ(vector<double> &Q, int num_beads, double step_size){
     for (int bead=0; bead<num_beads; bead++) {

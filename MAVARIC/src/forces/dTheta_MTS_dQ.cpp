@@ -18,19 +18,10 @@ dTheta_MTS_dQ::dTheta_MTS_dQ(int num_states, int nuc_beads, int elec_beads, C_Ma
     C = &C_In;
     M_MTS = &M_MTS_In;
     dM_MTS_dQ = & dM_MTS_dQ_In;
- 
-//    temp1.resize(num_states,num_states);
-//    temp2.resize(num_states,num_states);
-//
-//    fchain_temp.resize(num_states,num_states);
-//    bchain_temp.resize(num_states,num_states);
-
 }
 
 void dTheta_MTS_dQ::update_dTheta_MTS_dQ_vec(const vector<double> &Q){
-     
-    //std::cout << "dTHetadQ" << std::endl << std::endl;
- 
+      
     update_f_chain();
     update_b_chain();
 
@@ -46,19 +37,7 @@ void dTheta_MTS_dQ::update_dTheta_MTS_dQ_vec(const vector<double> &Q){
         
         noalias(temp1) = prod(f_chain(alpha), dM_MTS_dQ->get_dM_MTS_dQ_alpha(bead));
         noalias(temp2) = prod(temp1, b_chain(alpha));
-        
-//        std::cout << "f_chain" << std::endl;
-//        std::cout << f_chain(bead) << std::endl << std::endl;
-//        
-//        std::cout << "dMdQ" << std::endl;
-//        std::cout << dM_MTS_dQ->get_dM_MTS_dQ_alpha(bead) << std::endl << std::endl;
-//        
-//        std::cout << "b_chain" << std::endl;
-//        std::cout << b_chain(bead) << std::endl << std::endl;
-//        
-//        std::cout << "dThetadQ" << bead + 1 << std::endl;
-//        std::cout << temp2 << std::endl;
-        
+
         for (int state=0; state<num_states; state++) {
             tr += temp2(state,state);
         }
@@ -68,7 +47,6 @@ void dTheta_MTS_dQ::update_dTheta_MTS_dQ_vec(const vector<double> &Q){
         tr = std::complex<double> (0,0);
     }
 }
-
 void dTheta_MTS_dQ::update_f_chain(){
     
     f_chain[0] = C->get_C_alpha(0);
@@ -78,7 +56,6 @@ void dTheta_MTS_dQ::update_f_chain(){
         f_chain[bead] = prod(f_chain[bead-1], fchain_temp);
     }
 }
-
 void dTheta_MTS_dQ::update_b_chain(){
     
     b_chain[elec_beads-1] = identity_matrix<std::complex<double> > (num_states);
@@ -88,7 +65,6 @@ void dTheta_MTS_dQ::update_b_chain(){
         b_chain[bead] = prod(bchain_temp, b_chain[bead+1]);
     }
 }
-
 const vector<double> & dTheta_MTS_dQ::get_dThetaMTS_dQ_vec(){
     return dTheta_MTS_dQ_vec;
 }

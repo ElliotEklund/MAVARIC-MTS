@@ -101,7 +101,7 @@ inline int elec_step::rand_bead(const Ullong rn, int num_beads){
 inline double elec_step::step_dist(const double rn, double step_size){
     return (rn * 2.0 * step_size) - step_size;
 }
-void elec_step::set_hamiltonian(MVRPMD_MTS_Hamiltonian &H_IN){H = &H_IN;}
+void elec_step::set_hamiltonian(mvrpmd_mixed &H_IN){H = &H_IN;}
 
 void elec_step::set_beta(double betaIN){beta = betaIN;}
 

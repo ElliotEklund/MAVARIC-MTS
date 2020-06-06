@@ -10,7 +10,6 @@ dM_Matrix_dBeta::dM_Matrix_dBeta(int nuc_beads, int num_states, double betaN,
     M = &M_In;
     dM_dBeta_alpha = identity_matrix<std::complex<double> > (num_states,num_states);
 }
-
 dM_Matrix_dBeta::dM_Matrix_dBeta(int nuc_beads, int elec_beads, int num_states, double
                                  betaN,M_Matrix &M_In)
     :num_states(num_states), nuc_beads(nuc_beads), elec_beads(elec_beads),
@@ -21,7 +20,6 @@ dM_Matrix_dBeta::dM_Matrix_dBeta(int nuc_beads, int elec_beads, int num_states, 
     M = &M_In;
     dM_dBeta_alpha = identity_matrix<std::complex<double> > (num_states,num_states);
 }
-
 void dM_Matrix_dBeta::update_dM_dBeta(int alpha){
     
     std::complex<double> diag (0,0);
@@ -58,11 +56,9 @@ void dM_Matrix_dBeta::update_dM_dBeta(int alpha){
         }
     }
 }
-
 const matrix<std::complex<double> > & dM_Matrix_dBeta::get_dM_dBeta_alpha (int alpha){
     return dM_dBeta_vec(alpha);
 }
-
 void dM_Matrix_dBeta::update_dM_dBeta_vec(){
     for (int bead=0; bead<nuc_beads; bead++) {
         update_dM_dBeta(bead);

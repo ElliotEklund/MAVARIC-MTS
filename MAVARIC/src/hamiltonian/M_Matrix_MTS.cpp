@@ -9,7 +9,6 @@ M_Matrix_MTS::M_Matrix_MTS(int nuc_beads,int elec_beads,int num_states,
 {
     M = &M_In;
 }
-
 void M_Matrix_MTS::update_M_MTS_vec(const vector<double> &Q){
     
     M->update_M_vec(Q);
@@ -23,7 +22,6 @@ void M_Matrix_MTS::update_M_MTS_vec(const vector<double> &Q){
         M_MTS_vec(bead) = (1.0/gamma) * temp_sum;
     }
 }
-
 void M_Matrix_MTS::update_M_MTS_vec(){
     
     matrix<std::complex<double> > temp_sum (num_states,num_states,0.0);
@@ -36,7 +34,6 @@ void M_Matrix_MTS::update_M_MTS_vec(){
         M_MTS_vec(bead) = (1.0/gamma) * temp_sum;
     }
 }
-
 
 matrix<std::complex<double> >& M_Matrix_MTS::get_M_MTS_alpha(int alpha){
     return M_MTS_vec(alpha);

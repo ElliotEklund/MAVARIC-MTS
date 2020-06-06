@@ -9,7 +9,9 @@
 
 #include "Forces_MTS.hpp"
 #include "RK4_MVRPMD.hpp"
-
+#include "mvrpmd_mixed_forces.hpp"
+#include "mvrpmd_forces_temp.hpp"
+#include <iomanip>
 #include <math.h>
 
 using namespace boost::numeric::ublas;
@@ -18,7 +20,8 @@ class ABM_MVRPMD{
   
 public:
     
-    ABM_MVRPMD(Forces_MTS &F_In,double dt, int num_states, int nuc_beads, int elec_beads);
+    ABM_MVRPMD(mvrpmd_forces_temp &F_In,double dt, int num_states,
+               int nuc_beads, int elec_beads);
     
     /* Initialize ABM by taking backward steps with RK4*/
     void initialize_rk4(vector<double> &Q,vector<double> &P,
@@ -108,7 +111,7 @@ private:
     void update_f_p1(const vector<double> &Q,const vector<double> &P,
                     const matrix<double> &x,const matrix<double> &p);
     
-    Forces_MTS *F;
+    mvrpmd_forces_temp *F;
 };
 
 

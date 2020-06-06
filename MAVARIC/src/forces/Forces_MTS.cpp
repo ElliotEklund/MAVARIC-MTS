@@ -47,8 +47,8 @@ void Forces_MTS::update_Forces(const vector<double> &Q,const vector<double> &P,
 }
 
 void Forces_MTS::update_dHdP(const vector<double> &P){
-    //dHdP =  ONE_mass * P;
-    dHdP = nuc_beads* ONE_mass * P;
+    dHdP =  ONE_mass * P;
+    //dHdP = nuc_beads* ONE_mass * P;
 }
 
 void Forces_MTS::update_dHdQ(const vector<double> &Q, const matrix<double> &x,
@@ -58,24 +58,24 @@ void Forces_MTS::update_dHdQ(const vector<double> &Q, const matrix<double> &x,
     dV0_dQ_vec = dV0_dQ.get_dStateIndep_dQ(Q);
     dThetaMTS_dQ_vec = dThetaMTS_dQ->get_dThetaMTS_dQ_vec();
 
-    //noalias(dHdQ) = dVspring_dQ_vec + dV0_dQ_vec - coeff_ONE_theta*dThetaMTS_dQ_vec;
-    noalias(dHdQ) = (dVspring_dQ_vec + dV0_dQ_vec - coeff_ONE_theta*dThetaMTS_dQ_vec)/nuc_beads;
+    noalias(dHdQ) = dVspring_dQ_vec + dV0_dQ_vec - coeff_ONE_theta*dThetaMTS_dQ_vec;
+    //noalias(dHdQ) = (dVspring_dQ_vec + dV0_dQ_vec - coeff_ONE_theta*dThetaMTS_dQ_vec)/nuc_beads;
 }
 
 void Forces_MTS::update_dHdx(const vector<double> &Q, const matrix<double> &x,
                                        const matrix<double> &p){
     
     dThetaMTS_dx_vec = dThetaMTS_dElec->get_dThetaMTS_dx_vec();
-    //noalias(dHdx) = (TWO_beta_nuc_beads*x - coeff_ONE_theta * dThetaMTS_dx_vec);
-    noalias(dHdx) = - coeff_ONE_theta * dThetaMTS_dx_vec/nuc_beads;
+    noalias(dHdx) = (TWO_beta_nuc_beads*x - coeff_ONE_theta * dThetaMTS_dx_vec);
+    //noalias(dHdx) = - coeff_ONE_theta * dThetaMTS_dx_vec/nuc_beads;
 }
 
 void Forces_MTS::update_dHdp(const vector<double> &Q, const matrix<double> &x,
                                        const matrix<double> &p){
 
     dThetaMTS_dp_vec = dThetaMTS_dElec->get_dThetaMTS_dp_vec();
-    //noalias(dHdp) = (TWO_beta_nuc_beads*p - coeff_ONE_theta * dThetaMTS_dp_vec);
-    noalias(dHdp) = - coeff_ONE_theta * dThetaMTS_dp_vec/nuc_beads;
+    noalias(dHdp) = (TWO_beta_nuc_beads*p - coeff_ONE_theta * dThetaMTS_dp_vec);
+    //noalias(dHdp) = - coeff_ONE_theta * dThetaMTS_dp_vec/nuc_beads;
 }
 
 const vector<double> & Forces_MTS::get_dHdQ(){return dHdQ;}

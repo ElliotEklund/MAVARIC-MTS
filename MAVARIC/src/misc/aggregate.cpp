@@ -43,7 +43,7 @@ void aggregate::merge_collections(int root_process,int my_id, std::string root){
         if (my_id==root_process) {
             std::string fileName = root + name;
             std::ofstream myFile;
-            myFile.open(fileName);
+            myFile.open(fileName.c_str());
             
             if (!myFile.is_open()) {
                 std::cout << "ERROR: Could not open " << fileName << std::endl;

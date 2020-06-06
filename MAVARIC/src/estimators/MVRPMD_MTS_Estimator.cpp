@@ -35,7 +35,7 @@ double MVRPMD_MTS_Estimator::get_estimator(const vector<double> &Q,
     double thetaMTS_temp = thetaMTS->get_theta(Q,x,p);
     double sgnThetaMTS_temp = thetaMTS->get_signTheta();
     double dthetaMTS_dBeta_temp = dthetaMTS_dBeta->get_dTheta_MTS_dBeta();
-    
-    return (ONE_HALF_beta_num_beads + ONE_num_beads*(V0_temp - V_spring_temp) -
-            dthetaMTS_dBeta_temp/thetaMTS_temp)*sgnThetaMTS_temp;
+     
+    return (ONE_HALF_beta_num_beads + ONE_num_beads*(V0_temp - V_spring_temp)
+            - dthetaMTS_dBeta_temp/thetaMTS_temp)*sgnThetaMTS_temp;
 }

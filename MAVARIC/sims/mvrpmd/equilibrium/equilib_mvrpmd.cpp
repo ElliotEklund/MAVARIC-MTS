@@ -31,31 +31,38 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     M_Matrix M(num_states,nuc_beads,beta/elec_beads);
     M_Matrix_MTS M_MTS(nuc_beads,elec_beads,num_states,M);
     Theta_MTS thetaMTS(num_states,elec_beads,C,M_MTS);
+    theta_mixed theta(num_states,nuc_beads,elec_beads,C,M);
+    theta_mixed_dBeta dtheta(elec_beads,num_states,beta/elec_beads,C,M);
+
     dTheta_MTS_dBeta dthetaMTS_dBeta(nuc_beads,elec_beads,num_states,
                                       beta/elec_beads,C,M,M_MTS);
 
-    MVRPMD_MTS_Hamiltonian H(beta/nuc_beads,V_spring,V0,G,thetaMTS);
-    MVRPMD_MTS_Estimator Esti(nuc_beads,beta/nuc_beads,V_spring,V0,
-                                   thetaMTS,dthetaMTS_dBeta);
+//    MVRPMD_MTS_Hamiltonian H(beta/nuc_beads,V_spring,V0,G,thetaMTS);
+//
+//    MVRPMD_MTS_Estimator Esti(nuc_beads,beta/nuc_beads,V_spring,V0,
+//                                  thetaMTS,dthetaMTS_dBeta);
+    
+    mvrpmd_mixed_ham H(beta/nuc_beads,V_spring,V0,G,theta);
+    mvrpmd_mixed_esti Esti(nuc_beads,beta/nuc_beads,V_spring,V0,theta,dtheta);
     
     /* Initialize energy and estimator variables*/
     int esti_samples = 0;
     double estimator_total(0), sgn_total(0);
     double energy(0), estimator(0), sgnTheta(0);
     vector<double> estimator_t(num_steps/stride,0);
-    
+
     energy = H.get_energy(Q,x,p);
     estimator = Esti.get_estimator();
 
     /* Over-write estimator with saved value if requested*/
     if (readData) {helper.read_MC_data(sgn_total, estimator_total);}
 
-    /* Initialize nuclear stepping procedure */
+     //Initialize nuclear stepping procedure
     system_step nuc_stepper(my_id,num_procs,root_proc,nuc_beads,beta);
     nuc_stepper.set_nuc_ss(nuc_ss);
     nuc_stepper.set_hamiltonian(H);
 
-    /* Initialize electronic stepping procedure*/
+     //Initialize electronic stepping procedure
     elec_step elec_stepper(my_id,num_procs,root_proc,elec_beads,num_states,beta);
     elec_stepper.set_hamiltonian(H);
     elec_stepper.set_energy(energy);
@@ -83,12 +90,13 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
                 energy = elec_stepper.get_energy();
             }
         }
+
         estimator = Esti.get_estimator(Q,x,p);
-        sgnTheta = thetaMTS.get_signTheta();
-        
+        sgnTheta = theta.get_signTheta();
+    
         estimator_total += estimator;
         sgn_total += sgnTheta;
-        
+
         if(step % stride == 0){
             estimator_t[esti_samples] = estimator_total/(sgn_total + 1);
             esti_samples += 1;
@@ -104,13 +112,14 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
 
     unsigned long long p_steps_accpt = elec_stepper.get_p_steps_accpt();
     unsigned long long p_steps_total = elec_stepper.get_p_steps_total();
-    
+
     /* Print Monte Carlo simulation Data */
     helper.print_sys_accpt(nuc_steps_total, nuc_steps_accpt);
     helper.print_elec_accpt(x_steps_total, x_steps_accpt);
+    helper.print_elec_accpt(p_steps_total, p_steps_accpt);
     helper.print_avg_energy(estimator_total, sgn_total);
     helper.write_estimator(estimator_t,stride);
-        
+
     /* Write Monte Carlo information to file if requested*/
     if(writePSV){helper.write_PSV(nuc_beads, elec_beads, num_states, Q, x, p);}
     if (writeData) {helper.write_MC_data(sgn_total, estimator_total);}

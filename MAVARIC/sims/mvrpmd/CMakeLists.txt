@@ -75,6 +75,8 @@ if(${MACHINE} STREQUAL "MAC")
         ${HAMILTONIAN_DIR}/StateIndepPot.cpp
         ${HAMILTONIAN_DIR}/Theta_MTS.cpp
         ${HAMILTONIAN_DIR}/Theta.cpp
+        ${HAMILTONIAN_DIR}/theta_mixed.cpp
+        ${HAMILTONIAN_DIR}/mvrpmd_ham_mixed.cpp
 
         #estimators directory
         ${ESTIMATORS_DIR}/dM_Matrix_dBeta.cpp
@@ -83,6 +85,8 @@ if(${MACHINE} STREQUAL "MAC")
         ${ESTIMATORS_DIR}/dTheta_MTS_dBeta.cpp
         ${ESTIMATORS_DIR}/MVRPMD_Estimator.cpp
         ${ESTIMATORS_DIR}/MVRPMD_MTS_Estimator.cpp
+        ${ESTIMATORS_DIR}/theta_mixed_dBeta.cpp
+        ${ESTIMATORS_DIR}/mvrpmd_mixed_esti.cpp
 
         #forces directory
         ${FORCES_DIR}/dCdelec.cpp
@@ -94,6 +98,9 @@ if(${MACHINE} STREQUAL "MAC")
         ${FORCES_DIR}/dTheta_MTS_dElec.cpp
         ${FORCES_DIR}/dTheta_MTS_dQ.cpp
         ${FORCES_DIR}/Forces_MTS.cpp
+        ${FORCES_DIR}/theta_mixed_dQ.cpp
+	${FORCES_DIR}/mvrpmd_mixed_forces.cpp
+        ${FORCES_DIR}/theta_mixed_dElec.cpp
 
         #integrators directory
         ${INTEGRATORS_DIR}/ABM_MVRPMD.cpp

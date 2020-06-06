@@ -26,8 +26,15 @@ Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads,
      dThetadQ(num_states, nuc_beads, elec_beads, C, M_MTS, dM_MTS_dQ),
      dThetadElec(num_states, elec_beads, C, M_MTS),
 
-     F(nuc_beads, elec_beads, num_states, mass,
-       beta_nuc_beads, Theta, dThetadQ, dThetadElec)
+    theta(num_states,nuc_beads,elec_beads,C,M),
+    theta_dQ(num_states,nuc_beads,elec_beads,C,M,dMdQ),
+    theta_dElec(num_states,elec_beads,C,M),
+
+//     F(nuc_beads, elec_beads, num_states, mass,
+//       beta_nuc_beads, Theta, dThetadQ, dThetadElec)
+
+    F(nuc_beads, elec_beads, num_states, mass,
+      beta_nuc_beads, theta, theta_dQ, theta_dElec)
 {
 
     /* Global vectors hold all trajectories on the root processor.
@@ -75,8 +82,10 @@ Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads,
     format_array(P,P_local);
     format_array(x,x_local);
     format_array(p,p_local);
+    
+    theta_mixed_dQ theta_dQ(num_states,nuc_beads,elec_beads,C,M,dMdQ);
+    
 }
-
 void Dynamics::compute_initPAC(int interval){
     
     init_PAC my_init_PAC(num_procs,my_id,root_proc,nuc_beads,elec_beads,
@@ -86,7 +95,6 @@ void Dynamics::compute_initPAC(int interval){
     my_init_PAC.set_vectors(Q,x,p);
     my_init_PAC.compute(root);
 }
-
 void Dynamics::PAC(){
         
     if (!total_time) {
@@ -148,7 +156,6 @@ void Dynamics::PAC(){
 
     print_QQt(QQt,sgnTheta_total);
 }
-
 void Dynamics::energ_conserv(double tol, int energy_stride){
     
     if (!total_time) {
@@ -219,7 +226,6 @@ void Dynamics::energ_conserv(double tol, int energy_stride){
         std::cout << "Percent broken: " << 100 * num_broke_glo/double(num_trajs) << std::endl;
     }
 }
-
 void Dynamics::PopAC(bool pac, int pac_stride, bool bp, int bp_stride,
                      bool sp, int sp_stride, bool wp, int wp_stride){
     

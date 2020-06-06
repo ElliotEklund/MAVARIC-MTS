@@ -6,6 +6,8 @@
 #include <boost/numeric/ublas/matrix.hpp>
 
 #include "MVRPMD_MTS_Hamiltonian.hpp"
+#include "mvrpmd_mixed.hpp"
+#include "mvrpmd_mixed_ham.hpp"
 
 #include "nr3.h"
 #include "ran.h"
@@ -37,7 +39,7 @@ public:
                 matrix<double> &p);
     
 /* Mutators */
-    void set_hamiltonian(MVRPMD_MTS_Hamiltonian &H_IN);
+    void set_hamiltonian(mvrpmd_mixed &H_IN);
         
     void set_beta(double betaIN);
     
@@ -75,7 +77,7 @@ private:
     matrix<double> x_prop, p_prop; //propsed moves
     
 /* Objects */
-    MVRPMD_MTS_Hamiltonian *H; //Hamiltonian
+    mvrpmd_mixed *H; //Hamiltonian
     
 /* Functions*/
     

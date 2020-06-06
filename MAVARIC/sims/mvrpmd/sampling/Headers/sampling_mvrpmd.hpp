@@ -18,6 +18,8 @@
 #include "SamplingHelper.h"
 #include "system_step.hpp"
 #include "elec_step.hpp"
+#include "mvrpmd_mixed.hpp"
+#include "mvrpmd_mixed_ham.hpp"
 
 using namespace boost::numeric::ublas;
 

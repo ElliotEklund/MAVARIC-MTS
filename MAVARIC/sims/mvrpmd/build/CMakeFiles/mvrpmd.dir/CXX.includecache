@@ -216,9 +216,9 @@ mvrpmd_mixed.hpp
 mvrpmd_mixed_ham.hpp
 ../sampling/Headers/mvrpmd_mixed_ham.hpp
 
-/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/dynamics/Dynamics.cpp
-Dynamics.hpp
-/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/dynamics/Dynamics.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/equilibrium/equilib_mvrpmd.cpp
+equilib_mvrpmd.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/equilibrium/equilib_mvrpmd.hpp
 
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/mvrpmd.cpp
 iostream

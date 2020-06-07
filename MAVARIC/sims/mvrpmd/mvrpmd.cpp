@@ -118,8 +118,8 @@ int main(int argc, char ** argv) {
     beta_nuc = beta/nuc_beads;
     beta_elec = beta/elec_beads;
     
-    double x_ss = 1.3;
-    double p_ss = 1.3;
+    double x_ss = 0.33;
+    double p_ss = 4.0;
 
                         /* END PROCESS 1 */
     /* /////////////////////////////////////////////////////////*/

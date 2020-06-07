@@ -5,13 +5,14 @@ GTerm::GTerm(int num_beads, int num_states)
      p_squared(num_beads,num_states)
 {energy = 0;}
 void GTerm::update_gTerm(const matrix<double> &x,const matrix<double> &p){
+    
+     double alpha = sqrt(100.0);
 
     x_squared = element_prod(x,x);
     p_squared = element_prod(p,p);
 
     double x_sum = 0;
     double p_sum = 0;
-    double alpha = sqrt(1.0);
     
     x_sum = std::accumulate(x_squared.data().begin(),x_squared.data().end(),x_sum);
     p_sum = std::accumulate(p_squared.data().begin(),p_squared.data().end(),p_sum);

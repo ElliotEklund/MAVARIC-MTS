@@ -19,7 +19,7 @@ C_Matrix::C_Matrix(int num_beads, int num_states)
 void C_Matrix::update_C_vec(const matrix<double> &x_mat, const matrix<double> &p_mat){
     
     //copy x-mat,p-mat to complex matricies
-    double alpha = sqrt(1.0);
+    double alpha = sqrt(100.0);
     
     x_mat_c = alpha*x_mat;
     p_mat_c = p_mat/alpha;

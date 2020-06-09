@@ -6,7 +6,6 @@
 #include <boost/numeric/ublas/io.hpp>
 #include <boost/numeric/ublas/matrix_proxy.hpp>
 #include <boost/numeric/ublas/storage.hpp>
-
 #include <algorithm>
 
 using namespace boost::numeric::ublas;

@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/Theta.cpp.o"
   "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/Theta_MTS.cpp.o"
   "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.cpp.o"
+  "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.o"
   "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dCdelec.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dCdelec.cpp.o"
   "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dM_Matrix_MTS_dQ.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dM_Matrix_MTS_dQ.cpp.o"
   "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dM_Matrix_dQ.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dM_Matrix_dQ.cpp.o"
@@ -32,7 +33,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp.o"
   "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp.o"
   "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.o"
-  "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/test.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/test.cpp.o"
+  "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/csrpmd_ham.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/csrpmd_ham.cpp.o"
+  "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/sc_potential.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/sc_potential.cpp.o"
+  "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/test/test.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/test/test.cpp.o"
   "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/two_particle_Hamiltonian.cpp" "/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles/test.dir/two_particle_Hamiltonian.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

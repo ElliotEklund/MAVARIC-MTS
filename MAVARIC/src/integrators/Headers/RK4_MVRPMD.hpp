@@ -11,17 +11,19 @@
 
 #include "Forces_MTS.hpp"
 #include "mvrpmd_mixed_forces.hpp"
-#include "mvrpmd_forces_temp.hpp"
+#include "csrpmd_forces.hpp"
+#include "mv_forces_temp.hpp"
 
 using namespace boost::numeric::ublas;
 
 class RK4_MVRPMD{
     
 public:
-   RK4_MVRPMD(mvrpmd_forces_temp *F_In,int nuc_beads,int elec_beads,int num_states,double dt);
+   RK4_MVRPMD(mv_forces_temp *F_In,int nuc_beads,int elec_beads,int num_states,double dt);
     
     /* Advance the current trajectory one time step forward using RK4-MV-RPMD-SB integrator. */
-    void take_step(vector<double> &Q,vector<double> &P,matrix<double> &x,matrix<double> &p);
+    void take_step(vector<double> &Q,vector<double> &P,matrix<double> &x,
+                   matrix<double> &p);
     
     
 private:
@@ -42,7 +44,7 @@ private:
     matrix<double> k1x, k2x, k3x, k4x;
     matrix<double> k1p, k2p, k3p, k4p;
     
-    mvrpmd_forces_temp *F;
+    mv_forces_temp *F;
     
     /* Private Functions */
     

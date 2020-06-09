@@ -31,10 +31,8 @@
 
 StateDepPots::StateDepPots(int num_states, int num_beads, double beta_num_beads)
     :num_states(num_states), num_beads(num_beads), beta_num_beads(beta_num_beads),
-     V_mat(num_beads,num_states), V_couple_mat(num_states,num_states)
+     V_mat(num_beads,num_states,0), V_couple_mat(num_states,num_states,0)
 {
-    std::fill(V_mat.data().begin(),V_mat.data().end(),0.0);
-    std::fill(V_couple_mat.data().begin(),V_couple_mat.data().end(),1.0);
 
     /* Constant coupling optimization */
     V_couple_mat(1,0) = 1.0;

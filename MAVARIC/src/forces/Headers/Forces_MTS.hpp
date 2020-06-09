@@ -11,11 +11,11 @@
 #include "Theta_MTS.hpp"
 #include "dTheta_MTS_dQ.hpp"
 #include "dTheta_MTS_dElec.hpp"
-#include "mvrpmd_forces_temp.hpp"
+#include "mv_forces_temp.hpp"
 
 using namespace boost::numeric::ublas;
 
-class Forces_MTS : public mvrpmd_forces_temp{
+class Forces_MTS : public mv_forces_temp{
     
 public:
     Forces_MTS(int nuc_beads,int elec_beads, int num_states,

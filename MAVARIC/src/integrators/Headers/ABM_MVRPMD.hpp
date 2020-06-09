@@ -10,7 +10,7 @@
 #include "Forces_MTS.hpp"
 #include "RK4_MVRPMD.hpp"
 #include "mvrpmd_mixed_forces.hpp"
-#include "mvrpmd_forces_temp.hpp"
+#include "mv_forces_temp.hpp"
 #include <iomanip>
 #include <math.h>
 
@@ -20,7 +20,7 @@ class ABM_MVRPMD{
   
 public:
     
-    ABM_MVRPMD(mvrpmd_forces_temp &F_In,double dt, int num_states,
+    ABM_MVRPMD(mv_forces_temp &F_In,double dt, int num_states,
                int nuc_beads, int elec_beads);
     
     /* Initialize ABM by taking backward steps with RK4*/
@@ -111,7 +111,7 @@ private:
     void update_f_p1(const vector<double> &Q,const vector<double> &P,
                     const matrix<double> &x,const matrix<double> &p);
     
-    mvrpmd_forces_temp *F;
+    mv_forces_temp *F;
 };
 
 

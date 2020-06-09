@@ -25,7 +25,7 @@ add_definitions( "-DNDEBUG -O3" )
 # add the executable
 
 if(${MACHINE} STREQUAL "MAC")
-    add_executable(test test.cpp
+    add_executable(test ./test/test.cpp
 
         #hamiltonian directory
         ${HAMILTONIAN_DIR}/two_particle_Hamiltonian.cpp
@@ -41,6 +41,8 @@ if(${MACHINE} STREQUAL "MAC")
         ${HAMILTONIAN_DIR}/StateDepPots.cpp
         ${HAMILTONIAN_DIR}/StateIndepPot.cpp
         ${HAMILTONIAN_DIR}/Theta.cpp
+        ${HAMILTONIAN_DIR}/sc_potential.cpp
+        ${HAMILTONIAN_DIR}/csrpmd_ham.cpp
 
         #forces directory
         ${FORCES_DIR}/rpmd_force.cpp
@@ -53,6 +55,7 @@ if(${MACHINE} STREQUAL "MAC")
         ${FORCES_DIR}/dStateIndep_dQ.cpp
         ${FORCES_DIR}/dTheta_MTS_dElec.cpp
         ${FORCES_DIR}/dTheta_MTS_dQ.cpp
+        ${FORCES_DIR}/csrpmd_forces.cpp
 
         #integrators directory
         ${INTEGRATORS_DIR}/rpmd_vv.cpp

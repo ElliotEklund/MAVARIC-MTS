@@ -447,6 +447,33 @@ Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.cpp.s
 .PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.cpp.s
 
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.o
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.o
+
+# target to build an object file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.o
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.i
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.i
+
+# target to preprocess a source file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.i
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.s
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.s
+
+# target to generate assembly for a file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.s
+
 Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dCdelec.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dCdelec.cpp.o
 
 .PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dCdelec.o
@@ -879,32 +906,86 @@ Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.s
 .PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.s
 
-test.o: test.cpp.o
+csrpmd_ham.o: csrpmd_ham.cpp.o
 
-.PHONY : test.o
+.PHONY : csrpmd_ham.o
 
 # target to build an object file
-test.cpp.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.o
-.PHONY : test.cpp.o
+csrpmd_ham.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/csrpmd_ham.cpp.o
+.PHONY : csrpmd_ham.cpp.o
 
-test.i: test.cpp.i
+csrpmd_ham.i: csrpmd_ham.cpp.i
 
-.PHONY : test.i
+.PHONY : csrpmd_ham.i
 
 # target to preprocess a source file
-test.cpp.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.i
-.PHONY : test.cpp.i
+csrpmd_ham.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/csrpmd_ham.cpp.i
+.PHONY : csrpmd_ham.cpp.i
 
-test.s: test.cpp.s
+csrpmd_ham.s: csrpmd_ham.cpp.s
 
-.PHONY : test.s
+.PHONY : csrpmd_ham.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.s
-.PHONY : test.cpp.s
+csrpmd_ham.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/csrpmd_ham.cpp.s
+.PHONY : csrpmd_ham.cpp.s
+
+sc_potential.o: sc_potential.cpp.o
+
+.PHONY : sc_potential.o
+
+# target to build an object file
+sc_potential.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sc_potential.cpp.o
+.PHONY : sc_potential.cpp.o
+
+sc_potential.i: sc_potential.cpp.i
+
+.PHONY : sc_potential.i
+
+# target to preprocess a source file
+sc_potential.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sc_potential.cpp.i
+.PHONY : sc_potential.cpp.i
+
+sc_potential.s: sc_potential.cpp.s
+
+.PHONY : sc_potential.s
+
+# target to generate assembly for a file
+sc_potential.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/sc_potential.cpp.s
+.PHONY : sc_potential.cpp.s
+
+test/test.o: test/test.cpp.o
+
+.PHONY : test/test.o
+
+# target to build an object file
+test/test.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.cpp.o
+.PHONY : test/test.cpp.o
+
+test/test.i: test/test.cpp.i
+
+.PHONY : test/test.i
+
+# target to preprocess a source file
+test/test.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.cpp.i
+.PHONY : test/test.cpp.i
+
+test/test.s: test/test.cpp.s
+
+.PHONY : test/test.s
+
+# target to generate assembly for a file
+test/test.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.cpp.s
+.PHONY : test/test.cpp.s
 
 two_particle_Hamiltonian.o: two_particle_Hamiltonian.cpp.o
 
@@ -978,6 +1059,9 @@ help:
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.o"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.i"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Forces_MTS.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.s"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dCdelec.o"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dCdelec.i"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dCdelec.s"
@@ -1026,9 +1110,15 @@ help:
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.o"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.i"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.s"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... csrpmd_ham.o"
+	@echo "... csrpmd_ham.i"
+	@echo "... csrpmd_ham.s"
+	@echo "... sc_potential.o"
+	@echo "... sc_potential.i"
+	@echo "... sc_potential.s"
+	@echo "... test/test.o"
+	@echo "... test/test.i"
+	@echo "... test/test.s"
 	@echo "... two_particle_Hamiltonian.o"
 	@echo "... two_particle_Hamiltonian.i"
 	@echo "... two_particle_Hamiltonian.s"

@@ -1,6 +1,6 @@
 #include "RK4_MVRPMD.hpp"
 
-RK4_MVRPMD::RK4_MVRPMD(mvrpmd_forces_temp *F_In,int nuc_beads,int elec_beads,int num_states,double dt)
+RK4_MVRPMD::RK4_MVRPMD(mv_forces_temp *F_In,int nuc_beads,int elec_beads,int num_states,double dt)
 
     :nuc_beads(nuc_beads),num_states(num_states),elec_beads(elec_beads),
      dt(dt), dt_half(0.5*dt),

@@ -94,6 +94,9 @@ void sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
         }
         for (int bead=0; bead<nuc_beads; bead++) {
             Q_trajs(traj*nuc_beads+bead) = Q(bead);
+        }
+        
+        for (int bead=0; bead<elec_beads; bead++) {
             for (int state=0; state<num_states; state++) {
                 x_trajs(traj*elec_beads+bead,state) = x(bead,state);
                 p_trajs(traj*elec_beads+bead,state) = p(bead,state);
@@ -105,7 +108,7 @@ void sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     double stdev = sqrt(mass/(beta*nuc_beads));
 
     //system momentum distribution from Gaussian(mu, sigma, seed)
-    Normaldev_BM momentum(0, stdev, rand());
+    Normaldev_BM momentum(0, stdev, myRand.int32());
 
     for(int i=0; i<num_trajs*nuc_beads; i++){
         P_trajs(i) = momentum.dev();

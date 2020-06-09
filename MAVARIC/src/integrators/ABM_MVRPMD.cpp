@@ -1,6 +1,6 @@
 #include "ABM_MVRPMD.hpp"
 
-ABM_MVRPMD::ABM_MVRPMD(mvrpmd_forces_temp &F_In, double dt, int num_states, int nuc_beads, int elec_beads)
+ABM_MVRPMD::ABM_MVRPMD(mv_forces_temp &F_In, double dt, int num_states, int nuc_beads, int elec_beads)
     :dt(dt), num_states(num_states), elec_beads(elec_beads), nuc_beads(nuc_beads),
      h1_p(dt*55.0/24.0),h2_p(dt*59.0/24.0),h3_p(dt*37.0/24.0),h4_p(dt*9.0/24.0),
      h1_c(dt*9.0/24.0),h2_c(dt*19.0/24.0),h3_c(dt*5.0/24.0),h4_c(dt*1.0/24.0),

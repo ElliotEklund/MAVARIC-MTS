@@ -304,18 +304,18 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamilt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/theta_mixed.cpp.s"
 	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/theta_mixed.cpp -o CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/theta_mixed.cpp.s
 
-CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp.o: CMakeFiles/mvrpmd.dir/flags.make
-CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp.o"
-	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp
+CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp.o: CMakeFiles/mvrpmd.dir/flags.make
+CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp
 
-CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp.i"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp > CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp.i
+CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp.i"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp > CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp.i
 
-CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp.s"
-	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp -o CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp.s
+CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp.s"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp -o CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp.s
 
 CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/dM_Matrix_dBeta.cpp.o: CMakeFiles/mvrpmd.dir/flags.make
 CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/dM_Matrix_dBeta.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/dM_Matrix_dBeta.cpp
@@ -741,7 +741,7 @@ mvrpmd_OBJECTS = \
 "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.o" \
 "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.o" \
 "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/theta_mixed.cpp.o" \
-"CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp.o" \
+"CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp.o" \
 "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/dM_Matrix_dBeta.cpp.o" \
 "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/dM_Matrix_MTS_dBeta.cpp.o" \
 "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/dTheta_dBeta.cpp.o" \
@@ -796,7 +796,7 @@ mvrpmd_EXTERNAL_OBJECTS =
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta_MTS.cpp.o
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Theta.cpp.o
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/theta_mixed.cpp.o
-/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp.o
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp.o
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/dM_Matrix_dBeta.cpp.o
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/dM_Matrix_MTS_dBeta.cpp.o
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/dTheta_dBeta.cpp.o

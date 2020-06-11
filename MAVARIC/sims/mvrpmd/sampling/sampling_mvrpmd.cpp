@@ -44,9 +44,9 @@ void sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     StateIndepPot V0(nuc_beads,mass);
     GTerm G(elec_beads,num_states);
     C_Matrix C(elec_beads,num_states);
-    M_Matrix M(num_states,nuc_beads,beta/elec_beads);
-    M_Matrix_MTS M_MTS(nuc_beads,elec_beads,num_states,M);
-    Theta_MTS thetaMTS(num_states,elec_beads,C,M_MTS);
+    M_Matrix M(num_states,elec_beads,beta/elec_beads);
+    //M_Matrix_MTS M_MTS(nuc_beads,elec_beads,num_states,M);
+    //Theta_MTS thetaMTS(num_states,elec_beads,C,M_MTS);
     theta_mixed theta(num_states,nuc_beads,elec_beads,C,M);
 
     //MVRPMD_MTS_Hamiltonian H(beta/nuc_beads,V_spring,V0,G,thetaMTS);

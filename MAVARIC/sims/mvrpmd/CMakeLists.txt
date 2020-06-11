@@ -77,7 +77,7 @@ add_executable(mvrpmd mvrpmd.cpp
     ${HAMILTONIAN_DIR}/Theta_MTS.cpp
     ${HAMILTONIAN_DIR}/Theta.cpp
     ${HAMILTONIAN_DIR}/theta_mixed.cpp
-    ${HAMILTONIAN_DIR}/mvrpmd_ham_mixed.cpp
+    ${HAMILTONIAN_DIR}/mvrpmd_mixed_ham.cpp
 
     #estimators directory
     ${ESTIMATORS_DIR}/dM_Matrix_dBeta.cpp

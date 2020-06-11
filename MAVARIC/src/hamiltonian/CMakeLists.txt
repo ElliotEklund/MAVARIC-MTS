@@ -43,6 +43,8 @@ if(${MACHINE} STREQUAL "MAC")
         ${HAMILTONIAN_DIR}/Theta.cpp
         ${HAMILTONIAN_DIR}/sc_potential.cpp
         ${HAMILTONIAN_DIR}/csrpmd_ham.cpp
+        ${HAMILTONIAN_DIR}/mvrpmd_mixed_ham.cpp
+        ${HAMILTONIAN_DIR}/theta_mixed.cpp
 
         #forces directory
         ${FORCES_DIR}/rpmd_force.cpp
@@ -55,6 +57,9 @@ if(${MACHINE} STREQUAL "MAC")
         ${FORCES_DIR}/dStateIndep_dQ.cpp
         ${FORCES_DIR}/dTheta_MTS_dElec.cpp
         ${FORCES_DIR}/dTheta_MTS_dQ.cpp
+        ${FORCES_DIR}/theta_mixed_dQ.cpp
+        ${FORCES_DIR}/theta_mixed_dElec.cpp
+        ${FORCES_DIR}/mvrpmd_mixed_forces.cpp
         ${FORCES_DIR}/csrpmd_forces.cpp
 
         #integrators directory

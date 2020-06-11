@@ -6766,7 +6766,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dStateIndep_dQ.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dElec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dQ.hpp
- /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mvrpmd_forces_temp.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mv_forces_temp.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/C_Matrix.h
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/M_Matrix.h
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/M_Matrix_MTS.hpp
@@ -14277,7 +14277,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dSpring_dQ.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dStateDep_dQ.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dStateIndep_dQ.hpp
- /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mvrpmd_forces_temp.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mv_forces_temp.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mvrpmd_mixed_forces.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/theta_mixed_dElec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/theta_mixed_dQ.hpp
@@ -26041,7 +26041,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamilt
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/typeof/vector50.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/utility/enable_if.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/version.hpp
-CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp.o
+CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp.o
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/C_Matrix.h
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/GTerm.h
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/M_Matrix.h
@@ -26051,7 +26051,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamilt
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/mvrpmd_mixed.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/mvrpmd_mixed_ham.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/theta_mixed.hpp
- /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_ham_mixed.cpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/mvrpmd_mixed_ham.cpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/functions.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/aligned_storage.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/basic_archive.hpp
@@ -27790,6 +27790,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamilt
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/version.hpp
 CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.o
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/Forces_MTS.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/csrpmd_forces.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dCdelec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dM_Matrix_MTS_dQ.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dM_Matrix_dQ.hpp
@@ -27798,7 +27799,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integr
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dStateIndep_dQ.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dElec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dQ.hpp
- /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mvrpmd_forces_temp.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mv_forces_temp.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mvrpmd_mixed_forces.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/theta_mixed_dElec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/theta_mixed_dQ.hpp
@@ -27807,6 +27808,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integr
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/M_Matrix_MTS.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/StateDepPots.h
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/Theta_MTS.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/sc_potential.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/theta_mixed.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/Headers/ABM_MVRPMD.hpp
@@ -28678,6 +28680,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integr
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/version.hpp
 CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.o
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/Forces_MTS.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/csrpmd_forces.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dCdelec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dM_Matrix_MTS_dQ.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dM_Matrix_dQ.hpp
@@ -28686,7 +28689,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integr
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dStateIndep_dQ.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dElec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dQ.hpp
- /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mvrpmd_forces_temp.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mv_forces_temp.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mvrpmd_mixed_forces.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/theta_mixed_dElec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/theta_mixed_dQ.hpp
@@ -28695,6 +28698,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integr
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/M_Matrix_MTS.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/StateDepPots.h
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/Theta_MTS.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/sc_potential.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/theta_mixed.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/Headers/RK4_MVRPMD.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp
@@ -36260,6 +36264,7 @@ CMakeFiles/mvrpmd.dir/dynamics/Dynamics.cpp.o
  ../dynamics/Headers/Dynamics.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/dynamics/Dynamics.cpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/Forces_MTS.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/csrpmd_forces.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dCdelec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dM_Matrix_MTS_dQ.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dM_Matrix_dQ.hpp
@@ -36268,7 +36273,7 @@ CMakeFiles/mvrpmd.dir/dynamics/Dynamics.cpp.o
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dStateIndep_dQ.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dElec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dQ.hpp
- /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mvrpmd_forces_temp.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mv_forces_temp.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mvrpmd_mixed_forces.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/theta_mixed_dElec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/theta_mixed_dQ.hpp
@@ -36282,6 +36287,7 @@ CMakeFiles/mvrpmd.dir/dynamics/Dynamics.cpp.o
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/StateIndepPot.h
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/Theta_MTS.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/mvrpmd_mixed.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/sc_potential.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/theta_mixed.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/Headers/ABM_MVRPMD.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/Headers/RK4_MVRPMD.hpp
@@ -38891,6 +38897,7 @@ CMakeFiles/mvrpmd.dir/mvrpmd.cpp.o
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/Headers/mvrpmd_mixed_esti.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/estimators/Headers/theta_mixed_dBeta.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/Forces_MTS.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/csrpmd_forces.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dCdelec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dM_Matrix_MTS_dQ.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dM_Matrix_dQ.hpp
@@ -38899,7 +38906,7 @@ CMakeFiles/mvrpmd.dir/mvrpmd.cpp.o
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dStateIndep_dQ.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dElec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/dTheta_MTS_dQ.hpp
- /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mvrpmd_forces_temp.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mv_forces_temp.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/mvrpmd_mixed_forces.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/theta_mixed_dElec.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/Headers/theta_mixed_dQ.hpp
@@ -38914,6 +38921,7 @@ CMakeFiles/mvrpmd.dir/mvrpmd.cpp.o
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/Theta_MTS.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/mvrpmd_mixed.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/mvrpmd_mixed_ham.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/sc_potential.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/theta_mixed.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/Headers/ABM_MVRPMD.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/Headers/RK4_MVRPMD.hpp

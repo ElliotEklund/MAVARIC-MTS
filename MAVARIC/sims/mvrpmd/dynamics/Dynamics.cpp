@@ -2,7 +2,9 @@
 
 Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads, 
                    int elec_beads, int num_states, double mass,
-                   double beta_nuc_beads, double beta_elec_beads, int num_trajs,std::string root)
+                   double beta_nuc_beads, double beta_elec_beads,
+                   int num_trajs,std::string root)
+
     :num_procs(num_procs),my_id(my_id),root_proc(root_proc),
      root(root),
         
@@ -16,10 +18,14 @@ Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads,
      x(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
      p(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
 
-     C(elec_beads, num_states), M(num_states, nuc_beads, beta_nuc_beads),
+     C(elec_beads, num_states),
+     //M(num_states, nuc_beads, beta_nuc_beads),
+     M(num_states, elec_beads, beta_elec_beads),
 
      M_MTS(nuc_beads, elec_beads, num_states, M),
-     dMdQ(nuc_beads, num_states, beta_elec_beads, M),
+     //dMdQ(nuc_beads, num_states, beta_elec_beads, M),
+     dMdQ(elec_beads, num_states, beta_elec_beads, M),
+
      dM_MTS_dQ(nuc_beads, elec_beads, num_states, dMdQ),
 
      Theta(num_states, elec_beads, C, M_MTS),
@@ -82,9 +88,6 @@ Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads,
     format_array(P,P_local);
     format_array(x,x_local);
     format_array(p,p_local);
-    
-    theta_mixed_dQ theta_dQ(num_states,nuc_beads,elec_beads,C,M,dMdQ);
-    
 }
 void Dynamics::compute_initPAC(int interval){
     
@@ -132,7 +135,7 @@ void Dynamics::PAC(){
 
         myABM.initialize_rk4(Q_traj, P_traj, x_traj, p_traj);
 
-        sgnTheta = F.get_sgnTheta(Q_traj,x_traj,p_traj);
+        sgnTheta = F.get_sign(Q_traj,x_traj,p_traj);
 
         QQt(0) += Qcent_0 * Qcent_0 * sgnTheta;
 
@@ -277,7 +280,7 @@ void Dynamics::PopAC(bool pac, int pac_stride, bool bp, int bp_stride,
         p_traj = p(traj);
 
         myABM.initialize_rk4(Q_traj, P_traj, x_traj, p_traj);
-        sgnTheta = F.get_sgnTheta(Q_traj,x_traj,p_traj);
+        sgnTheta = F.get_sign(Q_traj,x_traj,p_traj);
 
         if (pac){
             pac_v0(0) = compute_centroid(Q_traj);
@@ -289,7 +292,9 @@ void Dynamics::PopAC(bool pac, int pac_stride, bool bp, int bp_stride,
             myAggregator.collect("boltzman",0,bp_v0,bp_v0,sgnTheta);
         }
         if (sp){
-            sp_v0 = myPops.sc(x_traj,p_traj);
+            //sp_v0 = myPops.sc(x_traj,p_traj);
+            /* Use boltzman for time zero */
+            sp_v0 = myPops.boltz(Theta.get_gamm());
             myAggregator.collect("semi_classic",0,sp_v0,sp_v0,sgnTheta);
         }
         if (wp){

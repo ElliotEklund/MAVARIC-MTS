@@ -13,7 +13,6 @@ dM_Matrix_dQ::dM_Matrix_dQ(int nuc_beads,int num_states, double betaN,
 {
     M = &M_In;
 }
-
 void dM_Matrix_dQ::update_dM_dQ_vec(const vector<double> &Q){
     
     dVdQ.update_dVdQ(Q);
@@ -25,23 +24,15 @@ void dM_Matrix_dQ::update_dM_dQ_vec(const vector<double> &Q){
         dM_dQ_vec(bead) = dM_dQ_alpha;
     }
 }
-
 void dM_Matrix_dQ::update_dM_dQ_alpha(const double &Q, int alpha){
     
     std::complex<double> m_diag (0,0);
     std::complex<double> term1 (0,0);
     std::complex<double> term2 (0,0);
-    
-    //std::cout << "Printing diag in dMdQ" << std::endl << std::endl;
-        
+            
     /* Update diagonal */
     for (int state=0; state<num_states; state++) {
         m_diag =  M->get_M_alpha(alpha)(state,state);
-//
-//        std::cout << m_diag << std::endl;
-//        std::cout << dVdQ_mat(alpha,state) << std::endl;
-//        std::cout << betaN << std::endl;
-        
         dM_dQ_alpha(state,state) = -betaN * dVdQ_mat(alpha,state) * m_diag;
     }
     
@@ -64,18 +55,10 @@ void dM_Matrix_dQ::update_dM_dQ_alpha(const double &Q, int alpha){
             dM_dQ_alpha(state1,state2) = -betaN*(term1 + term2);
         }
     }
-    
-//    std::cout << std::endl;
-//    std::cout << "single dMdQ" << std::endl;
-//    std::cout << dM_dQ_alpha(0,0) << std::endl;
-//    std::cout << std::endl;
-
 }
-
 const vector<matrix<std::complex<double> > > & dM_Matrix_dQ::get_dMdQ_vec(){
     return dM_dQ_vec;
 }
-
 const matrix<std::complex<double> > & dM_Matrix_dQ::get_dMdQ_alpha(int alpha){
     return dM_dQ_vec(alpha);
 }

@@ -7,9 +7,19 @@ equilib_mvrpmd::equilib_mvrpmd(int my_id, int root_proc, int num_procs,
      num_procs(num_procs),
      myRand(time(NULL) + my_id),
      helper(root_path,my_id,num_procs,root_proc)
-{}
+{
+    sys_set = false;
+    files_set = false;
+    
+}
 void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
                          unsigned long long num_steps, unsigned long long stride){
+    
+    if (my_id==root_proc) {
+        if (!sys_set || !files_set) {
+            std::cout << "ERROR: equilibrium_mvrpmd variables not set!" << std::endl;
+        }
+    }
     
     //Declare vectors for monte carlo moves
     vector<double> Q(nuc_beads,0);
@@ -28,14 +38,14 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     StateIndepPot V0(nuc_beads,mass);
     GTerm G(elec_beads,num_states);
     C_Matrix C(elec_beads,num_states);
-    M_Matrix M(num_states,nuc_beads,beta/elec_beads);
-    M_Matrix_MTS M_MTS(nuc_beads,elec_beads,num_states,M);
-    Theta_MTS thetaMTS(num_states,elec_beads,C,M_MTS);
+    M_Matrix M(num_states,elec_beads,beta/elec_beads);
+    //M_Matrix_MTS M_MTS(nuc_beads,elec_beads,num_states,M);
+    //Theta_MTS thetaMTS(num_states,elec_beads,C,M_MTS);
     theta_mixed theta(num_states,nuc_beads,elec_beads,C,M);
     theta_mixed_dBeta dtheta(elec_beads,num_states,beta/elec_beads,C,M);
 
-    dTheta_MTS_dBeta dthetaMTS_dBeta(nuc_beads,elec_beads,num_states,
-                                      beta/elec_beads,C,M,M_MTS);
+//    dTheta_MTS_dBeta dthetaMTS_dBeta(nuc_beads,elec_beads,num_states,
+//                                      beta/elec_beads,C,M,M_MTS);
 
 //    MVRPMD_MTS_Hamiltonian H(beta/nuc_beads,V_spring,V0,G,thetaMTS);
 //
@@ -144,6 +154,7 @@ void equilib_mvrpmd::initialize_system(int nuc_beads_IN,int elec_beadsIN,
     num_states = num_statesIN;
     mass = massIN;
     beta = betaIN;
+    sys_set = true;
 }
 void equilib_mvrpmd::initialize_files(bool writePSV_IN, bool readPSV_IN,
                                       bool writeData_IN, bool readData_IN){
@@ -151,6 +162,7 @@ void equilib_mvrpmd::initialize_files(bool writePSV_IN, bool readPSV_IN,
     readPSV = readPSV_IN;
     writeData = writeData_IN;
     readData = readData_IN;
+    files_set = true;
 }
 inline double equilib_mvrpmd::step_dist(const double rn, double step_size){
     return (rn * 2.0 * step_size) - step_size;

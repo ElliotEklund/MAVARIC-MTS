@@ -68,6 +68,8 @@ private:
     /* Number of nuclear beads, electronic beads, and electronic states*/
     int nuc_beads, elec_beads, num_states;
     double mass, beta; //system mass; 1/kb T
+    
+    bool sys_set, files_set; //true only once initialize_system(initialize_files) called
 
 /* Objects */
     Ran myRand; //NR3 random number generator

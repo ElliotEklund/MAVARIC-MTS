@@ -690,6 +690,33 @@ Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dTheta_MTS_dQ.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dTheta_MTS_dQ.cpp.s
 .PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dTheta_MTS_dQ.cpp.s
 
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.cpp.o
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.o
+
+# target to build an object file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.cpp.o
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.cpp.i
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.i
+
+# target to preprocess a source file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.cpp.i
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.cpp.s
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.s
+
+# target to generate assembly for a file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.cpp.s
+
 Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/rpmd_force.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/rpmd_force.cpp.o
 
 .PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/rpmd_force.o
@@ -716,6 +743,60 @@ Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/rpmd_force.s: Users/e
 Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/rpmd_force.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/rpmd_force.cpp.s
 .PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/rpmd_force.cpp.s
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.cpp.o
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.o
+
+# target to build an object file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.cpp.o
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.cpp.i
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.i
+
+# target to preprocess a source file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.cpp.i
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.cpp.s
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.s
+
+# target to generate assembly for a file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.cpp.s
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.cpp.o
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.o
+
+# target to build an object file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.cpp.o
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.cpp.i
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.i
+
+# target to preprocess a source file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.cpp.i
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.cpp.s
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.s
+
+# target to generate assembly for a file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.cpp.s
 
 Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.o
 
@@ -933,6 +1014,33 @@ csrpmd_ham.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/csrpmd_ham.cpp.s
 .PHONY : csrpmd_ham.cpp.s
 
+mvrpmd_mixed_ham.o: mvrpmd_mixed_ham.cpp.o
+
+.PHONY : mvrpmd_mixed_ham.o
+
+# target to build an object file
+mvrpmd_mixed_ham.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/mvrpmd_mixed_ham.cpp.o
+.PHONY : mvrpmd_mixed_ham.cpp.o
+
+mvrpmd_mixed_ham.i: mvrpmd_mixed_ham.cpp.i
+
+.PHONY : mvrpmd_mixed_ham.i
+
+# target to preprocess a source file
+mvrpmd_mixed_ham.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/mvrpmd_mixed_ham.cpp.i
+.PHONY : mvrpmd_mixed_ham.cpp.i
+
+mvrpmd_mixed_ham.s: mvrpmd_mixed_ham.cpp.s
+
+.PHONY : mvrpmd_mixed_ham.s
+
+# target to generate assembly for a file
+mvrpmd_mixed_ham.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/mvrpmd_mixed_ham.cpp.s
+.PHONY : mvrpmd_mixed_ham.cpp.s
+
 sc_potential.o: sc_potential.cpp.o
 
 .PHONY : sc_potential.o
@@ -986,6 +1094,33 @@ test/test.s: test/test.cpp.s
 test/test.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/test.cpp.s
 .PHONY : test/test.cpp.s
+
+theta_mixed.o: theta_mixed.cpp.o
+
+.PHONY : theta_mixed.o
+
+# target to build an object file
+theta_mixed.cpp.o:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/theta_mixed.cpp.o
+.PHONY : theta_mixed.cpp.o
+
+theta_mixed.i: theta_mixed.cpp.i
+
+.PHONY : theta_mixed.i
+
+# target to preprocess a source file
+theta_mixed.cpp.i:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/theta_mixed.cpp.i
+.PHONY : theta_mixed.cpp.i
+
+theta_mixed.s: theta_mixed.cpp.s
+
+.PHONY : theta_mixed.s
+
+# target to generate assembly for a file
+theta_mixed.cpp.s:
+	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/theta_mixed.cpp.s
+.PHONY : theta_mixed.cpp.s
 
 two_particle_Hamiltonian.o: two_particle_Hamiltonian.cpp.o
 
@@ -1086,9 +1221,18 @@ help:
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dTheta_MTS_dQ.o"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dTheta_MTS_dQ.i"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/dTheta_MTS_dQ.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/mvrpmd_mixed_forces.s"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/rpmd_force.o"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/rpmd_force.i"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/rpmd_force.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.s"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.o"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.i"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.s"
@@ -1113,12 +1257,18 @@ help:
 	@echo "... csrpmd_ham.o"
 	@echo "... csrpmd_ham.i"
 	@echo "... csrpmd_ham.s"
+	@echo "... mvrpmd_mixed_ham.o"
+	@echo "... mvrpmd_mixed_ham.i"
+	@echo "... mvrpmd_mixed_ham.s"
 	@echo "... sc_potential.o"
 	@echo "... sc_potential.i"
 	@echo "... sc_potential.s"
 	@echo "... test/test.o"
 	@echo "... test/test.i"
 	@echo "... test/test.s"
+	@echo "... theta_mixed.o"
+	@echo "... theta_mixed.i"
+	@echo "... theta_mixed.s"
 	@echo "... two_particle_Hamiltonian.o"
 	@echo "... two_particle_Hamiltonian.i"
 	@echo "... two_particle_Hamiltonian.s"

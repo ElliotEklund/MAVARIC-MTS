@@ -28,7 +28,7 @@ mvrpmd_mixed_forces::mvrpmd_mixed_forces(int nuc_beads,int elec_beads, int num_s
     coeff_ONE_theta = 0;
 }
 void mvrpmd_mixed_forces::update_Forces(const vector<double> &Q,const vector<double> &P,
-                   const matrix<double> &x,const matrix<double> &p){
+                                        const matrix<double> &x,const matrix<double> &p){
 
     /* Calling update_theta updates C and M_MTS. All further function calls that
      used C and M_MTS do not need to update these objects. */
@@ -74,7 +74,7 @@ const matrix<double> & mvrpmd_mixed_forces::get_dHdx(){return dHdx;}
 
 const matrix<double> & mvrpmd_mixed_forces::get_dHdp(){return dHdp;}
 
-double mvrpmd_mixed_forces::get_sgnTheta(const vector<double> &Q, const matrix<double> &x,
+double mvrpmd_mixed_forces::get_sign(const vector<double> &Q, const matrix<double> &x,
                                 const matrix<double> &p){
     return theta->get_signTheta(Q,x,p);
 }

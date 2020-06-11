@@ -6,7 +6,7 @@ GTerm::GTerm(int num_beads, int num_states)
 {energy = 0;}
 void GTerm::update_gTerm(const matrix<double> &x,const matrix<double> &p){
     
-     double alpha = sqrt(100.0);
+     double alpha = sqrt(1.0);
 
     x_squared = element_prod(x,x);
     p_squared = element_prod(p,p);

@@ -18,7 +18,7 @@ pop_estimators::pop_estimators(int elec_beads,int num_states)
 
 vector<double> pop_estimators::boltz(const matrix<std::complex<double> > gamma){
     
-    std::complex<double> tr(0.0) ;
+    std::complex<double> tr(0.0);
     for (int state=0; state<num_states; state++) {
         tr += gamma(state,state);
         gamma_nn(state) = gamma(state,state).real();

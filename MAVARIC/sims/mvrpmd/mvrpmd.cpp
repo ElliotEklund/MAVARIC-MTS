@@ -59,7 +59,7 @@ int main(int argc, char ** argv) {
 
     /* Sampling parameters.*/
     bool runSamp, saveTrajs;
-    int num_trajs;
+    unsigned long long num_trajs;
     unsigned long long decor_len;
 
     /* Dynamics Variables */
@@ -118,8 +118,8 @@ int main(int argc, char ** argv) {
     beta_nuc = beta/nuc_beads;
     beta_elec = beta/elec_beads;
     
-    double x_ss = 0.33;
-    double p_ss = 4.0;
+    double x_ss = 1.4;
+    double p_ss = 1.4;
 
                         /* END PROCESS 1 */
     /* /////////////////////////////////////////////////////////*/
@@ -227,7 +227,7 @@ int main(int argc, char ** argv) {
         if(run_PopAC){
             bool pac = true;
             bool bp = false;
-            bool sp = false;
+            bool sp = true;
             bool wp = false;
 
             int pac_stride = 100;

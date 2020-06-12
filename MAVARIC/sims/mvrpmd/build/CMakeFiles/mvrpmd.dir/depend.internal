@@ -32033,12 +32033,24 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/M_Matrix_MTS.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/StateDepPots.h
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/Theta_MTS.hpp
+ /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/Headers/theta_mixed.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/functions.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/init_PAC.hpp
  /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/init_PAC.cpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/aligned_storage.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/basic_archive.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/detail/abi_prefix.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/detail/abi_suffix.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/detail/auto_link_archive.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/detail/basic_iarchive.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/detail/decl.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/archive/detail/helper_collection.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/assert.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/checked_delete.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/config/abi_prefix.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/config/abi_suffix.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/config/auto_link.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config/compiler/borland.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config/compiler/clang.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config/compiler/codegear.hpp
@@ -32105,10 +32117,14 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config/user.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/config/workaround.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/core/addressof.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/core/alloc_construct.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/core/checked_delete.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/core/default_allocator.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/core/demangle.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/core/enable_if.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/core/first_scalar.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/core/ignore_unused.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/core/noinit_adaptor.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/core/noncopyable.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/core/nvp.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/core/typeinfo.hpp
@@ -32117,7 +32133,16 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/detail/fenv.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/detail/workaround.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/exception/exception.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/integer_traits.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/limits.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/move/core.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/move/detail/config_begin.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/move/detail/config_end.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/move/detail/meta_utils.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/move/detail/meta_utils_core.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/move/detail/type_traits.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/move/detail/workaround.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/move/utility_core.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/O1_size_fwd.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/advance.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/advance_fwd.hpp
@@ -32225,6 +32250,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/bool.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/bool_fwd.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/clear_fwd.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/comparison.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/deref.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/distance_fwd.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/empty_fwd.hpp
@@ -32232,6 +32258,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/eval_if.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/front_fwd.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/greater.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/greater_equal.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/has_xxx.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/identity.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/if.hpp
@@ -32245,6 +32272,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/lambda.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/lambda_fwd.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/less.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/less_equal.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/limits/arity.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/limits/unrolling.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/long.hpp
@@ -32254,6 +32282,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/next.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/next_prior.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/not.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/not_equal_to.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/numeric_cast.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/or.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/mpl/placeholders.hpp
@@ -32344,10 +32373,13 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/numeric/ublas/matrix.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/numeric/ublas/matrix_expression.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/numeric/ublas/matrix_proxy.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/numeric/ublas/matrix_sparse.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/numeric/ublas/storage.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/numeric/ublas/storage_sparse.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/numeric/ublas/traits.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/numeric/ublas/vector.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/numeric/ublas/vector_expression.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/numeric/ublas/vector_sparse.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/operators.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/operators_v1.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/predef.h
@@ -32595,16 +32627,21 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/preprocessor/variadic/elem.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/preprocessor/variadic/has_opt.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/preprocessor/variadic/size.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/scoped_ptr.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/access.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/array.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/array_optimization.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/array_wrapper.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/base_object.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/collection_size_type.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/collections_save_imp.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/detail/stack_constructor.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/force_include.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/is_bitwise_serializable.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/item_version_type.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/level.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/level_enum.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/map.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/nvp.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/serialization.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/split_free.hpp
@@ -32614,9 +32651,12 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/tracking_enum.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/traits.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/type_info_implementation.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/utility.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/version.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/void_cast_fwd.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/serialization/wrapper.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/shared_array.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/allocate_shared_array.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/bad_weak_ptr.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/detail/lightweight_mutex.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/detail/local_counted_base.hpp
@@ -32648,6 +32688,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/detail/sp_counted_base_w32.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/detail/sp_counted_impl.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/detail/sp_disable_deprecated.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/detail/sp_forward.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/detail/sp_has_sync.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/detail/sp_interlocked.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/detail/sp_noexcept.hpp
@@ -32662,6 +32703,10 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/detail/spinlock_sync.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/detail/spinlock_w32.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/detail/yield_k.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/make_shared.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/make_shared_array.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/make_shared_object.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/scoped_ptr.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/shared_array.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/smart_ptr/shared_ptr.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/static_assert.hpp
@@ -32767,6 +32812,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_assignable.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_base_and_derived.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_base_of.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_bounded_array.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_class.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_complete.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_complex.hpp
@@ -32805,6 +32851,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/i
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_scalar.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_signed.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_stateless.hpp
+ /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_unbounded_array.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_union.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_unsigned.hpp
  /Users/ellioteklund/Downloads/boost_1_72_0/boost/type_traits/is_virtual_base_of.hpp

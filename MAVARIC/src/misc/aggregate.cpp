@@ -18,7 +18,10 @@ void aggregate::collect(std::string name, int row, const vector<double> & v0,
     
     (*myMap[name])(row,num_cols) += sgnTheta;
 }
-void aggregate::merge_collections(int root_process,int my_id, std::string root){
+/* HACK ALERT!!!  I am currently hard coding dt and ss (stride). This should
+ be fixed at a later time*/
+void aggregate::merge_collections(int root_process,int my_id, std::string root,
+                                  double dt, double ss, unsigned long long num_trajs){
         
     std::map<std::string, matrix<double> *>::iterator itr;
         
@@ -49,11 +52,16 @@ void aggregate::merge_collections(int root_process,int my_id, std::string root){
                 std::cout << "ERROR: Could not open " << fileName << std::endl;
             }
             
+            myFile << "#dt:" << dt << std::endl;
+            myFile << "#num_trajs:" << num_trajs << std::endl;
+
+            
             int stride1 = 0;
             int stride2 = 0;
             stride2 = (num_cols-1)*num_rows;
             
             for (int row=0; row<num_rows; row++) {
+                myFile << row*dt*ss << " ";
                 for (int col=0; col<num_cols-1; col++) {
                     stride1 = col*num_rows;
                     myFile << v_sum[stride1 + row]/v_sum[stride2 + row] << " ";

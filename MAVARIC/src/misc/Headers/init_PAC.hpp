@@ -6,6 +6,7 @@
 #include <boost/numeric/ublas/matrix.hpp>
 
 #include "Theta_MTS.hpp"
+#include "theta_mixed.hpp"
 
 #include <math.h>
 #include <sstream>
@@ -18,29 +19,44 @@ class init_PAC{
     
 public:
     init_PAC(int num_procs, int my_id, int root_proc, int nuc_beads, int elec_beads,
-             int num_states, int num_trajs_total, int num_trajs_local, Theta_MTS Theta);
+             int num_states, int num_trajs_total, int num_trajs_local, theta_mixed Theta);
     
-    void set_interval(int interval_IN);
-    
-    void set_vectors(vector<vector<double> > Q_IN,
-                     vector<matrix<double> > x_IN, vector<matrix<double> > p_IN);
-    
+/* Functions */
+
+    /*
+     Compute analyzes how the decorrelation length is affecting the convergence of
+     zero time position auto-correlation.
+     The output of compute is a file with four columns.
+     Column 1: Number of samples used to generate data.
+     Column 2: Sum of zero time position auto-correlation function
+     Column 3: Sum of zero time sign(theta) term
+     Column 4: The standard deviation of zero time position auto-correlation
+     trajectory in which each point was monte carlo sampled with at least interval
+     steps between every other trajectory.
+     */
     void compute(std::string root);
     
+    /*
+     Compute the zero time position auto-correlation for each trajectory.
+     That is: Qcent(0)Qcent(0)sign(Theta), where Qcent is the centroid.
+     theta_vec and qqTheta_vec are filled once the function as completed
+     */
     void compute_vecs();
+    
+/* Mutators */
+    void set_interval(int interval_IN);
+    
+    void set_vectors(vector<vector<double> > Q_IN,vector<matrix<double> > x_IN,
+                     vector<matrix<double> > p_IN);
+
     
 private:
     
-    int num_procs;
-    int my_id;
-    int root_proc;
-    int nuc_beads;
-    int elec_beads;
-    int num_states;
+/* Data */
+    int num_procs, my_id, root_proc; //mpi information
+    int nuc_beads, elec_beads, num_states; //system information
     int num_trajs_total; //total number of trajectories
-    int num_trajs_local; //number of trajectories per proc
-
-    
+    int num_trajs_local; //number of trajectories per proc (num_trajs/num_proc)
     int interval; //number of trajectories per loop
     
     /* Q(i)(j) = jth bead position of ith trajectory*/
@@ -56,10 +72,11 @@ private:
     vector<double> qqTheta_vec; //qqTheta_vec[i] = Qcent(0)Qcent(0)sgnTheta(0) for ith traj
     vector<double> ones; //vector of 1.0s
 
-    Theta_MTS Theta;
+/* Objects */
+    theta_mixed Theta; //mvrpmd theta
     
-
-    double get_centroid(const vector<double> & Q_IN);
+/* Functions */
+    double get_centroid(const vector<double> & Q_IN); //return centroid of Q_IN
     
 };
 

@@ -19,12 +19,15 @@ class mpi_wrapper{
 public:
     mpi_wrapper(int num_procs, int my_id, int root_proc);
     
-    void write_vector(vector<double> &v,std::string fileName);
+    void write_vector(vector<double> &v,std::string fileName,
+                                   int nuc_beadsIN,int elec_beadsIN, int num_statesIN,
+                                   double betaIN,unsigned long long num_trajs_totalIN,
+                                   double decorrIN);
     
 private:
-    int num_procs, my_id, root_proc;
     
+/* Data */
+    int num_procs, my_id, root_proc;
 };
-
 
 #endif

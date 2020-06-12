@@ -46,7 +46,6 @@ void theta_mixed::update_theta(const vector<double> &Q,const matrix<double> &x,
 }
 double theta_mixed::get_theta(const vector<double> &Q,const matrix<double> &x,
                               const matrix<double> &p){
-    
     update_theta(Q, x, p);
     return theta;
 }

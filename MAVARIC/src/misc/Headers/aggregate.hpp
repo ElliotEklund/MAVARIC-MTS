@@ -26,10 +26,12 @@ public:
     
     void print_collection(std::string name);
     
-    void merge_collections(int root_process, int my_id, std::string root);
+    void merge_collections(int root_process, int my_id, std::string root,
+                           double dt, double ss, unsigned long long num_trajs);
     
 private:
     
+/* Data */
     std::map<std::string, matrix<double> * > myMap;
     
 };

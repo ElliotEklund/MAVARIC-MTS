@@ -92,7 +92,7 @@ Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads,
 void Dynamics::compute_initPAC(int interval){
     
     init_PAC my_init_PAC(num_procs,my_id,root_proc,nuc_beads,elec_beads,
-                         num_states,num_trajs,num_trajs_local,Theta);
+                         num_states,num_trajs,num_trajs_local,theta);
     
     my_init_PAC.set_interval(interval);
     my_init_PAC.set_vectors(Q,x,p);
@@ -227,6 +227,20 @@ void Dynamics::energ_conserv(double tol, int energy_stride){
     MPI_Reduce(&num_broke_loc,&num_broke_glo,1,MPI_INT,MPI_SUM,root_proc,MPI_COMM_WORLD);
     if (my_id == root_proc){
         std::cout << "Percent broken: " << 100 * num_broke_glo/double(num_trajs) << std::endl;
+        
+        std::ofstream my_stream;
+        std::string file_name = root + "Output/conserv_report";
+        
+        if(!my_stream.is_open()) {
+            std::cout << "ERROR: Could not open file " << file_name << std::endl;
+        }
+        
+        my_stream << "dt:" << dt << std::endl;
+        my_stream << "run time:" << total_time << std::endl;
+        my_stream << "tolerance:" << tol << std::endl;
+        my_stream << "percent broken:" << 100 * num_broke_glo/double(num_trajs) << std::endl;
+        
+        my_stream.close();
     }
 }
 void Dynamics::PopAC(bool pac, int pac_stride, bool bp, int bp_stride,
@@ -287,15 +301,15 @@ void Dynamics::PopAC(bool pac, int pac_stride, bool bp, int bp_stride,
             myAggregator.collect("position",0,pac_v0,pac_v0,sgnTheta);
         }
         if (bp){
-            bp_v0 = myPops.boltz(Theta.get_gamm());
-            std::cout << bp_v0 << std::endl;
+            bp_v0 = myPops.boltz(theta.get_gamm());
             myAggregator.collect("boltzman",0,bp_v0,bp_v0,sgnTheta);
         }
         if (sp){
             //sp_v0 = myPops.sc(x_traj,p_traj);
             /* Use boltzman for time zero */
-            sp_v0 = myPops.boltz(Theta.get_gamm());
-            myAggregator.collect("semi_classic",0,sp_v0,sp_v0,sgnTheta);
+            sp_v0 = myPops.boltz(theta.get_gamm());
+            sp_v = myPops.sc(x_traj,p_traj);
+            myAggregator.collect("semi_classic",0,sp_v0,sp_v,sgnTheta);
         }
         if (wp){
             wp_v0 = myPops.wigner(x_traj,p_traj);
@@ -334,7 +348,7 @@ void Dynamics::PopAC(bool pac, int pac_stride, bool bp, int bp_stride,
     }
 
     std::string fileName = root + "Output/";
-    myAggregator.merge_collections(root_proc,my_id,fileName);
+    myAggregator.merge_collections(root_proc,my_id,fileName,dt,sp_stride,num_trajs);
 }
 void Dynamics::write_broken(std::list<int> broken,std::string file_root){
     
@@ -413,21 +427,46 @@ double Dynamics::compute_centroid(const vector<double> &Q){
 }
 void Dynamics::load_var(vector<double> &X, std::string var, std::string root_path){
       
+    int num = X.size(); //size of vector
+
     /* Add root to specific file indicator*/
     std::string file_name =  root_path + var;
-    
     std::ifstream myFile;
     myFile.open(file_name.c_str());
-    
+        
     if(!myFile.is_open()) {
         std::cout << "Could not open file " << var << std::endl;
     }
  
-    int num = X.size(); //size of vector
+    /* Skip past file comment lines*/
+    std::string line; //current line
+    int num_lines = 0; //number of comment lines
+    bool keep_going = true;
     
+    while (keep_going) {
+        std::getline(myFile,line);
+        std::size_t found = line.find("#",0);
+        if (found != std::string::npos) {
+            //line is a comment line; it can be skipped
+            num_lines +=1;
+        }
+        else{keep_going = false;}
+    }
+    
+    myFile.close();
+    myFile.open(file_name.c_str());
+    std::string junk;
+    
+    /* Skip over comment lines */
+    for (int i=0; i<num_lines; i++) {
+        myFile >> junk;
+    }
+    
+    /* Read in data*/
     for (int i=0; i<num; i++) {
         myFile >> X(i);
     }
+ 
     myFile.close();
 }
 void Dynamics::set_dt(double dtIN){

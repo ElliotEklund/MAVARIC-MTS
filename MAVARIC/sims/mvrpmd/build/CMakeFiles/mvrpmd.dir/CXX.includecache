@@ -559,6 +559,8 @@ boost/numeric/ublas/matrix.hpp
 -
 Theta_MTS.hpp
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/Theta_MTS.hpp
+theta_mixed.hpp
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Headers/theta_mixed.hpp
 math.h
 -
 sstream

@@ -58,13 +58,13 @@ void mvrpmd_mixed_forces::update_dHdx(const vector<double> &Q, const matrix<doub
                                        const matrix<double> &p){
     
     dThetaMTS_dx_vec = theta_dElec->get_theta_dx_vec();
-    noalias(dHdx) = TWO_beta_nuc_beads*x - coeff_ONE_theta * dThetaMTS_dx_vec;
+    noalias(dHdx) = /*TWO_beta_nuc_beads*x*/ - coeff_ONE_theta * dThetaMTS_dx_vec;
 }
 void mvrpmd_mixed_forces::update_dHdp(const vector<double> &Q, const matrix<double> &x,
                                        const matrix<double> &p){
 
     dThetaMTS_dp_vec = theta_dElec->get_theta_dp_vec();
-    noalias(dHdp) = TWO_beta_nuc_beads*p - coeff_ONE_theta * dThetaMTS_dp_vec;
+    noalias(dHdp) = /*TWO_beta_nuc_beads*p*/ - coeff_ONE_theta * dThetaMTS_dp_vec;
 }
 const vector<double> & mvrpmd_mixed_forces::get_dHdQ(){return dHdQ;}
 

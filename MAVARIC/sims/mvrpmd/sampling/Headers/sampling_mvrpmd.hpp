@@ -78,15 +78,18 @@ private:
     /* Save v to file name.
      v: vector to be saved
      name: name of file v is to be saved to*/
-    void save_trajs(vector<double> &v,std::string name);
+    void save_trajs(vector<double> &v,std::string name,int nuc_beads, int elec_beads,
+                    int num_states,double betaIN,unsigned long long num_trajs_totalIN,
+                    double decorrIN);
     
     /* Save v to file name.
      v: matrix to be saved
      size: number of states x number of beads in system
      num_trajs: number of trajectories v holds
      name: name of file v is to be saved to*/
-    void save_trajs(matrix<double> &v,int size, int num_trajs,
-                    std::string name);
+    void save_trajs(matrix<double> &v,int size, unsigned long long num_trajs,
+                    std::string name,int nuc_beads, int elec_beads, int num_states,
+                    double betaIN,unsigned long long num_trajs_totalIN,double decorrIN);
 
     /* Initialize Q with random vaules.
      Q: vector of bead positions

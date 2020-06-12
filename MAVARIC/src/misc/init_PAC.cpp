@@ -2,34 +2,24 @@
 
 init_PAC::init_PAC(int num_procs, int my_id, int root_proc, int nuc_beads,
                    int elec_beads, int num_states, int num_trajs_total,
-                   int num_trajs_local,Theta_MTS Theta)
+                   int num_trajs_local,theta_mixed Theta)
+
     :num_procs(num_procs), my_id(my_id), root_proc(root_proc),
-     nuc_beads(nuc_beads), elec_beads(elec_beads), num_states(num_states),
-     num_trajs_total(num_trajs_total), num_trajs_local(num_trajs_local),
+     nuc_beads(nuc_beads),
+     elec_beads(elec_beads),
+     num_states(num_states),
+     num_trajs_total(num_trajs_total),
+     num_trajs_local(num_trajs_local),
 
      Theta(Theta),
      Q(num_trajs_local,zero_vector<double>(nuc_beads)),
      x(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
      p(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
 
-     theta_vec(num_trajs_local,0),qqTheta_vec(num_trajs_local,0),
+     theta_vec(num_trajs_local,0),
+     qqTheta_vec(num_trajs_local,0),
      ones(nuc_beads,1.0)
-{
-    
-}
-
-
-void init_PAC::set_interval(int interval_IN){interval = interval_IN;}
-
-void init_PAC::set_vectors(vector<vector<double> > Q_IN,
-                           vector<matrix<double> > x_IN, vector<matrix<double> > p_IN){
-    
-    Q = Q_IN;
-    x = x_IN;
-    p = p_IN;
-    
-}
-
+{}
 void init_PAC::compute_vecs(){
     
     double sgntheta = 0;
@@ -50,12 +40,6 @@ void init_PAC::compute_vecs(){
         qqTheta_vec[traj] = centroid*centroid*sgntheta;
     }
 }
-
-double init_PAC::get_centroid(const vector<double> & Q_IN){
-    double centroid = inner_prod(Q_IN,ones)/nuc_beads;
-    return centroid;
-}
-
 void init_PAC::compute(std::string root){
     
     compute_vecs();
@@ -69,10 +53,12 @@ void init_PAC::compute(std::string root){
     vector<double> theta_samples (num_samples,0.0);
     vector<double> qqTheta_samples (num_samples,0.0);
     
+    /* Slide through all possible samples at given interval */
     for (int sample=0; sample<num_samples; sample++) {
         sgntheta = 0;
         qqTheta = 0;
 
+        /* sgntheta and qqTheta use samples separated by length interval*/
         for (int traj=0; traj<batch_size; traj++) {
             sgntheta += theta_vec[sample  + traj*num_samples];
             qqTheta += qqTheta_vec[sample + traj*num_samples];
@@ -94,13 +80,16 @@ void init_PAC::compute(std::string root){
     
     if (my_id == root_proc) {
 
-        std::string fileName = root + "Results/PAC_vs_traj";
+        std::string fileName = root + "Output/PAC_vs_traj";
         std::ofstream myFile;
         myFile.open(fileName.c_str());
         
         if (!myFile.is_open()) {
             std::cout << "ERROR: Could not save " << fileName << std::endl;
         }
+        
+        myFile << "#interval:" << interval << std::endl;
+        myFile << "#samples per data point:" << num_samples << std::endl;
         
         double theta_sum = 0;
         double qq_sum = 0;
@@ -114,8 +103,23 @@ void init_PAC::compute(std::string root){
                 error = pow((qq_sum/theta_sum) - (qqTheta_samples_final[i]/theta_samples_final[i]),2);
             }
             
-            myFile << (i+1)*interval << " " << qq_sum/theta_sum << " " << theta_sum << " " << sqrt(error/(i+1)) << std::endl;
+            myFile << (i+1)*interval << " " << qq_sum/theta_sum << " " << theta_sum
+            << " " << sqrt(error/(i+1)) << std::endl;
         }
         myFile.close();
     }
+}
+double init_PAC::get_centroid(const vector<double> & Q_IN){
+    double centroid = inner_prod(Q_IN,ones)/nuc_beads;
+    return centroid;
+}
+
+void init_PAC::set_interval(int interval_IN){interval = interval_IN;}
+
+void init_PAC::set_vectors(vector<vector<double> > Q_IN, vector<matrix<double> > x_IN,
+                           vector<matrix<double> > p_IN){
+    
+    Q = Q_IN;
+    x = x_IN;
+    p = p_IN;
 }

@@ -1,10 +1,10 @@
-Run Dynamics:0
+Run Dynamics:1
 Run Time:10
 Time Step:0.001
 Read Trajectories:1
-Compute CQQ:1
+Compute CQQ:0
 Check Energy Conservation:0
 Conservation Tolerance:0.1
-Compute Wigner Populations:0
+Compute Wigner Populations:1
 Compute Initial PAC:0
-Interval:10000
+Interval:1000

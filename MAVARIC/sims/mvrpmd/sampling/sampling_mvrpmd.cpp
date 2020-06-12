@@ -113,15 +113,20 @@ void sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     for(int i=0; i<num_trajs*nuc_beads; i++){
         P_trajs(i) = momentum.dev();
     }
+    
+    save_trajs(Q_trajs,"Output/Trajectories/Q",nuc_beads,elec_beads,num_states,
+               beta,num_trajs*num_procs,decorr);
+    
+    save_trajs(P_trajs,"Output/Trajectories/P",nuc_beads,elec_beads,num_states,
+    beta,num_trajs*num_procs,decorr);
 
-    save_trajs(Q_trajs,"Output/Trajectories/Q");
-    save_trajs(P_trajs,"Output/Trajectories/P");
-    
     save_trajs(x_trajs,num_trajs*elec_beads*num_states,num_trajs,
-               "Output/Trajectories/xElec");
-    
+               "Output/Trajectories/xElec",nuc_beads,elec_beads,num_states,
+               beta,num_trajs*num_procs,decorr);
+
     save_trajs(p_trajs,num_trajs*elec_beads*num_states,num_trajs,
-               "Output/Trajectories/pElec");
+               "Output/Trajectories/pElec",nuc_beads,elec_beads,num_states,
+               beta,num_trajs*num_procs,decorr);
     
     unsigned long long nuc_steps_total = nuc_stepper.get_steps_total();
     unsigned long long nuc_steps_accpt = nuc_stepper.get_steps_accepted();
@@ -166,23 +171,29 @@ void sampling_mvrpmd::initialize_files(bool readPSVIN, std::string rootFolderIN)
     rootFolder = rootFolderIN;
     helper.set_root(rootFolderIN);
 }
-void sampling_mvrpmd::save_trajs(vector<double> &v,std::string name){
+void sampling_mvrpmd::save_trajs(vector<double> &v,std::string name, int nuc_beadsIN,
+                                 int elec_beadsIN, int num_statesIN,double betaIN,
+                                 unsigned long long num_trajs_totalIN,double decorrIN){
 
     std::string fileName = rootFolder + name;
     mpi_wrapper myWrap(num_procs,my_id,root_proc);
     
-    myWrap.write_vector(v,fileName);
+    myWrap.write_vector(v,fileName,nuc_beadsIN,elec_beadsIN,num_statesIN,betaIN,
+                        num_trajs_totalIN,decorrIN);
 }
-void sampling_mvrpmd::save_trajs(matrix<double> &v,int size,int num_trajs,
-                                 std::string name){
+void sampling_mvrpmd::save_trajs(matrix<double> &v,int size,
+                                 unsigned long long num_trajsIN,std::string name,
+                                 int nuc_beadsIN, int elec_beadsIN, int num_statesIN,
+                                 double betaIN,unsigned long long num_trajs_totalIN,
+                                 double decorrIN){
 
     vector<double> v_transform (size,0);
     int stride = 0;
     
-    for (int traj=0; traj<num_trajs; traj++) {
-        for (int bead=0; bead<elec_beads; bead++) {
+    for (unsigned long long traj=0; traj<num_trajsIN; traj++) {
+        for (unsigned long long bead=0; bead<elec_beads; bead++) {
             stride = traj*elec_beads*num_states + bead*num_states;
-            for (int state=0; state<num_states; state++) {
+            for (unsigned long long state=0; state<num_states; state++) {
                 v_transform(stride + state) = v(traj*elec_beads+bead,state);
             }
         }
@@ -190,5 +201,6 @@ void sampling_mvrpmd::save_trajs(matrix<double> &v,int size,int num_trajs,
     
     std::string fileName = rootFolder + name;
     mpi_wrapper myWrap(num_procs,my_id,root_proc);
-    myWrap.write_vector(v_transform,fileName);
+    myWrap.write_vector(v_transform,fileName,nuc_beadsIN,elec_beadsIN,num_statesIN,
+                        betaIN,num_trajs_totalIN,decorrIN);
 }

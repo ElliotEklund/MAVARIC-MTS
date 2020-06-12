@@ -124,11 +124,14 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     unsigned long long p_steps_total = elec_stepper.get_p_steps_total();
 
     /* Print Monte Carlo simulation Data */
-    helper.print_sys_accpt(nuc_steps_total, nuc_steps_accpt);
-    helper.print_elec_accpt(x_steps_total, x_steps_accpt);
-    helper.print_elec_accpt(p_steps_total, p_steps_accpt);
-    helper.print_avg_energy(estimator_total, sgn_total);
+    helper.set_sys_ratio(nuc_steps_total, nuc_steps_accpt);
+    helper.set_x_ratio(x_steps_total, x_steps_accpt);
+    helper.set_p_ratio(p_steps_total, p_steps_accpt);
+    helper.set_average_energy(estimator_total, sgn_total);
     helper.write_estimator(estimator_t,stride);
+    
+    helper.final_report(nuc_beads,elec_beads,num_states,beta,num_steps,nuc_ss,
+                        x_ss,p_ss);
 
     /* Write Monte Carlo information to file if requested*/
     if(writePSV){helper.write_PSV(nuc_beads, elec_beads, num_states, Q, x, p);}

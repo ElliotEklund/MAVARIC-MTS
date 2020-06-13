@@ -49,10 +49,11 @@ int main(int argc, char ** argv) {
     double temp, mass;
     int nuc_beads,num_states, elec_beads;
     double beta, beta_nuc, beta_elec;
+    double alpha;
 
     /* Monte Carlo parameters. */
     unsigned long long num_steps, esti_rate;
-    double nuc_ss, elec_ss;
+    double nuc_ss, x_ss, p_ss;
     bool writePSV, readPSV;
     bool readData, writeData;
     bool runMC;
@@ -93,7 +94,9 @@ int main(int argc, char ** argv) {
     /* From ElecParameters*/
     num_states = elec_parameters[0];
     elec_beads = elec_parameters[1];
-    elec_ss = elec_parameters[2];
+    x_ss = elec_parameters[2];
+    p_ss = elec_parameters[3];
+    alpha = elec_parameters[4];
 
     /* From Sampling */
     runSamp = Samp_parameters[0];
@@ -117,9 +120,6 @@ int main(int argc, char ** argv) {
     beta = 1.0/temp;
     beta_nuc = beta/nuc_beads;
     beta_elec = beta/elec_beads;
-    
-    double x_ss = 1.4;
-    double p_ss = 1.4;
 
                         /* END PROCESS 1 */
     /* /////////////////////////////////////////////////////////*/
@@ -138,7 +138,7 @@ int main(int argc, char ** argv) {
 
         equilib_mvrpmd equilibrator(my_id,root_process,num_procs,root);
         equilibrator.initialize_system(nuc_beads,elec_beads,num_states,
-                                       mass,beta);
+                                       mass,beta,alpha);
 
         equilibrator.initialize_files(writePSV,readPSV,writeData,readData);
 
@@ -173,7 +173,7 @@ int main(int argc, char ** argv) {
         }
         
         sampling_mvrpmd sampler(my_id,root_process,num_procs);
-        sampler.initialize_system(nuc_beads,elec_beads,num_states,mass,beta);
+        sampler.initialize_system(nuc_beads,elec_beads,num_states,mass,beta,alpha);
         sampler.initialize_files(readPSV,root);
 
         clock_t start = clock();
@@ -208,7 +208,7 @@ int main(int argc, char ** argv) {
 
         /* Setup Dynamics object for simulation. */
         Dynamics myDyn(num_procs,my_id,root_process,nuc_beads,elec_beads,
-                       num_states,mass,beta_nuc,beta_elec,num_trajs,root);
+                       num_states,mass,beta_nuc,beta_elec,alpha,num_trajs,root);
 
         myDyn.set_dt(dt);
         myDyn.set_total_time(total_time);

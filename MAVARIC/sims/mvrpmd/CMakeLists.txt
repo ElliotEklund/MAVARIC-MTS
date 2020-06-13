@@ -92,13 +92,13 @@ add_executable(mvrpmd mvrpmd.cpp
     #forces directory
     ${FORCES_DIR}/dCdelec.cpp
     ${FORCES_DIR}/dM_Matrix_dQ.cpp
-    ${FORCES_DIR}/dM_Matrix_MTS_dQ.cpp
+    #${FORCES_DIR}/dM_Matrix_MTS_dQ.cpp
     ${FORCES_DIR}/dSpring_dQ.cpp
     ${FORCES_DIR}/dStateDep_dQ.cpp
     ${FORCES_DIR}/dStateIndep_dQ.cpp
-    ${FORCES_DIR}/dTheta_MTS_dElec.cpp
-    ${FORCES_DIR}/dTheta_MTS_dQ.cpp
-    ${FORCES_DIR}/Forces_MTS.cpp
+    #${FORCES_DIR}/dTheta_MTS_dElec.cpp
+    #${FORCES_DIR}/dTheta_MTS_dQ.cpp
+    #${FORCES_DIR}/Forces_MTS.cpp
     ${FORCES_DIR}/theta_mixed_dQ.cpp
     ${FORCES_DIR}/mvrpmd_mixed_forces.cpp
     ${FORCES_DIR}/theta_mixed_dElec.cpp

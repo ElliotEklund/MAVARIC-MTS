@@ -46,8 +46,18 @@ inline int check_elec_in(std::string root, std::vector<double> &params){
         result = -1;
     }
     
-    /* Check MC Step Size */
-    if(!is_positive(params[2],fileName,"MC Step Size")){
+    /* Check x step Size */
+    if(!is_positive(params[2],fileName,"x step size")){
+        result = -1;
+    };
+    
+    /* Check p step Size */
+    if(!is_positive(params[3],fileName,"p step size")){
+        result = -1;
+    };
+    
+    /* Check alpha */
+    if(!is_positive(params[4],fileName,"alpha")){
         result = -1;
     };
     

@@ -42,14 +42,10 @@ void sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     /* Assemble Hamiltonian*/
     SpringEnergy V_spring(nuc_beads,mass,beta/nuc_beads);
     StateIndepPot V0(nuc_beads,mass);
-    GTerm G(elec_beads,num_states);
-    C_Matrix C(elec_beads,num_states);
+    GTerm G(elec_beads,num_states,alpha);
+    C_Matrix C(elec_beads,num_states,alpha);
     M_Matrix M(num_states,elec_beads,beta/elec_beads);
-    //M_Matrix_MTS M_MTS(nuc_beads,elec_beads,num_states,M);
-    //Theta_MTS thetaMTS(num_states,elec_beads,C,M_MTS);
     theta_mixed theta(num_states,nuc_beads,elec_beads,C,M);
-
-    //MVRPMD_MTS_Hamiltonian H(beta/nuc_beads,V_spring,V0,G,thetaMTS);
     mvrpmd_mixed_ham H(beta/nuc_beads,V_spring,V0,G,theta);
     
     double energy = H.get_energy(Q,x,p);
@@ -158,12 +154,14 @@ inline double sampling_mvrpmd::step_dist(const double rn, double step_size){
     return (rn * 2.0 * step_size) - step_size;
 }
 void sampling_mvrpmd::initialize_system(int nuc_beads_IN,int elec_beadsIN,
-                                        int num_statesIN,double massIN,double betaIN){
+                                        int num_statesIN,double massIN,double betaIN,
+                                        double alphaIN){
     nuc_beads = nuc_beads_IN;
     elec_beads = elec_beadsIN;
     num_states = num_statesIN;
     mass = massIN;
     beta = betaIN;
+    alpha = alphaIN;
 }
 void sampling_mvrpmd::initialize_files(bool readPSVIN, std::string rootFolderIN){
     

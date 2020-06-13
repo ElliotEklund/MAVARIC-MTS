@@ -17,8 +17,8 @@ using namespace boost::numeric::ublas;
 class theta_mixed_dElec{
     
 public:
-    theta_mixed_dElec(int num_states, int elec_beads, C_Matrix &C_In,
-                      M_Matrix &M_IN);
+    theta_mixed_dElec(int num_states, int elec_beads,double alpha,
+                      C_Matrix &C_In, M_Matrix &M_IN);
     
     void update_theta_dElec(const matrix<std::complex<double> > & x,
                                  const matrix<std::complex<double> > & p);

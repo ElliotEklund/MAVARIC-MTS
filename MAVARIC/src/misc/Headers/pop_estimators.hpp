@@ -16,7 +16,7 @@ using namespace boost::numeric::ublas;
 class pop_estimators{
     
 public:
-    pop_estimators(int elec_beads, int num_states);
+    pop_estimators(int elec_beads, int num_states,double alpha);
     
     /* Return the boltzmann population estimator*/
     vector<double> boltz(const matrix<std::complex<double> > gamma);
@@ -35,6 +35,8 @@ private:
     double sc_coef; //1.0/2.0 * elec_beads
     double wigner_coef;
     vector<double> gamma_nn; //element n correspons to gamma(n,n)
+    double alpha;
+    double x_alpha, p_alpha;
     
     matrix<double> x_sq; //element-wise square of x
     matrix<double> p_sq; //element-wise square of p

@@ -45,7 +45,7 @@ public:
 
 /* Mutators */
     void initialize_system(int nuc_beads_IN,int elec_beadsIN, int num_statesIN,
-                           double massIN,double betaIN);
+                           double massIN,double betaIN,double alpha);
     
     void initialize_files(bool writePSV_IN, bool readPSV_IN,
                           bool writeData_IN, bool readData_IN);
@@ -68,6 +68,7 @@ private:
     /* Number of nuclear beads, electronic beads, and electronic states*/
     int nuc_beads, elec_beads, num_states;
     double mass, beta; //system mass; 1/kb T
+    double alpha; //mapping variable prefactor
     
     bool sys_set, files_set; //true only once initialize_system(initialize_files) called
 

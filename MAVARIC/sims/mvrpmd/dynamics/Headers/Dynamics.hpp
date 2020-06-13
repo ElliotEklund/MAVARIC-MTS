@@ -9,28 +9,27 @@
 
 #include "mpi_wrapper.hpp"
 
+#include "SpringEnergy.h"
+#include "StateIndepPot.h"
+#include "GTerm.h"
+
 #include "M_Matrix.h"
 #include "C_Matrix.h"
 
 #include "M_Matrix_MTS.hpp"
-#include "dM_Matrix_MTS_dQ.hpp"
 #include "dM_Matrix_dQ.hpp"
 
-#include "Theta_MTS.hpp"
-#include "dTheta_MTS_dQ.hpp"
-#include "dTheta_MTS_dElec.hpp"
 #include "theta_mixed.hpp"
 #include "theta_mixed_dQ.hpp"
 #include "theta_mixed_dElec.hpp"
 
 #include "Forces_MTS.hpp"
 #include "mvrpmd_mixed_forces.hpp"
+#include "mvrpmd_mixed_ham.hpp"
 #include "ABM_MVRPMD.hpp"
 #include "init_PAC.hpp"
 #include "aggregate.hpp"
 #include "pop_estimators.hpp"
-
-#include "MVRPMD_MTS_Hamiltonian.hpp"
 
 #include <math.h>
 #include <sstream>
@@ -44,7 +43,8 @@ class Dynamics{
 public:
     Dynamics(int num_procs,int my_id, int root_proc,int nuc_beads, 
              int elec_beads, int num_states, double mass,
-             double beta_nuc_beads, double beta_elec_beads, int num_trajs,std::string root);
+             double beta_nuc_beads, double beta_elec_beads,double alpha,
+             int num_trajs,std::string root);
     
     /* Compute Position Auto-Correlation (PAC) function */
     void PAC();
@@ -105,6 +105,7 @@ private:
     int num_trajs_local; //trajectories per processor
     double mass; //nuclear mass
     double beta_nuc_beads; //beta/nuc_beads
+    double alpha; //mapping variable prefactor
     
     double dt; //time step [a.u]
     double total_time; //total molecular dynamics simulation time [a.u]
@@ -132,11 +133,11 @@ private:
     
     M_Matrix_MTS M_MTS;
     dM_Matrix_dQ dMdQ;
-    dM_Matrix_MTS_dQ dM_MTS_dQ;
-    
-    Theta_MTS Theta;
-    dTheta_MTS_dQ dThetadQ;
-    dTheta_MTS_dElec dThetadElec;
+//    dM_Matrix_MTS_dQ dM_MTS_dQ;
+//
+//    Theta_MTS Theta;
+//    dTheta_MTS_dQ dThetadQ;
+//    dTheta_MTS_dElec dThetadElec;
     
     theta_mixed theta;
     theta_mixed_dQ theta_dQ;

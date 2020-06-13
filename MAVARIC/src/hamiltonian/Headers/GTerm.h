@@ -16,7 +16,7 @@ class GTerm{
     
 public:
     
-    GTerm(int num_beads, int num_states);
+    GTerm(int num_beads, int num_states, double alpha);
     
     /* Update energy to reflect the state of x and p.
      x is a matrix electronic beads and states;
@@ -44,6 +44,8 @@ private:
     
     /* Private data. */
     double energy; //energy of GTerm
+    double alpha; //mapping variable prefactor
+    double x_alpha, p_alpha; //x and p mapping variable prefactor
     matrix<double> x_squared; //each element of x squared;intermediate data
     matrix<double> p_squared; //each element of p squared;intermediate data
 

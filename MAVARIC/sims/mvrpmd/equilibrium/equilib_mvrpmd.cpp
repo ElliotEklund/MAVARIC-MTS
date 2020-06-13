@@ -10,7 +10,6 @@ equilib_mvrpmd::equilib_mvrpmd(int my_id, int root_proc, int num_procs,
 {
     sys_set = false;
     files_set = false;
-    
 }
 void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
                          unsigned long long num_steps, unsigned long long stride){
@@ -36,22 +35,11 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     /* Assemble Hamiltonian and Estimator*/
     SpringEnergy V_spring(nuc_beads,mass,beta/nuc_beads);
     StateIndepPot V0(nuc_beads,mass);
-    GTerm G(elec_beads,num_states);
-    C_Matrix C(elec_beads,num_states);
+    GTerm G(elec_beads,num_states,alpha);
+    C_Matrix C(elec_beads,num_states,alpha);
     M_Matrix M(num_states,elec_beads,beta/elec_beads);
-    //M_Matrix_MTS M_MTS(nuc_beads,elec_beads,num_states,M);
-    //Theta_MTS thetaMTS(num_states,elec_beads,C,M_MTS);
     theta_mixed theta(num_states,nuc_beads,elec_beads,C,M);
     theta_mixed_dBeta dtheta(elec_beads,num_states,beta/elec_beads,C,M);
-
-//    dTheta_MTS_dBeta dthetaMTS_dBeta(nuc_beads,elec_beads,num_states,
-//                                      beta/elec_beads,C,M,M_MTS);
-
-//    MVRPMD_MTS_Hamiltonian H(beta/nuc_beads,V_spring,V0,G,thetaMTS);
-//
-//    MVRPMD_MTS_Estimator Esti(nuc_beads,beta/nuc_beads,V_spring,V0,
-//                                  thetaMTS,dthetaMTS_dBeta);
-    
     mvrpmd_mixed_ham H(beta/nuc_beads,V_spring,V0,G,theta);
     mvrpmd_mixed_esti Esti(nuc_beads,beta/nuc_beads,V_spring,V0,theta,dtheta);
     
@@ -151,12 +139,14 @@ void equilib_mvrpmd::gen_initElec(matrix<double> &v, int num_beads, int num_stat
     }
 }
 void equilib_mvrpmd::initialize_system(int nuc_beads_IN,int elec_beadsIN,
-                                        int num_statesIN,double massIN,double betaIN){
+                                       int num_statesIN,double massIN,double betaIN,
+                                       double alphaIN){
     nuc_beads = nuc_beads_IN;
     elec_beads = elec_beadsIN;
     num_states = num_statesIN;
     mass = massIN;
     beta = betaIN;
+    alpha = alphaIN;
     sys_set = true;
 }
 void equilib_mvrpmd::initialize_files(bool writePSV_IN, bool readPSV_IN,

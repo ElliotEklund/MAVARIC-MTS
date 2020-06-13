@@ -1,7 +1,7 @@
 #include "mvrpmd_mixed_forces.hpp"
 
 mvrpmd_mixed_forces::mvrpmd_mixed_forces(int nuc_beads,int elec_beads, int num_states,
-                                         double mass, double beta_nuc_beads,
+                                         double mass, double beta_nuc_beads, double alpha,
                                          theta_mixed &thetaIN, theta_mixed_dQ &theta_dQIN,
                                          theta_mixed_dElec &theta_dElec_IN)
 
@@ -20,12 +20,17 @@ mvrpmd_mixed_forces::mvrpmd_mixed_forces(int nuc_beads,int elec_beads, int num_s
      dThetaMTS_dQ_vec(nuc_beads,0.0),
 
      dThetaMTS_dx_vec(elec_beads,num_states,0.0),
-     dThetaMTS_dp_vec(elec_beads,num_states,0.0)
+     dThetaMTS_dp_vec(elec_beads,num_states,0.0),
+
+     alpha(alpha)
 {
     theta = &thetaIN;
     theta_dQ = &theta_dQIN;
     theta_dElec = &theta_dElec_IN;
     coeff_ONE_theta = 0;
+    
+    x_alpha = alpha;
+    p_alpha = 1.0/alpha;
 }
 void mvrpmd_mixed_forces::update_Forces(const vector<double> &Q,const vector<double> &P,
                                         const matrix<double> &x,const matrix<double> &p){
@@ -56,14 +61,17 @@ void mvrpmd_mixed_forces::update_dHdQ(const vector<double> &Q, const matrix<doub
 }
 void mvrpmd_mixed_forces::update_dHdx(const vector<double> &Q, const matrix<double> &x,
                                        const matrix<double> &p){
-    
     dThetaMTS_dx_vec = theta_dElec->get_theta_dx_vec();
+    //noalias(dHdx) = x_alpha*TWO_beta_nuc_beads*x - coeff_ONE_theta * dThetaMTS_dx_vec;
+
     noalias(dHdx) = /*TWO_beta_nuc_beads*x*/ - coeff_ONE_theta * dThetaMTS_dx_vec;
 }
 void mvrpmd_mixed_forces::update_dHdp(const vector<double> &Q, const matrix<double> &x,
                                        const matrix<double> &p){
 
     dThetaMTS_dp_vec = theta_dElec->get_theta_dp_vec();
+    //noalias(dHdp) = p_alpha*TWO_beta_nuc_beads*p - coeff_ONE_theta * dThetaMTS_dp_vec;
+
     noalias(dHdp) = /*TWO_beta_nuc_beads*p*/ - coeff_ONE_theta * dThetaMTS_dp_vec;
 }
 const vector<double> & mvrpmd_mixed_forces::get_dHdQ(){return dHdQ;}

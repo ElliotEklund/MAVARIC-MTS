@@ -59,13 +59,13 @@ void MonteCarloHelper::print_sys_accpt(){
 void MonteCarloHelper::print_x_accpt(){
     
     if (my_id == root_proc) {
-        std::cout << "\t Electronic Acceptance Ratio: " << x_ratio<< std::endl;
+        std::cout << "\t x Acceptance Ratio: " << x_ratio<< std::endl;
     }
 }
 void MonteCarloHelper::print_p_accpt(){
     
     if (my_id == root_proc) {
-        std::cout << "\t Electronic Acceptance Ratio: " << p_ratio<< std::endl;
+        std::cout << "\t p Acceptance Ratio: " << p_ratio<< std::endl;
     }
 }
 void MonteCarloHelper::set_average_energy(double estimator_total, double sgn_total){
@@ -101,6 +101,8 @@ void MonteCarloHelper::print_avg_energy(){
             std::cout << "\t Average Energy: " << average_energy << std::endl;
             std::cout << "\t Standard Deviation: " << energy_stdev << std::endl;
             std::cout << "\t Using " << num_procs << " processors." << std::endl;
+            std::cout << "\t STDEV/Estimator:" << 100*energy_stdev/average_energy
+            << "%" << std::endl;
         }
         else{
             std::cout << "\t Average Energy: " << average_energy << std::endl;
@@ -272,6 +274,8 @@ void MonteCarloHelper::final_report(int nuc_beads, int elec_beads, int num_state
         
         if (num_procs > 1) {
             myStream << "Energy Estimator STDEV:" << energy_stdev << std::endl;
+            myStream << "STDEV/Estimator:" << 100* energy_stdev/average_energy <<
+            "%" << std::endl;
         }
         else{
             myStream << "Energy Estimator STDEV: NA" << std::endl;

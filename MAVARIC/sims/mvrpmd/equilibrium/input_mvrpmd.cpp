@@ -47,7 +47,7 @@ int input_mvrpmd::input_file_handler(std::string root, std::vector<double> &sysP
     int result = 0;
 
     /* First, check if any of the input files are corrupt */
-    if(is_corrupt(ElecFile,3)){result = -1;}
+    if(is_corrupt(ElecFile,5)){result = -1;}
     if(is_corrupt(SysFile,4)){result = -1;}
     if(is_corrupt(MCFile,7)){result = -1;}
     if(is_corrupt(SampFile,7)){result = -1;}

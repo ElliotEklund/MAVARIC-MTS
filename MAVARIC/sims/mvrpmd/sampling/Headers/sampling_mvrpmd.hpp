@@ -41,7 +41,7 @@ public:
      Set all variables in the argument; these are defined below under Model Data
      */
     void initialize_system(int nuc_beads_IN,int elec_beadsIN,int num_statesIN,
-                           double massIN,double betaIN);
+                           double massIN,double betaIN,double alphaIN);
     
     /* Set all variables in the argument; these are defined below under
      Sampling Data*/
@@ -58,6 +58,7 @@ private:
     int num_states; //number of electronic states
     double beta; //1.0/kb T
     double mass; //system mass
+    double alpha; //mapping variable prefactor
     
     /* Sampling Data */
     std::string rootFolder; //specifies folder to read and write data

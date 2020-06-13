@@ -1,13 +1,16 @@
 #include "GTerm.h"
 
-GTerm::GTerm(int num_beads, int num_states)
+GTerm::GTerm(int num_beads, int num_states, double alpha)
     :x_squared(num_beads,num_states),
-     p_squared(num_beads,num_states)
-{energy = 0;}
+     p_squared(num_beads,num_states),
+     alpha(alpha)
+{
+    energy = 0;
+    x_alpha = alpha;
+    p_alpha = 1.0/alpha;
+}
 void GTerm::update_gTerm(const matrix<double> &x,const matrix<double> &p){
     
-     double alpha = sqrt(1.0);
-
     x_squared = element_prod(x,x);
     p_squared = element_prod(p,p);
 
@@ -17,9 +20,8 @@ void GTerm::update_gTerm(const matrix<double> &x,const matrix<double> &p){
     x_sum = std::accumulate(x_squared.data().begin(),x_squared.data().end(),x_sum);
     p_sum = std::accumulate(p_squared.data().begin(),p_squared.data().end(),p_sum);
     
-    energy = alpha*x_sum + p_sum/alpha;
+    energy = x_alpha*x_sum + p_alpha*p_sum;
 }
-
 double& GTerm::get_gTerm(const matrix<double> &x,const matrix<double> &p){
     update_gTerm(x, p);
     return energy;

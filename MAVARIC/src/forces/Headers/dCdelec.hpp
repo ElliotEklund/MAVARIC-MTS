@@ -14,7 +14,7 @@ using namespace boost::numeric::ublas;
 class dCdelec{
   
 public:
-    dCdelec(int elec_beads, int num_states);
+    dCdelec(int elec_beads, int num_states, double alpha);
     
     /* Update dCdx_mat to reflect the state of x and p */
     void update_dCdx_mat(const matrix<std::complex<double> > & x,const matrix<std::complex<double> > & p);
@@ -32,14 +32,19 @@ public:
 private:
     
     /* Private Functions*/
-    void update_dCdx(int bead, int state, std::complex<double> x, matrix<std::complex<double> > &dC);
+    void update_dCdx(int bead, int state, const matrix<std::complex<double> > & x,
+                     const matrix<std::complex<double> > & p,
+                     matrix<std::complex<double> > &dC);
     
-    void update_dCdp(int bead, int state, std::complex<double> p, matrix<std::complex<double> > &dC);
+    void update_dCdp(int bead, int state, const matrix<std::complex<double> > & x,
+                     const matrix<std::complex<double> > & p,
+                     matrix<std::complex<double> > &dC);
 
-    
     /* Private Data */
     int num_states;//number of electronic states
     int elec_beads; //number of electronic beads
+    double alpha; //mapping variable prefactor
+    double x_alpha, p_alpha; //x and p mapping variable prefactor
     std::complex<double> unit_complex;
     
     /* dCdx_mac(i,j) returns a matrix containing the derivative of C wrt x of state j of bead i */
@@ -59,8 +64,9 @@ private:
 
     vector<std::complex<double> > dCdp_row;
     vector<std::complex<double> > dCdp_col;
-
+    
+    vector<std::complex<double> > x_state;
+    vector<std::complex<double> > p_state;
 };
-
 
 #endif

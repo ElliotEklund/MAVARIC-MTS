@@ -19,7 +19,7 @@ class mvrpmd_mixed_forces : public mv_forces_temp {
     
 public:
     mvrpmd_mixed_forces(int nuc_beads,int elec_beads, int num_states,
-                        double mass, double beta_nuc_beads,
+                        double mass, double beta_nuc_beads,double alpha,
                         theta_mixed &theta_IN, theta_mixed_dQ &theta_dQ_IN,
                         theta_mixed_dElec &theta_dElec_IN);
     
@@ -91,6 +91,8 @@ private:
     int elec_beads; //number of electronic beads
     int num_states; //number of electronic states
     double coeff_ONE_theta; //ONE_beta_nuc_beads /theta
+    double alpha; //mapping variable prefactor
+    double x_alpha, p_alpha; //x and p mapping variable prefactors
 
     vector<double> dHdQ, dHdP; //derivative of Hamiltonian wrt Q,P
     matrix<double> dHdx, dHdp; //derivative of Hamiltonian wrt x,p

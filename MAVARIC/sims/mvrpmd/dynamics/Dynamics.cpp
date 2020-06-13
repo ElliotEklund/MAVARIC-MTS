@@ -2,7 +2,7 @@
 
 Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads, 
                    int elec_beads, int num_states, double mass,
-                   double beta_nuc_beads, double beta_elec_beads,
+                   double beta_nuc_beads, double beta_elec_beads, double alpha,
                    int num_trajs,std::string root)
 
     :num_procs(num_procs),my_id(my_id),root_proc(root_proc),
@@ -12,35 +12,25 @@ Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads,
      num_trajs(num_trajs),num_trajs_local(num_trajs/num_procs), mass(mass),
      beta_nuc_beads(beta_nuc_beads),
      dt_is_set(false), total_time_is_set(false),
+     alpha(alpha),
     
      Q(num_trajs_local,zero_vector<double>(nuc_beads)),
      P(num_trajs_local,zero_vector<double>(nuc_beads)),
      x(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
      p(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
 
-     C(elec_beads, num_states),
-     //M(num_states, nuc_beads, beta_nuc_beads),
+     C(elec_beads, num_states,alpha),
      M(num_states, elec_beads, beta_elec_beads),
 
      M_MTS(nuc_beads, elec_beads, num_states, M),
-     //dMdQ(nuc_beads, num_states, beta_elec_beads, M),
      dMdQ(elec_beads, num_states, beta_elec_beads, M),
-
-     dM_MTS_dQ(nuc_beads, elec_beads, num_states, dMdQ),
-
-     Theta(num_states, elec_beads, C, M_MTS),
-     dThetadQ(num_states, nuc_beads, elec_beads, C, M_MTS, dM_MTS_dQ),
-     dThetadElec(num_states, elec_beads, C, M_MTS),
 
     theta(num_states,nuc_beads,elec_beads,C,M),
     theta_dQ(num_states,nuc_beads,elec_beads,C,M,dMdQ),
-    theta_dElec(num_states,elec_beads,C,M),
-
-//     F(nuc_beads, elec_beads, num_states, mass,
-//       beta_nuc_beads, Theta, dThetadQ, dThetadElec)
+    theta_dElec(num_states,elec_beads,alpha,C,M),
 
     F(nuc_beads, elec_beads, num_states, mass,
-      beta_nuc_beads, theta, theta_dQ, theta_dElec)
+      beta_nuc_beads, alpha, theta, theta_dQ, theta_dElec)
 {
 
     /* Global vectors hold all trajectories on the root processor.
@@ -144,7 +134,6 @@ void Dynamics::PAC(){
 
         i_data = 1;
 
-
         for (int step=1; step<num_steps; step++) {
 
             myABM.take_step(Q_traj, P_traj, x_traj, p_traj);
@@ -169,8 +158,8 @@ void Dynamics::energ_conserv(double tol, int energy_stride){
 
     SpringEnergy V_spring(nuc_beads,mass,beta_nuc_beads);
     StateIndepPot V0(nuc_beads,mass);
-    GTerm G(elec_beads,num_states);
-    MVRPMD_MTS_Hamiltonian myHam(beta_nuc_beads,V_spring,V0,G,Theta);
+    GTerm G(elec_beads,num_states,alpha);
+    mvrpmd_mixed_ham H(beta_nuc_beads,V_spring,V0,G,theta);
 
     vector<double> Q_traj (nuc_beads);
     vector<double> P_traj (nuc_beads);
@@ -195,9 +184,8 @@ void Dynamics::energ_conserv(double tol, int energy_stride){
         broken = false; //reset broken trajectory to false
 
         step = 0; //reset step to zero
-
         myABM.initialize_rk4(Q_traj, P_traj, x_traj, p_traj);
-        energy_init = myHam.get_energy_dyn(mass,Q_traj,P_traj,x_traj,p_traj);
+        energy_init = H.get_energy_dyn(mass,Q_traj,P_traj,x_traj,p_traj);
         
         while (step<num_steps && !broken){
 
@@ -207,7 +195,7 @@ void Dynamics::energ_conserv(double tol, int energy_stride){
             if (step % energy_stride == 0) {
                 /* Test if trajectory has broken*/
 
-                energy_t = myHam.get_energy_dyn(mass,Q_traj,P_traj,x_traj,p_traj);
+                energy_t = H.get_energy_dyn(mass,Q_traj,P_traj,x_traj,p_traj);
                 badness = abs(energy_init - energy_t)/energy_t;
 
                 if (badness > tol) {
@@ -230,6 +218,7 @@ void Dynamics::energ_conserv(double tol, int energy_stride){
         
         std::ofstream my_stream;
         std::string file_name = root + "Output/conserv_report";
+        my_stream.open(file_name.c_str());
         
         if(!my_stream.is_open()) {
             std::cout << "ERROR: Could not open file " << file_name << std::endl;
@@ -258,7 +247,7 @@ void Dynamics::PopAC(bool pac, int pac_stride, bool bp, int bp_stride,
     matrix<double> p_traj (elec_beads,num_states);
 
     aggregate myAggregator;
-    pop_estimators myPops(elec_beads,num_states);
+    pop_estimators myPops(elec_beads,num_states,alpha);
 
     vector<double> pac_v0, bp_v0, sp_v0, wp_v0;
     vector<double> pac_v, bp_v, sp_v, wp_v;
@@ -328,7 +317,7 @@ void Dynamics::PopAC(bool pac, int pac_stride, bool bp, int bp_stride,
             }
             if (bp){
                 if (step % bp_stride == 0) {
-                    bp_v = myPops.boltz(Theta.get_gamm());
+                    bp_v = myPops.boltz(theta.get_gamm());
                     myAggregator.collect("boltzman",step/bp_stride,bp_v0,bp_v,sgnTheta);
                 }
             }

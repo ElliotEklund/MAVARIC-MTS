@@ -5,8 +5,10 @@
 #include <boost/numeric/ublas/io.hpp>
 #include <boost/numeric/ublas/matrix.hpp>
 
-#include "Theta_MTS.hpp"
 #include "theta_mixed.hpp"
+#include "C_Matrix.h"
+#include "M_Matrix.h"
+#include "trajs_io.hpp"
 
 #include <math.h>
 #include <sstream>
@@ -18,8 +20,8 @@
 class init_PAC{
     
 public:
-    init_PAC(int num_procs, int my_id, int root_proc, int nuc_beads, int elec_beads,
-             int num_states, int num_trajs_total, int num_trajs_local, theta_mixed Theta);
+    init_PAC(int my_id,int num_procs, int root_proc,int num_trajs_total,
+             int num_trajs_local);
     
 /* Functions */
 
@@ -34,22 +36,24 @@ public:
      trajectory in which each point was monte carlo sampled with at least interval
      steps between every other trajectory.
      */
-    void compute(std::string root);
+    void compute(std::string input_dir, std::string output_dir);
     
     /*
      Compute the zero time position auto-correlation for each trajectory.
      That is: Qcent(0)Qcent(0)sign(Theta), where Qcent is the centroid.
      theta_vec and qqTheta_vec are filled once the function as completed
      */
-    void compute_vecs();
+    void compute_vecs(std::string input_dir);
     
 /* Mutators */
     void set_interval(int interval_IN);
     
     void set_vectors(vector<vector<double> > Q_IN,vector<matrix<double> > x_IN,
                      vector<matrix<double> > p_IN);
-
     
+    void  set_system(int nuc_beadsIN,int elec_beadsIN,int num_statesIN,
+                     double betaIN,double alphaIN);
+
 private:
     
 /* Data */
@@ -58,6 +62,8 @@ private:
     int num_trajs_total; //total number of trajectories
     int num_trajs_local; //number of trajectories per proc (num_trajs/num_proc)
     int interval; //number of trajectories per loop
+    double alpha;
+    double beta;
     
     /* Q(i)(j) = jth bead position of ith trajectory*/
     vector<vector<double> > Q;
@@ -71,9 +77,6 @@ private:
     vector<double> theta_vec; //theta_vec[i] corresponds to sgn_theta the ith traj
     vector<double> qqTheta_vec; //qqTheta_vec[i] = Qcent(0)Qcent(0)sgnTheta(0) for ith traj
     vector<double> ones; //vector of 1.0s
-
-/* Objects */
-    theta_mixed Theta; //mvrpmd theta
     
 /* Functions */
     double get_centroid(const vector<double> & Q_IN); //return centroid of Q_IN

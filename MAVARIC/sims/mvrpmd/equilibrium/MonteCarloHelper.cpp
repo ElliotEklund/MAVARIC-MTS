@@ -259,7 +259,7 @@ void MonteCarloHelper::final_report(int nuc_beads, int elec_beads, int num_state
         std::string file_name = root + "Output/equil_report";
 
         std::ofstream myStream;
-        myStream.open(file_name);
+        myStream.open(file_name.c_str());
         
         if(!myStream.is_open()) {
             std::cout << "ERROR: Could not open file" << file_name << std::endl;

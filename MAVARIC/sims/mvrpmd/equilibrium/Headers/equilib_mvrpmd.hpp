@@ -62,6 +62,7 @@ private:
     
 /* Data */
     int my_id, num_procs, root_proc; //mpi data
+    std::string root_path;
     bool writePSV, readPSV; // determine how Phase Spave Variables are processed
     bool writeData, readData; // determine how MC data is processed
     

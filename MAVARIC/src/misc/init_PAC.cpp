@@ -1,32 +1,45 @@
 #include "init_PAC.hpp"
 
-init_PAC::init_PAC(int num_procs, int my_id, int root_proc, int nuc_beads,
-                   int elec_beads, int num_states, int num_trajs_total,
-                   int num_trajs_local,theta_mixed Theta)
-
-    :num_procs(num_procs), my_id(my_id), root_proc(root_proc),
-     nuc_beads(nuc_beads),
-     elec_beads(elec_beads),
-     num_states(num_states),
+init_PAC::init_PAC(int my_id,int num_procs,int root_proc,int num_trajs_total,
+                   int num_trajs_local)
+    :num_procs(num_procs),
+     my_id(my_id),
+     root_proc(root_proc),
+   
      num_trajs_total(num_trajs_total),
      num_trajs_local(num_trajs_local),
 
-     Theta(Theta),
-     Q(num_trajs_local,zero_vector<double>(nuc_beads)),
-     x(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
-     p(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
-
      theta_vec(num_trajs_local,0),
-     qqTheta_vec(num_trajs_local,0),
-     ones(nuc_beads,1.0)
+     qqTheta_vec(num_trajs_local,0)
 {}
-void init_PAC::compute_vecs(){
+void init_PAC::compute_vecs(std::string input_dir){
     
-    double sgntheta = 0;
-    double centroid = 0;
+    C_Matrix C(elec_beads, num_states,alpha);
+    M_Matrix M(num_states, elec_beads, beta/elec_beads);
+    theta_mixed Theta(num_states,nuc_beads,elec_beads,C,M);
+    
+    vector<vector<double> > Q(num_trajs_local,zero_vector<double>(nuc_beads));
+    vector<matrix<double> > x(num_trajs_local,zero_matrix<double>(elec_beads,num_states));
+    vector<matrix<double> > p(num_trajs_local,zero_matrix<double>(elec_beads,num_states));
+    
+    Q = get_trajs_reformat(input_dir + "Q",num_trajs_total*nuc_beads,
+                           num_trajs_local*nuc_beads,my_id,num_procs,root_proc,
+                           num_trajs_local,nuc_beads);
+    
+    x = get_trajs_reformat(input_dir + "xElec",num_trajs_total*elec_beads,
+                           num_trajs_local*elec_beads,my_id,num_procs,root_proc,
+                           num_trajs_local,elec_beads,num_states);
+    
+    p = get_trajs_reformat(input_dir + "pElec",num_trajs_total*elec_beads,
+                           num_trajs_local*elec_beads,my_id,num_procs,root_proc,
+                           num_trajs_local,elec_beads,num_states);
+    
     vector<double> Q_traj (nuc_beads);
     matrix<double> x_traj (elec_beads,num_states);
     matrix<double> p_traj (elec_beads,num_states);
+    
+    double sgntheta = 0;
+    double centroid = 0;
     
     for (int traj=0; traj<num_trajs_local; traj++) {
         
@@ -40,9 +53,9 @@ void init_PAC::compute_vecs(){
         qqTheta_vec[traj] = centroid*centroid*sgntheta;
     }
 }
-void init_PAC::compute(std::string root){
+void init_PAC::compute(std::string input_dir,std::string output_dir){
     
-    compute_vecs();
+    compute_vecs(input_dir);
     
     int num_samples = num_trajs_total/interval; //number of samples that will be generated
     int batch_size = interval/num_procs; //number of samples per processor
@@ -70,7 +83,6 @@ void init_PAC::compute(std::string root){
         
     vector<double> theta_samples_final (num_samples,0);
     vector<double> qqTheta_samples_final (num_samples,0);
-
     
     MPI_Reduce(&theta_samples[0],&theta_samples_final[0],num_samples,
                MPI_DOUBLE,MPI_SUM,root_proc,MPI_COMM_WORLD);
@@ -80,7 +92,7 @@ void init_PAC::compute(std::string root){
     
     if (my_id == root_proc) {
 
-        std::string fileName = root + "Output/PAC_vs_traj";
+        std::string fileName = output_dir + "PAC_vs_traj";
         std::ofstream myFile;
         myFile.open(fileName.c_str());
         
@@ -118,8 +130,16 @@ void init_PAC::set_interval(int interval_IN){interval = interval_IN;}
 
 void init_PAC::set_vectors(vector<vector<double> > Q_IN, vector<matrix<double> > x_IN,
                            vector<matrix<double> > p_IN){
-    
     Q = Q_IN;
     x = x_IN;
     p = p_IN;
+}
+void init_PAC::set_system(int nuc_beadsIN,int elec_beadsIN,int num_statesIN,
+                          double betaIN,double alphaIN){
+    nuc_beads = nuc_beadsIN;
+    elec_beads = elec_beadsIN;
+    num_states = num_statesIN;
+    beta = betaIN;
+    alpha = alphaIN;
+    ones.resize(nuc_beads,1.0);
 }

@@ -26,24 +26,9 @@ set(CMAKE_CXX_COMPILER mpic++)
     set(INTEGRATORS_DIR "${ROOT}/src/integrators")
     set(MISC_DIR "${ROOT}/src/misc")
     set(MONTECARLO_DIR "${ROOT}/src/monte_carlo")
+    set(IO_DIR "${ROOT}/src/IO")
     set(EXECUTABLE_OUTPUT_PATH "${ROOT}/bin")
     set(CMAKE_CXX_FLAGS "-DMAC")
-
-    #elseif(${MACHINE} STREQUAL "ASTRA")
-    #    set(BOOST_DIR "${BOOST_ASTRA}/boost_1_72_0")
-    #    set(DYNAMICS_DIR "${ROOT_ASTRA}/sims/mvrpmd/dynamics")
-    #    set(SAMPLING_DIR "${ROOT_ASTRA}/sims/mvrpmd/sampling")
-    #    set(EQUILIBRIUM_DIR "${ROOT_ASTRA}/sims/mvrpmd/equilibrium")
-    #    set(FORCES_DIR "${ROOT_ASTRA}/src/forces")
-    #    set(HAMILTONIAN_DIR "${ROOT_ASTRA}/src/hamiltonian")
-    #    set(ESTIMATORS_DIR "${ROOT_ASTRA}/src/estimators")
-    #    set(INTEGRATORS_DIR "${ROOT_ASTRA}/src/integrators")
-    #    set(MISC_DIR "${ROOT_ASTRA}/src/misc")
-    #    set(MONTECARLO_DIR "${ROOT_ASTRA}/src/monte_carlo")
-    #    set(EXECUTABLE_OUTPUT_PATH "${ROOT_ASTRA}/bin")
-    #    set(CMAKE_CXX_FLAGS "-ASTRA")
-    #endif()
-
 
 add_definitions( "-DNDEBUG -O3" )
 
@@ -62,7 +47,8 @@ add_executable(mvrpmd mvrpmd.cpp
     ${SAMPLING_DIR}/SamplingHelper.cpp
 
     #dynamics directory
-    ${DYNAMICS_DIR}/Dynamics.cpp
+    #${DYNAMICS_DIR}/Dynamics.cpp
+    ${DYNAMICS_DIR}/dynamics_mvrpmd.cpp
 
     #hamiltonian directory
     ${HAMILTONIAN_DIR}/C_Matrix.cpp
@@ -115,6 +101,7 @@ add_executable(mvrpmd mvrpmd.cpp
     ${MISC_DIR}/pop_estimators.cpp
     ${MISC_DIR}/aggregate.cpp
     ${MISC_DIR}/init_PAC.cpp
+    ${MISC_DIR}/auto_correlation.cpp
 
     #monte carlo directory
     ${MONTECARLO_DIR}/system_step.cpp
@@ -130,4 +117,5 @@ include_directories(${FORCES_DIR}/Headers)
 include_directories(${INTEGRATORS_DIR}/Headers)
 include_directories(${MISC_DIR}/Headers)
 include_directories(${MONTECARLO_DIR}/Headers)
+include_directories(${IO_DIR}/Headers)
 

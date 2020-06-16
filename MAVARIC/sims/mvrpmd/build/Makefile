@@ -1041,6 +1041,33 @@ Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp.s:
 	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp.s
 .PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp.s
 
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.o
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.o
+
+# target to build an object file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.o:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.o
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.i
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.i
+
+# target to preprocess a source file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.i:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.i
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.s
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.s
+
+# target to generate assembly for a file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.s:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.s
+
 Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/decorrelation.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/decorrelation.cpp.o
 
 .PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/decorrelation.o
@@ -1203,32 +1230,32 @@ Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.
 	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.s
 .PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.s
 
-dynamics/Dynamics.o: dynamics/Dynamics.cpp.o
+dynamics/dynamics_mvrpmd.o: dynamics/dynamics_mvrpmd.cpp.o
 
-.PHONY : dynamics/Dynamics.o
+.PHONY : dynamics/dynamics_mvrpmd.o
 
 # target to build an object file
-dynamics/Dynamics.cpp.o:
-	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/dynamics/Dynamics.cpp.o
-.PHONY : dynamics/Dynamics.cpp.o
+dynamics/dynamics_mvrpmd.cpp.o:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/dynamics/dynamics_mvrpmd.cpp.o
+.PHONY : dynamics/dynamics_mvrpmd.cpp.o
 
-dynamics/Dynamics.i: dynamics/Dynamics.cpp.i
+dynamics/dynamics_mvrpmd.i: dynamics/dynamics_mvrpmd.cpp.i
 
-.PHONY : dynamics/Dynamics.i
+.PHONY : dynamics/dynamics_mvrpmd.i
 
 # target to preprocess a source file
-dynamics/Dynamics.cpp.i:
-	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/dynamics/Dynamics.cpp.i
-.PHONY : dynamics/Dynamics.cpp.i
+dynamics/dynamics_mvrpmd.cpp.i:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/dynamics/dynamics_mvrpmd.cpp.i
+.PHONY : dynamics/dynamics_mvrpmd.cpp.i
 
-dynamics/Dynamics.s: dynamics/Dynamics.cpp.s
+dynamics/dynamics_mvrpmd.s: dynamics/dynamics_mvrpmd.cpp.s
 
-.PHONY : dynamics/Dynamics.s
+.PHONY : dynamics/dynamics_mvrpmd.s
 
 # target to generate assembly for a file
-dynamics/Dynamics.cpp.s:
-	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/dynamics/Dynamics.cpp.s
-.PHONY : dynamics/Dynamics.cpp.s
+dynamics/dynamics_mvrpmd.cpp.s:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/dynamics/dynamics_mvrpmd.cpp.s
+.PHONY : dynamics/dynamics_mvrpmd.cpp.s
 
 equilibrium/MonteCarloHelper.o: equilibrium/MonteCarloHelper.cpp.o
 
@@ -1503,6 +1530,9 @@ help:
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.o"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.i"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.s"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/decorrelation.o"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/decorrelation.i"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/decorrelation.s"
@@ -1521,9 +1551,9 @@ help:
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.o"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.i"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.s"
-	@echo "... dynamics/Dynamics.o"
-	@echo "... dynamics/Dynamics.i"
-	@echo "... dynamics/Dynamics.s"
+	@echo "... dynamics/dynamics_mvrpmd.o"
+	@echo "... dynamics/dynamics_mvrpmd.i"
+	@echo "... dynamics/dynamics_mvrpmd.s"
 	@echo "... equilibrium/MonteCarloHelper.o"
 	@echo "... equilibrium/MonteCarloHelper.i"
 	@echo "... equilibrium/MonteCarloHelper.s"

@@ -15,6 +15,7 @@
 
 #include "M_Matrix.h"
 #include "C_Matrix.h"
+#include "dM_Matrix_dQ.hpp"
 
 #include "M_Matrix_MTS.hpp"
 #include "dM_Matrix_dQ.hpp"
@@ -65,6 +66,10 @@ public:
                bool sp, int sp_stride, bool wp, int wp_stride);
     
     void compute_initPAC(int interval);
+    
+    void set_system(int nuc_beadsIN, int elec_beadsIN, int num_statesIN,
+                    double massIN, double beta_nuc_beadsIN,
+                    double beta_elec_beadsIN, double alphaIN);
 
 
 private:

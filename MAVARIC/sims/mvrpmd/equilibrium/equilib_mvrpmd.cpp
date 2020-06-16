@@ -6,7 +6,8 @@ equilib_mvrpmd::equilib_mvrpmd(int my_id, int root_proc, int num_procs,
      root_proc(root_proc),
      num_procs(num_procs),
      myRand(time(NULL) + my_id),
-     helper(root_path,my_id,num_procs,root_proc)
+     helper(root_path,my_id,num_procs,root_proc),
+     root_path(root_path)
 {
     sys_set = false;
     files_set = false;
@@ -68,6 +69,13 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
 
     //r is a ratio that determines how often to sample each sub-system
     double r = double(nuc_beads)/ double(nuc_beads + num_states*elec_beads);
+    
+    std::ofstream progress;
+
+    if (my_id == root_proc) {
+        std::string file_name = root_path + "Output/equil_progress";
+        progress.open(file_name.c_str());
+    }
 
     for (int step=0; step<num_steps; step++) {
         if (myRand.doub() < r) {
@@ -99,6 +107,15 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
             estimator_t[esti_samples] = estimator_total/(sgn_total + 1);
             esti_samples += 1;
         }
+        if (step % (num_steps/10) == 0) {
+            if (my_id==root_proc) {
+                progress << 100 * step/double(num_steps) << "%" << std::endl;
+            }
+        }
+    }
+    
+    if (my_id == root_proc) {
+        progress.close();
     }
 
     /* Retrive acceptance ratio information */

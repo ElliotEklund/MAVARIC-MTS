@@ -103,6 +103,11 @@ private:
      step_size: specifices range of uniform random distribution*/
     void gen_initElec(matrix<double> &v, int num_beads,
                       int num_states,double step_size);
+    
+    /* Return num_trajs_local, the correct number of trajectories for
+     a given processor to run. */
+    unsigned long long get_trajs_local(unsigned long long num_trajs_totalIN);
+
 };
 
 #endif

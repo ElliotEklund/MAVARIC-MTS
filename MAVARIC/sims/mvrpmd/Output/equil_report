@@ -1,0 +1,11 @@
+nuc_beads:1
+elec_beads:1
+num_states:2
+beta:1
+Monte Carlo Steps:1000000
+Energy Estimator:0.498759
+Energy Estimator STDEV:0.00305895
+STDEV/Estimator:0.613313%
+Nuclear Step Size:3.5 Acceptance Ratio: 50.0271
+x Step Size:0.45 Acceptance Ratio: 49.5405
+p Step Size:4.5 Acceptance Ratio: 49.5932

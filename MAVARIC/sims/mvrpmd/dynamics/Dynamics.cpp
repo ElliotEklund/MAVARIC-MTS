@@ -1,36 +1,31 @@
 #include "Dynamics.hpp"
 
-Dynamics::Dynamics(int num_procs, int my_id, int root_proc,int nuc_beads, 
-                   int elec_beads, int num_states, double mass,
-                   double beta_nuc_beads, double beta_elec_beads, double alpha,
-                   int num_trajs,std::string root)
+Dynamics::Dynamics(int num_procs, int my_id, int root_proc)
 
-    :num_procs(num_procs),my_id(my_id),root_proc(root_proc),
-     root(root),
+    :num_procs(num_procs),
+     my_id(my_id),
+     root_proc(root_proc),
         
-     nuc_beads(nuc_beads),elec_beads(elec_beads),num_states(num_states),
-     num_trajs(num_trajs),num_trajs_local(num_trajs/num_procs), mass(mass),
-     beta_nuc_beads(beta_nuc_beads),
-     dt_is_set(false), total_time_is_set(false),
-     alpha(alpha),
+     dt_is_set(false),
+     total_time_is_set(false),
     
-     Q(num_trajs_local,zero_vector<double>(nuc_beads)),
-     P(num_trajs_local,zero_vector<double>(nuc_beads)),
-     x(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
-     p(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
-
-     C(elec_beads, num_states,alpha),
-     M(num_states, elec_beads, beta_elec_beads),
-
-     M_MTS(nuc_beads, elec_beads, num_states, M),
-     dMdQ(elec_beads, num_states, beta_elec_beads, M),
-
-    theta(num_states,nuc_beads,elec_beads,C,M),
-    theta_dQ(num_states,nuc_beads,elec_beads,C,M,dMdQ),
-    theta_dElec(num_states,elec_beads,alpha,C,M),
-
-    F(nuc_beads, elec_beads, num_states, mass,
-      beta_nuc_beads, alpha, theta, theta_dQ, theta_dElec)
+//     Q(num_trajs_local,zero_vector<double>(nuc_beads)),
+//     P(num_trajs_local,zero_vector<double>(nuc_beads)),
+//     x(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
+//     p(num_trajs_local,zero_matrix<double>(elec_beads,num_states)),
+//
+//     C(elec_beads, num_states,alpha),
+//     M(num_states, elec_beads, beta_elec_beads),
+//
+//     M_MTS(nuc_beads, elec_beads, num_states, M),
+//     dMdQ(elec_beads, num_states, beta_elec_beads, M),
+//
+//    theta(num_states,nuc_beads,elec_beads,C,M),
+//    theta_dQ(num_states,nuc_beads,elec_beads,C,M,dMdQ),
+//    theta_dElec(num_states,elec_beads,alpha,C,M),
+//
+//    F(nuc_beads, elec_beads, num_states, mass,
+//      beta_nuc_beads, alpha, theta, theta_dQ, theta_dElec)
 {
 
     /* Global vectors hold all trajectories on the root processor.
@@ -87,66 +82,6 @@ void Dynamics::compute_initPAC(int interval){
     my_init_PAC.set_interval(interval);
     my_init_PAC.set_vectors(Q,x,p);
     my_init_PAC.compute(root);
-}
-void Dynamics::PAC(){
-        
-    if (!total_time) {
-        std::cout << "ERROR: total_time must be set before a simulation can be run." << std::endl;
-    }
-    
-    int data_count = int(total_time * 10); //resolution of data being sampled
-    int rate = num_steps/data_count;
-
-    ABM_MVRPMD myABM(F,dt,num_states,nuc_beads,elec_beads);
-    
-    vector<double> Q_traj (nuc_beads);
-    vector<double> P_traj (nuc_beads);
-    matrix<double> x_traj (elec_beads,num_states);
-    matrix<double> p_traj (elec_beads,num_states);
-    
-    double Qcent_0 = 0; //position centroid evaluated at t=0
-    double Qcent_t = 0; //position centroid evaluated at t
-    double sgnTheta = 0; //sign of Theta for a trajectory
-    double sgnTheta_total = 0; //sum of sgnTheta across all trajectories
-    double Qcent0_X_sgnTheta = 0; //Qcent_0 * sgnTheta
-    
-    QQt = zero_vector<double>(data_count);
-    int i_data = 0;
-
-    for (int traj=0; traj<num_trajs_local; traj++){
-
-        /* Load new trajecty*/
-        Q_traj = Q(traj);
-        P_traj = P(traj);
-        x_traj = x(traj);
-        p_traj = p(traj);
-
-        Qcent_0 = compute_centroid(Q_traj);
-
-        myABM.initialize_rk4(Q_traj, P_traj, x_traj, p_traj);
-
-        sgnTheta = F.get_sign(Q_traj,x_traj,p_traj);
-
-        QQt(0) += Qcent_0 * Qcent_0 * sgnTheta;
-
-        sgnTheta_total += sgnTheta;
-        Qcent0_X_sgnTheta = Qcent_0 * sgnTheta;
-
-        i_data = 1;
-
-        for (int step=1; step<num_steps; step++) {
-
-            myABM.take_step(Q_traj, P_traj, x_traj, p_traj);
-
-            if(step%rate == 0){
-                Qcent_t = compute_centroid(Q_traj);
-                QQt(i_data) += Qcent_t * Qcent0_X_sgnTheta;
-                i_data += 1;
-            }
-        }
-    }
-
-    print_QQt(QQt,sgnTheta_total);
 }
 void Dynamics::energ_conserv(double tol, int energy_stride){
     
@@ -238,13 +173,21 @@ void Dynamics::PopAC(bool pac, int pac_stride, bool bp, int bp_stride,
     if (!total_time) {
         std::cout << "ERROR: total_time must be set before a simulation can be run." << std::endl;
     }
-
+    
+    C_Matrix C(elec_beads, num_states,alpha),
+    M_Matrix M(num_states, elec_beads, beta_elec_beads),
+    dM_Matrix_dQ dMdQ(elec_beads, num_states, beta_elec_beads, M),
+    theta_mixed theta(num_states,nuc_beads,elec_beads,C,M),
+    theta_mixed_dQ theta_dQ(num_states,nuc_beads,elec_beads,C,M,dMdQ),
+    theta_mixed_dElec theta_dElec(num_states,elec_beads,alpha,C,M),
+    
+    F(nuc_beads, elec_beads, num_states, mass,
+      beta_nuc_beads, alpha, theta, theta_dQ, theta_dElec)
+    
     ABM_MVRPMD myABM(F,dt,num_states,nuc_beads,elec_beads);
 
-    vector<double> Q_traj (nuc_beads);
-    vector<double> P_traj (nuc_beads);
-    matrix<double> x_traj (elec_beads,num_states);
-    matrix<double> p_traj (elec_beads,num_states);
+    vector<double> Q_traj (nuc_beads), P_traj (nuc_beads);
+    matrix<double> x_traj (elec_beads,num_states), p_traj (elec_beads,num_states);
 
     aggregate myAggregator;
     pop_estimators myPops(elec_beads,num_states,alpha);
@@ -274,7 +217,14 @@ void Dynamics::PopAC(bool pac, int pac_stride, bool bp, int bp_stride,
     }
 
     double sgnTheta = 0; //sign of Theta for a trajectory
-
+    
+    int ten_p = floor(double(num_trajs_local)/10.0); //ten percent of trajs
+    std::ofstream progress;
+    if (my_id == root_proc) {
+        std::string file_name = root + "Output/dyn_progress";
+        progress.open(file_name.c_str());
+    }
+    
     for (int traj=0; traj<num_trajs_local; traj++) {
         /* Load new trajecty*/
         Q_traj = Q(traj);
@@ -334,6 +284,20 @@ void Dynamics::PopAC(bool pac, int pac_stride, bool bp, int bp_stride,
                 }
             }
         }
+        
+        if (traj % ten_p == 0) {
+            if (my_id == root_proc) {
+                progress << 100 * (double) traj /num_trajs_local << "%" << std::endl;
+            }
+            /* Save progress */
+            std::string fileName = root + "Output/";
+            myAggregator.merge_collections(root_proc,my_id,fileName,dt,sp_stride,
+                                           traj*num_procs);
+        }
+    }
+    
+    if (my_id==root_proc) {
+        progress.close();
     }
 
     std::string fileName = root + "Output/";
@@ -378,38 +342,7 @@ void Dynamics::write_broken(std::list<int> broken,std::string file_root){
     
     myFile.close();
 }
-void Dynamics::print_QQt(vector<double> &QQt,double sgnTheta_total){
 
-    int data_count = total_time*10;
-    int rate = 1/(dt*10);
-
-    double global_sgn_theta_total = 0;
-    vector<double> global_QQt (data_count);
-    
-    MPI_Reduce(&sgnTheta_total,&global_sgn_theta_total,1,
-    MPI_DOUBLE,MPI_SUM,0,MPI_COMM_WORLD);
-    
-    MPI_Reduce(&QQt[0],&global_QQt[0],data_count,MPI_DOUBLE,MPI_SUM,0,MPI_COMM_WORLD);
-
-    if(my_id == root_proc){
-        std::string fileName = root + "Output/PAC";
-        
-        std::ofstream myFile;
-        myFile.open(fileName.c_str());
-        
-        if (!myFile.is_open()) {
-            std::cout << "ERROR: Could not open " << fileName << std::endl;
-        }
-        
-    
-        for(int i=0; i<QQt.size(); i++){
-            myFile << i*rate*dt << " " << global_QQt(i)/global_sgn_theta_total << std::endl;
-        }
-    
-        myFile.close();
-        std::cout << "Successfully wrote pos_auto_corr to Results." << std::endl;
-    }
-}
 double Dynamics::compute_centroid(const vector<double> &Q){
     double centroid = sum(Q);
     return centroid/nuc_beads;
@@ -504,4 +437,16 @@ void Dynamics::format_array(vector<matrix<double> > &X, vector<double> &X_local)
             }
         }
     }
+}
+void Dynamics::set_system(int nuc_beadsIN, int elec_beadsIN, int num_statesIN,
+                          double massIN, double beta_nuc_beadsIN,
+                          double beta_elec_beadsIN, double alphaIN){
+    
+    nuc_beads = nuc_beadsIN;
+    elec_beads = elec_beadsIN;
+    num_states = num_statesIN;
+    mass = massIN:
+    beta_nuc_beads = beta_nuc_beadsIN;
+    beta_elec_beads = beta_nuc_beadsIN;
+    alpha = alphaIN;
 }

@@ -1,6 +1,6 @@
-Run Dynamics:1
+Run Dynamics:0
 Run Time:5
-Time Step:0.0001
+Time Step:0.001
 Read Trajectories:1
 Compute CQQ:0
 Check Energy Conservation:0

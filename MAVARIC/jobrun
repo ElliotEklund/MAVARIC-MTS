@@ -1,12 +1,23 @@
+#!/bin/bash
+#PBS -l walltime=1:00:00:00
+#PBS -l nodes=compute-1-8:ppn=2+compute-1-11:ppn=2
+##PBS -l nodes=compute-1-5:ppn=12
+##PBS -l nodes=compute-1-6:ppn=12
+##PBS -l nodes=compute-1-7:ppn=2
+
+##PBS -l nodes=compute-1-8:ppn=8
+##PBS -l nodes=compute-1-9:ppn=2
+##PBS -l nodes=compute-1-10:ppn=12
+##PBS -l nodes=compute-1-11:ppn=12
+
 #PBS -e Output/error
 #PBS -o Output/output
-#PBS -l nodes=20:ppn=10,walltime=1:00:00:00
-#PBS -S /bin/bash
 #PBS -q default
 
+set -x
 echo $PBS_NODEFILE
 echo `cat $PBS_NODEFILE`
 export GMPICONF=nodeinfo/PBS_JOBID
 cd $PBS_O_WORKDIR
 
-mpirun -np 200 mavaric
+mpirun -np 4 bin/mvrpmd

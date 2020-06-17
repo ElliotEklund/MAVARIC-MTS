@@ -26,13 +26,13 @@ void init_PAC::compute_vecs(std::string input_dir){
                            num_trajs_local*nuc_beads,my_id,num_procs,root_proc,
                            num_trajs_local,nuc_beads);
     
-    x = get_trajs_reformat(input_dir + "xElec",num_trajs_total*elec_beads,
-                           num_trajs_local*elec_beads,my_id,num_procs,root_proc,
-                           num_trajs_local,elec_beads,num_states);
+    x = get_trajs_reformat(input_dir + "xElec",num_trajs_total*elec_beads*num_states,
+                           num_trajs_local*elec_beads*num_states,my_id,num_procs,
+                           root_proc,num_trajs_local,elec_beads,num_states);
     
-    p = get_trajs_reformat(input_dir + "pElec",num_trajs_total*elec_beads,
-                           num_trajs_local*elec_beads,my_id,num_procs,root_proc,
-                           num_trajs_local,elec_beads,num_states);
+    p = get_trajs_reformat(input_dir + "pElec",num_trajs_total*elec_beads*num_states,
+                           num_trajs_local*elec_beads*num_states,my_id,num_procs,
+                           root_proc,num_trajs_local,elec_beads,num_states);
     
     vector<double> Q_traj (nuc_beads);
     matrix<double> x_traj (elec_beads,num_states);
@@ -92,7 +92,7 @@ void init_PAC::compute(std::string input_dir,std::string output_dir){
     
     if (my_id == root_proc) {
 
-        std::string fileName = output_dir + "PAC_vs_traj";
+        std::string fileName = output_dir + "iPAC";
         std::ofstream myFile;
         myFile.open(fileName.c_str());
         
@@ -141,5 +141,9 @@ void init_PAC::set_system(int nuc_beadsIN,int elec_beadsIN,int num_statesIN,
     num_states = num_statesIN;
     beta = betaIN;
     alpha = alphaIN;
-    ones.resize(nuc_beads,1.0);
+    ones.resize(nuc_beads);
+    
+    for (int i=0; i<nuc_beads; i++) {
+        ones(i) = 1.0;
+    }
 }

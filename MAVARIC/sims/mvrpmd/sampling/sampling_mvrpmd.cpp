@@ -21,8 +21,10 @@ void sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     gen_initElec(x,elec_beads,num_states,x_ss);
     gen_initElec(p,elec_beads,num_states,p_ss);
 
+    /* TODO Check for reading*/
     if (readPSV) {
         helper.read_PSV(nuc_beads,elec_beads,num_states,Q,x,p);
+        std::cout << "no read" << std::endl;
     }
 
     /* Declare vectors to store sampled trajectories*/
@@ -128,20 +130,22 @@ void sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     for(int i=0; i<num_trajs_local*nuc_beads; i++){
         P_trajs(i) = momentum.dev();
     }
+    
+    if (saveTrajs) {
+        save_trajs(Q_trajs,"Output/Trajectories/Q",nuc_beads,elec_beads,num_states,
+                   beta,num_trajs,decorr);
+        
+        save_trajs(P_trajs,"Output/Trajectories/P",nuc_beads,elec_beads,num_states,
+                   beta,num_trajs,decorr);
+        
+        save_trajs(x_trajs,num_trajs_local*elec_beads*num_states,num_trajs_local,
+                   "Output/Trajectories/xElec",nuc_beads,elec_beads,num_states,
+                   beta,num_trajs,decorr);
 
-    save_trajs(Q_trajs,"Output/Trajectories/Q",nuc_beads,elec_beads,num_states,
-               beta,num_trajs,decorr);
-
-    save_trajs(P_trajs,"Output/Trajectories/P",nuc_beads,elec_beads,num_states,
-    beta,num_trajs,decorr);
-
-    save_trajs(x_trajs,num_trajs*elec_beads*num_states,num_trajs,
-               "Output/Trajectories/xElec",nuc_beads,elec_beads,num_states,
-               beta,num_trajs*num_procs,decorr);
-
-    save_trajs(p_trajs,num_trajs*elec_beads*num_states,num_trajs,
-               "Output/Trajectories/pElec",nuc_beads,elec_beads,num_states,
-               beta,num_trajs*num_procs,decorr);
+        save_trajs(p_trajs,num_trajs_local*elec_beads*num_states,num_trajs_local,
+                   "Output/Trajectories/pElec",nuc_beads,elec_beads,num_states,
+                   beta,num_trajs,decorr);
+    }
     
     unsigned long long nuc_steps_total = nuc_stepper.get_steps_total();
     unsigned long long nuc_steps_accpt = nuc_stepper.get_steps_accepted();
@@ -180,12 +184,14 @@ void sampling_mvrpmd::initialize_system(int nuc_beads_IN,int elec_beadsIN,
     beta = betaIN;
     alpha = alphaIN;
 }
-void sampling_mvrpmd::initialize_files(bool readPSVIN, std::string rootFolderIN){
+void sampling_mvrpmd::initialize_files(bool readPSVIN,bool saveTrajsIN,
+                                       std::string rootFolderIN){
     
     readPSV = readPSVIN;
     rootFolder = rootFolderIN;
     helper.set_root(rootFolderIN);
     rootFolder = rootFolderIN;
+    saveTrajs = saveTrajsIN;
 }
 void sampling_mvrpmd::save_trajs(vector<double> &v,std::string name, int nuc_beadsIN,
                                  int elec_beadsIN, int num_statesIN,double betaIN,
@@ -214,7 +220,7 @@ void sampling_mvrpmd::save_trajs(matrix<double> &v,int size,
             }
         }
     }
-    
+
     std::string fileName = rootFolder + name;
     mpi_wrapper myWrap(num_procs,my_id,root_proc);
     myWrap.write_vector(v_transform,fileName,nuc_beadsIN,elec_beadsIN,num_statesIN,

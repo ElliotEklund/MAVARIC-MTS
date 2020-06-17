@@ -170,15 +170,12 @@ inline vector<vector<double> > get_trajs_reformat(std::string file,
     v_trajs = get_trajs(file, vg_size, vl_size,my_id,num_procs,root_proc);
     return reformat(v_trajs,num_trajs,num_beads);
 }
-
-
 inline vector<matrix<double> > get_trajs_reformat(std::string file,
                                                   unsigned long long vg_size,
                                                   int vl_size, int my_id,
                                                   int num_procs,
                                                   int root_proc, int num_trajs,
                                                   int num_beads,int num_states){
-    
     
     vector<double> v_trajs(vl_size,0);
     v_trajs = get_trajs(file, vg_size, vl_size,my_id,num_procs,root_proc);

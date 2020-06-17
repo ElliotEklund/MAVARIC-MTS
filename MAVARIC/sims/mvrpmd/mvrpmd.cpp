@@ -177,7 +177,7 @@ int main(int argc, char ** argv) {
         
         sampling_mvrpmd sampler(my_id,root_process,num_procs);
         sampler.initialize_system(nuc_beads,elec_beads,num_states,mass,beta,alpha);
-        sampler.initialize_files(readPSV,root);
+        sampler.initialize_files(readPSV,saveTrajs,root);
 
         clock_t start = clock();
 
@@ -203,70 +203,60 @@ int main(int argc, char ** argv) {
                           /* BEGIN PROCESS 4 */
     /* This process runs the Dynamics simulation if requested.*/
     
-    
-    
-    aggregate myAg(my_id,num_procs,root_process);
-    int num_samples = 4;
-    int num_errors = 3;
-    
-    vector<double> errors(3,0);
-    
-    for (int i=0; i<num_errors; i++) {
-        errors(i) = 5*my_id + i;
+
+    if(runDyn){
+        if (my_id == root_process) {
+            std::cout << "Begin Dynamics Simulation" << std::endl;
+            std::cout << std::endl << std::endl;
+        }
+
+        /* Setup Dynamics object for simulation. */
+        dynamics_mvrpmd dyn(my_id,num_procs,root_process);
+        
+        dyn.set_system(nuc_beads,elec_beads,num_states,mass,beta,beta_nuc,
+                       beta_elec,alpha);
+        dyn.set_time(dt,total_time);
+        dyn.set_trajs(num_trajs,root);
+
+        clock_t start = clock();
+
+        if(run_energ_conserv){
+            energy_stride = 100;
+            dyn.energy_conserve(tol,energy_stride,root + "Output/Trajectories/",
+                               root + "Output/");
+        }
+        if(run_PopAC){
+            bool pac = true;
+            bool bp = true;
+            bool sp = true;
+            bool wp = false;
+
+            int pac_stride = 100;
+            int bp_stride = 100;
+            int sp_stride = 100;
+            int wp_stride = 100;
+            int num_samples = 4;
+            int num_errors = 10;
+
+            dyn.compute_ac(pac,pac_stride,bp,bp_stride,sp,sp_stride,wp,wp_stride,
+                           root + "Output/Trajectories/",root + "Output/",
+                           num_samples,num_errors);
+        }
+
+        if(run_init_PAC){
+          dyn.iPAC(interval,root+"Output/Trajectories/",
+                                root+"Output/");
+        }
+
+        clock_t end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+
+        if (my_id == root_process) {
+            std::cout << "Dynamics simulation time:" << time_taken << std::endl;
+            std::cout << "End Dynamics Simulation" << std::endl;
+        }
     }
     
-    myAg.sum_data(errors,num_samples,num_errors);
-    
-    
-
-//    if(runDyn){
-//        if (my_id == root_process) {
-//            std::cout << "Begin Dynamics Simulation" << std::endl;
-//            std::cout << std::endl << std::endl;
-//        }
-//
-//        /* Setup Dynamics object for simulation. */
-//        dynamics_mvrpmd dyn(my_id,num_procs,root_process);
-//        
-//        dyn.set_system(nuc_beads,elec_beads,num_states,mass,beta_nuc,
-//                       beta_elec,alpha);
-//        dyn.set_time(dt,total_time);
-//        dyn.set_trajs(num_trajs,root);
-//
-//        clock_t start = clock();
-////
-////        if(run_energ_conserv){
-////            energy_stride = 100;
-////            myDyn.energ_conserv(tol,energy_stride);
-////        }
-//        if(run_PopAC){
-//            bool pac = true;
-//            bool bp = true;
-//            bool sp = true;
-//            bool wp = false;
-//
-//            int pac_stride = 100;
-//            int bp_stride = 100;
-//            int sp_stride = 100;
-//            int wp_stride = 100;
-//
-//            dyn.compute_ac(pac,pac_stride,bp,bp_stride,sp,sp_stride,wp,wp_stride,
-//                           root + "Output/Trajectories/",root + "Output/");
-//        }
-////
-////        if(run_init_PAC){
-////          myDyn.compute_initPAC(interval);
-////        }
-////
-//        clock_t end = clock();
-//        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
-//
-//        if (my_id == root_process) {
-//            std::cout << time_taken << std::endl;
-//            std::cout << "End Dynamics Simulation" << std::endl;
-//        }
-//    }
-//    
                             /* END PROCESS 4 */
     /* /////////////////////////////////////////////////////////// */
     

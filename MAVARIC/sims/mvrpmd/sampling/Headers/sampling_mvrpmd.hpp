@@ -45,7 +45,8 @@ public:
     
     /* Set all variables in the argument; these are defined below under
      Sampling Data*/
-    void initialize_files(bool readPSVIN, std::string rootFolderIN);
+    void initialize_files(bool readPSVIN,bool saveTrajsIN,
+                          std::string rootFolderIN);
     
 private:
 
@@ -63,6 +64,7 @@ private:
     /* Sampling Data */
     std::string rootFolder; //specifies folder to read and write data
     bool readPSV; //read in Phase Space Variables (PSV) if true
+    bool saveTrajs;
     
 /* Objects */
     Ran myRand; //NR3 random number generator

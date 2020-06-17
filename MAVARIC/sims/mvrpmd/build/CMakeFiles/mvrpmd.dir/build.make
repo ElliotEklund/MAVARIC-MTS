@@ -655,9 +655,22 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/a
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.s"
 	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp -o CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.s
 
+CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.o: CMakeFiles/mvrpmd.dir/flags.make
+CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp
+
+CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.i"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp > CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.i
+
+CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.s"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp -o CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.s
+
 CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.o: CMakeFiles/mvrpmd.dir/flags.make
 CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.o"
 	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp
 
 CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.i: cmake_force
@@ -670,7 +683,7 @@ CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_
 
 CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.o: CMakeFiles/mvrpmd.dir/flags.make
 CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.o"
 	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp
 
 CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.i: cmake_force
@@ -729,6 +742,7 @@ mvrpmd_OBJECTS = \
 "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp.o" \
 "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/init_PAC.cpp.o" \
 "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.o" \
+"CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.o" \
 "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.o" \
 "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.o"
 
@@ -781,11 +795,12 @@ mvrpmd_EXTERNAL_OBJECTS =
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp.o
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/init_PAC.cpp.o
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.o
+/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.o
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/system_step.cpp.o
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/monte_carlo/elec_step.cpp.o
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/build.make
 /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd: CMakeFiles/mvrpmd.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Linking CXX executable /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/sims/mvrpmd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Linking CXX executable /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/bin/mvrpmd"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mvrpmd.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

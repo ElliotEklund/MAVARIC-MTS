@@ -102,6 +102,7 @@ add_executable(mvrpmd mvrpmd.cpp
     ${MISC_DIR}/aggregate.cpp
     ${MISC_DIR}/init_PAC.cpp
     ${MISC_DIR}/auto_correlation.cpp
+    ${MISC_DIR}/energy_conserv.cpp
 
     #monte carlo directory
     ${MONTECARLO_DIR}/system_step.cpp

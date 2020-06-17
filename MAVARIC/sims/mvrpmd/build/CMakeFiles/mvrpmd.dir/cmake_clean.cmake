@@ -37,6 +37,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp.o"
   "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/auto_correlation.cpp.o"
   "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/decorrelation.cpp.o"
+  "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.o"
   "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/init_PAC.cpp.o"
   "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/mpi_wrapper.cpp.o"
   "CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.o"

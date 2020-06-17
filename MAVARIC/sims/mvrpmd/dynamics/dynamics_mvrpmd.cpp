@@ -9,7 +9,6 @@ dynamics_mvrpmd::dynamics_mvrpmd(int my_id, int num_procs, int root_proc)
     is_time_set = false;
     is_trajs_set = false;
 }
-
 void dynamics_mvrpmd::pre_comp(){
 
     if (my_id==root_proc) {
@@ -27,7 +26,8 @@ void dynamics_mvrpmd::pre_comp(){
 void dynamics_mvrpmd::compute_ac(bool pac, int pac_stride, bool bp,
                                  int bp_stride,bool sp, int sp_stride,
                                  bool wp,int wp_stride,std::string input_dir,
-                                 std::string output_dir){
+                                 std::string output_dir,int num_samples,
+                                 int num_errors){
     
     pre_comp();
     
@@ -38,14 +38,35 @@ void dynamics_mvrpmd::compute_ac(bool pac, int pac_stride, bool bp,
     my_ac.request_calcs(pac,pac_stride,bp,bp_stride,sp,sp_stride,wp,wp_stride);
     my_ac.set_time(dt,total_time);
     
-    my_ac.compute(num_trajs_global,num_trajs_local,input_dir,output_dir);
+    my_ac.compute(num_trajs_global,num_trajs_local,input_dir,output_dir,
+                  num_samples,num_errors);
 }
-//
-//void dynamics_mvrpmd::energy_conserve(){
-//
-//}
-//
+
+void dynamics_mvrpmd::energy_conserve(double tol, int energy_stride,
+                                      std::string input_dir,
+                                      std::string output_dir){
+    
+    pre_comp();
+    
+    energy_conserv my_conserv(my_id,num_procs,root_proc);
+    
+    my_conserv.set_system(nuc_beads,elec_beads,num_states,mass,beta,
+                          beta_nuc_beads,beta_elec_beads,alpha);
+    
+    my_conserv.set_time(dt,total_time);
+    
+    my_conserv.compute(num_trajs_global,num_trajs_local,tol,energy_stride,
+                       input_dir,output_dir);
+    
+
+}
+
 void dynamics_mvrpmd::iPAC(int interval,std::string input_dir,std::string output_dir){
+    
+    if (my_id == root_proc) {
+        std::cout << "HACK ALERT: iPAC calculation only supports even ratios of "
+        "num_trajs, interval, and num_procs for the time being." << std::endl;
+    }
     
     pre_comp();
     

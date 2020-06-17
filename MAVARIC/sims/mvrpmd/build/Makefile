@@ -1095,6 +1095,33 @@ Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/decorrelation.cpp.s:
 	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/decorrelation.cpp.s
 .PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/decorrelation.cpp.s
 
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.o
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.o
+
+# target to build an object file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.o:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.o
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.o
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.i: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.i
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.i
+
+# target to preprocess a source file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.i:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.i
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.i
+
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.s: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.s
+
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.s
+
+# target to generate assembly for a file
+Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.s:
+	$(MAKE) -f CMakeFiles/mvrpmd.dir/build.make CMakeFiles/mvrpmd.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.s
+.PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.cpp.s
+
 Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/init_PAC.o: Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/init_PAC.cpp.o
 
 .PHONY : Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/init_PAC.o
@@ -1536,6 +1563,9 @@ help:
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/decorrelation.o"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/decorrelation.i"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/decorrelation.s"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.o"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.i"
+	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/energy_conserv.s"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/init_PAC.o"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/init_PAC.i"
 	@echo "... Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/init_PAC.s"

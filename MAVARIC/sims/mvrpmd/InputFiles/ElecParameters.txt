@@ -1,5 +1,5 @@
 States:2
-ElecBeads:1
-x step size:0.45
-p step size:4.5
-alpha:10
+ElecBeads:3
+x step size:1
+p step size:1
+alpha:1

@@ -40,7 +40,6 @@ void mpi_wrapper::write_vector(vector<double> &v,std::string fileName,
 
     if (my_id==root_proc) {
         std::ofstream myFile;
-        std::cout << fileName << std::endl;
         myFile.open(fileName.c_str());
         if (!myFile.is_open()) {
             std::cout << "ERROR: Could not open " << fileName << std::endl;

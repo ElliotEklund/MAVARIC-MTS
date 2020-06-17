@@ -34,10 +34,10 @@ public:
     
     auto_correlation(int my_id,int nun_procs, int root_proc);
 
-    
-    void compute(unsigned long long num_trajs_global,
+    int compute(unsigned long long num_trajs_global,
                  unsigned long long num_trajs_local,
-                 std::string input_dir,std::string output_dir);
+                 std::string input_dir,std::string output_dir,
+                 int num_samples, int num_errors);
 
 /*  Mutators */
     

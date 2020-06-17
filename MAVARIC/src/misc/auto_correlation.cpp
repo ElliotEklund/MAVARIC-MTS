@@ -9,9 +9,18 @@ auto_correlation::auto_correlation(int my_id,int num_procs, int root_proc)
     is_req_set = false;
     is_time_set = false;
 }
-void auto_correlation::compute(unsigned long long num_trajs_global,
+int auto_correlation::compute(unsigned long long num_trajs_global,
                                unsigned long long num_trajs_local,
-                               std::string input_dir, std::string output_dir){
+                               std::string input_dir, std::string output_dir,
+                               int num_samples, int num_errors){
+    
+    if (num_samples> num_procs) {
+        if(my_id == root_proc){
+            std::cout << "ERROR: num_samples must be >= num_procs. Aborting "
+            "calculations." << std::endl;
+        }
+        return -1;
+    }
     
     /* Initialize Forces and Integrator*/
     C_Matrix C(elec_beads, num_states,alpha);
@@ -41,7 +50,6 @@ void auto_correlation::compute(unsigned long long num_trajs_global,
     std::string P_file = input_dir + "P";
     std::string x_file = input_dir + "xElec";
     std::string p_file = input_dir + "pElec";
-
     
     Q = get_trajs_reformat(Q_file,num_trajs_global*nuc_beads,
                            num_trajs_local*nuc_beads,my_id,num_procs,
@@ -53,11 +61,11 @@ void auto_correlation::compute(unsigned long long num_trajs_global,
     
     x = get_trajs_reformat(x_file,num_trajs_global*elec_beads*num_states,
                            num_trajs_local*elec_beads*num_states,my_id,num_procs,
-                           root_proc,num_trajs_local,nuc_beads,num_states);
+                           root_proc,num_trajs_local,elec_beads,num_states);
     
     p = get_trajs_reformat(p_file,num_trajs_global*elec_beads*num_states,
                            num_trajs_local*elec_beads*num_states,my_id,num_procs,
-                           root_proc,num_trajs_local,nuc_beads,num_states);
+                           root_proc,num_trajs_local,elec_beads,num_states);
     
     /* Initialize auto-correlation function machinery*/
     aggregate myAggregator(my_id,num_procs,root_proc);
@@ -67,6 +75,15 @@ void auto_correlation::compute(unsigned long long num_trajs_global,
     vector<double> pac_v, bp_v, sp_v, wp_v;
     
     int num_steps = floor(total_time/dt);
+    int ten_p = floor(num_trajs_local/10.0);
+    std::ofstream progress;
+    if (my_id==root_proc) {
+        std::string fileName = output_dir + "dyn_progress";
+        progress.open(fileName.c_str());
+        if (!progress.is_open()) {
+            std::cout << "ERROR: Could now open " << fileName << std::endl;
+        }
+    }
 
     if (pac){
         myAggregator.add_calc("position",1,num_steps/pac_stride);
@@ -152,26 +169,46 @@ void auto_correlation::compute(unsigned long long num_trajs_global,
                 }
             }
         }
-//
-//        if (traj % ten_p == 0) {
-//            if (my_id == root_proc) {
-//                progress << 100 * (double) traj /num_trajs_local << "%" << std::endl;
-//            }
-//            /* Save progress */
-//            std::string fileName = root + "Output/";
-//            myAggregator.merge_collections(root_proc,my_id,fileName,dt,sp_stride,
-//                                           traj*num_procs);
-//        }
+
+        if (traj % ten_p == 0) {
+            if (my_id == root_proc) {
+                progress << 100 * (double) traj /num_trajs_local << "%" << std::endl;
+            }
+            /* Save progress */
+            myAggregator.merge_collections(root_proc,my_id,output_dir,dt,sp_stride,
+                                           traj*num_procs);
+            if (pac) {
+                myAggregator.write_errors("position",num_samples,num_errors,dt,pac_stride,output_dir);
+            }
+            if (bp) {
+                myAggregator.write_errors("boltzman",num_samples,num_errors,dt,pac_stride,output_dir);
+            }
+            if (sp) {
+                myAggregator.write_errors("semi_classic",num_samples,num_errors,dt,pac_stride,output_dir);
+            }
+            if (wp) {
+                myAggregator.write_errors("wigner",num_samples,num_errors,dt,pac_stride,output_dir);
+            }
+        }
     }
-//
-//    if (my_id==root_proc) {
-//        progress.close();
-//    }
-//
-  
+
+    if (my_id==root_proc) {
+        progress.close();
+    }
+    
     /* NOTE sp_strides currently sets the stride for all other ac functions*/
     myAggregator.merge_collections(root_proc,my_id,output_dir,dt,sp_stride,
                                    num_trajs_global);
+    if (pac) {
+        myAggregator.write_errors("position",num_samples,num_errors,dt,pac_stride,output_dir);}
+    if (bp) {
+        myAggregator.write_errors("boltzman",num_samples,num_errors,dt,pac_stride,output_dir);}
+    if (sp) {
+        myAggregator.write_errors("semi_classic",num_samples,num_errors,dt,pac_stride,output_dir);}
+    if (wp) {
+        myAggregator.write_errors("wigner",num_samples,num_errors,dt,pac_stride,output_dir);}
+    
+    return 0;
 }
 double auto_correlation::compute_centroid(const vector<double> &Q){
     double centroid = sum(Q);
@@ -189,7 +226,6 @@ void auto_correlation::set_system(int nuc_beadsIN, int elec_beadsIN, int num_sta
     alpha = alphaIN;
     is_sys_set = true;
 }
-
 void auto_correlation::request_calcs(bool pacIN, int pac_strideIN, bool bpIN,
                                      int bp_strideIN,bool spIN, int sp_strideIN,
                                      bool wpIN,int wp_strideIN){

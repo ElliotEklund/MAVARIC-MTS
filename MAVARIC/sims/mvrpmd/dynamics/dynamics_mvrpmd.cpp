@@ -9,27 +9,41 @@ dynamics_mvrpmd::dynamics_mvrpmd(int my_id, int num_procs, int root_proc)
     is_time_set = false;
     is_trajs_set = false;
 }
-void dynamics_mvrpmd::pre_comp(){
-
-    if (my_id==root_proc) {
-        if (!is_sys_set) {
+int dynamics_mvrpmd::pre_comp(){
+    int abort = 0;
+    
+    if (!is_sys_set) {
+        abort = -1;
+        if (my_id==root_proc) {
             std::cout << "ERROR: System variables are not set!" << std::endl;
-        }
-        if (!is_time_set) {
-            std::cout << "ERROR: Time variables are not set!" << std::endl;
-        }
-        if (!is_trajs_set) {
-            std::cout << "ERROR: Trajectory variables are not set!" << std::endl;
+            std::cout << "Aborting calculation." << std::endl;
         }
     }
+    if (!is_time_set) {
+        abort = -1;
+        if (my_id==root_proc) {
+            std::cout << "ERROR: Time variables are not set!" << std::endl;
+            std::cout << "Aborting calculation." << std::endl;
+        }
+    }
+    if (!is_trajs_set) {
+        abort = -1;
+        if (my_id==root_proc) {
+            std::cout << "ERROR: Trajectory variables are not set!" << std::endl;
+            std::cout << "Aborting calculation." << std::endl;
+        }
+    }
+    return abort;
 }
-void dynamics_mvrpmd::compute_ac(bool pac, int pac_stride, bool bp,
+int dynamics_mvrpmd::compute_ac(bool pac, int pac_stride, bool bp,
                                  int bp_stride,bool sp, int sp_stride,
                                  bool wp,int wp_stride,std::string input_dir,
                                  std::string output_dir,int num_samples,
                                  int num_errors){
     
-    pre_comp();
+    if(pre_comp()==-1){
+        return -1;
+    }
     
     auto_correlation my_ac(my_id,num_procs,root_proc);
     my_ac.set_system(nuc_beads,elec_beads,num_states,mass,
@@ -40,13 +54,17 @@ void dynamics_mvrpmd::compute_ac(bool pac, int pac_stride, bool bp,
     
     my_ac.compute(num_trajs_global,num_trajs_local,input_dir,output_dir,
                   num_samples,num_errors);
+    
+    return 0;
 }
 
-void dynamics_mvrpmd::energy_conserve(double tol, int energy_stride,
+int dynamics_mvrpmd::energy_conserve(double tol, int energy_stride,
                                       std::string input_dir,
                                       std::string output_dir){
     
-    pre_comp();
+    if(pre_comp()==-1){
+        return -1;
+    }
     
     energy_conserv my_conserv(my_id,num_procs,root_proc);
     
@@ -58,22 +76,26 @@ void dynamics_mvrpmd::energy_conserve(double tol, int energy_stride,
     my_conserv.compute(num_trajs_global,num_trajs_local,tol,energy_stride,
                        input_dir,output_dir);
     
-
+    return 0;
 }
 
-void dynamics_mvrpmd::iPAC(int interval,std::string input_dir,std::string output_dir){
+int dynamics_mvrpmd::iPAC(int interval,std::string input_dir,std::string output_dir){
     
     if (my_id == root_proc) {
         std::cout << "HACK ALERT: iPAC calculation only supports even ratios of "
         "num_trajs, interval, and num_procs for the time being." << std::endl;
     }
     
-    pre_comp();
+    if(pre_comp()==-1){
+        return -1;
+    }
     
     init_PAC my_init_PAC(my_id,num_procs,root_proc,num_trajs_global,num_trajs_local);
     my_init_PAC.set_system(nuc_beads,elec_beads,num_states,beta,alpha);
     my_init_PAC.set_interval(interval);
     my_init_PAC.compute(input_dir,output_dir);
+    
+    return 0;
 }
 void dynamics_mvrpmd::set_system(int nuc_beadsIN, int elec_beadsIN, int num_statesIN,
                                  double massIN,double betaIN, double beta_nuc_beadsIN,

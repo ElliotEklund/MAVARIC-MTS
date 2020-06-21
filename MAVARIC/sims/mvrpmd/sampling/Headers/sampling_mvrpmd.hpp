@@ -34,7 +34,7 @@ public:
      num_trajs: number of trajectories to be sampled
      decorr: decorrelation length between trajectories
      */
-    void run(double nuc_ss, double x_ss, double p_xx,
+    int run(double nuc_ss, double x_ss, double p_xx,
              unsigned long long num_trajs,unsigned long long decorr);
     
     /*
@@ -65,6 +65,7 @@ private:
     std::string rootFolder; //specifies folder to read and write data
     bool readPSV; //read in Phase Space Variables (PSV) if true
     bool saveTrajs;
+    bool sys_set, files_set;
     
 /* Objects */
     Ran myRand; //NR3 random number generator

@@ -3,7 +3,7 @@
 dTheta_MTS_dElec::dTheta_MTS_dElec(int num_states, int elec_beads, C_Matrix &C_In,
                                    M_Matrix_MTS &M_MTS_In)
     :num_states(num_states),elec_beads(elec_beads),
-     dC(elec_beads, num_states),
+     dC(elec_beads, num_states,1.0),
 
      f_chain(elec_beads,zero_matrix<std::complex<double> >(num_states,num_states)),
      b_chain(elec_beads,zero_matrix<std::complex<double> >(num_states,num_states)),

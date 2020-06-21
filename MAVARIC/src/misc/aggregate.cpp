@@ -21,6 +21,19 @@ void aggregate::collect(std::string name, int row, const vector<double> & v0,
     
     (*myMap[name])(row,num_cols) += sgnTheta;
 }
+
+void aggregate::collect(std::string name, int row, const double & v0,
+                        const double & v, const double & sgnTheta){
+    
+    int num_cols = 1;
+    
+    for (int col=0; col<num_cols; col++) {
+        (*myMap[name])(row,col) += sgnTheta * v0 * v;
+    }
+    
+    (*myMap[name])(row,num_cols) += sgnTheta;
+}
+
 /* HACK ALERT!!!  I am currently hard ss (stride). This should
  be fixed at a later time
  num_trajs is the global num_trajs*/

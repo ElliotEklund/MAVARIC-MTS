@@ -123,6 +123,17 @@ int main(int argc, char ** argv) {
     beta = 1.0/temp;
     beta_nuc = beta/nuc_beads;
     beta_elec = beta/elec_beads;
+    
+    
+    /* Ensure bead ratios are acceptable */
+    if (nuc_beads%(2*elec_beads)!=0){
+        if (my_id==root_process) {
+            std::cout << "ERROR: Nuclear beads % (2 Elec Beads) must be zero."
+            << std::endl;
+            std::cout << "Aborting calculation." << std::endl;
+        }
+        return -1;
+    }
 
                         /* END PROCESS 1 */
     /* /////////////////////////////////////////////////////////*/

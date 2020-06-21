@@ -6,25 +6,34 @@ sampling_mvrpmd::sampling_mvrpmd(int my_id, int root_proc, int num_procs)
      num_procs(num_procs),
      myRand(time(NULL) + my_id),
      helper(my_id,num_procs,root_proc)
-{}
-void sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
+{
+    sys_set = false;
+    files_set = false;
+}
+int sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
                           unsigned long long num_trajs,unsigned long long decorr){
+    
+    if (!sys_set || !files_set) {
+        if (my_id==root_proc) {
+            std::cout << "ERROR: sampling mvrpmd variables not set!" << std::endl;
+            std::cout << "Aborting calculation." << std::endl;
+        }
+        return -1;
+    }
     
     unsigned long long num_trajs_local = 0;
     num_trajs_local = get_trajs_local(num_trajs);
-        
+    
     /* Declare vectors for monte carlo moves*/
     vector<double> Q(nuc_beads,0);
     matrix<double> x(elec_beads,num_states,0), p(elec_beads,num_states,0);
-
+    
     gen_initQ(Q,nuc_beads,nuc_ss);
     gen_initElec(x,elec_beads,num_states,x_ss);
     gen_initElec(p,elec_beads,num_states,p_ss);
 
-    /* TODO Check for reading*/
     if (readPSV) {
         helper.read_PSV(nuc_beads,elec_beads,num_states,Q,x,p);
-        std::cout << "no read" << std::endl;
     }
 
     /* Declare vectors to store sampled trajectories*/
@@ -132,19 +141,44 @@ void sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     }
     
     if (saveTrajs) {
-        save_trajs(Q_trajs,"Output/Trajectories/Q",nuc_beads,elec_beads,num_states,
-                   beta,num_trajs,decorr);
-        
-        save_trajs(P_trajs,"Output/Trajectories/P",nuc_beads,elec_beads,num_states,
-                   beta,num_trajs,decorr);
-        
-        save_trajs(x_trajs,num_trajs_local*elec_beads*num_states,num_trajs_local,
-                   "Output/Trajectories/xElec",nuc_beads,elec_beads,num_states,
-                   beta,num_trajs,decorr);
-
-        save_trajs(p_trajs,num_trajs_local*elec_beads*num_states,num_trajs_local,
-                   "Output/Trajectories/pElec",nuc_beads,elec_beads,num_states,
-                   beta,num_trajs,decorr);
+        if (!contains_NaN(Q_trajs)) {
+            save_trajs(Q_trajs,"Output/Trajectories/Q",nuc_beads,elec_beads,num_states,
+                       beta,num_trajs,decorr);
+        }
+        else{
+            if (my_id==root_proc) {
+                std::cout << "Bad value found in sampled Q trajectories." << std::endl;
+            }
+        }
+        if (!contains_NaN(P_trajs)) {
+            save_trajs(P_trajs,"Output/Trajectories/P",nuc_beads,elec_beads,num_states,
+                       beta,num_trajs,decorr);
+        }
+        else{
+            if (my_id==root_proc) {
+                std::cout << "Bad value found in sampled P trajectories." << std::endl;
+            }
+        }
+        if (!contains_NaN(x_trajs)) {
+            save_trajs(x_trajs,num_trajs_local*elec_beads*num_states,num_trajs_local,
+                       "Output/Trajectories/xElec",nuc_beads,elec_beads,num_states,
+                       beta,num_trajs,decorr);
+        }
+        else{
+            if (my_id==root_proc) {
+                std::cout << "Bad value found in sampled x trajectories." << std::endl;
+            }
+        }
+        if (!contains_NaN(p_trajs)) {
+            save_trajs(p_trajs,num_trajs_local*elec_beads*num_states,num_trajs_local,
+                       "Output/Trajectories/pElec",nuc_beads,elec_beads,num_states,
+                       beta,num_trajs,decorr);
+        }
+        else{
+            if (my_id==root_proc) {
+                std::cout << "Bad value found in sampled p trajectories." << std::endl;
+            }
+        }
     }
     
     unsigned long long nuc_steps_total = nuc_stepper.get_steps_total();
@@ -157,6 +191,8 @@ void sampling_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     helper.print_sys_accpt(nuc_steps_total,nuc_steps_accpt,"Nuclear");
     helper.print_sys_accpt(x_steps_total,x_steps_accpt,"x");
     helper.print_sys_accpt(p_steps_total,p_steps_accpt,"p");
+    
+    return 0;
 }
 void sampling_mvrpmd::gen_initQ(vector<double> &Q, int num_beads, double step_size){
     for (int bead=0; bead<num_beads; bead++) {
@@ -183,6 +219,7 @@ void sampling_mvrpmd::initialize_system(int nuc_beads_IN,int elec_beadsIN,
     mass = massIN;
     beta = betaIN;
     alpha = alphaIN;
+    sys_set = true;
 }
 void sampling_mvrpmd::initialize_files(bool readPSVIN,bool saveTrajsIN,
                                        std::string rootFolderIN){
@@ -192,6 +229,7 @@ void sampling_mvrpmd::initialize_files(bool readPSVIN,bool saveTrajsIN,
     helper.set_root(rootFolderIN);
     rootFolder = rootFolderIN;
     saveTrajs = saveTrajsIN;
+    files_set = true;
 }
 void sampling_mvrpmd::save_trajs(vector<double> &v,std::string name, int nuc_beadsIN,
                                  int elec_beadsIN, int num_statesIN,double betaIN,

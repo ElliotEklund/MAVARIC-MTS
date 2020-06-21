@@ -21,7 +21,6 @@ theta_mixed_dElec::theta_mixed_dElec(int num_states, int elec_beads, double alph
 }
 void theta_mixed_dElec::update_theta_dElec(const matrix<std::complex<double> > & x,
                                            const matrix<std::complex<double> > & p){
-    
     update_f_chain();
     update_b_chain();
     update_theta_dx_vec(x,p);
@@ -29,7 +28,6 @@ void theta_mixed_dElec::update_theta_dElec(const matrix<std::complex<double> > &
 }
 void theta_mixed_dElec::update_theta_dx_vec(const matrix<std::complex<double> > & x,
                                             const matrix<std::complex<double> > & p){
-    
     dC.update_dCdx_mat(x,p);
     std::complex<double> tr (0,0); //compute trace
     

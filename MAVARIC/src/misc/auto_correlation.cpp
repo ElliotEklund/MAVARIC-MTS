@@ -22,6 +22,8 @@ int auto_correlation::compute(unsigned long long num_trajs_global,
         return -1;
     }
     
+    int num_steps = floor(total_time/dt);
+    
     /* Initialize Forces and Integrator*/
     C_Matrix C(elec_beads, num_states,alpha);
     M_Matrix M(num_states, elec_beads, beta_elec_beads);
@@ -42,9 +44,9 @@ int auto_correlation::compute(unsigned long long num_trajs_global,
     vector<vector<double> > Q(num_trajs_local,zero_vector<double>(nuc_beads));
     vector<vector<double> > P(num_trajs_local,zero_vector<double>(nuc_beads));
     vector<matrix<double> > x(num_trajs_local,zero_matrix<double>
-                                  (nuc_beads,num_states));
+                                  (elec_beads,num_states));
     vector<matrix<double> > p(num_trajs_local,zero_matrix<double>
-                                  (nuc_beads,num_states));
+                                  (elec_beads,num_states));
     
     std::string Q_file = input_dir + "Q";
     std::string P_file = input_dir + "P";
@@ -74,14 +76,41 @@ int auto_correlation::compute(unsigned long long num_trajs_global,
     vector<double> pac_v0, bp_v0, sp_v0, wp_v0;
     vector<double> pac_v, bp_v, sp_v, wp_v;
     
-    int num_steps = floor(total_time/dt);
-    int ten_p = floor(num_trajs_local/10.0);
+    /* HACK */
+    vector<double> bp_vt(2*num_states,0);
+    vector<double> sp_vt(2*num_states,0);
+    vector<double> bp_vt0(2*num_states,0);
+    vector<double> sp_vt0(2*num_states,0);
+    
+    /* HACK ALERT! This should be cleane dup later*/
+    vector<double> pac_temp(num_steps/pac_stride,0);
+    vector<vector<double> > sp_temp(4,zero_vector<double>(num_steps/sp_stride));
+    vector<vector<double> > bp_temp(4,zero_vector<double>(num_steps/bp_stride));
+
+
+    int ten_p = floor(num_trajs_local/10.0); //ten percent of local trajectories
+    bool get_prog = true; //true if progress should be collected
+    int get_prog_int = 1;
+    
+    if ((my_id==root_proc) && (ten_p == 0)) {
+        get_prog_int = 0;
+        MPI_Bcast(&get_prog_int,1,MPI_INT,root_proc,MPI_COMM_WORLD);
+    }
+    
+    if (get_prog_int==0) {
+        get_prog = false;
+    }
+    
     std::ofstream progress;
     if (my_id==root_proc) {
         std::string fileName = output_dir + "dyn_progress";
         progress.open(fileName.c_str());
         if (!progress.is_open()) {
-            std::cout << "ERROR: Could now open " << fileName << std::endl;
+            std::cout << "ERROR: Could not open " << fileName << std::endl;
+        }
+        if (!get_prog) {
+            std::cout << "Warning: auto-correlation progress is not collected"
+            "because too few trajectories are used." << std::endl;
         }
     }
 
@@ -91,12 +120,12 @@ int auto_correlation::compute(unsigned long long num_trajs_global,
         pac_v0.resize(1);
     }
     if (bp){
-        myAggregator.add_calc("boltzman",num_states,num_steps/bp_stride);
+        myAggregator.add_calc("boltzman",2*num_states,num_steps/bp_stride);
         bp_v.resize(num_states);
         bp_v0.resize(num_states);
     }
     if (sp){
-        myAggregator.add_calc("semi_classic",num_states,num_steps/sp_stride);
+        myAggregator.add_calc("semi_classic",2*num_states,num_steps/sp_stride);
         sp_v.resize(num_states);
         sp_v0.resize(num_states);
     }
@@ -107,7 +136,7 @@ int auto_correlation::compute(unsigned long long num_trajs_global,
     }
 
     double sgnTheta = 0; //sign of Theta for a trajectory
-
+    
     for (int traj=0; traj<num_trajs_local; traj++) {
         /* Load new trajecty*/
         Q_traj = Q(traj);
@@ -117,28 +146,39 @@ int auto_correlation::compute(unsigned long long num_trajs_global,
 
         myABM.initialize_rk4(Q_traj, P_traj, x_traj, p_traj);
         sgnTheta = F.get_sign(Q_traj,x_traj,p_traj);
+        
+        /* HACK !! I am using boltzman and semi classical for all */
+        bp_v0 = myPops.boltz(theta.get_gamm());
+        sp_v0 = myPops.sc(x_traj,p_traj);
+
+        bp_vt0(0) = bp_v0(0);
+        bp_vt0(1) = bp_v0(1);
+        bp_vt0(2) = sp_v0(0);
+        bp_vt0(3) = sp_v0(1);
+
+        sp_vt0(0) = sp_v0(0);
+        sp_vt0(1) = sp_v0(1);
+        sp_vt0(2) = bp_v0(0);
+        sp_vt0(3) = bp_v0(1);
 
         if (pac){
-            pac_v0(0) = compute_centroid(Q_traj);
-            myAggregator.collect("position",0,pac_v0,pac_v0,sgnTheta);
+            //pac_v0(0) = compute_centroid(Q_traj);
+            pac_temp(0) = compute_centroid(Q_traj);
+            //myAggregator.collect("position",0,pac_v0,pac_v0,sgnTheta);
         }
-        if (bp){
-            /* Use semi classical for time zero */
-            bp_v0 = myPops.sc(x_traj,p_traj);
-            bp_v = myPops.boltz(theta.get_gamm());
-            myAggregator.collect("boltzman",0,bp_v0,bp_v,sgnTheta);
-        }
-        if (sp){
-            //sp_v0 = myPops.sc(x_traj,p_traj);
-            /* Use boltzman for time zero */
-            sp_v0 = myPops.boltz(theta.get_gamm());
-            sp_v = myPops.sc(x_traj,p_traj);
-            myAggregator.collect("semi_classic",0,sp_v0,sp_v,sgnTheta);
-        }
-        if (wp){
-            wp_v0 = myPops.wigner(x_traj,p_traj);
-            myAggregator.collect("wigner",0,wp_v0,wp_v0,sgnTheta);
-        }
+//        if (bp){
+//            /* Use semi classical for time zero */
+//            //myAggregator.collect("boltzman",0,bp_vt0,bp_vt0,sgnTheta);
+//        }
+//        if (sp){
+//            //sp_v0 = myPops.sc(x_traj,p_traj);
+//            /* Use boltzman for time zero */
+//            //myAggregator.collect("semi_classic",0,sp_vt0,sp_vt0,sgnTheta);
+//        }
+//        if (wp){
+//            wp_v0 = myPops.wigner(x_traj,p_traj);
+//            myAggregator.collect("wigner",0,wp_v0,wp_v0,sgnTheta);
+//        }
 
         for (int step=1; step<num_steps; step++) {
 
@@ -146,52 +186,94 @@ int auto_correlation::compute(unsigned long long num_trajs_global,
 
             if (pac){
                 if (step % pac_stride == 0) {
-                    pac_v(0) = compute_centroid(Q_traj);
-                    myAggregator.collect("position",step/sp_stride,pac_v0,pac_v,sgnTheta);
+                    //pac_v(0) = compute_centroid(Q_traj);
+                    pac_temp(step/pac_stride) = compute_centroid(Q_traj);
+                    //myAggregator.collect("position",step/pac_stride,pac_v0,pac_v,sgnTheta);
                 }
             }
             if (bp){
                 if (step % bp_stride == 0) {
+                    
                     bp_v = myPops.boltz(theta.get_gamm());
-                    myAggregator.collect("boltzman",step/bp_stride,bp_v0,bp_v,sgnTheta);
-                }
-            }
-            if (sp){
-                if (step % sp_stride == 0) {
                     sp_v = myPops.sc(x_traj,p_traj);
-                    myAggregator.collect("semi_classic",step/sp_stride,sp_v0,sp_v,sgnTheta);
+
+                    bp_vt(0) = bp_v(0);
+                    bp_vt(1) = bp_v(1);
+                    bp_vt(2) = bp_v(0);
+                    bp_vt(3) = bp_v(1);
+
+                    sp_vt(0) = sp_v(0);
+                    sp_vt(1) = sp_v(1);
+                    sp_vt(2) = sp_v(0);
+                    sp_vt(3) = sp_v(1);
+                    
+                    bp_temp(step/bp_stride) = bp_vt;
+                    sp_temp(step/bp_stride) = sp_vt;
+
+                    //myAggregator.collect("boltzman",step/bp_stride,bp_vt0,bp_vt,sgnTheta);
                 }
             }
-            if (wp){
-                if (step % wp_stride == 0) {
-                    wp_v = myPops.wigner(x_traj,p_traj);
-                    myAggregator.collect("wigner",step/wp_stride,wp_v0,wp_v,sgnTheta);
-                }
+//            if (sp){
+//                if (step % sp_stride == 0) {
+//                    myAggregator.collect("semi_classic",step/sp_stride,sp_vt0,sp_vt,sgnTheta);
+//                }
+//            }
+//            if (wp){
+//                if (step % wp_stride == 0) {
+//                    wp_v = myPops.wigner(x_traj,p_traj);
+//                    myAggregator.collect("wigner",step/wp_stride,wp_v0,wp_v,sgnTheta);
+//                }
+//            }
+        }
+        
+        /* Check for Nans*/
+        if(!contains_NaN(pac_temp)){
+            /* Contains no NaNs*/
+            for (int i=0; i< num_steps/pac_stride; i++) {
+                myAggregator.collect("position",i,pac_v0(0),pac_temp(i),sgnTheta);
             }
         }
-
-        if (traj % ten_p == 0) {
-            if (my_id == root_proc) {
-                progress << 100 * (double) traj /num_trajs_local << "%" << std::endl;
+        if(!contains_NaN(bp_temp)){
+            /* Contains no NaNs*/
+            for (int i=0; i<num_steps/bp_stride; i++) {
+                myAggregator.collect("boltzman",i,bp_vt0,bp_temp(i),sgnTheta);
             }
-            /* Save progress */
-            myAggregator.merge_collections(root_proc,my_id,output_dir,dt,sp_stride,
-                                           traj*num_procs);
-            if (pac) {
-                myAggregator.write_errors("position",num_samples,num_errors,dt,pac_stride,output_dir);
-            }
-            if (bp) {
-                myAggregator.write_errors("boltzman",num_samples,num_errors,dt,pac_stride,output_dir);
-            }
-            if (sp) {
-                myAggregator.write_errors("semi_classic",num_samples,num_errors,dt,pac_stride,output_dir);
-            }
-            if (wp) {
-                myAggregator.write_errors("wigner",num_samples,num_errors,dt,pac_stride,output_dir);
+        }
+        if(!contains_NaN(sp_temp)){
+             /* Contains no NaNs*/
+             for (int i=0; i<num_steps/sp_stride; i++) {
+                 myAggregator.collect("semi_classic",i,sp_vt0,sp_temp(i),sgnTheta);
+             }
+         }
+        
+        if (get_prog) {
+            if (traj % ten_p == 0) {
+                if (my_id == root_proc) {
+                    progress << 100 * (double) traj /num_trajs_local << "%" << std::endl;
+                }
+                /* Save progress */
+                myAggregator.merge_collections(root_proc,my_id,output_dir,dt,sp_stride,
+                                               traj*num_procs);
+                if (pac) {
+                    myAggregator.write_errors("position",num_samples,num_errors,
+                                              dt,pac_stride,output_dir);
+                }
+                if (bp) {
+                    myAggregator.write_errors("boltzman",num_samples,num_errors,
+                                              dt,pac_stride,output_dir);
+                }
+                if (sp) {
+                    myAggregator.write_errors("semi_classic",num_samples,num_errors,
+                                              dt,pac_stride,output_dir);
+                }
+                if (wp) {
+                    myAggregator.write_errors("wigner",num_samples,num_errors,
+                                              dt,pac_stride,output_dir);
+                }
             }
         }
     }
-
+    
     if (my_id==root_proc) {
         progress.close();
     }
@@ -222,7 +304,7 @@ void auto_correlation::set_system(int nuc_beadsIN, int elec_beadsIN, int num_sta
     num_states = num_statesIN;
     mass = massIN;
     beta_nuc_beads = beta_nuc_beadsIN;
-    beta_elec_beads = beta_nuc_beadsIN;
+    beta_elec_beads = beta_elec_beadsIN;
     alpha = alphaIN;
     is_sys_set = true;
 }

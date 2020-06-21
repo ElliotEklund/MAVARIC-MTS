@@ -39,9 +39,12 @@ void theta_mixed_dQ::update_theta_dQ(const vector<double> &Q){
     std::complex<double> tr (0,0);
  
     noalias(Q_trans) = prod(W,Q);
+    
     update_f_chain();
     update_b_chain();
-    M_dQ->update_dM_dQ_vec(Q);
+    
+    /*  ERROR Q_TRANS NEEDS TO BE HERE   */
+    M_dQ->update_dM_dQ_vec(Q_trans);
     
     vector<double> theta_dQ_temp(elec_beads,0);
     

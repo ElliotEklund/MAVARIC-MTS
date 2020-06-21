@@ -486,9 +486,22 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrat
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.s"
 	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.s
 
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.o"
+	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp
+
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.i"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp > CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.i
+
+CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.s"
+	mpic++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.s
+
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o"
 	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp
 
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.i: cmake_force
@@ -501,7 +514,7 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrat
 
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp.o"
 	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp
 
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp.i: cmake_force
@@ -514,7 +527,7 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/Mai
 
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.o"
 	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp
 
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.i: cmake_force
@@ -527,7 +540,7 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop
 
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp.o"
 	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp
 
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/aggregate.cpp.i: cmake_force
@@ -540,7 +553,7 @@ CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/agg
 
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp.o: /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp.o"
 	mpic++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp.o -c /Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp
 
 CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp.i: cmake_force
@@ -586,6 +599,7 @@ test_OBJECTS = \
 "CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.o" \
 "CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/rpmd_vv.cpp.o" \
 "CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.o" \
+"CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.o" \
 "CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o" \
 "CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp.o" \
 "CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.o" \
@@ -628,6 +642,7 @@ test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/fo
 test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/csrpmd_forces.cpp.o
 test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/rpmd_vv.cpp.o
 test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.o
+test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.o
 test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o
 test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/MainHlpr.cpp.o
 test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/pop_estimators.cpp.o
@@ -635,7 +650,7 @@ test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/mi
 test: CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/misc/PopulationEstimator.cpp.o
 test: CMakeFiles/test.dir/build.make
 test: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Linking CXX executable test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/hamiltonian/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

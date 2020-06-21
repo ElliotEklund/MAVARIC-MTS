@@ -24,6 +24,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/rpmd_force.cpp.o"
   "CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dElec.cpp.o"
   "CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/forces/theta_mixed_dQ.cpp.o"
+  "CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/ABM_MVRPMD.cpp.o"
   "CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/RK4_MVRPMD.cpp.o"
   "CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/mvrpmd_special.cpp.o"
   "CMakeFiles/test.dir/Users/ellioteklund/Desktop/MAVARIC_v2.0/MAVARIC/src/integrators/rpmd_vv.cpp.o"

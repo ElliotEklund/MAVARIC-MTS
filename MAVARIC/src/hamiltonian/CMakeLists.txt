@@ -65,6 +65,7 @@ if(${MACHINE} STREQUAL "MAC")
         #integrators directory
         ${INTEGRATORS_DIR}/rpmd_vv.cpp
         ${INTEGRATORS_DIR}/RK4_MVRPMD.cpp
+        ${INTEGRATORS_DIR}/ABM_MVRPMD.cpp
         ${INTEGRATORS_DIR}/mvrpmd_special.cpp
 
         #misc directory

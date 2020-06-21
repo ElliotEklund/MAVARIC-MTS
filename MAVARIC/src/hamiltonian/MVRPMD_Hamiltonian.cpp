@@ -20,6 +20,8 @@ double MVRPMD_Hamiltonian::get_energy(const vector<double> &Q,const matrix<doubl
     double theta_temp = theta->get_theta(Q, x, p);
     double energy = V_spring_temp + V0_temp + one_beta_num_beads*(G_temp - log(fabs(theta_temp)));
     
+    
+    std::cout << fabs(theta_temp) << std::endl;
     return V_spring_temp + V0_temp + one_beta_num_beads*(G_temp - log(fabs(theta_temp)));
 }
 

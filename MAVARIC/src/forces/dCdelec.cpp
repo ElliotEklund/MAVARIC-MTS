@@ -77,8 +77,8 @@ void dCdelec::update_dCdp(int bead, int state, const matrix<std::complex<double>
     x_state = row(x,bead);
     p_state = row(p,bead);
     
-    dCdp_row = p_alpha*p_state - unit_complex*x_state;
-    dCdp_col = p_alpha*p_state + unit_complex*x_state;
+    dCdp_row = p_alpha*p_state + unit_complex*x_state;
+    dCdp_col = p_alpha*p_state - unit_complex*x_state;
     
     row(dC, state) = dCdp_row;
     column(dC, state) = dCdp_col;

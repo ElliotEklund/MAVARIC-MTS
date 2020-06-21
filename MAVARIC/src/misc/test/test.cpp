@@ -11,6 +11,7 @@
 
 #include "pop_estimators.hpp"
 #include "aggregate.hpp"
+#include "functions.hpp"
 
 using namespace boost::numeric::ublas;
 
@@ -94,6 +95,12 @@ int main(int argc, char ** argv){
 
     std::string fileName = "ag_results";
     aggregator.merge_collections(0,my_id,fileName);
+    
+    
+    double x = 1.0/0.0;
+    double y = 5.0;
+    double z = x + y;
+    std::cout << z << std::endl;
     
     MPI_Finalize();
 

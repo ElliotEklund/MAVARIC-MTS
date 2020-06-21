@@ -23,15 +23,15 @@ public:
     dynamics_mvrpmd(int my_id, int num_procs, int root_proc);
     
 /* Functions */
-    void compute_ac(bool pacIN, int pac_strideIN, bool bpIN,
+    int compute_ac(bool pacIN, int pac_strideIN, bool bpIN,
                     int bp_strideIN,bool spIN, int sp_strideIN,
                     bool wpIN,int wp_strideIN,std::string input_dir,
                     std::string output_dir,int num_samples=10,
                     int num_errors=10);
     
-    void iPAC(int interval,std::string input_dir,std::string output_dir);
+    int iPAC(int interval,std::string input_dir,std::string output_dir);
     
-    void energy_conserve(double tol, int energy_stride, std::string input_dir,
+    int energy_conserve(double tol, int energy_stride, std::string input_dir,
                     std::string output_dir);
 
 /* Mutators */
@@ -68,9 +68,8 @@ private:
     
 /* Functions */
     
-    void pre_comp();
+    int pre_comp();
 
-    
 };
 
 #endif

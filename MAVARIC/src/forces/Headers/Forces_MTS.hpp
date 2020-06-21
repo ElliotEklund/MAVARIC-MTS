@@ -52,7 +52,7 @@ public:
     /* Return dHdp*/
     const matrix<double> & get_dHdp();
     
-    double get_sgnTheta(const vector<double> &Q, const matrix<double> &x,
+    double get_sign(const vector<double> &Q, const matrix<double> &x,
                         const matrix<double> &p);
 
     /* Functions for debugging*/

@@ -12,15 +12,17 @@ equilib_mvrpmd::equilib_mvrpmd(int my_id, int root_proc, int num_procs,
     sys_set = false;
     files_set = false;
 }
-void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
-                         unsigned long long num_steps, unsigned long long stride){
+int equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
+                         unsigned long long num_steps,unsigned long long stride){
     
-    if (my_id==root_proc) {
-        if (!sys_set || !files_set) {
-            std::cout << "ERROR: equilibrium_mvrpmd variables not set!" << std::endl;
+    if (!sys_set || !files_set) {
+        if (my_id==root_proc) {
+            std::cout << "ERROR: equilibrium mvrpmd variables not set!" << std::endl;
+            std::cout << "Aborting calculation." << std::endl;
         }
+        return -1;
     }
-    
+
     //Declare vectors for monte carlo moves
     vector<double> Q(nuc_beads,0);
     matrix<double> x(elec_beads,num_states,0), p(elec_beads,num_states,0);
@@ -71,7 +73,17 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     double r = double(nuc_beads)/ double(nuc_beads + num_states*elec_beads);
     
     std::ofstream progress;
-
+    int ten_p = floor(num_states/10.0); //ten percent of steps to take
+    double get_prog = true;
+    
+    if (ten_p == 0) {
+        get_prog = false;
+        if (my_id==root_proc) {
+            std::cout << "Warning: equilibrium progress will not be tracked"
+            " because simulation uses small number of steps." <<std::endl;
+        }
+    }
+    
     if (my_id == root_proc) {
         std::string file_name = root_path + "Output/equil_progress";
         progress.open(file_name.c_str());
@@ -96,20 +108,35 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
                 energy = elec_stepper.get_energy();
             }
         }
-
+        
         estimator = Esti.get_estimator(Q,x,p);
         sgnTheta = theta.get_signTheta();
-    
-        estimator_total += estimator;
-        sgn_total += sgnTheta;
-
+        
+        if (is_NaN(estimator)) {
+            std::cout << "Bad value for estimator encountered on" << std::endl;
+            std::cout << "process " << my_id << " at step " << step << std::endl;
+        }
+        else{
+            estimator_total += estimator;
+        }
+        
+        if (is_NaN(sgnTheta)) {
+            std::cout << "Bad value for sgnTheta encountered on" << std::endl;
+            std::cout << "process " << my_id << " at step " << step << std::endl;
+        }
+        else{
+            sgn_total += sgnTheta;
+        }
+        
         if(step % stride == 0){
             estimator_t[esti_samples] = estimator_total/(sgn_total + 1);
             esti_samples += 1;
         }
-        if (step % (num_steps/10) == 0) {
-            if (my_id==root_proc) {
-                progress << 100 * step/double(num_steps) << "%" << std::endl;
+        if (get_prog) {
+            if (step % ten_p == 0) {
+                if (my_id==root_proc) {
+                    progress << 100 * step/double(num_steps) << "%" << std::endl;
+                }
             }
         }
     }
@@ -141,6 +168,8 @@ void equilib_mvrpmd::run(double nuc_ss, double x_ss, double p_ss,
     /* Write Monte Carlo information to file if requested*/
     if(writePSV){helper.write_PSV(nuc_beads, elec_beads, num_states, Q, x, p);}
     if (writeData) {helper.write_MC_data(sgn_total, estimator_total);}
+    
+    return 0;
 }
 void equilib_mvrpmd::gen_initQ(vector<double> &Q, int num_beads, double step_size){
     for (int bead=0; bead<num_beads; bead++) {

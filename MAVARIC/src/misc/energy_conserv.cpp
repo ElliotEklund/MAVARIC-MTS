@@ -4,7 +4,10 @@ energy_conserv::energy_conserv(int my_id, int num_procs, int root_proc)
     :my_id(my_id),
      num_procs(num_procs),
      root_proc(root_proc)
-{}
+{
+    is_sys_set = false;
+    is_time_set = false;
+}
 void energy_conserv::compute(unsigned long long num_trajs_global,
                              unsigned long long num_trajs_local, double tol,
                              int energy_stride,
@@ -14,9 +17,7 @@ void energy_conserv::compute(unsigned long long num_trajs_global,
     
     C_Matrix C(elec_beads, num_states,alpha);
     M_Matrix M(num_states, elec_beads, beta_elec_beads);
-    
     dM_Matrix_dQ dMdQ(elec_beads, num_states, beta_elec_beads, M);
-    
     theta_mixed theta(num_states,nuc_beads,elec_beads,C,M);
     theta_mixed_dQ theta_dQ(num_states,nuc_beads,elec_beads,C,M,dMdQ);
     theta_mixed_dElec theta_dElec(num_states,elec_beads,alpha,C,M);
@@ -72,6 +73,33 @@ void energy_conserv::compute(unsigned long long num_trajs_global,
     /*  holds integers corresponding to which trajectories have broken*/
     std::list <int> broken_trajectories;
     
+    int ten_p = floor(num_trajs_local/10.0);
+    bool get_prog;
+    int get_prog_int = 1;
+    
+    if ((my_id==root_proc) && (ten_p == 0)) {
+        get_prog_int = 0;
+        MPI_Bcast(&get_prog_int,1,MPI_INT,root_proc,MPI_COMM_WORLD);
+    }
+    
+    if (get_prog_int==0) {
+        get_prog = false;
+    }
+    
+    std::ofstream progress;
+    if (my_id==root_proc) {
+        std::string file_name = output_dir + "conserv_prog";
+        progress.open(file_name.c_str());
+        if (!progress.is_open()) {
+            std::cout << "ERROR: Could not open " << file_name << std::endl;
+        }
+        if (!get_prog) {
+            std::cout << "Warning: energy conservation progress is not collected"
+            "because too few trajectories are used." << std::endl;
+        }
+    }
+    
+    
     for (int traj=0; traj<num_trajs_local; traj++){
 
         /* Load new trajecty*/
@@ -97,13 +125,23 @@ void energy_conserv::compute(unsigned long long num_trajs_global,
                 energy_t = H.get_energy_dyn(mass,Q_traj,P_traj,x_traj,p_traj);
                 badness = abs(energy_init - energy_t)/energy_t;
 
-                if (badness > tol) {
+                if (badness > tol || is_NaN(energy_t)) {
                     /* Trajectory is broken*/
                     broken = true;
                     broken_trajectories.push_front(traj);
                 }
             }
         }
+        
+        if (get_prog) {
+            if ((traj % ten_p == 0) && (my_id == root_proc)) {
+                progress << traj/ten_p << "%" << std::endl;
+            }
+        }
+    }
+    
+    if (my_id==root_proc) {
+        progress.close();
     }
 
     write_broken(broken_trajectories,num_trajs_local,output_dir);

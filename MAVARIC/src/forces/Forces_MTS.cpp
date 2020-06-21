@@ -57,8 +57,9 @@ void Forces_MTS::update_dHdQ(const vector<double> &Q, const matrix<double> &x,
     dVspring_dQ_vec = dVspring_dQ.get_dSpring_dQ(Q);
     dV0_dQ_vec = dV0_dQ.get_dStateIndep_dQ(Q);
     dThetaMTS_dQ_vec = dThetaMTS_dQ->get_dThetaMTS_dQ_vec();
-
     noalias(dHdQ) = dVspring_dQ_vec + dV0_dQ_vec - coeff_ONE_theta*dThetaMTS_dQ_vec;
+    
+    /* N pulled out verision */
     //noalias(dHdQ) = (dVspring_dQ_vec + dV0_dQ_vec - coeff_ONE_theta*dThetaMTS_dQ_vec)/nuc_beads;
 }
 
@@ -66,7 +67,7 @@ void Forces_MTS::update_dHdx(const vector<double> &Q, const matrix<double> &x,
                                        const matrix<double> &p){
     
     dThetaMTS_dx_vec = dThetaMTS_dElec->get_dThetaMTS_dx_vec();
-    noalias(dHdx) = (TWO_beta_nuc_beads*x - coeff_ONE_theta * dThetaMTS_dx_vec);
+    noalias(dHdx) = /*(TWO_beta_nuc_beads*x*/ - coeff_ONE_theta * dThetaMTS_dx_vec;
     //noalias(dHdx) = - coeff_ONE_theta * dThetaMTS_dx_vec/nuc_beads;
 }
 
@@ -74,7 +75,7 @@ void Forces_MTS::update_dHdp(const vector<double> &Q, const matrix<double> &x,
                                        const matrix<double> &p){
 
     dThetaMTS_dp_vec = dThetaMTS_dElec->get_dThetaMTS_dp_vec();
-    noalias(dHdp) = (TWO_beta_nuc_beads*p - coeff_ONE_theta * dThetaMTS_dp_vec);
+    noalias(dHdp) = /*(TWO_beta_nuc_beads*p*/ - coeff_ONE_theta * dThetaMTS_dp_vec;
     //noalias(dHdp) = - coeff_ONE_theta * dThetaMTS_dp_vec/nuc_beads;
 }
 
@@ -86,7 +87,7 @@ const matrix<double> & Forces_MTS::get_dHdx(){return dHdx;}
 
 const matrix<double> & Forces_MTS::get_dHdp(){return dHdp;}
 
-double Forces_MTS::get_sgnTheta(const vector<double> &Q, const matrix<double> &x,
+double Forces_MTS::get_sign(const vector<double> &Q, const matrix<double> &x,
                                 const matrix<double> &p){
     return ThetaMTS->get_signTheta(Q,x,p);
 }

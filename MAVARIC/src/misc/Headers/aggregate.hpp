@@ -27,6 +27,9 @@ public:
     void collect(std::string name, int row, const vector<double> & v0,
                  const vector<double> & v,const double & sgnTheta);
     
+    void collect(std::string name, int row, const double & v0,
+                            const double & v, const double & sgnTheta);
+    
     void print_collection(std::string name);
     
     void merge_collections(int root_process, int my_id, std::string root,

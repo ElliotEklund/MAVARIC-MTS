@@ -25,15 +25,12 @@ void SamplingHelper::print_sys_accpt(unsigned long long sys_steps,
         << 100*(double)sys_steps_accpt_global/sys_steps_global << std::endl;
     }
 }
-
 void SamplingHelper::read_PSV(int nuc_beads,int elec_beads,int num_states,
                               vector<double> &Q, matrix<double> &x,matrix<double> &p){
     
     std::ostringstream quickConvert;
     quickConvert << my_id;
-    
     std::string fileName = root + "Output/PSV" + quickConvert.str();
-    std::cout << fileName << std::endl;
     
     std::ifstream myFile;
     myFile.open(fileName.c_str());
@@ -41,7 +38,6 @@ void SamplingHelper::read_PSV(int nuc_beads,int elec_beads,int num_states,
     if(!myFile.is_open()) {
         std::cout << "Could not open file" << std::endl;
     }
-    
     for(int bead=0; bead<nuc_beads; bead++){
         myFile >> Q(bead);
     }

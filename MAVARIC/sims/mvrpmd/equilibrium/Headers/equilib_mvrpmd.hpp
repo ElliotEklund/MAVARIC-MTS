@@ -24,6 +24,7 @@
 #include "MonteCarloHelper.h"
 #include "system_step.hpp"
 #include "elec_step.hpp"
+#include "functions.hpp"
 
 class equilib_mvrpmd{
     
@@ -40,7 +41,7 @@ public:
      num_steps: number of monte carlo steps simulation will take
      stride: length between successive collection of energy estimator
      */
-    void run(double nuc_ss, double x_ss, double p_ss,unsigned long long num_steps,
+    int run(double nuc_ss, double x_ss, double p_ss,unsigned long long num_steps,
              unsigned long long stride);
 
 /* Mutators */

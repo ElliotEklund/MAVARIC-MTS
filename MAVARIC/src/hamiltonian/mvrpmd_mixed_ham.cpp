@@ -18,6 +18,7 @@ double mvrpmd_mixed_ham::get_energy(const vector<double> &Q,const matrix<double>
     double G_temp = G->get_gTerm(x, p);
     double theta_temp = theta->get_theta(Q, x, p);
         
+    std::cout << fabs(theta_temp) << std::endl;
     return V_spring_temp + V0_temp + one_beta_num_beads*(G_temp - log(fabs(theta_temp)));
 }
 
